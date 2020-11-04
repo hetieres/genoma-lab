@@ -1,0 +1,137 @@
+#fapespBar {
+    position: relative;
+    margin-bottom: 1px;
+    color: @white;
+    background-color: @bar-blue;
+
+    a {
+        display: block;
+        color: @white;
+        font-size: 0.65em;
+        text-align: center;
+        .transition();
+
+        > i {
+            position: relative;
+            top: 2px;
+            font-size: 1.4em;
+        }
+
+        &.btn-face,
+        &.btn-twitter {
+            padding: 8px 10px;
+            width: 15%;
+            float: left;
+        }
+
+        &.btn-face {
+            background-color: @bar-fb;
+
+            &:hover {
+                background-color: darken(@bar-fb, 5);
+            }
+        }
+
+        &.btn-twitter {
+            background-color: @bar-tw;
+
+            &:hover {
+                background-color: darken(@bar-tw, 5);
+            }
+        }
+
+        &.btn-fapesp {
+            padding: 8px 15px;
+            width: 70%;
+            float: right;
+            background-color: @bar-green;
+
+            &:hover {
+                background-color: darken(@bar-green, 5);
+            }
+
+            > i {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+
+        > li {
+            position: relative;
+            margin: auto;
+            padding: 0 10px;
+            display: inline-block;
+
+            > a {
+                padding: 9px 10px 8px;
+                font-size: 0.65em;
+                color: fade(@white, 60);
+                .transition();
+
+                &:hover {
+                    color: @white;
+                }
+            }
+        }
+    }
+
+    #logo {
+        padding: 6px 15px;
+        text-align: center;
+
+        > a {
+            > img {
+                max-width: 60%;
+                max-height: 20px;
+            }
+        }
+    }
+}
+
+// Ajustes de Mobile e Tablet
+@media (max-width: @screen-sm-max) {
+    #fapespBar {
+        height: 5px;
+        background-color: @bar-blue;
+    }
+}
+
+// Ajustes somente de Mobile
+@media (max-width: @screen-sm) {
+}
+
+// Ajustes somente de Tablet
+@media (min-width: @screen-xs-max) and (max-width: @screen-md) {
+}
+
+// Ajustes de Desktop médio
+@media (min-width: @screen-sm-max) and (max-width: @screen-lg) {
+    #fapespBar {
+        a {
+            &.btn-face,
+            &.btn-twitter {
+                padding: 8px 5px;
+                width: 14%;
+            }
+
+            &.btn-fapesp {
+                padding: 8px 5px;
+                width: 72%;
+            }
+        }
+
+        ul > li {
+            padding: 0 4px;
+        }
+    }
+}
+
+// Ajustes de Desktop Grande
+@media (min-width: @screen-md-max) {
+}

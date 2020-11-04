@@ -1,0 +1,35 @@
+@import "bootstrap-utilities.less";
+@import "bootstrap-mixins.less";
+@import "bootstrap-common.less";
+@import "bootstrap-reset.less";
+@import "bootstrap-grid.less";
+
+// Basics
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+// Collapse
+.collapse {
+    display: none;
+}
+
+.collapse.show {
+    display: block;
+}
+
+tr.collapse.show {
+    display: table-row;
+}
+
+tbody.collapse.show {
+    display: table-row-group;
+}
+
+.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s ease;
+}

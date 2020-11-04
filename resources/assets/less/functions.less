@@ -1,0 +1,203 @@
+/* Borda arredondada */
+.borderRadius(@radius: 6px) {
+    border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+}
+
+.textShadow(@horPos: 4px, @verPos: 2px, @blur: 4px, @color: rgba(150, 150, 150, 1)) {
+    text-shadow: @horPos @verPos @blur @color;
+}
+
+.transition(@item: all, @time: .2s, @effect: ease-in-out) {
+	-webkit-transition: @item @time @effect;
+	-o-transition: @item @time @effect;
+	transition: @item @time @effect;
+}
+
+.positions(@sizes, @index) when (@index > 0) {
+    .positions(@sizes; (@index - 1)); // decrement.
+
+    @positions: top, bottom, left, right;
+    @positionsLenght: length(@positions);
+
+    @size: extract(@sizes, @index);
+
+    .generatePositions(@positions, "margin", @size, @positionsLenght);
+    .generatePositions(@positions, "padding", @size, @positionsLenght);
+}
+
+.generatePositions(@positions, @type, @size, @index) when (@index > 0) {
+    .generatePositions(@positions, @type, @size, (@index - 1)); // decrement.
+
+    @position: extract(@positions, @index);
+    @className: ~"@{type}-@{position}-@{size}";
+    @itemCss: ~"@{type}-@{position}";
+
+    .@{className} { @{itemCss}: ~"@{size}px"; }
+}
+
+// Texts Effects
+.wrapLineOverflow(@width: 100%) {
+    width: @width;
+    text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+// Functions Flex
+.flex(@direction: '', @justify: '', @align: '', @self: '', @grow: '') {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+
+    // Directions
+    & when (@direction = 'column') {
+        -webkit-box-orient: vertical !important;
+        -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+        flex-direction: column !important;
+    }
+
+    // Justify
+    & when (@justify = 'start') {
+        -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+        justify-content: flex-start !important;
+    }
+
+    & when (@justify = 'end') {
+        -webkit-box-pack: end !important;
+        -ms-flex-pack: end !important;
+        justify-content: flex-end !important;
+    }
+
+    & when (@justify = 'center') {
+        -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+        justify-content: center !important;
+    }
+
+    & when (@justify = 'around') {
+        -ms-flex-pack: distribute !important;
+        justify-content: space-around !important;
+    }
+
+    & when (@justify = 'between') {
+        -webkit-box-pack: justify !important;
+        -webkit-justify-content: space-between !important;
+        -ms-flex-pack: justify !important;
+        justify-content: space-between !important;
+    }
+
+    // Align
+    & when (@align = 'start') {
+        -webkit-box-align: start !important;
+        -ms-flex-align: start !important;
+        align-items: flex-start !important;
+    }
+
+    & when (@align = 'end') {
+        -webkit-box-align: end !important;
+        -ms-flex-align: end !important;
+        align-items: flex-end !important;
+    }
+
+    & when (@align = 'center') {
+        -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+        align-items: center !important;
+    }
+
+    & when (@align = 'baseline') {
+        -webkit-box-align: baseline !important;
+        -ms-flex-align: baseline !important;
+        align-items: baseline !important;
+    }
+
+    & when (@align = 'stretch') {
+        -webkit-box-align: stretch !important;
+        -ms-flex-align: stretch !important;
+        align-items: stretch !important;
+    }
+
+    // Align Self
+    & when (@self = 'auto') {
+        -ms-flex-item-align: auto !important;
+        align-self: auto !important;
+    }
+
+    & when (@self = 'start') {
+        -ms-flex-item-align: start !important;
+        align-self: flex-start !important;
+    }
+
+    & when (@self = 'end') {
+         -ms-flex-item-align: end !important;
+        align-self: flex-end !important;
+    }
+
+    & when (@self = 'center') {
+        -ms-flex-item-align: center !important;
+        align-self: center !important;
+    }
+
+    & when (@self = 'baseline') {
+        -ms-flex-item-align: baseline !important;
+        align-self: baseline !important;
+    }
+
+    & when (@self = 'stretch') {
+        -ms-flex-item-align: stretch !important;
+        align-self: stretch !important;
+    }
+
+    // Grow
+    & when (@grow > 0) {
+        -webkit-box-flex: @grow !important;
+        -ms-flex-positive: @grow !important;
+        flex-grow: @grow !important;
+    }
+}
+
+.flexWrap(@size: 'all', @type: wrap) {
+    & when (@size = 'all') {
+        -ms-flex-wrap: @type !important;
+        flex-wrap: @type !important;
+    }
+
+    & when (@size = 'xs') {
+        @media (max-width:@screen-xs-max) {
+            -ms-flex-wrap: @type !important;
+            flex-wrap: @type !important;
+        }
+    }
+
+    & when (@size = 'sm') {
+        @media (min-width:@screen-sm) and (max-width:@screen-sm-max) {
+            -ms-flex-wrap: @type !important;
+            flex-wrap: @type !important;
+        }
+    }
+
+    & when (@size = 'md') {
+        @media (min-width:@screen-md) and (max-width:@screen-md-max) {
+            -ms-flex-wrap: @type !important;
+            flex-wrap: @type !important;
+        }
+    }
+
+    & when (@size = 'lg') {
+        @media (min-width:@screen-lg) and (max-width:@screen-lg-max) {
+            -ms-flex-wrap: @type !important;
+            flex-wrap: @type !important;
+        }
+    }
+
+    & when (@size = 'xl') {
+        @media (min-width:@screen-xl) {
+            -ms-flex-wrap: @type !important;
+            flex-wrap: @type !important;
+        }
+    }
+}

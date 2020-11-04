@@ -1,0 +1,11 @@
+{
+    "project": "Na Mídia",
+    "description": "Sistema e site do projeto Na Mídia da FAPESP",
+    "year": "2019",
+    "client": {
+        "name": "Na Mídia",
+        "url": "https://namidia.fapesp.br/"
+    },
+    "dev": "http://chevron.fapesp.br/namidia/",
+    "prod": "https://namidia.fapesp.br/"
+}

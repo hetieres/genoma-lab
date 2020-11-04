@@ -1,0 +1,188 @@
+@import 'functions.less';
+@import 'colors.less';
+
+#boxUsers {
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    > .box {
+        margin-bottom: 0;
+
+        > .widget-user-header {
+            padding: 15px;
+            .borderRadius(0);
+
+            > .widget-user-username {
+                font-size: 18px;
+                .wrapLineOverflow(auto);
+            }
+
+            > .widget-user-desc {
+                font-size: 13px;
+            }
+        }
+
+        > .box-buttons > a {
+            margin-top: 1px;
+            padding: 10px;
+            color: @white;
+            text-align: center;
+            background-color: lighten(@base-bkg-text, 30);
+            border-right: 0.3px solid fade(@white, 40);
+            .transition();
+
+            &:hover {
+                background-color: darken(@base-bkg-text, 20);
+            }
+
+            &.status {
+                background-color: darken(@btn-red, 20);
+
+                &.active {
+                    background-color: darken(@btn-green, 20);
+                }
+            }
+
+            &.del:hover {
+                background-color: darken(@btn-red, 20);
+            }
+
+            &.edit:hover {
+                background-color: darken(@btn-blue, 20);
+            }
+
+            &:last-child {
+                border: none;
+            }
+        }
+    }
+
+    > .delUser {
+        position: absolute;
+        top: 100%;
+        bottom: 0;
+        left: 15px;
+        right: 15px;
+        background: fade(@black, 90%);
+        z-index: 1;
+        .transition();
+
+        &.show {
+            top: 0%;
+        }
+
+        > .header {
+            position: relative;
+            display: block;
+
+            > .title {
+                margin: 0;
+                padding: 10px;
+                font-size: 14px;
+                font-weight: 600;
+                color: @white;
+                border-bottom: 1px solid fade(@white, 10%);
+            }
+
+            > .buttons {
+                position: absolute;
+                top: 2px;
+                right: 10px;
+
+                > a {
+                    font-size: 18px;
+                    color: fade(@white, 50%);
+                    .textShadow(0, 0, 0, transparent);
+                    .transition();
+
+                    &:hover {
+                        color: @white;
+                    }
+
+                    &.saveData {
+                        margin-right: 5px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        > .body {
+            padding: 10px;
+            font-size: 12px;
+            color: @white;
+        }
+    }
+
+    > .delUser > .body {
+        padding-top: 10px;
+
+        > .message {
+            margin-bottom: 15px;
+        }
+
+        > .buttons > a {
+            padding: 6px;
+            color: @white;
+            text-align: center;
+            background-color: @base-bkg-text;
+            .transition();
+
+            &:hover {
+                background-color: darken(@base-bkg-text, 20);
+            }
+
+            &.del {
+                background-color: @btn-red;
+
+                &:hover {
+                    background-color: darken(@btn-red, 20);
+                }
+            }
+        }
+    }
+}
+
+.create-user > .modal-dialog > .modal-content {
+    > .modal-body div > .imageBox {
+        display: block;
+        width: 100%;
+
+        > input[type="file"] {
+            display: none;
+        }
+
+        > img {
+            display: block;
+            margin: auto;
+            width: 100%;
+            max-width: 200px;
+            max-height: 200px;
+            cursor: pointer;
+        }
+    }
+
+    > .modal-footer > #modalButtons {
+        .flex('', 'between', 'center', 'stretch');
+
+        > .saveCancel {
+            .flex('', 'between', 'center', 'stretch');
+
+            > button:not(:first-child) {
+                margin-left: 3px;
+            }
+        }
+
+        button {
+            margin: 0;
+            padding: 6px 15px;
+            .borderRadius(0);
+
+            > i {
+                margin-right: 3px;
+            }
+        }
+    }
+}

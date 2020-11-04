@@ -1,0 +1,1 @@
+const urlAjax = baseUrl  + "api/admin/ajax/";

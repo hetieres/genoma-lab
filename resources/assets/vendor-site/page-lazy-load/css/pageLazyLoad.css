@@ -1,0 +1,11 @@
+.pageLoadingBox {
+    display: block;
+    text-align: center;
+}
+
+.pageLoadingBox > img {
+    margin: auto;
+    padding-top: 15px;
+    display: block;
+    width: 90px;
+}
