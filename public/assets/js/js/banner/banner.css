@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Akkurat;
+    src: url('FontsFree-Net-Akkurat.ttf');
+}
+
 .list-group {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1191,7 +1196,7 @@ button.close {
 body {
     position: relative;
     display: block;
-    font-family: Roboto, Helvetica, Arial, Sans-Serif;
+    font-family: Akkurat;
     overflow-x: hidden
 }
 
@@ -1951,6 +1956,7 @@ body a.btnTop.view {
 }
 
 .Titulo2 {
+    font-family: Akkurat;
     margin-top: 30px;
     font-size: 20px;
     font-weight: 700;
