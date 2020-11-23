@@ -4638,7 +4638,12 @@ hr {
 }
 
 .recent-articles-card3 {
-    background: #4c0013;
+    background: #82d643;
+    height: auto;
+}
+
+.recent-articles-card3-Pesquisa {
+    background: #00b9e4;
     height: auto;
 }
 

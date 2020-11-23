@@ -10,8 +10,8 @@
         <div class="col-md-12">
             <div class="single-recent">
                 <div class="card mb-6 shadow-sm">
-                    <div class="card-body1 recent-articles-card3">
-                        <p class="TextLimitedProjects" style="color: white; font-weight: 450; text-align: justify;">
+                    <div class="card-body1 recent-articles-card3 recent-articles-card3-Pesquisa">
+                        <p class="TextLimitedProjects" style="color: black; font-weight: 700; text-align: justify;">
                             {{ $post->title }}
                         </p>
                     </div>
