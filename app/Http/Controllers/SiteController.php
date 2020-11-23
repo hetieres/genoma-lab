@@ -41,7 +41,7 @@ class SiteController extends Controller
 
     public function detalhe(Request $request)
     {
-        
+
 
         $slug = isset($request->slug) ? $request->slug : false;
         $id   = isset($request->id)   ? $request->id   : false;
@@ -51,18 +51,14 @@ class SiteController extends Controller
             $id = $slug;
             $slug = false;
         }
-       
+
         if ($slug == 'projetos-apoiados' && !$id) {
             $post = Post::find(51);
             return view('site.conteudo', ['post' => $post]);
-        }
-        else if($slug == 'en' && !$id)
-        {
+        } else if ($slug == 'en' && !$id) {
             $post = Post::find(294);
             return view('site.conteudo', ['post' => $post]);
-        }
-        else if($slug == 'comunicados' && !$id)
-        {
+        } else if ($slug == 'comunicados' && !$id) {
             $post = Post::find(220);
             return view('site.conteudo', ['post' => $post]);
         }
@@ -70,7 +66,7 @@ class SiteController extends Controller
         if ($id) {
             $post = Post::find($id);
 
-            if($slug != str_slug($post->title)){
+            if ($slug != str_slug($post->title)) {
                 return redirect($post->link(), 301);
             }
 
@@ -124,7 +120,7 @@ class SiteController extends Controller
             ->where('dt_publication', '<=', date('Y-m-d'))
             ->orderBy('title', 'ASC')
             ->get();
-           return view('site.suplementos', $this->data);
+        return view('site.suplementos', $this->data);
     }
 
     public function tecnologias(Request $request)
@@ -172,11 +168,33 @@ class SiteController extends Controller
             ->where('highlight', 1)
             ->where('dt_publication', '<=', date('Y-m-d'))
             ->orderBy('order')
-            ->limit(4)
+            ->limit(2)
             ->get();
 
 
-        $this->data['tecnologias'] = Post::where('active', 1)
+        /*Dados para Educação e Difusão*/
+        $this->data['EducacaoDifusao'] = Post::where('session_id', 2)
+            ->where('active', 1)
+            ->where('highlight', 1)
+            ->where('dt_publication', '<=', date('Y-m-d'))
+            ->orderBy('order')
+            ->limit(3)
+            ->get();
+
+        /*Dados para Genoma na Mídia*/
+        $this->data['Midia'] = Post::where('session_id', 2)
+        ->where('active', 1)
+        ->where('highlight', 1)
+        ->where('dt_publication', '<=', date('Y-m-d'))
+        ->orderBy('order')
+        ->limit(3)
+        ->get();
+
+
+            
+
+        /*Dados para Projetos de Pesquisa*/
+        $this->data['projetos'] = Post::where('active', 1)
             ->where('dt_publication', '<=', date('Y-m-d'))
             ->where(function ($query) {
                 $query->where('session_id', '=', 1)
@@ -186,6 +204,20 @@ class SiteController extends Controller
             ->limit(3)
             ->get();
 
+
+
+
+        /*
+
+                        $this->data['WebiNars'] = Post::where('session_id', 3)
+            ->where('active', 1)
+            ->where('highlight', 1)
+            ->where('dt_publication', '<=', date('Y-m-d'))
+            ->orderBy('order')
+            ->orderBy('dt_publication', 'DESC')
+            ->limit(3)
+            ->get();
+            
         $this->data['Videos'] = Post::where('session_id', 4)
             ->where('active', 1)
             ->where('highlight', 1)
@@ -196,21 +228,16 @@ class SiteController extends Controller
             ->get();
 
         /* Dados WebiNars*/
-        $this->data['WebiNars'] = Post::where('session_id', 3)
-            ->where('active', 1)
-            ->where('highlight', 1)
-            ->where('dt_publication', '<=', date('Y-m-d'))
-            ->orderBy('order')
-            ->orderBy('dt_publication', 'DESC')
-            ->limit(3)
-            ->get();
+        /*
+     
+            */
     }
 
     public function search(Request $request)
     {
 
         $rs = Post::where('session_id', '<>', 5);
-        $request->k = trim($request->k);//chave
+        $request->k = trim($request->k); //chave
         $request->o = isset($request->o) ? $request->o : 1;
 
         //chave
@@ -231,7 +258,7 @@ class SiteController extends Controller
         else if ($request->o == 2)
             $rs->orderBy('dt_publication');
 
-     //    dd($rs->toSql());
+        //    dd($rs->toSql());
 
         //set pagina atual
         Paginator::currentPageResolver(function () use ($request) {
@@ -239,7 +266,7 @@ class SiteController extends Controller
             return $request->pg;
         });
 
-  //       dd($rs->toSql());
+        //       dd($rs->toSql());
 
         $rs = $rs->paginate(10);
 
@@ -288,7 +315,7 @@ class SiteController extends Controller
             if ($vehicle && str_slug($vehicle->description) === $request->title) {
                 $this->vehicleDetail($vehicle, $request->page);
                 return view('site.vehicle-internal', $this->data);
-            }else if ($news) {
+            } else if ($news) {
                 //url errada
                 return redirect(route('details', ['title' => str_slug($news->title), 'id' => $news->id]));
             }
@@ -308,17 +335,16 @@ class SiteController extends Controller
     {
 
         $news->news = News::selectRaw('posts.*')
-                        ->where('news.url_fapesp', '=', $news->url_fapesp)
-                        ->where('news.url_fapesp', '<>', '')
-                        ->where('news.vehicle_id', '<>', $news->vehicle_id)
-                        ->whereIn('news.news_status_id', News::statusActive())
-                        ->join('vehicles', 'news.vehicle_id' , '=', 'vehicles.id')
-                        ->orderBy('vehicles.big', 'DESC')
-                        ->get();
+            ->where('news.url_fapesp', '=', $news->url_fapesp)
+            ->where('news.url_fapesp', '<>', '')
+            ->where('news.vehicle_id', '<>', $news->vehicle_id)
+            ->whereIn('news.news_status_id', News::statusActive())
+            ->join('vehicles', 'news.vehicle_id', '=', 'vehicles.id')
+            ->orderBy('vehicles.big', 'DESC')
+            ->get();
         //dd($news->news);
         $news->source = $this->sourceSite($news);
 
         $this->data['news'] = $news;
     }
-
 }

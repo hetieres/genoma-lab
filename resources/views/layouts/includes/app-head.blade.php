@@ -10,10 +10,13 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159627-52"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-159627-52');
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-159627-52');
     </script>
 
     <meta charset="UTF-8">
@@ -24,12 +27,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{ config('app.name') }}</title>
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script>
         window.baseUrl = "{{ asset('/') }}";
     </script>
-   
+
     <script>
         function redirect(pg, id) {
             location.href = '/' + pg + '/' + id;
@@ -38,7 +40,6 @@
         function redirectPG(pg) {
             location.href = pg;
         }
-
     </script>
 
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon" />
@@ -56,13 +57,21 @@
     <link rel="stylesheet" href="{{ asset('assets/css/styles/nice-select.css') }}">
     <link href="{{ asset('assets/css/styles/style.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/styles/footer.css') }}" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ asset('assets/css/menu/menu.css') }}" rel="stylesheet">
+
+    <!-- Styles -->
+
+    <link href="{{ asset('assets/js/js/banner/banner.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/js/js/banner/slick.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/js/js/banner/home.min.css')}}" rel="stylesheet">
+
+
 </head>
 
 <body>
-    <header>
+    <header>    
         <!-- Header Start -->
         {{-- Line Bar FAPESP --}}
         @include('layouts.includes.fapesp-bar')
     </header>
-    
-   

@@ -1,55 +1,94 @@
-@php($noSearch=false)
 @extends('layouts.site')
 @section('content')
-
-<div class="row ImgBanner">
-    <img src="{{ asset('assets/img/banner/banner.jpg') }}" class="ImgBanner" alt="Fapesp">
-</div>
-
+<main class="Espaco2">
+    <section id="banner">
+        <div class="slider container">
+            <div class="slide">
+                <div class="image" style="background-image: url('https://fapesp.br/files/home/34571.jpg')"></div>
+                <a href="https://agencia.fapesp.br/ipen-se-equipa-para-produzir-nanorradiofarmacos/34571/" class="box" target="_blank">
+                    <h2 class="b">Ipen se equipa para produzir nanorradiofármacos</h2>
+                    <div class="info">Com apoio da FAPESP, laboratório de padrão internacional associa nanotecnologia e radiofarmácia para desenvolver novos produtos, principalmente para o tratamento de câncer</div>
+                </a>
+            </div>
+            <div class="slide">
+                <div class="image" style="background-image: url('https://fapesp.br/files/home/cpe2.jpg')"></div>
+                <a href="https://fapesp.br/14600/fapesp-e-gsk-anunciam-chamada-para-constituicao-do-centro-de-novos-alvos-terapeuticos-em-oncologia" class="box">
+                    <h2 class="b">FAPESP e GSK anunciam chamada para Centro de Novos Alvos Terapêuticos em Oncologia</h2>
+                    <div class="info">Novo centro realizará pesquisas fundamentais e aplicadas buscando descobrir novos alvos terapêuticos para o tratamento do câncer</div>
+                </a>
+            </div>
+            <div class="slide">
+                <div class="image" style="background-image: url('https://fapesp.br/files/home/34543.jpg')"></div>
+                <a href="https://agencia.fapesp.br/oito-emendas-ao-pl-627-buscam-assegurar-transferencias-do-tesouro-a-fapesp-em-2021/34543/" class="box" target="_blank">
+                    <h2 class="b">Oito emendas ao PL 627 buscam assegurar transferências do Tesouro à FAPESP em 2021</h2>
+                    <div class="info">Uma das emendas foi apresentada em conjunto pelos seis deputados que integram a Comissão de Ciência, Tecnologia, Inovação e Informação da Alesp</div>
+                </a>
+            </div>
+            <div class="slide">
+                <div class="image" style="background-image: url('https://fapesp.br/files/home/054-058-avaliacoes-297-0-1140.jpg')"></div>
+                <a href="https://revistapesquisa.fapesp.br/impactos-da-pesquisa-na-sociedade/" class="box" target="_blank">
+                    <h2 class="b">Impactos da pesquisa na sociedade</h2>
+                    <div class="info">Levantamento aponta resultados positivos em programas da FAPESP de apoio a pequenas empresas, colaborações internacionais e formação de pesquisadores</div>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+<br>
 <div class="container">
     <div class="container">
         <div class="recent-articles ">
             <div class="container BordaInferior">
                 <div class="recent-wrapper">
-                    <div class="row">
-                        <div class="col-md-12   text-justifid ">
-                            {!!html_entity_decode($pgHome->text)!!}
+                    <div class="row" style="padding-bottom: 25px;">
+                        <div class="col-md-5   text-justifid ">
+                            <ul class="social-network social-circle">
+                                <li><a href="#" class="icoFacebook fundoLink" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#" class="icoTwitter fundoLink fundoLink" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#" class="icoGoogle fundoLink" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#" class="icoYouTube fundoLink" title="YouTube"><i class="fab fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="LabelMobil1">
+                            <br><br><br>
+                        </div>
+                        <!-- <div class="MSN">
+                            <p>ESTÁGIO - para atuar em Educação em Difusão do Genoma</p>
+                        </div> -->
+                        <div class="col-md">
+                            <div class="single-recent" style="margin-left: 0px;margin-right: 0px;width: 85%;">
+                                <div class="card" style="    border: 1px solid #000000;margin-left: 7px; margin-right: -5px;">
+                                    <div class="card-body" style="flex: 1 1 auto;padding: 0.5rem;">
+                                        <p style="margin-top: 0px;margin-bottom: 0px;">ESTÁGIO - para atuar em Educação em Difusão do Genoma
+                                            <a href="{{ asset('/') }}"><img class="img-fluig" src="{{asset('assets/img/seta.png') }}" alt="" style="float: right;margin-right: 15px;width: 25px;"></a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="BordaInferior2" style="border-bottom: 10px solid #82d643;"></div>
         </div>
 
         <div class="recent-articles pt-40 ">
             <div class="container BordaInferior">
-                <div class="recent-wrapper">
-                    <div class="row LabelMobil">
-                        <div class="col-md-7 " style="cursor: pointer;" onclick="redirectPG('{{ $Noticias[0]->link() }}')" ;>
-                            <h4 class="subtitulo">{{ $Noticias[0]->title }}</h4>
-                            <p class="TextLimitedNews">{!!$Noticias[0]->dt_publication->format('d/m/Y') . ' &ndash; ' . html_entity_decode($Noticias[0]->summary)!!}</p>
-                        </div>
-                        <div class="col-md-5 " style="cursor: pointer;" onclick="redirectPG('{{ $Noticias[0]->link() }}')" ;>
-                            <img src="{{ asset($Noticias[0]->image) }}" alt="" class="img-fluid imgText">
-                        </div>
+                <div class="col-md-12">
+                    <div class="section-tittle mb-30">
+                        <h3>Conheça o Genoma</h3>
                     </div>
-                    <!-- Versão Mobil -->
-                    <div class="row LabelMobil1">
-                        <div class="col-md-5 " style="cursor: pointer;" onclick="redirectPG('{{ $Noticias[0]->link() }}')" ;>
-                            <img src="{{ asset($Noticias[0]->image) }}" alt="" class="img-fluid imgText">
-                        </div>
-                        <div class="col-md-7 " style="cursor: pointer;" onclick="redirectPG('{{ $Noticias[0]->link() }}')" ;>
-                            <h4 class="subtitulo">{{ $Noticias[0]->title }}</h4>
-                            <p class="TextLimitedNews">{!!$Noticias[0]->dt_publication->format('d/m/Y') . ' &ndash; ' . html_entity_decode($Noticias[0]->summary)!!}</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-12 LabelMobil">
-                    <div class="row">
-                        @for ($i = 1; $i < count($Noticias); $i++) <div class="col-md">
+                    <div class="row Espaco3">
+                        @for ($i = 0; $i < count($Noticias); $i++) <?php
+                                                                    if ($i == 0) {
+                                                                        $style = "Espaco";
+                                                                    } else {
+                                                                        $style = "";
+                                                                    }
+                                                                    ?> <div class="col-md {{$style}}">
                             <div class="single-recent">
                                 <a href="{{ $Noticias[$i]->link() }}">
-                                    <div class=" mb-4" style="height: 456px;">
+                                    <div class=" mb-4" style="height: auto;">
                                         <div class="">
                                             <img src="{{ asset($Noticias[$i]->image) }}" alt="" class="img-fluid imgNoticias">
                                         </div>
@@ -66,42 +105,45 @@
                     @endfor
                 </div>
             </div>
+
+
             <div class="col-md-12 ">
                 <center>
-                    <button type="button" class="btn btn-primary" onclick="location.href = '{{ route('detalhe', ['slug' => 'noticias']) }}'">Mais Notícias</button>
+                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => 'noticias']) }}'">Saiba mais</button>
                 </center>
                 <br>
             </div>
         </div>
+        <div class="BordaInferior2" style="border-bottom: 10px solid #00b9e4;"></div>
     </div>
+
     <div class="recent-articles pt-40">
         <div class="container BordaInferior">
             <div class="recent-wrapper">
                 <!-- section Tittle -->
-                <div class="row">
+                <div class="row Espaco3">
                     <div class="col-lg-12">
                         <div class="section-tittle mb-30">
-                            <h3>PESQUISAS SOBRE COVID-19 APOIADAS PELA FAPESP</h3>
+                            <h3>Projetos de Pesquisa</h3>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    @foreach ($tecnologias as $item)
+                    @foreach ($projetos as $item)
                     <div class="col-md">
                         <div class="single-recent">
-                            <a href="{{ $item->link() }}">
-                                <div class="card mb-4 shadow-sm">
-                                    <div class="card-body {{ $item->id == $tecnologias[1]->id ? 'recent-articles-card2' : 'recent-articles-card1' }}">
-                                        <p class="TextLimitedProjects" style="color: white; font-weight: 450;">
-                                            {{ $item->title }}</p>
-                                    </div>
+                            <div class="card mb-4 shadow-sm" style="border: 1px solid #000000;">
+                                <a href="{{ $item->link() }}">
                                     <div class="card-body">
-                                        <p class="card-text">
+                                        <p class="TextLimitedProjects" style="color: #1e359c;font-weight: 450;height: 92px;">
+                                            {{ $item->title }}</p>
+                                        <p class="card-text" style="height: 120px;">
                                             {!!html_entity_decode(str_replace("\n", "<br>", $item->summary))!!}
                                         </p>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                                <a href="{{ asset('/') }}"><img class="img-fluig" src="{{asset('assets/img/seta.png') }}" alt="" style="float: right;margin-right: 10px;"></a>
+                            </div>
                         </div>
                     </div>
                     @endforeach
@@ -109,133 +151,85 @@
             </div>
             <div class="col-md-12 ">
                 <center>
-                    <button type="button" class="btn btn-primary" onclick="location.href = '{{ route('detalhe', ['slug' => 'projetos-apoiados']) }}'">Conheça todos os projetos</button>
+                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => 'projetos-apoiados']) }}'">Mais pesquisas</button>
                 </center>
                 <br>
             </div>
         </div>
+        <div class="BordaInferior2" style="border-bottom: 10px solid #f6303e;"></div>
     </div>
-
-    <div class="container BordaInferior pt-40 pb-40">
-        <div class="recent-wrapper">
-            <!-- section Tittle -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-tittle mb-30">
-                        <h3>PROJETOS DE PESQUISA SOBRE A COVID-19 EM VÍDEOS</h3>
-                    </div>
+    <div class="recent-articles pt-40 ">
+        <div class="container BordaInferior">
+            <div class="col-md-12">
+                <div class="section-tittle mb-30">
+                    <h3>Educação e Difusão</h3>
                 </div>
-            </div>
-            <div class="row">
-                @foreach ($Videos as $value)
-                <div class="col-md">
-                    <div class="single-recent">
-                        <div class="card mb-5 shadow-sm" style="cursor: pointer;">
-                            <div class="card-body" onclick="location.href = '{{  $value->link() }}';">
-                                <center>
-                                    <img class="ImgTube img-fluid" src="https://img.youtube.com/vi/{{ $value->id_youtube }}/0.jpg" alt="">
-                                    <div class="wrapper">
-                                        <p class="TextLimited" style="font-size: 17px;">
-                                            {{ $value->summary }}
+                <div class="row Espaco3">
+                    @for ($i = 0; $i < count($EducacaoDifusao); $i++) <div class="col-md Espaco">
+                        <div class="single-recent">
+                            <a href="{{ $EducacaoDifusao[$i]->link() }}">
+                                <div class=" mb-4" style="height: auto;">
+                                    <div class="">
+                                        <img src="{{ asset($EducacaoDifusao[$i]->image) }}" alt="" class="img-fluid imgNoticias">
+                                    </div>
+                                    <div class="">
+                                        <h5 class="cardtitleNoticia subtitulo">{{ $EducacaoDifusao[$i]->title }}</h5>
+                                        <p class="TextLimiteNoticias">
+                                            {!!html_entity_decode(str_replace("\n", "<br>", $EducacaoDifusao[$i]->summary))!!}
                                         </p>
                                     </div>
-                                </center>
-                                </a>
-                            </div>
+                                </div>
+                            </a>
                         </div>
-                    </div>
                 </div>
-                @endforeach
+                @endfor
             </div>
         </div>
         <div class="col-md-12 ">
             <center>
-                <button type="button" class="btn btn-primary" onclick=redirectPG("{{ route('videos') }}")>Mais Vídeos</button>
+                <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => 'noticias']) }}'">Mais</button>
             </center>
             <br>
         </div>
     </div>
+    <div class="BordaInferior2" style="border-bottom: 10px solid #0032a0;"></div>
+</div>
 </div>
 
-<div class="container BordaInferior pt-40 pb-40">
-    <div class="recent-wrapper">
-        <!-- section Tittle -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-tittle mb-30">
-                    <h3>WEBINARS</h3>
-                </div>
+
+<div class="recent-articles pt-40 ">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="section-tittle mb-30">
+                <h3>Genoma na Mídia</h3>
             </div>
-        </div>
-        <div class="row">
-
-
-            @foreach ($WebiNars as $item)
-        
-                <div class="col-md">
-
+            <div class="row Espaco4">
+                @for ($i = 0; $i < count($Midia); $i++) <div class="col-md">
                     <div class="single-recent">
-                        <div class="card mb-5 shadow-sm">
-                        <a href="{{ $item->link() }}" style="text-decoration: none;">
-
-                            <div class="card-body1 recent-articles-card4">
-                                <p class="TextLimitedProjects" style="color: white; font-weight: 450;height: 90px;margin-bottom: 0px !important;">
-                                    {{ $item->title }}
-                                </p>
+                        <a href="{{ $Midia[$i]->link() }}">
+                            <div class=" mb-4" style="height: auto;">
+                                <div class="">
+                                    <img src="{{ asset($Midia[$i]->image) }}" alt="" class="img-fluid imgNoticias">
+                                </div>
+                                <div class="">
+                                    <h5 class="cardtitleNoticia subtitulo">{{ $Midia[$i]->title }}</h5>
+                                    <p class="TextLimiteNoticias">
+                                        {!!html_entity_decode(str_replace("\n", "<br>", $Midia[$i]->summary))!!}
+                                    </p>
+                                </div>
                             </div>
-</a>
-
-                            <div class="card-body">
-                                <p class="card-title">
-                                    {{-- {!!html_entity_decode($item->text)!!} --}}
-                                </p>
-
-                                <a href="{{ $item->link() }}" style="text-decoration: none;">
-                                <p class="card-text TextLimitedWebNars" style="height: 217px;color: #010201;">
-                                    {!!html_entity_decode($item->summary)!!}
-                                </p>
-                                </a>
-
-
-                                <center style="margin-top: -20px;">
-                                    <button type="button" class="btn btn-primary" onclick="redirectPG('{{ $item->link() }}');">Leia Mais</button>
-
-                                    <?php
-                                    if (($item->live != "null" && $item->live != "")) {
-                                    ?>
-                                        <br>
-                                        <input type="button" class="btn3 btn btn-danger btn-sm" onclick="redirectPG('{{ $item->live }}');" value="Live" style="margin-top: 16px;">
-                                    <?php
-                                    } elseif ($item->id_youtube != "null" && $item->id_youtube != "") {
-                                        $urlVideo = "https://www.youtube.com/watch?v=" . $item->id_youtube
-                                    ?>
-                                    <br>
-                                        <input type="button" class="btn4 btn btn-success btn-sm" onclick="redirectPG('{{ $urlVideo }}');" value="Vídeo" style="margin-top: 16px;">
-
-                                    <?php
-                                    } else {
-                                    ?>
-                                    <br><br><br>
-                                    <?php
-                                    }
-
-                                    ?>
-
-
-                                </center>
-                            </div>
-                        </div>
-            
+                        </a>
+                    </div>
+            </div>
+            @endfor
         </div>
     </div>
-    @endforeach
-</div>
-</div>
-<div class="col-md-12 ">
-    <center>
-        <button type="button" class="btn btn-primary" onclick=redirectPG("{{ route('webinars') }}")>Todos os Eventos</button>
-    </center>
-    <br>
+    <div class="col-md-12 ">
+        <center>
+            <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => 'noticias']) }}'">Mais</button>
+        </center>
+        <br>
+    </div>
 </div>
 </div>
 @endsection
