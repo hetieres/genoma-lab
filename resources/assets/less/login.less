@@ -16,7 +16,7 @@ body.login-page {
     -o-background-size: cover;
     background-size: cover;
 
-    > .infosLogin {
+    >.infosLogin {
         position: absolute;
         top: 0;
         width: 100%;
@@ -25,32 +25,32 @@ body.login-page {
         z-index: 99;
     }
 
-    > .login-box {
-        > .login-logo {
+    >.login-box {
+        >.login-logo {
             position: relative;
             text-align: center;
 
-            > img, > a > img {
+            >img,
+            >a>img {
                 margin: auto;
-                max-width: 60%;
             }
         }
 
-        > .login-box-body {
+        >.login-box-body {
             background: fade(@white, 50);
             border: 5px solid @base-medium;
 
-            > .login-logo {
+            >.login-logo {
                 position: relative;
                 text-align: center;
 
-                > a > img {
+                >a>img {
                     margin: auto;
                     max-width: 67%;
                 }
             }
 
-            > h2 {
+            >h2 {
                 margin: 0 0 30px;
                 color: @base-dark;
                 font-size: 20px;
@@ -58,8 +58,8 @@ body.login-page {
                 text-align: center;
             }
 
-            > form > .form-group {
-                > input {
+            >form>.form-group {
+                >input {
                     padding: 15px 50px 15px 15px;
                     height: auto;
                     background: fade(@white, 70);
@@ -70,23 +70,55 @@ body.login-page {
                         color: @black;
                         background-color: @white;
 
-                        &::-webkit-input-placeholder { color: @black-60; } /* Chrome/Opera/Safari */
-                        &::-moz-placeholder { color: @black-60; } /* Firefox 19+ */
-                        &:-ms-input-placeholder { color: @black-60; } /* IE 10+ */
-                        &:-moz-placeholder { color: @black-60; } /* Firefox 18- */
+                        &::-webkit-input-placeholder {
+                            color: @black-60;
+                        }
+
+                        /* Chrome/Opera/Safari */
+                        &::-moz-placeholder {
+                            color: @black-60;
+                        }
+
+                        /* Firefox 19+ */
+                        &:-ms-input-placeholder {
+                            color: @black-60;
+                        }
+
+                        /* IE 10+ */
+                        &:-moz-placeholder {
+                            color: @black-60;
+                        }
+
+                        /* Firefox 18- */
 
                         &+span {
                             color: @black-40;
                         }
                     }
 
-                    &::-webkit-input-placeholder { color: @black-40; } /* Chrome/Opera/Safari */
-                    &::-moz-placeholder { color: @black-40; } /* Firefox 19+ */
-                    &:-ms-input-placeholder { color: @black-40; } /* IE 10+ */
-                    &:-moz-placeholder { color: @black-40; } /* Firefox 18- */
+                    &::-webkit-input-placeholder {
+                        color: @black-40;
+                    }
+
+                    /* Chrome/Opera/Safari */
+                    &::-moz-placeholder {
+                        color: @black-40;
+                    }
+
+                    /* Firefox 19+ */
+                    &:-ms-input-placeholder {
+                        color: @black-40;
+                    }
+
+                    /* IE 10+ */
+                    &:-moz-placeholder {
+                        color: @black-40;
+                    }
+
+                    /* Firefox 18- */
                 }
 
-                > span {
+                >span {
                     width: 50px;
                     height: 100%;
                     font-size: 18px;
@@ -95,7 +127,7 @@ body.login-page {
                     .transition();
                 }
 
-                > .btn-fp {
+                >.btn-fp {
                     padding: 15px;
                     color: @white;
                     background-color: @base-light;
@@ -108,13 +140,13 @@ body.login-page {
                     }
                 }
 
-                &.has-error > input {
+                &.has-error>input {
                     border-color: @base-medium;
                 }
             }
 
-            > .buttons label,
-            > .buttons a.btnRequest {
+            >.buttons label,
+            >.buttons a.btnRequest {
                 color: @black-20;
                 .transition();
 
@@ -123,14 +155,14 @@ body.login-page {
                 }
             }
 
-            > .buttons a.btnRequest {
+            >.buttons a.btnRequest {
                 display: block;
                 line-height: 43px;
                 text-align: right;
             }
         }
 
-        > .copyright {
+        >.copyright {
             margin-top: 10px;
             font-size: 11px;
             text-align: center;
