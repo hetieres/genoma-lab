@@ -182,17 +182,16 @@ class SiteController extends Controller
             ->get();
 
         /*Dados para Genoma na Mídia*/
-        $this->data['Midia'] = Post::where('session_id', 2)
+        $this->data['Midia'] = Post::where('session_id', 4)
         ->where('active', 1)
         ->where('highlight', 1)
         ->where('dt_publication', '<=', date('Y-m-d'))
         ->orderBy('order')
-        ->limit(3)
+        ->limit(2)
         ->get();
 
 
-            
-
+        
         /*Dados para Projetos de Pesquisa*/
         $this->data['projetos'] = Post::where('active', 1)
             ->where('dt_publication', '<=', date('Y-m-d'))
