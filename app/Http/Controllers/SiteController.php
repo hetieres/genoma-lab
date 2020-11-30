@@ -170,6 +170,7 @@ class SiteController extends Controller
             ->orderBy('order')
             ->limit(2)
             ->get();
+            
 
 
         /*Dados para Educação e Difusão*/

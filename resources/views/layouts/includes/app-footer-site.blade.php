@@ -3,20 +3,7 @@
 {!! $footer !!}
 <!-- Scripts -->
 
-<br>
-<div class="EspacoRodape">
-    <h5 style="font-weight: 600;">Genoma USP - Centro de Estudos do Genoma Humano e Células-Tronco</h5>
-    <h6>Rua do Matão - Travessa 13, n. 106<br>
-        Cidade Universitária<br>
-        05508-090 - São Paulo -SP<br>
-        Telefone (11) 3091-7966 / 3091-0878<br>
-        WhatsApp, só para mensagem: (11) 94057-4021<br>
-    </h6>
-    <br>
-    <div class="LabelMobil1">
-        <br><br>
-    </div>
-</div>
+
 
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->

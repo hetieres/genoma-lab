@@ -142,7 +142,8 @@
                                         </p>
                                     </div>
                                 </a>
-                                <a href="{{ asset('/') }}"><img class="img-fluig" src="{{asset('assets/img/seta.png') }}" alt="" style="float: right;margin-right: 10px;"></a>
+                                <a href="{{ asset('/') }}">
+                                <img class="img-fluig" src="{{asset('assets/img/seta.png') }}" alt="" style="float: right;margin-right: 10px;"></a>
                             </div>
                         </div>
                     </div>
