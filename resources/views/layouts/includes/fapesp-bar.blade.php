@@ -54,31 +54,6 @@ $Size = "font-size: 35px;";
                     </div>
                 </div>
             </div>
-
-            <!--
-            <div class="header-bottom header-sticky ">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-12 col-lg-8 col-md-12">
-                            <div class="sticky-logo">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <a href="http://www.fapesp.br/"><img src="https://covid19.fapesp.br/assets/img/logo/logoBranco.jpg" alt="" style="margin-top: 0px;width: 100px; margin-left: 0px;"></a>
-                                    </div>
-                                    <div class="col-8">
-                                        <center>
-                                            <a href="{{ asset('/') }}">
-                                                <h1 class="TitleSite">Ciência e tecnologia para o combate à COVID-19</h1>
-                                            </a>
-                                        </center>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
--->
         </div>
     </div>
 </div>
@@ -106,14 +81,10 @@ $Size = "font-size: 35px;";
             <ul class="links" id="navigation">
                 <div class="row">
                     <li>
-                    
                         <a href="javascript:;">
-                      
                             <i class="fas fa-plus visible-sm "></i>
-                            <span> <b class="MenuLabel">  <i class="fas fa-sort-down ArrowDow"  ></i> Pesquisa </b></span>
+                            <span> <b class="MenuLabel">  <i class="fas fa-sort-down ArrowDow LabelMobil"  ></i> Pesquisa </b></span>
                         </a>
-
-
                         <div class="subnav-container">
                             <div class="container">
                                 <div class="row">
@@ -175,12 +146,10 @@ $Size = "font-size: 35px;";
                             </div>
                         </div>
                     </li>
-
                     <li>
                         <a href="javascript:;">
                             <span><b class="MenuLabel" style="margin-top: 3px;" ><i class="fas ArrowDow" ></i> Serviços</b></span>
                         </a>
-                     
                     </li>
                     <li>
                         <a href="javascript:;">
