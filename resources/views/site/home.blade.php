@@ -52,9 +52,6 @@
                         <div class="LabelMobil1">
                             <br><br><br>
                         </div>
-                        <!-- <div class="MSN">
-                            <p>ESTÁGIO - para atuar em Educação em Difusão do Genoma</p>
-                        </div> -->
                         <div class="col-md">
                             <div class="single-recent" style="margin-left: 0px;margin-right: 0px;width: 85%;">
                                 <div class="card" style="    border: 1px solid #000000;margin-left: 7px; margin-right: -5px;">
@@ -83,7 +80,7 @@
                                                                     if ($i == 0) {
                                                                         $style = "Espaco";
                                                                     } else {
-                                                                        $style = "";
+                                                                        $style = "Espaco5";
                                                                     }
                                                                     ?> <div class="col-md {{$style}}">
                             <div class="single-recent">
@@ -196,12 +193,7 @@
     <div class="BordaInferior2" style="border-bottom: 10px solid #0032a0;"></div>
 </div>
 </div>
-
-
-
 <div class="container">
-       
-
         <div class="recent-articles pt-40 ">
             <div class="container">
                 <div class="col-md-12">
@@ -213,7 +205,7 @@
                                                                     if ($i == 0) {
                                                                         $style = "Espaco";
                                                                     } else {
-                                                                        $style = "";
+                                                                        $style = "Espaco5";
                                                                     }
                                                                     ?> <div class="col-md {{$style}}">
                             <div class="single-recent">
@@ -245,43 +237,5 @@
             </div>
         </div>
     </div>
-
-<!--
-<div class="recent-articles pt-40 ">
-    <div class="container">
-        <div class="col-md-12">
-            <div class="section-tittle mb-30">
-                <h3>Genoma na Mídia</h3>
-            </div>
-            <div class="row Espaco4">
-                @for ($i = 0; $i < count($Midia); $i++) <div class="col-md Espaco">
-                    <div class="single-recent">
-                        <a href="{{ $Midia[$i]->link() }}">
-                            <div class=" mb-4" style="height: auto;">
-                                <div class="">
-                                    <img src="{{ asset($Midia[$i]->image) }}" alt="" class="img-fluid imgNoticias2">
-                                </div>
-                                <div class="">
-                                    <h5 class="cardtitleNoticia subtitulo">{{ $Midia[$i]->title }}</h5>
-                                    <p class="TextLimiteNoticias">
-                                        {!!html_entity_decode(str_replace("\n", "<br>", $Midia[$i]->summary))!!}
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-            </div>
-            @endfor
-        </div>
-    </div>
-    <div class="col-md-12 ">
-        <center>
-            <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => 'noticias']) }}'">Mais</button>
-        </center>
-        <br>
-    </div>
-</div>
-                                                                -->
-
 </div>
 @endsection

@@ -191,6 +191,7 @@ class SiteController extends Controller
         ->get();
 
 
+
         
         /*Dados para Projetos de Pesquisa*/
         $this->data['projetos'] = Post::where('active', 1)
