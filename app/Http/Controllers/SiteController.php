@@ -173,7 +173,7 @@ class SiteController extends Controller
 
 
         /*Dados para Educação e Difusão*/
-        $this->data['EducacaoDifusao'] = Post::where('session_id', 2)
+        $this->data['EducacaoDifusao'] = Post::where('session_id', 3)
             ->where('active', 1)
             ->where('highlight', 1)
             ->where('dt_publication', '<=', date('Y-m-d'))
