@@ -3,9 +3,6 @@
 {!! $footer !!}
 <!-- Scripts -->
 
-
-
-
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" async="true" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5efe2429bd2b5328"></script>
 
@@ -41,12 +38,12 @@
 
 <!-- Jquery Plugins, main Jquery -->
 <script src="{{ asset('assets/js/js/main.js') }}"></script>
+
+
 <script src="{{ asset('assets/js/js/menu/plugins.min.js') }}"></script>
 <script src="{{ asset('assets/js/js/menu/site.min.js') }}"></script>
 <script src="{{ asset('assets/js/js/banner/slick.min.js') }}"></script>
 <script src="{{ asset('assets/js/js/banner/home.min.js') }}"></script>
-
-
 <script>
     function Show(value) {
         if (value == "1") {
@@ -55,10 +52,33 @@
             $("#BoxSearch").hide("slow");
         }
     }
-
     $("#IconeLupa").click(function() {
         $("#form-search").submit();
     });
 </script>
+
+<script>
+    function Arrow(id) {
+        $('.ArrowMenu').removeClass('fas fa-angle-right');
+        $('.ArrowMenu').addClass('fas fa-angle-down');
+        $('#arrow_'+id).removeClass('fas fa-angle-down');
+        $('#arrow_'+id).addClass('fas fa-angle-right');
+    }
+
+
+    $("main").click(function() {
+        //$('.item-menu').removeClass('active');
+        $('.ArrowMenu').removeClass('fas fa-angle-right');
+        $('.ArrowMenu').addClass('fas fa-angle-down');
+    });
+
+    $(".main-header").click(function() {
+        //$('.item-menu').removeClass('active');
+        $('.ArrowMenu').removeClass('fas fa-angle-right');
+        $('.ArrowMenu').addClass('fas fa-angle-down');
+    });
+</script>
+
 </body>
+
 </html>

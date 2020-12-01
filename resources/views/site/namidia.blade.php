@@ -4,7 +4,7 @@
 <div style="text-align: justify;">{!!html_entity_decode($DadosHead->text)!!} </div>
 
 <div class="row">
-    @foreach ($noticias as $item)
+    @foreach ($namidias as $item)
     <div class="col-md-12">
         <div class="single-recent">
             <div class="card mb-6 shadow-sm">

@@ -1973,7 +1973,7 @@ body a.btnTop.view {
         color: white !important;
     }
     body>header {
-        border-bottom: 5px solid #05376c
+        /*  border-bottom: 5px solid #05376c*/
     }
     body>header>.brand>div {
         width: 100%
@@ -2508,6 +2508,7 @@ body a.btnTop.view {
 .MenuLabel {
     color: black;
     margin-top: 3px;
+    text-transform: uppercase;
 }
 
 @media (min-width:991px) and (max-width:1200px) {

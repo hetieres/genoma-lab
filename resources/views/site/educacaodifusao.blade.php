@@ -1,6 +1,5 @@
-
 @include('layouts.includes.app-head')
-<Br><br>
+<Br>
 <div class="container">
     <div class="banner">
         <img src="{{ asset($post->image) }}" class="img-fluid">
@@ -31,6 +30,4 @@
             </ul>
     </div>
 </div>
-
-
-    @include('layouts.includes.app-footer-site')
+@include('layouts.includes.app-footer-site')

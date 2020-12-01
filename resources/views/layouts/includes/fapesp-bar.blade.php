@@ -58,8 +58,74 @@ $Size = "font-size: 35px;";
     </div>
 </div>
 
+<style>
+    /**
+*** Seta para ESQUERDA
+**/
+    .seta-esquerda:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        width: 0;
+        height: 0;
+
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-right: 5px solid blue;
+    }
+
+    /**
+*** Seta para DIREITA
+**/
+    .seta-direita:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        width: 0;
+        height: 0;
+
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid green;
+    }
+
+
+    
+
+    /**
+*** Seta para BAIXO
+**/
+    .seta-baixo:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        width: 0;
+        height: 0;
+
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #f00;
+    }
+</style>
+
+
+<!--
+
+<a href="#" class="item-menu" id="TST" onclick="Arrow(this.id)"> <i id="arrow_TST" class="fas fa-angle-down ArrowMenu"></i> TESTE</a>
+<a href="#" class="item-menu" id="Xuplau" onclick="Arrow(this.id)" > <i id="arrow_Xuplau"  class="fas fa-angle-down ArrowMenu"></i> TESTE1</a>
+
+-->
+<!--
+<a class="fa fa-angle-double-right" id="Xuplau" href="#"></a>
+<a href="#" class="seta-baixo">Seta para cima</a>
+-->
 
 <div class="menu-line header-sticky">
+
+
     <div class="container">
         <div class="brand LabelMobil1">
             <a href="{{asset('/') }}" class="link-brand" title="FAPESP - Fundação de Amparo à Pesquisa do Estado de São Paulo">
@@ -71,6 +137,8 @@ $Size = "font-size: 35px;";
             </a>
         </div>
 
+
+
         <nav class="menu header2 ">
             <div class="menuMobile visible-sm">
                 <span class="title">Menu</span>
@@ -81,9 +149,9 @@ $Size = "font-size: 35px;";
             <ul class="links" id="navigation">
                 <div class="row">
                     <li>
-                        <a href="javascript:;">
-                            <i class="fas fa-plus visible-sm "></i>
-                            <span> <b class="MenuLabel">  <i class="fas fa-sort-down ArrowDow LabelMobil"  ></i> Pesquisa </b></span>
+                        <a href="javascript:;" id="Pesquisa" onclick="Arrow(this.id)">
+                            <i class="fas fa-plus visible-sm"></i>
+                            <span> <b class="MenuLabel"> <i id="arrow_Pesquisa" class="fas fa-angle-down ArrowMenu LabelMobil"></i> Pesquisa </b></span>
                         </a>
                         <div class="subnav-container">
                             <div class="container">
@@ -129,7 +197,7 @@ $Size = "font-size: 35px;";
                                                 </div>
                                                 <div class="col-sm">
                                                     <h3 class="b" style="color: white;">
-                                                    Sequenciamento de Nova geração (NGS)
+                                                        Sequenciamento de Nova geração (NGS)
                                                     </h3>
                                                     <ul class="submenu">
                                                         <li><a href="#">- Preparo e sequenciamento de bibliotecas</a></li>
@@ -141,32 +209,33 @@ $Size = "font-size: 35px;";
 
                                             </div>
                                         </div>
-                                      </div>                       
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </li>
                     <li>
-                        <a href="javascript:;">
-                            <span><b class="MenuLabel" style="margin-top: 3px;" ><i class="fas ArrowDow" ></i> Serviços</b></span>
+                        <a href="javascript:;" id="Servicos" onclick="Arrow(this.id)">
+                            <i class="fas fa-plus visible-sm"></i>
+                            <span><b class="MenuLabel" style="margin-top: 3px;"><i id="arrow_Servicos" class="fas fa-angle-down ArrowMenu LabelMobil"></i> &nbsp;&nbsp;Serviços</b></span>
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:;">
+                        <a href="javascript:;" id="EnsinoDifusao" onclick="Arrow(this.id)">
                             <i class="fas fa-plus visible-sm"></i>
-                            <span><b class="MenuLabel">Ensino e Difusão</b></span>
-                        </a>
-                     </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="fas fa-plus visible-sm"></i>
-                            <span><b class="MenuLabel">Genoma em Números</b></span>
+                            <span><b class="MenuLabel" style="margin-top: 3px;"><i id="arrow_EnsinoDifusao" class="fas fa-angle-down ArrowMenu LabelMobil"></i>&nbsp;&nbsp;Ensino e Difusão</b></span>
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:;">
+                        <a href="javascript:;" id="GenomaNumeros" onclick="Arrow(this.id)">
                             <i class="fas fa-plus visible-sm"></i>
-                            <span><b class="MenuLabel">Quem Somos</b> </span>
+                            <span><b class="MenuLabel" style="margin-top: 3px;"><i id="arrow_GenomaNumeros" class="fas fa-angle-down ArrowMenu LabelMobil"></i>&nbsp;&nbsp;Genoma em Números</b></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" id="QuemSomos" onclick="Arrow(this.id)">
+                            <i class="fas fa-plus visible-sm"></i>
+                            <span><b class="MenuLabel" style="margin-top: 3px;"><i id="arrow_QuemSomos" class="fas fa-angle-down ArrowMenu LabelMobil"></i>&nbsp;&nbsp;Quem Somos</b> </span>
                         </a>
                     </li>
                     <li class="LabelMobil">
@@ -193,7 +262,6 @@ $Size = "font-size: 35px;";
 
 
                 <!-- Form para Versão Mobil-->
-
                 <div class="busca LabelMobil11">
                     <form action="/pesquisa" id="form-search" method="get">
                         <button type="submit" class="text-center">
@@ -202,9 +270,6 @@ $Size = "font-size: 35px;";
                         <input type="text" name="k" id="search-input" placeholder="Buscar...">
                     </form>
                 </div>
-
-
-
             </div>
         </nav>
     </div>

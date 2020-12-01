@@ -33,7 +33,7 @@
             </div>
         </div>
     </section>
-</main>
+
 <br>
 <div class="container">
     <div class="container">
@@ -106,7 +106,7 @@
 
             <div class="col-md-12 ">
                 <center>
-                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => 'noticias']) }}'">Saiba mais</button>
+                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => 'pesquisas']) }}'">Saiba mais</button>
                 </center>
                 <br>
             </div>
@@ -149,7 +149,7 @@
             </div>
             <div class="col-md-12 ">
                 <center>
-                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => 'projetos-apoiados']) }}'">Mais pesquisas</button>
+                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => 'projetospesquisas']) }}'">Mais pesquisas</button>
                 </center>
                 <br>
             </div>
@@ -185,7 +185,7 @@
         </div>
         <div class="col-md-12 ">
             <center>
-                <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => 'noticias']) }}'">Mais</button>
+                <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => 'educacaodifusoes']) }}'">Mais</button>
             </center>
             <br>
         </div>
@@ -198,7 +198,7 @@
             <div class="container">
                 <div class="col-md-12">
                     <div class="section-tittle mb-30">
-                        <h3>Conheça o Genoma</h3>
+                        <h3>Genoma na Mídia</h3>
                     </div>
                     <div class="row Espaco3">
                         @for ($i = 0; $i < count($Midia); $i++) <?php
@@ -231,11 +231,12 @@
 
             <div class="col-md-12 ">
                 <center>
-                <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => 'noticias']) }}'">Mais</button>
+                <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => 'namidia']) }}'">Mais</button>
                 </center>
                 <br>
             </div>
         </div>
     </div>
 </div>
+</main>
 @endsection
