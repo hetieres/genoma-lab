@@ -234,7 +234,8 @@ class UserController extends Controller
 
     private function passwordGenerate($chars)
     {
-        $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
-        return substr(str_shuffle($data), 0, $chars);
+        // $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
+        // return substr(str_shuffle($data), 0, $chars);
+        return 'genoma@2020';
     }
 }

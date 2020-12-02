@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use DateTime;
 use App\Model\Post;
 use App\Model\Session;
+use App\Model\PostHistory;
+use Caxy\HtmlDiff\HtmlDiff;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use function GuzzleHttp\json_decode;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use function GuzzleHttp\json_decode;
 
 class PostController extends Controller
 {
@@ -147,6 +149,9 @@ class PostController extends Controller
         $post = new Post(['active' => 1, 'dt_publication' => date('Y-m-d')]);
         if (isset($request->id) && $request->id > 0) {
             $post = Post::find($request->id);
+            if (isset($request->history_id) && $request->history_id > 0) {
+                $history = $post->history($request->history_id);
+            }
         }
 
         if ($post !== '' && !is_null($post->image) && file_exists(public_path($post->image))) {
@@ -159,9 +164,30 @@ class PostController extends Controller
             $post->keywords = json_decode($post->keywords);
         }
 
+        //uploads
+        $files = [];
+        $path = "files/upload/" . $post->id . '/';
+        if(is_dir($path) && $post->id > 0){
+            $pathRead = dir($path);
+            while($file = $pathRead -> read()){
+                if(!in_array($file, ['.', '..'])){
+                    $fileInfo = pathinfo($path . $file);
+                    $fileInfo['url'] = asset($fileInfo['dirname'] . '/' . $fileInfo['basename']);
+                    $fileInfo['icon'] = $this->fileIcon($fileInfo);
+                    $files[] = $fileInfo;
+                }
+            }
+            $pathRead->close();
+        }
+
+        $post->history = $post->historyLoad();
+
+
         $this->data['post'] = $post;
+        $this->data['files'] = $files;
         $this->data['user_id'] = Auth::user()->id;
         $this->data['sessions'] = Session::orderBy('description')->get()->toArray();
+        $this->data['history_id'] = isset($request->history_id) ? $request->history_id : $post->history[0]->history_id;
 
         return view('admin.postEdit', $this->data);
     }
@@ -277,4 +303,120 @@ class PostController extends Controller
             }
         }
     }
+
+    public function comparation(Request $request)
+    {
+        ini_set('max_execution_time', 0);
+        set_time_limit(0);
+
+        if ((int)$request->id > 0 && (int)$request->history_id >= 0) {
+            $version1 = Post::find($request->id);
+            $version2 = Post::find($request->id);
+            $maxMin = $version1->maxMinHistory();
+
+            //caso id_historico > max
+            $request->history_id = $request->history_id > $maxMin->max ? $maxMin->max : $request->history_id;
+
+            //caso id_historico < = 0
+            $version1->history($request->history_id > 0 ? $request->history_id : 1);
+            $version2->history($request->history_id > 1 ? $request->history_id - 1 : 1);
+
+            $version1->text = '<p><strong>' . $version1->title . '</strong></p><p>' . $version1->subtitle . '</p><p>' . ($version1->section ? $version1->section->description : '') . '</p>' . $version1->text;
+            $version2->text = '<p><strong>' . $version2->title . '</strong></p><p>' . $version2->subtitle . '</p><p>' . ($version2->section ? $version2->section->description : '') . '</p>' . $version2->text;
+
+            $htmlDiff = new HtmlDiff($version2->text, $version1->text);
+            $version1->htmlDiff = $htmlDiff->build();
+            $version1->htmlDiff = preg_replace('/<del class="(.*?)">(.*?)<\/del>/i', "", $version1->htmlDiff);
+
+            $htmlDiff = new HtmlDiff($version1->text, $version2->text);
+            $version2->htmlDiff = $htmlDiff->build();
+            $version2->htmlDiff = preg_replace('/<del class="(.*?)">(.*?)<\/del>/i', "", $version2->htmlDiff);
+            $version2->htmlDiff = preg_replace('/<ins class="(.*?)">/i', "<del >", $version2->htmlDiff);
+            $version2->htmlDiff = preg_replace('/<\/ins>/i', "</del>", $version2->htmlDiff);
+
+            $version1->url_edit = route('post-edit', ['id' => $version1->id, 'history_id' => $version1->history_id]);
+            $version2->url_edit = route('post-edit', ['id' => $version2->id, 'history_id' => $version2->history_id]);
+
+
+            //echo $version1->history_id . ' < ' . $maxMin->max;
+            if ($version1->history_id < $maxMin->max) {
+                $version1->next = route('post-comparation', ['id' => $version1->id, 'history_id' => $version1->history_id + 1]);
+            }
+
+            if ($version1->history_id > $maxMin->min) {
+                $version1->prev = route('post-comparation', ['id' => $version1->id, 'history_id' => $version1->history_id - 1]);
+            }
+
+            $this->data['version1'] = $version1;
+            $this->data['version2'] = $version2;
+
+            return view('admin.postCompare', $this->data);
+        }
+    }
+
+    public function upload(Request $request)
+    {
+        $files = [];
+        for ($i=0; $i < 100; $i++) {
+            if($request->file('file' . $i) === null){
+                break;
+            }else if($request->hasFile('file' . $i) && isset($request->id)){
+                $file = $request->file('file' . $i );
+                $fileInfo = pathinfo($file->getClientOriginalName());
+                $fileInfo['name'] = str_slug($fileInfo['filename']) . '.' . str_slug($fileInfo['extension']);
+                $upload = $file->storeAs($this->_public_path . '/upload/'. $request->id, $fileInfo['name']);
+                $upload = str_replace($this->_public_path, $this->_uploads_path, $upload);
+                $fileInfo['url'] = asset($upload);
+                $fileInfo['icon'] = $this->fileIcon($fileInfo);
+                $files[] = $fileInfo;
+            }
+        }
+
+        return $files;
+    }
+
+    function fileIcon($fileInfo){
+        switch ($fileInfo['extension']) {
+            case 'txt':
+                $return = 'fa-file-text-o';
+                break;
+            case 'doc':
+            case 'docx':
+                $return = 'fa-file-word-o';
+                break;
+            case 'pdf':
+                $return = 'fa-file-pdf-o';
+                break;
+            case 'csv':
+            case 'xls':
+            case 'xlsx':
+                $return = 'fa-file-excel-o';
+                break;
+            case 'jpg':
+            case 'gif':
+            case 'png':
+                $return = false;
+                break;
+            default:
+                $return = ' fa-file-o';
+                break;
+        }
+        return $return;
+    }
+
+    public function uploadDestroy(Request $request)
+    {
+        $return = true;
+        $file = 'files/upload/' . $request->id . '/' . $request->filename;
+        if (file_exists($file)) {
+            $return = Storage::delete(str_replace($this->_uploads_path, $this->_public_path, $file));
+        }else{
+            dd($file);
+        }
+
+        return json_encode($return);
+    }
+
+
+
 }

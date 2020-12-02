@@ -19,7 +19,7 @@
         </li>
 
         <li>
-            <a href="{{ route('post-edit') }}">
+            <a href="{{ route('post-new') }}">
                 <i class="fa fa-file-o"></i> <span>Nova Matéria </span>
             </a>
         </li>

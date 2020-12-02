@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Post;
 use App\Helpers\JWTHelper;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,6 +25,7 @@ class Controller extends BaseController
         $this->_public_path = "public";
         $this->_uploads_path = "files";
         $this->generateJWT();
+        $this->dataLoad();
     }
 
     private function generateJWT()
@@ -36,6 +39,30 @@ class Controller extends BaseController
                 $payload = ['type' => 'site', 'ip' => \Request::ip()];
                 $jwt->setPayload($payload);
                 $jwt->generateCookie();
+            }
+        }
+    }
+
+    private function dataLoad()
+    {
+        $prefix = $this->_treatPrefix();
+        if (in_array($prefix, ['fapesp', 'admin'])) {
+            $jwt   = new JWTHelper;
+            $token = (isset($_COOKIE['JWT-TOKEN']) ? $_COOKIE['JWT-TOKEN'] : '');
+            $user  = $jwt->getPayload($token);
+            
+            //paginas do admin
+            if (strpos($_SERVER['REQUEST_URI'], Route::current()->getPrefix())!==false
+                && in_array('auth', Route::current()->middleware()) && isset($user->id)
+            ) {
+
+                $side_news = Post::orderBy('id', 'DESC')->limit(10)->get();
+                $side_edit = Post::where('user_id', '=', $user->id)
+                    ->orderBy('updated_at', 'DESC')
+                    ->limit(10)
+                    ->get();
+                View::share('side_news', $side_news);
+                View::share('side_edit', $side_edit);
             }
         }
     }
@@ -75,20 +102,19 @@ class Controller extends BaseController
         return $pages;
     }
 
-    public function numberProcessFormat($n)
+    private function _treatPrefix()
     {
-        $number = "";
-        $j = 0;
-        for ($i = strlen($n) - 1; $i > -1; $i--) {
-            $number = $n[$i] . $number;
-            if ($j == 0) {
-                $number = "-" . $number;
-            }
-            if ($j == 5) {
-                $number = "/" . $number;
-            }
-            $j++;
+        $ret    = '';
+        $prefix = \Request::route()->getPrefix();
+
+        if (null!==$prefix && substr($prefix, 0, 1)==='/') {
+            $ret    = substr($prefix, 1);
+        } else if (null!==$prefix && substr($prefix, 0, 1)!=='/') {
+            $prefix = explode('/', $prefix);
+            $ret    = $prefix[0];
         }
-        return $number;
+
+        return $ret;
     }
+
 }

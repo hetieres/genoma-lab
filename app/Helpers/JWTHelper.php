@@ -23,6 +23,15 @@ class JWTHelper {
         $this->payload = $payload;
     }
 
+    public function getPayload($token)
+    {
+        $tokenSplit = explode('.', $token);
+        $base64Data = base64_decode(isset($tokenSplit[1]) ? $tokenSplit[1] : $tokenSplit[0]);
+        $data       = json_decode($base64Data);
+
+        return $data;
+    }
+
     public function addPayload($key, $value)
     {
         $this->payload[$key] = $value;
@@ -51,7 +60,7 @@ class JWTHelper {
     public function generateCookie($path = "/")
     {
         $token      = $this->getJWT();
-        $expiration = time() + 86400; // 1 day - 86400 | 12 hours - 43200
+        $expiration = time() + 43200; // 1 day - 86400 | 12 hours - 43200
 
         setcookie('JWT-TOKEN', $token, $expiration, $path);
     }

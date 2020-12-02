@@ -21,16 +21,34 @@ class Post extends Model
         return $this->belongsTo('App\Model\User');
     }
 
-    public static function DadosPost($id, $limit)
-    {
-        return Post::selectRaw('posts.id, posts.summary, posts.title, posts.text, posts.id_youtube , posts.href ,posts.image,posts.highlight')
-            ->join('sessions', 'sessions.id', '=', 'posts.session_id')
-            ->where('posts.session_id', '=', $id)
-            ->where('posts.highlight', '=', 1)
-            ->limit($limit)
-            ->orderBy('posts.dt_publication', 'desc')
-            ->get();
+    public function historyLoad()
+	{
+		return PostHistory::where('id', $this->id)->orderBy('history_id', 'desc')->get();
     }
+
+	public function history($history_id)
+	{
+		$history = PostHistory::where('id', $this->id)->where('history_id', $history_id)->first();
+		$this->title          = $history->title;
+		$this->summary        = $history->summary;
+		$this->text           = $history->text;
+		$this->id_youtube     = $history->id_youtube;
+		$this->href           = $history->href;
+		$this->live           = $history->live;
+		$this->dt_publication = $history->dt_publication;
+		$this->highlight      = $history->highlight;
+		$this->active         = $history->active;
+		$this->caption_image  = $history->caption_image;
+		$this->session_id     = $history->session_id;
+		$this->keywords       = $history->keywords;
+        $this->user_id        = $history->user_id;
+        $this->history_id     = $history_id;
+	}
+
+    public function maxMinHistory()
+	{
+		return PostHistory::selectRaw('max(history_id) as max, min(history_id) as min')->where('id', $this->id)->first();
+	}
 
     public function link(){
         $return = false;

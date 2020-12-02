@@ -64,14 +64,14 @@ $(document).ready(function () {
             data.append('id_youtube', $("#id_youtube").val());
             data.append('href', $("#href").val());
             data.append('live', $("#live").val());
-            
+
 
             if ($('#image').prop('files').length) {
                 data.append('image', $('#image').prop('files')[0]);
             }
 
             let url = baseUrl + "api/admin/ajax/post-save";
-            
+
 
             let message = "Gravado com sucesso!";
 
@@ -97,7 +97,7 @@ $(document).ready(function () {
             }).catch(error => {
                 console.log(error);
             });
-            
+
 
         } else {
             toastr.warning('Verifique campos obrigatórios');
@@ -262,6 +262,105 @@ $(document).ready(function () {
     });
 
     $("#session_id").change();
+
+    $('#files').change(function () {
+        if ($('#id').val() == '') {
+            $('#modalPage').find('.modal-title').html('Aviso');
+            $('#modalPage').find('.modal-body').html('Não é possivél subir arquivos antes de gravar matéria!');
+            $('#modalPage').find('.modal-footer').html('<button type="submit" class="btn btn-default" data-dismiss="modal">ok</button>');
+
+            $('#modalPage').modal();
+
+        } else if ($('#files').prop('files').length) {
+            let url = baseUrl + "api/admin/ajax/post-upload";
+            let data = new FormData();
+            let files = [];
+            for (let i = 0; i < $('#files').prop('files').length; i++) {
+                // files.push($('#files').prop('files')[i]);
+                data.append('file' + i, $('#files').prop('files')[i]);
+            }
+            data.append('id', $('#id').val());
+
+            // data.append('files', $('#files').prop('files')[0]);
+
+            axios.post(url, data).then(response => {
+                let files = response.data;
+                let html = "";
+                for (let i = 0; i < files.length; i++) {
+                    html += '<div class="col-lg-2 col-xs-4"><div class="file-item">';
+                    if (files[i]['icon'] == false) {
+                        html += '<img src="' + files[i]['url'] + '" width="100" alt="">';
+                    } else {
+                        html += '<i class="fa fa-fw ' + files[i]['icon'] + '"> </i>';
+                    }
+                    html += '<p>' + files[i]['name'] + '</p>';
+                    html += '<input type="hidden" id="url" value="' + files[i]['url'] + '">';
+                    html += '<button class="btn btn-danger upload-del"> Excluir </button> ';
+                    html += '<button class="btn btn-info upload-copy"> Copiar </button>';
+                    html += '</div></div>';
+                }
+                if ($(".file-item").length) {
+                    $(".file-item").eq(0).parent().before(html);
+                } else {
+                    $(".box-footer").find('.row').html(html);
+                }
+                actionsBind();
+            }).catch(error => {
+                console.log(error);
+                // console.log('Error: ' + error.response.status + ' / ' + error.response.data);
+            });
+
+        }
+    });
+
+    function actionsBind() {
+        $(".upload-del").unbind("click");
+        $(".upload-copy").bind("click");
+
+        $(".upload-del").bind("click", function () {
+            let item = $(this).parent();
+            let filename = item.find('p').eq(0).html();
+
+            $('#modalPage').find('.modal-title').html('Excluir');
+            $('#modalPage').find('.modal-body').html('Confirma, exclusão do arvivo?<br>' + filename);
+            $('#modalPage').find('.modal-footer').html('<button type="submit" class="btn btn-default" data-dismiss="modal">Cancelar</button><button type="button" id="bnt-del-image" class="btn btn-danger pull-right">Sim</button>');
+
+            $('#modalPage').modal();
+
+            $('#bnt-del-image').click(function () {
+
+                let url = baseUrl + "api/admin/ajax/post-upload-del";
+                let message = "Arquivo apagado!";
+
+                let data = new FormData();
+                data.append('id', $('#id').val());
+                data.append('filename', filename);
+
+                axios.post(url, data).then(response => {
+                    toastr.success(message);
+                    item.parent().remove();
+                }).catch(error => {
+                    console.log('Error: ' + error.response.status + ' / ' + error.response.data);
+                });
+
+                $('#modalPage').modal('hide');
+            });
+        });
+
+        $(".upload-copy").bind("click", function () {
+            let url = $(this).parent().find('#url').val();
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val(url).select();
+            document.execCommand("copy");
+            $temp.remove();
+            toastr.success('Url copiada!');
+        });
+    }
+
+    actionsBind();
+
+
 
 
 });

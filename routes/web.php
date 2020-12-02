@@ -24,8 +24,10 @@ Route::group(['prefix' => 'fapesp', 'middleware' => ['auth']], function () {
     Route::group(['prefix' => 'materia'], function () {
         Route::get('/', 'PostController@index')->name('post-list');
         Route::get('/destaques', 'PostController@order')->name('post-order');
-        Route::get('/{id}', 'PostController@edit')->name('post-edit');
-        Route::get('/nova', 'PostController@edit')->name('post-edit');
+        // Route::get('/{id}', 'PostController@edit')->name('post-edit');
+        Route::get('/nova', 'PostController@edit')->name('post-new');
+        Route::get('/{id}/{history_id?}', 'PostController@edit')->name('post-edit');
+        Route::get('/compare/{id}/{history_id}', 'PostController@comparation')->name('post-comparation');
     });
 
     // users

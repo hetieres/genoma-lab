@@ -11,4 +11,7 @@ return array(
     'Raven_' => array($vendorDir . '/sentry/sentry/lib'),
     'Parsedown' => array($vendorDir . '/erusev/parsedown'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
+    'KubAT\\PhpSimple\\HtmlDomParser' => array($vendorDir . '/kub-at/php-simple-html-dom-parser/src'),
+    'HTMLPurifier' => array($vendorDir . '/ezyang/htmlpurifier/library'),
+    'Caxy\\HtmlDiff' => array($vendorDir . '/caxy/php-htmldiff/lib'),
 );

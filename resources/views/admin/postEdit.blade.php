@@ -21,12 +21,23 @@
 
     <section class="content">
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-md-12">
+          <!-- Custom Tabs -->
+          <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">Edição</a></li>
+              <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">Uploads</a></li>
+              <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">Versões</a></li>
+              {{-- <li class="pull-right"><a href="{{ route('geral', ['id' => $post->id, 'slug' => str_slug($post->title)]) }}" target="_blank"><small class="label bg-maroon" style="font-size: 100%;"><i class="fa fa-fw fa-eye"></i></small></a></li> --}}
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="tab_1">
+                     {{-- <div class="col-xs-12"> --}}
                 <div class="box">
                     <div class="box-header with-border">
                         <h3 class="box-title">
                             <i class="fa fa-fw fa-file-o"></i> {{ ($post->id != '' ? $post->id . ' :: ' . $post->title : 'Matéria <nova>') }}
-                            <small>Edição</small>
+                            {{-- <small>Edição</small> --}}
                         </h3>
                         {{-- <h3 class="box-title">{{ $post->id != '' ? $post->id . ' :: ' . $post->title : '<nova>' }}</h3> --}}
                         <div class="pull-right">
@@ -181,7 +192,92 @@
                         </div>
                     </div>
                 </div>
+            {{-- </div> --}}
+              </div>
+              <!-- /.tab-pane -->
+
+
+
+              <div class="tab-pane" id="tab_2">
+                <div class="box">
+                    {{-- <div class="box-header with-border">
+                        <h3 class="box-title">Upload de arquivos</h3>
+                    </div> --}}
+                    <div class="box-body">
+                        <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                            <div class="box-body">
+
+                                <div class="form-group">
+                                    <label for="files" class="col-sm-2 control-label">Arquivos</label>
+                                    <div class="col-lg-6 col-xs-8">
+                                        <input type="file" multiple="multiple" class="form-control" id="files" name="files[]">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="box-footer">
+                         <div class="row">
+                            @foreach ($files as $file)
+                                <div class="col-lg-2 col-xs-4">
+                                    <div class="file-item">
+                                        @if($file['icon'] == false)
+                                            <img  src="{{ $file['url'] }}" width="100"  alt="">
+                                        @else
+                                            <i class="fa fa-fw {{ $file['icon'] }}"></i>
+                                        @endif
+                                            <p>{{ $file['basename'] }}</p>
+                                            <input type="hidden" id="url" value="{{ $file['url'] }}">
+                                            <button class="btn btn-danger upload-del" >Excluir</button>
+                                            <button class="btn btn-info upload-copy">Copiar</button>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="tab-pane" id="tab_3">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Histórico de versões</h3>
+                    </div>
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr>
+                                    <th>ID</th>
+                                    <th style="width: 70%">Título/Comentário</th>
+                                    <th>Atualizado</th>
+                                    <th>Ações</th>
+                                </tr>
+                                @foreach ($post->history as $item)
+                                    <tr class="{{ $history_id == $item->history_id ? 'active' : '' }}">
+                                        <td>{{ $item->history_id }}</td>
+                                        <td>{{ $item->title }}<br>{{ $item->comment }}</td>
+                                        <td>{{ $item->user ? $item->user->name : '' }}<br>{{ $item->created_at->format('d/m/Y') }}</td>
+                                        <td>
+                                            <a class="label bg-maroon" alt="Editar" href="{{ route('post-comparation', ['id' => $item->id, 'history_id' => $item->history_id]) }}" style="font-size: 100% !important"><i class="fa fa-fw fa-clone"></i></a>
+                                            <a class="label bg-green" alt="Editar" href="{{ route('post-edit', ['id' => $item->id, 'history_id' => $item->history_id]) }}" style="font-size: 100% !important"><i class="fa fa-fw fa-edit"></i></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+              </div>
+              <!-- /.tab-pane -->
             </div>
+            <!-- /.tab-content -->
+          </div>
+          <!-- nav-tabs-custom -->
+        </div>
+
+
+
         </div>
     </section>
 @endsection

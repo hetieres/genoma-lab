@@ -89,9 +89,9 @@
                             </ul>
                         </li>
 
-                        {{-- <li>
-                            <a href="javascript:;" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                        </li> --}}
+                        <li>
+                            <a href="javascript:;" data-toggle="control-sidebar"><i class="fa fa-pencil"></i></a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -116,7 +116,7 @@
 
         @include('layouts.includes.app-footer')
 
-        {{-- @include('layouts.includes.app-sidebar-config') --}}
+        @include('layouts.includes.app-sidebar-config')
 
         <div class="control-sidebar-bg"></div>
     </div>
