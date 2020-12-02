@@ -61,12 +61,9 @@
     <link href="{{ asset('assets/css/menu/menu.css') }}" rel="stylesheet">
 
     <!-- Styles -->
-
     <link href="{{ asset('assets/js/js/banner/banner.css')}}" rel="stylesheet">
     <link href="{{ asset('assets/js/js/banner/slick.min.css')}}" rel="stylesheet">
     <link href="{{ asset('assets/js/js/banner/home.min.css')}}" rel="stylesheet">
-
-
 </head>
 
 <body>

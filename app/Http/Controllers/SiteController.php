@@ -42,7 +42,6 @@ class SiteController extends Controller
     public function detalhe(Request $request)
     {
 
-
         $slug = isset($request->slug) ? $request->slug : false;
         $id   = isset($request->id)   ? $request->id   : false;
 
@@ -76,17 +75,17 @@ class SiteController extends Controller
                         $DadosHead = Post::find(20);
                         return view('site.tecnologia', ['post' => $post, 'DadosHead' => $DadosHead]);
                         break;
-                    case '2': //Notícias
+                    case '2': //Pesquisa
                         $DadosHead = Post::find(19);
-                        return view('site.noticia', ['post' => $post, 'DadosHead' => $DadosHead]);
+                        return view('site.pesquisa', ['post' => $post, 'DadosHead' => $DadosHead]);
                         break;
                     case '3': //Webinars
                         $DadosHead = Post::find(77);
-                        return view('site.webinar', ['post' => $post, 'DadosHead' => $DadosHead]);
+                        return view('site.educacaodifusao', ['post' => $post, 'DadosHead' => $DadosHead]);
                         break;
                     case '4': //Vídeos
                         $DadosHead = Post::find(152);
-                        return view('site.video', ['post' => $post, 'DadosHead' => $DadosHead]);
+                        return view('site.midia', ['post' => $post, 'DadosHead' => $DadosHead]);
                         break;
                     case '5': //Conteúdo
                         return view('site.conteudo', ['post' => $post]);
@@ -94,36 +93,52 @@ class SiteController extends Controller
                     case '6': //Suplementos de Rápida Implementação
 
                         $DadosHead = Post::find(23);
-                        return view('site.suplemento', ['post' => $post, 'DadosHead' => $DadosHead]);
+                        return view('site.projetospesquisa', ['post' => $post, 'DadosHead' => $DadosHead]);
                         break;
                 }
             }
         }
     }
 
-    public function webinars(Request $request)
+    public function educacaodifusoes(Request $request)
     {
         $this->data['DadosHead'] = Post::find(77);
-        $this->data['webinars'] = Post::where('session_id', 3)
+        $this->data['educacaodifusoes'] = Post::where('session_id', 3)
             ->where('active', 1)
             ->where('dt_publication', '<=', date('Y-m-d'))
             ->orderBy('dt_publication', 'DESC')
             ->get();
-        return view('site.webinars', $this->data);
+
+
+        return view('site.educacaodifusoes', $this->data);
     }
 
-    public function suplementos(Request $request)
+    public function projetospesquisa(Request $request)
     {
         $this->data['DadosHead'] = Post::find(23);
-        $this->data['suplementos'] = Post::where('session_id', 6)
+        $this->data['projetospesquisas'] = Post::where('session_id', 6)
             ->where('active', 1)
             ->where('dt_publication', '<=', date('Y-m-d'))
             ->orderBy('title', 'ASC')
             ->get();
-        return view('site.suplementos', $this->data);
+        return view('site.projetospesquisas', $this->data);
     }
 
-    public function tecnologias(Request $request)
+
+    public function namidia(Request $request)
+    {
+        $this->data['DadosHead'] = Post::find(23);
+        $this->data['namidias'] = Post::where('session_id', 4)
+            ->where('active', 1)
+            ->where('dt_publication', '<=', date('Y-m-d'))
+            ->orderBy('title', 'ASC')
+            ->get();
+        return view('site.namidia', $this->data);
+    }
+
+
+    
+    public function conhecaogenoma(Request $request)
     {
         $this->data['DadosHead'] = Post::find(20);
         $this->data['tecnologias'] = Post::where('session_id', 1)
@@ -134,15 +149,17 @@ class SiteController extends Controller
         return view('site.tecnologias', $this->data);
     }
 
-    public function noticias(Request $request)
+    public function pesquisas(Request $request)
     {
-        $dadosNoticas['noticias'] = Post::where('session_id', 2)
+        
+        $dadosNoticas['pesquisas'] = Post::where('session_id', 2)
             ->where('active', 1)
             ->where('dt_publication', '<=', date('Y-m-d'))
             ->orderBy('dt_publication', 'DESC')
             ->get();
         $dadosNoticas['DadosHead'] = Post::find(19);
-        return view('site.noticias', $dadosNoticas);
+
+        return view('site.pesquisas', $dadosNoticas);
     }
 
     public function videos()
@@ -159,9 +176,7 @@ class SiteController extends Controller
 
     private function asideData()
     {
-
         $this->data['pgHome'] = Post::find(17);
-
         /*Dados para Notícias*/
         $this->data['Noticias'] = Post::where('session_id', 2)
             ->where('active', 1)
@@ -173,7 +188,7 @@ class SiteController extends Controller
 
 
         /*Dados para Educação e Difusão*/
-        $this->data['EducacaoDifusao'] = Post::where('session_id', 2)
+        $this->data['EducacaoDifusao'] = Post::where('session_id', 3)
             ->where('active', 1)
             ->where('highlight', 1)
             ->where('dt_publication', '<=', date('Y-m-d'))
@@ -182,17 +197,14 @@ class SiteController extends Controller
             ->get();
 
         /*Dados para Genoma na Mídia*/
-        $this->data['Midia'] = Post::where('session_id', 2)
+        $this->data['Midia'] = Post::where('session_id', 4)
         ->where('active', 1)
         ->where('highlight', 1)
         ->where('dt_publication', '<=', date('Y-m-d'))
         ->orderBy('order')
-        ->limit(3)
+        ->limit(2)
         ->get();
-
-
-            
-
+        
         /*Dados para Projetos de Pesquisa*/
         $this->data['projetos'] = Post::where('active', 1)
             ->where('dt_publication', '<=', date('Y-m-d'))
@@ -203,34 +215,6 @@ class SiteController extends Controller
             ->orderByRaw("RAND()")
             ->limit(3)
             ->get();
-
-
-
-
-        /*
-
-                        $this->data['WebiNars'] = Post::where('session_id', 3)
-            ->where('active', 1)
-            ->where('highlight', 1)
-            ->where('dt_publication', '<=', date('Y-m-d'))
-            ->orderBy('order')
-            ->orderBy('dt_publication', 'DESC')
-            ->limit(3)
-            ->get();
-            
-        $this->data['Videos'] = Post::where('session_id', 4)
-            ->where('active', 1)
-            ->where('highlight', 1)
-            ->where('dt_publication', '<=', date('Y-m-d'))
-            ->orderBy('order')
-            ->orderBy('dt_publication', 'DESC')
-            ->limit(3)
-            ->get();
-
-        /* Dados WebiNars*/
-        /*
-     
-            */
     }
 
     public function search(Request $request)

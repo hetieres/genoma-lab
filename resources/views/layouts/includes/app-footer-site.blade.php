@@ -3,22 +3,6 @@
 {!! $footer !!}
 <!-- Scripts -->
 
-<br>
-<div class="EspacoRodape">
-    <h5 style="font-weight: 600;">Genoma USP - Centro de Estudos do Genoma Humano e Células-Tronco</h5>
-    <h6>Rua do Matão - Travessa 13, n. 106<br>
-        Cidade Universitária<br>
-        05508-090 - São Paulo -SP<br>
-        Telefone (11) 3091-7966 / 3091-0878<br>
-        WhatsApp, só para mensagem: (11) 94057-4021<br>
-    </h6>
-    <br>
-    <div class="LabelMobil1">
-        <br><br>
-    </div>
-</div>
-
-
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" async="true" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5efe2429bd2b5328"></script>
 
@@ -54,12 +38,12 @@
 
 <!-- Jquery Plugins, main Jquery -->
 <script src="{{ asset('assets/js/js/main.js') }}"></script>
+
+
 <script src="{{ asset('assets/js/js/menu/plugins.min.js') }}"></script>
 <script src="{{ asset('assets/js/js/menu/site.min.js') }}"></script>
 <script src="{{ asset('assets/js/js/banner/slick.min.js') }}"></script>
 <script src="{{ asset('assets/js/js/banner/home.min.js') }}"></script>
-
-
 <script>
     function Show(value) {
         if (value == "1") {
@@ -68,10 +52,33 @@
             $("#BoxSearch").hide("slow");
         }
     }
-
     $("#IconeLupa").click(function() {
         $("#form-search").submit();
     });
 </script>
+
+<script>
+    function Arrow(id) {
+        $('.ArrowMenu').removeClass('fas fa-angle-right');
+        $('.ArrowMenu').addClass('fas fa-angle-down');
+        $('#arrow_'+id).removeClass('fas fa-angle-down');
+        $('#arrow_'+id).addClass('fas fa-angle-right');
+    }
+
+
+    $("main").click(function() {
+        //$('.item-menu').removeClass('active');
+        $('.ArrowMenu').removeClass('fas fa-angle-right');
+        $('.ArrowMenu').addClass('fas fa-angle-down');
+    });
+
+    $(".main-header").click(function() {
+        //$('.item-menu').removeClass('active');
+        $('.ArrowMenu').removeClass('fas fa-angle-right');
+        $('.ArrowMenu').addClass('fas fa-angle-down');
+    });
+</script>
+
 </body>
+
 </html>

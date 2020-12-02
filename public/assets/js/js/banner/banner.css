@@ -1957,7 +1957,7 @@ body a.btnTop.view {
 
 .Titulo2 {
     font-family: Akkurat;
-    margin-top: 30px;
+    margin-top: 40px;
     font-size: 20px;
     font-weight: 700;
 }
@@ -1973,7 +1973,7 @@ body a.btnTop.view {
         color: white !important;
     }
     body>header {
-        border-bottom: 5px solid #05376c
+        /*  border-bottom: 5px solid #05376c*/
     }
     body>header>.brand>div {
         width: 100%
@@ -2507,11 +2507,13 @@ body a.btnTop.view {
 
 .MenuLabel {
     color: black;
+    margin-top: 3px;
+    text-transform: uppercase;
 }
 
 @media (min-width:991px) and (max-width:1200px) {
     .Titulo2 {
-        margin-top: 30px !important;
+        margin-top: 40px !important;
         font-size: 16px !important;
         font-weight: 700;
     }

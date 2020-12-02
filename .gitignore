@@ -1,1 +1,8 @@
 /.env
+
+/node_modules
+/public/assets/vendor/
+/*vendor*/
+public/files/
+.gitignore
+.gitattributes
