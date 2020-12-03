@@ -6,3 +6,4 @@
 public/files/
 .gitignore
 .gitattributes
+/public/files
