@@ -15,7 +15,10 @@
             {!!html_entity_decode($post->text)!!}
         </div>
         <aside class="col-12 col-sm-5 col-md-4 no-padding-right no-padding-xs">
-        <div class="addthis_inline_share_toolbox" style="padding-bottom:10px;"></div>
+
+  <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+  <div class="addthis_inline_share_toolbox_9yn6" style="padding-bottom:10px;"></div>
+
             <div class="titlePesquisa"> <span style="margin-left: 10px;">Linhas de pesquisa do Genoma USP</span>
             </div>
             <br>

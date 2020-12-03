@@ -9,7 +9,7 @@
         <div class="single-recent">
             <div class="card mb-6 shadow-sm">
                 <div class="card-body1 recent-articles-card3 projetospesquisas-card">
-                    <p class="TextLimitedProjects" style="color: black; font-weight: 700; text-align: justify;">
+                    <p class="TextLimitedProjects" style="color: white;">
                         {{ $item->title }}
                     </p>
                 </div>
