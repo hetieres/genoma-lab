@@ -43,10 +43,10 @@
                     <div class="row" style="padding-bottom: 25px;">
                         <div class="col-md-5   text-justifid ">
                             <ul class="social-network social-circle">
-                                <li><a href="#" class="icoFacebook fundoLink" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#" class="icoTwitter fundoLink fundoLink" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#" class="icoGoogle fundoLink" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#" class="icoYouTube fundoLink" title="YouTube"><i class="fab fa-youtube"></i></a></li>
+                                <li><a href="https://www.facebook.com/genomaUSP/" class="icoFacebook fundoLink" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://twitter.com/Mayanazatz" class="icoTwitter fundoLink fundoLink" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://www.instagram.com/genoma.usp/" class="icoGoogle fundoLink" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://www.youtube.com/c/GenomaUSP" class="icoYouTube fundoLink" title="YouTube"><i class="fab fa-youtube"></i></a></li>
                             </ul>
                         </div>
                         <div class="LabelMobil1">
