@@ -187,7 +187,8 @@ class PostController extends Controller
         $this->data['files'] = $files;
         $this->data['user_id'] = Auth::user()->id;
         $this->data['sessions'] = Session::orderBy('description')->get()->toArray();
-        $this->data['history_id'] = isset($request->history_id) ? $request->history_id : $post->history[0]->history_id;
+        $this->data['history_id'] = isset($request->history_id) ? $request->history_id : 0;
+        $this->data['history_id'] = isset($post->history[0]->history_id) && $this->data['history_id'] == 0 ? $post->history[0]->history_id : 0;
 
         return view('admin.postEdit', $this->data);
     }
