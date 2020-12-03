@@ -8,7 +8,7 @@
     <div class="col-md-12">
         <div class="single-recent">
             <div class="card mb-6 shadow-sm">
-                <div class="card-body1 recent-articles-card3 recent-articles-card3-Pesquisa">
+                <div class="card-body1 recent-articles-card3 projetospesquisas-card">
                     <p class="TextLimitedProjects" style="color: black; font-weight: 700; text-align: justify;">
                         {{ $item->title }}
                     </p>

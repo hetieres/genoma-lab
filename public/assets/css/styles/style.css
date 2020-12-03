@@ -4669,6 +4669,16 @@ hr {
     height: auto;
 }
 
+.projetospesquisas-card {
+    background: #f6303e;
+    height: auto;
+}
+
+.educacaodifusoes-card {
+    background: #0032a0;
+    height: auto;
+}
+
 .recent-articles-card3-Pesquisa {
     background: #00b9e4;
     height: auto;
