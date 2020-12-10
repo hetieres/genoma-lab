@@ -19,7 +19,7 @@
                     </p>
                 </div>
                 <center>
-                    <button type="button" class="btn btn-primary" onclick="location.href = ('{{ $item->link() }}');">Leia Mais</button>
+                  <button type="button" class="ButtonG" onclick="location.href = ('{{ $item->link() }}');"">Leia mais</button>
                 </center>
                 <br>
             </div>

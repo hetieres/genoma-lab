@@ -369,7 +369,7 @@ h4,
 h5,
 h6 {
     /* font-family: "Akkurat";*/
-    color: #051441;
+    color: #000000;
     margin-top: 0px;
     font-style: normal;
     font-weight: 500;
@@ -571,10 +571,10 @@ a.socialIcon:hover,
 
 .ButtonG:hover {
     border: 2px solid #20399e;
-    background: #82d643;
+    background: #ececec;
     color: #000000;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 button {
@@ -8359,8 +8359,8 @@ del {
 }
 
 .EspacoRodape>h5 {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .banner {

@@ -59,24 +59,25 @@
 
 <script>
     function Arrow(id) {
-        $('.ArrowMenu').removeClass('fas fa-angle-right');
-        $('.ArrowMenu').addClass('fas fa-angle-down');
-        $('#arrow_'+id).removeClass('fas fa-angle-down');
-        $('#arrow_'+id).addClass('fas fa-angle-right');
+        var windowWidth = window.innerWidth;
+        if (windowWidth >= 993) {
+            $('.ArrowMenu').removeClass('fas fa-angle-right');
+            $('.ArrowMenu').addClass('fas fa-angle-down');
+            $('#arrow_' + id).removeClass('fas fa-angle-down');
+            $('#arrow_' + id).addClass('fas fa-angle-right');
+            var e = $(".links > div > li");
+            var r = e.hasClass("active");
+            if (r) {
+                $('#arrow_' + id).removeClass('fas fa-angle-down');
+                $('#arrow_' + id).addClass('fas fa-angle-right');
+                e.removeClass("active");
+            } else {
+                // e.addClass("active");
+                $('#arrow_' + id).removeClass('fas fa-angle-down');
+                $('#arrow_' + id).addClass('fas fa-angle-right');
+            }
+        }
     }
-
-
-    $("main").click(function() {
-        //$('.item-menu').removeClass('active');
-        $('.ArrowMenu').removeClass('fas fa-angle-right');
-        $('.ArrowMenu').addClass('fas fa-angle-down');
-    });
-
-    $(".main-header").click(function() {
-        //$('.item-menu').removeClass('active');
-        $('.ArrowMenu').removeClass('fas fa-angle-right');
-        $('.ArrowMenu').addClass('fas fa-angle-down');
-    });
 </script>
 
 </body>

@@ -1,1 +1,189 @@
-body>main.internal .vehiclesHighlights,body>main.internal ul.moreList,body>main.internal ul.vehiclesList{margin:0;padding:0;list-style:none}body>main.internal .vehiclesHighlights>li:not(:first-child),body>main.internal ul.moreList>li:not(:first-child),body>main.internal ul.vehiclesList>li:not(:first-child){margin-top:20px;padding-top:20px;border-top:4px solid #eaeaea}body>main.internal .vehiclesHighlights .boxVehicleBig,body>main.internal ul.moreList .boxVehicleBig,body>main.internal ul.vehiclesList .boxVehicleBig{margin:0 0 25px}body>main.internal .vehiclesHighlights h3,body>main.internal ul.moreList h3,body>main.internal ul.vehiclesList h3{margin:0;font-size:1.4em;line-height:1.2em;color:#333}body>main.internal .vehiclesHighlights h4,body>main.internal ul.moreList h4,body>main.internal ul.vehiclesList h4{margin:0 0 10px;font-size:1em;line-height:1em;color:#666;-webkit-transition:all .2s ease-in-out;transition:all .2s ease-in-out}body>main.internal .vehiclesHighlights .lastPublic,body>main.internal ul.moreList .lastPublic,body>main.internal ul.vehiclesList .lastPublic{margin:0 0 15px;font-size:.75em;font-style:italic;color:#999}body>main.internal .vehiclesHighlights .lastPublic>a,body>main.internal ul.moreList .lastPublic>a,body>main.internal ul.vehiclesList .lastPublic>a{font-weight:600}body>main.internal .vehiclesHighlights .description,body>main.internal ul.moreList .description,body>main.internal ul.vehiclesList .description{font-size:.9em;line-height:1.3em;color:#666;text-align:justify}body>main.internal .vehiclesHighlights a,body>main.internal ul.moreList a,body>main.internal ul.vehiclesList a{-webkit-transition:all .2s ease-in-out;transition:all .2s ease-in-out}body>main.internal .vehiclesHighlights a:hover>h4,body>main.internal ul.moreList a:hover>h4,body>main.internal ul.vehiclesList a:hover>h4{color:#333}body>main.internal .vehiclesHighlights a.viewNews,body>main.internal ul.moreList a.viewNews,body>main.internal ul.vehiclesList a.viewNews{margin-top:15px;display:inline-block;padding:8px 18px;font-size:.8em;font-weight:600;color:#fff;background-color:#65080e}body>main.internal .vehiclesHighlights a.viewNews:hover,body>main.internal ul.moreList a.viewNews:hover,body>main.internal ul.vehiclesList a.viewNews:hover{background-color:#360408}body>main.internal .vehiclesHighlights a>h4,body>main.internal .vehiclesHighlights h4,body>main.internal ul.moreList a>h4,body>main.internal ul.moreList h4,body>main.internal ul.vehiclesList a>h4,body>main.internal ul.vehiclesList h4{margin:0;font-size:1em;line-height:1.3em;color:#666}body>main.internal ul.moreList{margin-top:20px;padding-top:20px;border-top:4px solid #eaeaea}body>main.internal ul.moreList>li:not(:first-child){margin-top:25px;padding-top:20px;border-top:1px solid #eaeaea}body>main.internal ul.moreList>li>.datePublic{margin:0 0 10px;font-size:.7em;font-style:italic;color:#999}body>main.internal ul.moreList>li>.datePublic>a{font-weight:600}body>main.internal ul.moreList>li>.description{font-size:.9em}body>main.internal ul.moreList>li>a.boxVehicle{margin-top:15px}body>main.internal .vehiclesHighlights>.viewLine{margin-top:20px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}body>main.internal .vehiclesHighlights>.viewLine>a{margin:0 15px 0 0;padding:8px 25px}body>main.internal .vehiclesHighlights>.viewLine>.othersVehicles{position:relative}body>main.internal .vehiclesHighlights>.viewLine>.othersVehicles>.title{position:relative;top:-5px;margin-bottom:-6px;font-size:.6em;font-weight:700;color:#ac0d19}body>main.internal .vehiclesHighlights>.viewLine>.othersVehicles>.vehiclesLine{margin:0}body>main.internal .vehiclesHighlights .boxTitle{margin-bottom:25px;display:flex;display:-webkit-box;display:-ms-flexbox;flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row}body>main.internal .vehiclesHighlights .boxTitle>div{margin:0;display:flex;display:-webkit-box;display:-ms-flexbox;flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center}body>main.internal .vehiclesHighlights .boxTitle>div.total{margin-left:15px}body>main.internal .vehiclesHighlights .boxTitle>div.total>h5{margin:0;font-size:12px;font-weight:400;line-height:18px;color:#333}body>main.internal .vehiclesHighlights .boxTitle>div.total>h5>b{font-weight:600}
+/* Borda arredondada */
+body > main.internal ul.vehiclesList,
+body > main.internal ul.moreList,
+body > main.internal .vehiclesHighlights {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body > main.internal ul.vehiclesList > li:not(:first-child),
+body > main.internal ul.moreList > li:not(:first-child),
+body > main.internal .vehiclesHighlights > li:not(:first-child) {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 4px solid #eaeaea;
+}
+body > main.internal ul.vehiclesList .boxVehicleBig,
+body > main.internal ul.moreList .boxVehicleBig,
+body > main.internal .vehiclesHighlights .boxVehicleBig {
+  margin: 0 0 25px;
+}
+body > main.internal ul.vehiclesList h3,
+body > main.internal ul.moreList h3,
+body > main.internal .vehiclesHighlights h3 {
+  margin: 0;
+  font-size: 1.4em;
+  line-height: 1.2em;
+  color: #333;
+}
+body > main.internal ul.vehiclesList h4,
+body > main.internal ul.moreList h4,
+body > main.internal .vehiclesHighlights h4 {
+  margin: 0 0 10px;
+  font-size: 1em;
+  line-height: 1em;
+  color: #666;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+body > main.internal ul.vehiclesList .lastPublic,
+body > main.internal ul.moreList .lastPublic,
+body > main.internal .vehiclesHighlights .lastPublic {
+  margin: 0 0 15px;
+  font-size: 0.75em;
+  font-style: italic;
+  color: #999;
+}
+body > main.internal ul.vehiclesList .lastPublic > a,
+body > main.internal ul.moreList .lastPublic > a,
+body > main.internal .vehiclesHighlights .lastPublic > a {
+  font-weight: 600;
+}
+body > main.internal ul.vehiclesList .description,
+body > main.internal ul.moreList .description,
+body > main.internal .vehiclesHighlights .description {
+  font-size: 0.9em;
+  line-height: 1.3em;
+  color: #666;
+  text-align: justify;
+}
+body > main.internal ul.vehiclesList a,
+body > main.internal ul.moreList a,
+body > main.internal .vehiclesHighlights a {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+body > main.internal ul.vehiclesList a:hover > h4,
+body > main.internal ul.moreList a:hover > h4,
+body > main.internal .vehiclesHighlights a:hover > h4 {
+  color: #333333;
+}
+body > main.internal ul.vehiclesList a.viewNews,
+body > main.internal ul.moreList a.viewNews,
+body > main.internal .vehiclesHighlights a.viewNews {
+  margin-top: 15px;
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #FFF;
+  background-color: #65080e;
+}
+body > main.internal ul.vehiclesList a.viewNews:hover,
+body > main.internal ul.moreList a.viewNews:hover,
+body > main.internal .vehiclesHighlights a.viewNews:hover {
+  background-color: #360408;
+}
+body > main.internal ul.vehiclesList h4,
+body > main.internal ul.moreList h4,
+body > main.internal .vehiclesHighlights h4,
+body > main.internal ul.vehiclesList a > h4,
+body > main.internal ul.moreList a > h4,
+body > main.internal .vehiclesHighlights a > h4 {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.3em;
+  color: #666;
+}
+body > main.internal ul.moreList {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 4px solid #eaeaea;
+}
+body > main.internal ul.moreList > li:not(:first-child) {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #eaeaea;
+}
+body > main.internal ul.moreList > li > .datePublic {
+  margin: 0 0 10px;
+  font-size: 0.7em;
+  font-style: italic;
+  color: #999;
+}
+body > main.internal ul.moreList > li > .datePublic > a {
+  font-weight: 600;
+}
+body > main.internal ul.moreList > li > .description {
+  font-size: 0.9em;
+}
+body > main.internal ul.moreList > li > a.boxVehicle {
+  margin-top: 15px;
+}
+body > main.internal .vehiclesHighlights > .viewLine {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body > main.internal .vehiclesHighlights > .viewLine > a {
+  margin: 0 15px 0 0;
+  padding: 8px 25px;
+}
+body > main.internal .vehiclesHighlights > .viewLine > .othersVehicles {
+  position: relative;
+}
+body > main.internal .vehiclesHighlights > .viewLine > .othersVehicles > .title {
+  position: relative;
+  top: -5px;
+  margin-bottom: -6px;
+  font-size: 0.6em;
+  font-weight: bold;
+  color: #ac0d19;
+}
+body > main.internal .vehiclesHighlights > .viewLine > .othersVehicles > .vehiclesLine {
+  margin: 0;
+}
+body > main.internal .vehiclesHighlights .boxTitle {
+  margin-bottom: 25px;
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+}
+body > main.internal .vehiclesHighlights .boxTitle > div {
+  margin: 0;
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+}
+body > main.internal .vehiclesHighlights .boxTitle > div.total {
+  margin-left: 15px;
+}
+body > main.internal .vehiclesHighlights .boxTitle > div.total > h5 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #333;
+}
+body > main.internal .vehiclesHighlights .boxTitle > div.total > h5 > b {
+  font-weight: 600;
+}
