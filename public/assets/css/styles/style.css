@@ -806,7 +806,8 @@ hr {
 
 .mb-4 {
     margin-bottom: 1.5rem !important;
-    height: 350px;
+    height: auto;
+    padding-bottom: 15px;
 }
 
 .mb-5 {
