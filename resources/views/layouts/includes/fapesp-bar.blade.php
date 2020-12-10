@@ -275,7 +275,7 @@ $Size = "font-size: 35px;";
                 </div>
                 <div class="indices hidden-xs hidden-sm English">
                     <a href="javascript:;" class="text-center">
-                        <span style="font-size: 14px;color: #7f7f77;height: 10px;">English&nbsp;</span>
+                        <span style="font-size: 14px;color: #7f7f77;height: auto;">English&nbsp;</span>
                     </a>
                 </div>
 
