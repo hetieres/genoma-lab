@@ -4954,7 +4954,7 @@ nav.menu div.busca:hover>.buscaContainer {
     list-style-type: none;
     list-style-image: none;
     float: left;
-    border-bottom: 5px solid #82d643;
+    /*border-bottom: 5px solid #82d643;*/
 }
 
 .menu-line>.container>nav.menu>ul.links>div>li>a {
@@ -5453,7 +5453,7 @@ nav.menu div.busca:hover>.buscaContainer {
     .menu-line>.container>nav.menu.header2>.buttons>.indices.active>a,
     .menu-line>.container>nav.menu.header2>.buttons>.indices:hover>a,
     .menu-line>.container>nav.menu.header2>.buttons>.indices>a:hover {
-        border-bottom: 5px solid #82d643;
+        /* border-bottom: 5px solid #82d643;*/
     }
     .menu-line>.container>nav.menu.header2>.buttons>.indices>.indicesContainer {
         background-color: #fff;

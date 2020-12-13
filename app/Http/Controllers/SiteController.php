@@ -70,6 +70,7 @@ class SiteController extends Controller
             }
 
             if ($post) {
+
                 switch ($post->session_id) {
                     case '1': //Desenvolvimento de Tecnologias
                         $DadosHead = Post::find(20);

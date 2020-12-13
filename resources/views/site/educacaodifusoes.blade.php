@@ -8,8 +8,8 @@
     <div class="col-md-12">
         <div class="single-recent">
             <div class="card mb-6 shadow-sm">
-                <div class="card-body1 recent-articles-card3 recent-articles-card3-Pesquisa">
-                    <p class="TextLimitedProjects" style="color: black; font-weight: 700; text-align: justify;">
+                <div class="card-body1 recent-articles-card3 educacaodifusoes-card">
+                    <p class="TextLimitedProjects" style="color: white; text-align: justify;">
                         {{ $item->title }}
                     </p>
                 </div>
@@ -19,7 +19,7 @@
                     </p>
                 </div>
                 <center>
-                    <button type="button" class="btn btn-primary" onclick="location.href = ('{{ $item->link() }}');">Leia Mais</button>
+                  <button type="button" class="ButtonG" onclick="location.href = ('{{ $item->link() }}');"">Leia mais</button>
                 </center>
                 <br>
             </div>

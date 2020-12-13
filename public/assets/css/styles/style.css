@@ -369,7 +369,7 @@ h4,
 h5,
 h6 {
     /* font-family: "Akkurat";*/
-    color: #051441;
+    color: #000000;
     margin-top: 0px;
     font-style: normal;
     font-weight: 500;
@@ -571,10 +571,10 @@ a.socialIcon:hover,
 
 .ButtonG:hover {
     border: 2px solid #20399e;
-    background: #82d643;
+    background: #ececec;
     color: #000000;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 button {
@@ -806,7 +806,8 @@ hr {
 
 .mb-4 {
     margin-bottom: 1.5rem !important;
-    height: 350px;
+    height: auto;
+    padding-bottom: 0px;
 }
 
 .mb-5 {
@@ -4669,6 +4670,16 @@ hr {
     height: auto;
 }
 
+.projetospesquisas-card {
+    background: #f6303e;
+    height: auto;
+}
+
+.educacaodifusoes-card {
+    background: #0032a0;
+    height: auto;
+}
+
 .recent-articles-card3-Pesquisa {
     background: #00b9e4;
     height: auto;
@@ -8349,8 +8360,8 @@ del {
 }
 
 .EspacoRodape>h5 {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .banner {

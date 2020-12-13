@@ -80,7 +80,7 @@
                                                                     if ($i == 0) {
                                                                         $style = "Espaco";
                                                                     } else {
-                                                                        $style = "Espaco5";
+                                                                        $style = "Espaco";
                                                                     }
                                                                     ?> <div class="col-md {{$style}}">
                             <div class="single-recent">
@@ -102,8 +102,6 @@
                     @endfor
                 </div>
             </div>
-
-
             <div class="col-md-12 ">
                 <center>
                     <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => 'pesquisas']) }}'">Saiba mais</button>
@@ -139,8 +137,10 @@
                                         </p>
                                     </div>
                                 </a>
+                                <!--
                                 <a href="{{ asset('/') }}">
                                 <img class="img-fluig" src="{{asset('assets/img/seta.png') }}" alt="" style="float: right;margin-right: 10px;"></a>
+                           -->
                             </div>
                         </div>
                     </div>

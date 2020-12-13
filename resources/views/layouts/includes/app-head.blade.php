@@ -7,8 +7,10 @@
 <!--<![endif]-->
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159627-52"></script>
+ <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+ <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5fc6b519332d8fcf"></script>
+
+
     <script>
         window.dataLayer = window.dataLayer || [];
 
