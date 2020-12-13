@@ -10,7 +10,6 @@
         @endif
     </div> --}}
     <ul class="sidebar-menu" data-widget="tree">
-        @if(Auth::user()->type !== 'clipping')
         <li class="header">MENU</li>
         <li @if(Route::current()->getName()=='post-list') class="active" @endif>
             <a href="{{ route('post-list') }}">
@@ -29,7 +28,16 @@
                 <i class="fa fa-arrows-v"></i> <span>Destaques </span>
             </a>
         </li>
-        @endif
+
+
+        <li class="header">SEÇÕES</li>
+            @foreach ($sessions_edit as $item)
+                <li @if(Route::current()->getName()=='session-edit' && isset($session) && $session->id == $item->id) class="active" @endif>
+                    <a href="{{route('session-edit', ['id' => $item->id]) }}">
+                        <i class="fa fa-object-group"></i> <span>{{$item->description}} </span>
+                    </a>
+                </li>
+            @endforeach
 
         {{-- <li class="header">RELATÓRIOS</li>
         @if(Auth::user()->type !== 'clipping')

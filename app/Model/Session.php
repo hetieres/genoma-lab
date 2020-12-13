@@ -16,4 +16,9 @@ class Session extends Model
         return $this->hasMany('App\Model\Post');
     }
 
+    public function user()
+    {
+        return $this->belongsTo('App\Model\User');
+    }
+
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Post;
+use App\Model\Session;
 use App\Helpers\JWTHelper;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
@@ -61,8 +62,14 @@ class Controller extends BaseController
                     ->orderBy('updated_at', 'DESC')
                     ->limit(10)
                     ->get();
+
+                $sessions_edit = Session::where('edit', '=', '1')->orderByRaw('id=1 desc, id=3 desc, id=6 desc, id=5 desc')->get();
+
+                // dd($sessions_edit);
+
                 View::share('side_news', $side_news);
                 View::share('side_edit', $side_edit);
+                View::share('sessions_edit', $sessions_edit);
             }
         }
     }

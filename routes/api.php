@@ -52,6 +52,8 @@ Route::group(['prefix' => 'admin/ajax', 'middleware' => 'ajax'], function () {
     Route::post('vehicle-save', 'VehicleController@createUpdate');
     Route::post('vehicle-multiple-save', 'VehicleController@multipleSave');
     Route::get('vehicle/all-combo-box', 'VehicleController@allComboBox');
+    
+    Route::post('session-save', 'SessionController@save');
 
     Route::post('report/news', 'ReportController@reportNews');
     Route::get('report/team', 'ReportTeamController@report');
