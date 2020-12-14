@@ -167,8 +167,8 @@ class PostController extends Controller
         //uploads
         $files = [];
         $path = "files/upload/" . $post->id . '/';
-        if(is_dir($path) && $post->id > 0){
-            $pathRead = dir($path);
+        if(is_dir(public_path($path)) && $post->id > 0){
+            $pathRead = dir(public_path($path));
             while($file = $pathRead -> read()){
                 if(!in_array($file, ['.', '..'])){
                     $fileInfo = pathinfo($path . $file);
@@ -409,7 +409,7 @@ class PostController extends Controller
     {
         $return = true;
         $file = 'files/upload/' . $request->id . '/' . $request->filename;
-        if (file_exists($file)) {
+        if (file_exists(public_path($file))) {
             $return = Storage::delete(str_replace($this->_uploads_path, $this->_public_path, $file));
         }else{
             dd($file);

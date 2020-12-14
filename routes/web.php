@@ -35,6 +35,12 @@ Route::group(['prefix' => 'fapesp', 'middleware' => ['auth']], function () {
         Route::get('/', 'UserController@index')->name('users')->middleware('admin');
         Route::get('/profile', 'UserController@profile')->name('users-profile');
     });
+
+    // sessions
+    Route::group(['prefix' => 'session'], function () {
+        Route::get('/{id}', 'SessionController@edit')->name('session-edit')->middleware('admin');
+    });
+
 });
 
 /* Rota para limpar cache */
