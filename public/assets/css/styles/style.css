@@ -8383,8 +8383,10 @@ del {
 }
 
 .internas {
+    /*  height: 300px !important;
+    width: auto;*/
     height: 300px !important;
-    width: auto;
+    width: 450px;
 }
 
 .banner img {
