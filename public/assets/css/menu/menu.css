@@ -5428,7 +5428,7 @@ nav.menu div.busca:hover>.buscaContainer {
         -ms-flex-item-align: stretch!important;
         align-self: stretch!important;
         color: white;
-        border-bottom: 1px solid #82d643;
+        /* border-bottom: 1px solid #82d643;*/
     }
     .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container>.container>.row>div:hover h3>.border,
     .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container>.container>.row>div:hover h3>.border {
@@ -5436,16 +5436,16 @@ nav.menu div.busca:hover>.buscaContainer {
     }
     .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container>.container>.row>div:hover ul.submenu>li>a:hover,
     .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container>.container>.row>div:hover ul.submenu>li>a:hover {
-        color: rgb(172, 169, 169)(150, 150, 150);
-        border-bottom: 1px solid #82d643;
+        color: rgb(80, 80, 80)(150, 150, 150);
+        /* border-bottom: 1px solid #82d643;*/
     }
     .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container>.container>.row>div:hover ul.submenu>li.more>a,
     .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container>.container>.row>div:hover ul.submenu>li.more>a {
-        color: #81888f
+        color: rgb(80, 80, 80)(150, 150, 150);
     }
     .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container>.container>.row>div:hover ul.submenu>li.more>a:hover,
     .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container>.container>.row>div:hover ul.submenu>li.more>a:hover {
-        color: #686e75
+        color: rgb(80, 80, 80)(150, 150, 150);
     }
     .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container>div {
         padding: 20px 5px
@@ -5468,8 +5468,13 @@ nav.menu div.busca:hover>.buscaContainer {
     }
 }
 
+line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container ul.submenu>li>a,
+.menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container ul.submenu>li>a:hover {
+    color: rgb(173 173 173);
+}
+
 .border:hover {
-    border: 1px solid #82d643 !important;
+    border: 1px solid #f8f8f8 !important;
 }
 
 .English {

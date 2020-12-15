@@ -1817,7 +1817,7 @@ body>footer a {
 body>footer a:hover {
     color: rgb(217 217 217) !important;
     font-weight: 500;
-    border-bottom: 2px solid rgb(217 217 217);
+    /* border-bottom: 2px solid rgb(217 217 217);*/
 }
 
 body>footer ul {
