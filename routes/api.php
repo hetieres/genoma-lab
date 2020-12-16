@@ -34,6 +34,7 @@ Route::group(['prefix' => 'admin/ajax', 'middleware' => 'ajax'], function () {
     Route::post('post-upload', 'PostController@upload');
     Route::post('post-upload-del', 'PostController@uploadDestroy');
     Route::post('post-load', 'PostController@post');
+    Route::post('post-highlight-off', 'PostController@highlightOff');
 
 
     Route::post('link-save', 'LinkController@save');

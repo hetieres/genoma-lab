@@ -36,6 +36,7 @@ class SiteController extends Controller
     public function index(Request $request)
     {
         $this->asideData();
+
         return view('site.home', $this->data);
     }
 
@@ -134,7 +135,7 @@ class SiteController extends Controller
     }
 
 
-    
+
     public function conhecaogenoma(Request $request)
     {
         $this->data['DadosHead'] = Post::find(20);
@@ -148,7 +149,7 @@ class SiteController extends Controller
 
     public function pesquisas(Request $request)
     {
-        
+
         $dadosNoticas['pesquisas'] = Post::where('session_id', 2)
             ->where('active', 1)
             ->where('dt_publication', '<=', date('Y-m-d'))
@@ -201,7 +202,7 @@ class SiteController extends Controller
         ->orderBy('order')
         ->limit(2)
         ->get();
-        
+
         /*Dados para Projetos de Pesquisa*/
         $this->data['projetos'] = Post::where('active', 1)
             ->where('dt_publication', '<=', date('Y-m-d'))
@@ -212,6 +213,7 @@ class SiteController extends Controller
             ->orderByRaw("RAND()")
             ->limit(3)
             ->get();
+
     }
 
     public function search(Request $request)

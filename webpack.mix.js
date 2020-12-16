@@ -38,6 +38,7 @@ mix.js('resources/assets/js-site/main.js', 'assets/js/site.min.js')
 /* Scripts Individuais */
 mix.js('resources/assets/js/users.js', 'public/assets/js/users.min.js')
     .js('resources/assets/js/pages/post-edit.js', 'public/assets/js/admin/post-edit.min.js')
+    .js('resources/assets/js/pages/post-order.js', 'public/assets/js/admin/post-order.min.js')
     .js('resources/assets/js/pages/news-edit-multiple.js', 'public/assets/js/admin/news-edit-multiple.min.js')
     .js('resources/assets/js/pages/vehicle-edit.js', 'public/assets/js/admin/vehicle-edit.min.js')
     .js('resources/assets/js/pages/session-edit.js', 'public/assets/js/admin/session-edit.min.js')

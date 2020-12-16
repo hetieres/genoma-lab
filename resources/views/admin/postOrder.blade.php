@@ -9,7 +9,7 @@
     <script src="{{ asset('assets/vendor/jquery-ui/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.min.js') }}" charset="UTF-8"></script>
-    <script src="{{ asset('assets/js/admin/post-order.min.js?v=' . config('app.version')) }}"></script>
+    <script src="{{ asset('assets/js/admin/post-order.min.js') }}"></script>
 @endsection
 
 @section('content')
@@ -55,9 +55,11 @@
                                         <li class="list-group-item">
                                             <div class="label bg-navy" style="height: 75px !important; display: block; width: 75px; font-size: 200%; padding-top: 19px; float: left; margin: 3px;"><i class="fa fa-fw fa-arrows-v"></i></div>
                                             <a href="{{ route('detalhe', ['id' => $item->id, 'slug' => str_slug($item->title)]) }}" target="_blank"><div class="label bg-maroon" style="height: 75px !important; display: block; width: 75px; font-size: 200%; padding-top: 19px;float: left; margin: 3px;"><i class="fa fa-fw fa-eye"></i></div></a>
+                                            <a href="#" class="highlight_off"><div class="label bg-red" style="height: 75px !important; display: block; width: 75px; font-size: 200%; padding-top: 19px;float: left; margin: 3px;"><i class="fa fa-fw fa-remove"></i></div></a>
+                                            {{-- <a href="#" class="btn-rel-del"><small class="label bg-red" style="font-size: 100%;"><i class="fa fa-fw fa-remove"></i></small></a> --}}
                                             {{-- <img src="{{ asset($item->image) }}" style="height: 50px"> --}}
                                             <img src="{{ asset($item->image) }}" style="height: 75px; width:100px; border-radius: 10px; margin: 3px;">
-                                            {{ $item->title }}
+                                            <label>{{ $item->title }}</label>
                                             <input type="hidden" name="ids" value="{{ $item->id }}">
                                         </li>
                                         @endforeach
