@@ -1,3 +1,17 @@
+@if (isset($li) && $li)
+    <li class="list-group-item">
+        <small class="label bg-navy" style="font-size: 100%;"><i class="fa fa-fw fa-arrows-v"></i></small>
+        <a href="{{ route('detalhe', ['id' => $post->id, 'slug' => str_slug($post->title)]) }}" target="_blank"><small class="label bg-maroon" style="font-size: 100%;"><i class="fa fa-fw fa-eye"></i></small></a>
+        <small class="label bg-green" style="font-size: 100%; width: 150px;"><label style="width: 40px;">{{ $post->id }}</label></small>
+        <a href="#" class="btn-rel-del"><small class="label bg-red" style="font-size: 100%;"><i class="fa fa-fw fa-remove"></i></small></a>
+        {{ $post->title }}
+        <input type="hidden" name="ids" value="{{ $post->id }}">
+    </li>
+    @php
+        die();
+    @endphp
+@endif
+
 @extends('layouts.app')
 
 @section('styles')

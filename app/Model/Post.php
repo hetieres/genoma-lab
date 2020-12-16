@@ -64,4 +64,12 @@ class Post extends Model
         return [1];
     }
 
+    public function getImage(){
+        if (!is_null($this->image) && file_exists(public_path($this->image))) {
+            return asset($this->image);
+        } else {
+            return asset('assets/img/default.png');
+        }
+    }
+
 }

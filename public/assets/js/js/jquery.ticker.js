@@ -6,7 +6,7 @@
     jQuery News Ticker is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+    GNU General Public License for more detalhe.
 
     You should have received a copy of the GNU General Public License
     along with jQuery News Ticker.  If not, see <http://www.gnu.org/licenses/>.

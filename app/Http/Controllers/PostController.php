@@ -79,8 +79,7 @@ class PostController extends Controller
 
     public function order(Request $request)
     {
-        $posts = Post::where('session_id', 2)
-            ->where('active', 1)
+        $posts = Post::where('active', 1)
             ->where('highlight', 1)
             ->where('dt_publication', '<=', date('Y-m-d'))
             ->orderBy('order')
@@ -252,6 +251,13 @@ class PostController extends Controller
         return $deletedRows;
     }
 
+    public function highlightOff(Request $request)
+    {
+        $ids = explode('-', $request->input('id'));
+        $off = Post::where('id', '=', $request->input('id'))->update(['highlight' => 0]);
+        return $off;
+    }
+
     public function images()
     {
         $posts = Post::where('text', 'like', '%src="%')->get();
@@ -416,6 +422,21 @@ class PostController extends Controller
         }
 
         return json_encode($return);
+    }
+
+    public function post(Request $request)
+    {
+        $post = Post::find($request->id);
+
+        if ($post && $request->html) {
+            $this->data['li'] = true;
+            $this->data['post'] = $post;
+            return view('admin.postEdit', $this->data);
+        } else if ($post) {
+            return $post;
+        } else {
+            return null;
+        }
     }
 
 

@@ -69,25 +69,12 @@ Route::get('/sitemap.xml/{slug?}/{pg?}', 'SitemapController@internals')->name('s
 /* Rotas do site */
 Route::get('/', 'SiteController@index')->name('home');
 Route::get('/pesquisa', 'SiteController@search')->name('search');
-Route::get('/educacaodifusoes', 'SiteController@educacaodifusoes')->name('educacaodifusoes');
 Route::get('/videos', 'SiteController@videos')->name('videos');
 Route::get('/pesquisas', 'SiteController@pesquisas')->name('pesquisas');
 
 
-
-Route::group(['prefix' => 'projetos-apoiados'], function () {
-    Route::get('/tecnologias', 'SiteController@tecnologias')->name('tecnologias');
-    Route::get('/suplementos', 'SiteController@suplementos')->name('suplementos');
-});
-
-
-Route::get('/conhecaogenoma', 'SiteController@conhecaogenoma')->name('conhecaogenoma');
-Route::get('/projetospesquisas', 'SiteController@projetospesquisa')->name('projetospesquisa');
-Route::get('/namidia', 'SiteController@namidia')->name('namidia');
-
-
 Route::get('/{slug?}/{id?}', 'SiteController@detalhe')->name('detalhe');
-Route::get('/{title}/{id}/{page?}', 'SiteController@detail')->name('details');
+// Route::get('/{title}/{id}/{page?}', 'SiteController@detail')->name('detalhe');
 
 
 

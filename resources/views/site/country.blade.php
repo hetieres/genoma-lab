@@ -32,7 +32,7 @@
                     </div>
                 </div>
 
-                <a href="{{ route('details', ['title' => str_slug($news[0]->title), 'id' => $news[0]->id]) }}">
+                <a href="{{ route('detalhe', ['title' => str_slug($news[0]->title), 'id' => $news[0]->id]) }}">
                     <h4>{{ $news[0]->title }}</h4>
                 </a>
 
@@ -43,12 +43,12 @@
                     @endif --}}
                 </div>
 
-                <a href="{{ route('details', ['title' => str_slug($news[0]->title), 'id' => $news[0]->id]) }}">
+                <a href="{{ route('detalhe', ['title' => str_slug($news[0]->title), 'id' => $news[0]->id]) }}">
                     <div class="description">{!! $news[0]->summary != '' ? strip_tags($news[0]->summary) : \App\Helpers\BaseHelper::limitChar(strip_tags($news[0]->text)) !!}</div>
                 </a>
 
                 <div class="viewLine">
-                    <a href="{{ route('details', ['title' => str_slug($news[0]->title), 'id' => $news[0]->id]) }}" class="viewNews">{{ $news[0]->vehicle->description }}</a>
+                    <a href="{{ route('detalhe', ['title' => str_slug($news[0]->title), 'id' => $news[0]->id]) }}" class="viewNews">{{ $news[0]->vehicle->description }}</a>
 
                     {{-- @if (count($news[0]->news) > 0)
                         <div class="othersVehicles">
@@ -56,7 +56,7 @@
                             <div class="vehiclesLine">
                                 @foreach ($news[0]->news as $item)
                                     @if ($item->vehicle->id !== $country->id)
-                                        <a href="{{ route('details', ['title' => str_slug($item->title), 'id' => $item->id]) }}" class="boxVehicle">{{ $item->vehicle->description }}</a>
+                                        <a href="{{ route('detalhe', ['title' => str_slug($item->title), 'id' => $item->id]) }}" class="boxVehicle">{{ $item->vehicle->description }}</a>
                                     @endif
                                 @endforeach
                             </div>
@@ -68,7 +68,7 @@
             <ul class="moreList">
                 @for ($i = 1; $i < count($news); $i++)
                     <li>
-                        <a href="{{ route('details', ['title' => str_slug($news[$i]->title), 'id' => $news[$i]->id]) }}">
+                        <a href="{{ route('detalhe', ['title' => str_slug($news[$i]->title), 'id' => $news[$i]->id]) }}">
                             <h4>{{ $news[$i]->title }}</h4>
                         </a>
 
@@ -79,11 +79,11 @@
                             @endif --}}
                         </div>
 
-                        <a href="{{ route('details', ['title' => str_slug($news[$i]->title), 'id' => $news[$i]->id]) }}">
+                        <a href="{{ route('detalhe', ['title' => str_slug($news[$i]->title), 'id' => $news[$i]->id]) }}">
                             <div class="description">{!! $news[$i]->summary != '' ? strip_tags($news[$i]->summary) :  \App\Helpers\BaseHelper::limitChar(strip_tags($news[$i]->text)) !!}</div>
                         </a>
 
-                        <a href="{{ route('details', ['title' => str_slug($news[$i]->title), 'id' => $news[$i]->id]) }}" class="boxVehicle">{{ $news[$i]->vehicle->description }}</a>
+                        <a href="{{ route('detalhe', ['title' => str_slug($news[$i]->title), 'id' => $news[$i]->id]) }}" class="boxVehicle">{{ $news[$i]->vehicle->description }}</a>
                     </li>
                 @endfor
             </ul>

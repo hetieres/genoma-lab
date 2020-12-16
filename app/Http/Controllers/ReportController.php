@@ -128,7 +128,7 @@ class ReportController extends Controller
             $item->vehicle    = $item->vehicle;
             $item->mediaType  = MediaType::find($item->vehicle->media_type_id);
             $item->date       = isset($item->dt_publication) ? $item->dt_publication->format('d/m/Y') : ' - ';
-            $item->url        = $item->url . '<br>' . route('details', ['title' => str_slug($item->title), 'id' => $item->id]) . '<br>' . $item->url_fapesp;
+            $item->url        = $item->url . '<br>' . route('detalhe', ['title' => str_slug($item->title), 'id' => $item->id]) . '<br>' . $item->url_fapesp;
             $item->from       = '';
             $country          = Country::find($item->vehicle->country_id);
             if(isset($country)){

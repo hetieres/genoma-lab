@@ -35,65 +35,91 @@ class SiteController extends Controller
      */
     public function index(Request $request)
     {
-        $this->asideData();
+        $this->data['highlights'] = Post::where('active', 1)
+                                    ->where('highlight', 1)
+                                    ->where('dt_publication', '<=', date('Y-m-d'))
+                                    ->orderBy('order')
+                                    ->limit(5)
+                                    ->get();
+
+        $sessions = Session::where('edit', '=', '1')->orderByRaw('id=1 desc, id=6 desc, id=3 desc, id=5 desc')->get();
+
+        foreach ($sessions as $session) {
+            $rs = false;
+            if($session->type_list_id == 1){ //mais recentes
+                $rs = Post::where('session_id', $session->id)
+                    ->where('dt_publication', '<=', date('Y-m-d'))
+                    ->orderBy('dt_publication', 'desc')
+                    ->limit($session->limit)
+                    ->get();
+            }else if($session->type_list_id == 2){ //Aleatório
+                $rs = Post::where('session_id', $session->id)
+                    ->where('dt_publication', '<=', date('Y-m-d'))
+                    ->orderByRaw("RAND()")
+                    ->limit($session->limit)
+                    ->get();
+            }else if($session->type_list_id == 3){ //manual
+                $session->ids = $session->ids ? json_decode($session->ids): false;
+                $rs = Post::whereIn('id', $session->ids);
+                foreach ($session->ids as $item) {
+                    $rs->orderByRaw('id=' . $item . ' desc');
+                }
+                $rs = $rs->limit($session->limit)->get();
+            }
+            $session->posts = $rs;
+        }
+        $this->data['sessions'] = $sessions;
+
         return view('site.home', $this->data);
     }
 
     public function detalhe(Request $request)
     {
 
-        $slug = isset($request->slug) ? $request->slug : false;
-        $id   = isset($request->id)   ? $request->id   : false;
+        $slug          = isset($request->slug) ? $request->slug: false;
+        $id            = isset($request->id)   ? $request->id:   false;
+        $count_session = Session::where('url', $slug)->count();
+
 
         // SLUG conflita com ID
-        if ($slug && is_numeric($slug) === true) {
+        if ($slug && is_numeric($slug) === true && !$id) {
             $id = $slug;
             $slug = false;
         }
 
-        if ($slug == 'projetos-apoiados' && !$id) {
-            $post = Post::find(51);
-            return view('site.conteudo', ['post' => $post]);
-        } else if ($slug == 'en' && !$id) {
-            $post = Post::find(294);
-            return view('site.conteudo', ['post' => $post]);
-        } else if ($slug == 'comunicados' && !$id) {
-            $post = Post::find(220);
-            return view('site.conteudo', ['post' => $post]);
-        }
         if ($id) {
             $post = Post::find($id);
-            if ($slug != str_slug($post->title)) {
+            if ($post && $slug != str_slug($post->title) && $count_session == 0) {
                 return redirect($post->link(), 301);
+            }else if ($post && $slug == str_slug($post->title)) {
+                return view('site.detail', ['post' => $post]);
             }
-            if ($post) {
-                switch ($post->session_id) {
-                    case '1': //Desenvolvimento de Tecnologias
-                        $DadosHead = Post::find(20);
-                        return view('site.tecnologia', ['post' => $post, 'DadosHead' => $DadosHead]);
-                        break;
-                    case '2': //Pesquisa
-                        $DadosHead = Post::find(19);
-                        return view('site.pesquisa', ['post' => $post, 'DadosHead' => $DadosHead]);
-                        break;
-                    case '3': //Webinars
-                        $DadosHead = Post::find(77);
-                        return view('site.educacaodifusao', ['post' => $post, 'DadosHead' => $DadosHead]);
-                        break;
-                    case '4': //Vídeos
-                        $DadosHead = Post::find(152);
-                        return view('site.midia', ['post' => $post, 'DadosHead' => $DadosHead]);
-                        break;
-                    case '5': //Conteúdo
-                        return view('site.conteudo', ['post' => $post]);
-                        break;
-                    case '6': //Suplementos de Rápida Implementação
+        }
 
-                        $DadosHead = Post::find(23);
-                        return view('site.projetospesquisa', ['post' => $post, 'DadosHead' => $DadosHead]);
-                        break;
-                }
+        if ($count_session){
+            if(is_numeric($id)){
+                $page = $id;
+                // Resolve a problem at pagination
+                Paginator::currentPageResolver(
+                    function () use ($page) {
+                        return $page;
+                    }
+                );
             }
+            $session = Session::where('url', $slug)->first();
+            $rs = Post::where('session_id', $session->id)
+                ->where('dt_publication', '<=', date('Y-m-d'))
+                ->orderBy('dt_publication', 'desc')
+                ->paginate(25);
+            $session->posts = $rs;
+            $this->data['slug']        = $slug;
+            $this->data['lastPage']    = $rs->lastPage();
+            $this->data['currentPage'] = $rs->currentPage();
+            $this->data['rangePages']  = $this->rangePages($this->data['lastPage'], $this->data['currentPage']);
+            $this->data['session']     = $session;
+            return view('site.list', $this->data);
+        }else{
+            //404
         }
     }
 
@@ -134,7 +160,7 @@ class SiteController extends Controller
     }
 
 
-    
+
     public function conhecaogenoma(Request $request)
     {
         $this->data['DadosHead'] = Post::find(20);
@@ -148,7 +174,7 @@ class SiteController extends Controller
 
     public function pesquisas(Request $request)
     {
-        
+
         $dadosNoticas['pesquisas'] = Post::where('session_id', 2)
             ->where('active', 1)
             ->where('dt_publication', '<=', date('Y-m-d'))
@@ -171,48 +197,6 @@ class SiteController extends Controller
         return view('site.videos', $this->data);
     }
 
-    private function asideData()
-    {
-        $this->data['pgHome'] = Post::find(17);
-        /*Dados para Notícias*/
-        $this->data['Noticias'] = Post::where('session_id', 2)
-            ->where('active', 1)
-            ->where('highlight', 1)
-            ->where('dt_publication', '<=', date('Y-m-d'))
-            ->orderBy('order')
-            ->limit(2)
-            ->get();
-
-
-        /*Dados para Educação e Difusão*/
-        $this->data['EducacaoDifusao'] = Post::where('session_id', 3)
-            ->where('active', 1)
-            ->where('highlight', 1)
-            ->where('dt_publication', '<=', date('Y-m-d'))
-            ->orderBy('order')
-            ->limit(3)
-            ->get();
-
-        /*Dados para Genoma na Mídia*/
-        $this->data['Midia'] = Post::where('session_id', 4)
-        ->where('active', 1)
-        ->where('highlight', 1)
-        ->where('dt_publication', '<=', date('Y-m-d'))
-        ->orderBy('order')
-        ->limit(2)
-        ->get();
-        
-        /*Dados para Projetos de Pesquisa*/
-        $this->data['projetos'] = Post::where('active', 1)
-            ->where('dt_publication', '<=', date('Y-m-d'))
-            ->where(function ($query) {
-                $query->where('session_id', '=', 1)
-                    ->orWhere('session_id', '=', 6);
-            })
-            ->orderByRaw("RAND()")
-            ->limit(3)
-            ->get();
-    }
 
     public function search(Request $request)
     {
@@ -267,65 +251,4 @@ class SiteController extends Controller
     }
 
 
-    /*
-    *
-    * Detalhe noticia/vehicle
-    *
-    */
-    public function detail(Request $request)
-    {
-        $news = Post::find($request->id);
-
-        //url sem titulo somente id
-        if (!isset($request->title)) {
-            if ($news == null) {
-                return redirect(route('home'));
-            } else {
-                return redirect(route('details', ['title' => str_slug($news->title), 'id' => $news->id]));
-            }
-        }
-
-
-        //se existe noticia
-        if (!is_null($news) && str_slug($news->title) === $request->title) {
-            $this->newsDetail($news);
-            return view('site.news', $this->data);
-        } else {
-            $vehicle = Vehicle::find($request->id);
-            //detalhe do veiculo
-            if ($vehicle && str_slug($vehicle->description) === $request->title) {
-                $this->vehicleDetail($vehicle, $request->page);
-                return view('site.vehicle-internal', $this->data);
-            } else if ($news) {
-                //url errada
-                return redirect(route('details', ['title' => str_slug($news->title), 'id' => $news->id]));
-            }
-        }
-        /**/
-
-        return redirect(route('home'));
-    }
-
-
-    /*
-    *
-    * Detalhe do noticia
-    *
-    */
-    public function newsDetail($news)
-    {
-
-        $news->news = News::selectRaw('posts.*')
-            ->where('news.url_fapesp', '=', $news->url_fapesp)
-            ->where('news.url_fapesp', '<>', '')
-            ->where('news.vehicle_id', '<>', $news->vehicle_id)
-            ->whereIn('news.news_status_id', News::statusActive())
-            ->join('vehicles', 'news.vehicle_id', '=', 'vehicles.id')
-            ->orderBy('vehicles.big', 'DESC')
-            ->get();
-        //dd($news->news);
-        $news->source = $this->sourceSite($news);
-
-        $this->data['news'] = $news;
-    }
 }
