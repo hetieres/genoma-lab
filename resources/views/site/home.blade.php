@@ -96,7 +96,7 @@
 
     @if($sessions[1]->posts)
     <div class="recent-articles pt-40">
-        <div class="container BordaInferior">
+        <div class="BordaInferior">
             <div class="recent-wrapper">
                 <!-- section Tittle -->
                 <div class="row Espaco3">
