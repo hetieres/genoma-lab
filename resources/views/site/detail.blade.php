@@ -16,6 +16,7 @@
                 <div class="internasBanner">
                     <center>
                         <img src="{{ $post->getImage() }}" class="internas img-fluid">
+                        <small>{{ $post->caption_image }}</small>
                     </center>
                 </div>
             @endif
