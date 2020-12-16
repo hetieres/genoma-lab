@@ -113,9 +113,9 @@
                             <div class="card mb-4 shadow-sm" style="border: 1px solid #000000;">
                                 <a href="{{ $item->link() }}">
                                     <div class="card-body">
-                                        <p class="TextLimitedProjects" style="color: #1e359c;font-weight: 450;height: 90px;">
+                                        <p class="TextLimitedProjects" style="color: #1e359c;font-weight: 450;height: 50px;">
                                             {{ $item->title }}</p>
-                                        <p class="card-text" style="height: 105px;">
+                                        <p class="card-text" style="height: 145px;">
                                             {!!html_entity_decode(str_replace("\n", "<br>", $item->summary))!!}
                                         </p>
                                     </div>
