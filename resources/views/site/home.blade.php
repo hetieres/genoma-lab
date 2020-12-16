@@ -132,7 +132,7 @@
                                     <div class="card-body">
                                         <p class="TextLimitedProjects" style="color: #1e359c;font-weight: 450;height: 120px;">
                                             {{ $item->title }}</p>
-                                        <p class="card-text" style="height: 105px;">
+                                        <p class="card-text" style="/*height: 105px;*/">
                                             {!!html_entity_decode(str_replace("\n", "<br>", $item->summary))!!}
                                         </p>
                                     </div>
