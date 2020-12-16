@@ -44,7 +44,7 @@
                                 </td>
                                 <td>{!! mb_convert_encoding($item->from, "HTML-ENTITIES", "UTF-8") !!}</td>
                                 <td>{!! $item->url !!}</td>
-                                <td>{!! route('details', ['title' => str_slug($item->title), 'id' => $item->id]) !!}</td>
+                                <td>{!! route('detalhe', ['title' => str_slug($item->title), 'id' => $item->id]) !!}</td>
                                 <td>{!! $item->url_fapesp !!}</td>
                                 <td>{!! mb_convert_encoding($item->date, "HTML-ENTITIES", "UTF-8") !!}</td>
                             </tr>

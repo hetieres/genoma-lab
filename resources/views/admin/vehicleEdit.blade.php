@@ -154,7 +154,7 @@
                         @endif
                         <div class="pull-right">
                             <button class="btn btn-warning" onclick="window.close();">Fechar</button>
-                            <button class="btn bg-maroon btn-view" onclick="window.open('{{  route('details', ['title' => str_slug($vehicle->description), 'id' => $vehicle->id]) }}','_blank')" {{ $vehicle->news_total > 0 ? '' : 'disabled="disabled"' }}>Visualizar</button>
+                            <button class="btn bg-maroon btn-view" onclick="window.open('{{  route('detalhe', ['title' => str_slug($vehicle->description), 'id' => $vehicle->id]) }}','_blank')" {{ $vehicle->news_total > 0 ? '' : 'disabled="disabled"' }}>Visualizar</button>
                             <button class="btn btn-info" id="save">Gravar</button>
                             <input type="hidden" name="id" id="id" value="{{ $vehicle->id }}">
                             <input type="hidden" name="user_id" id="user_id" value="{{ $user_id }}">

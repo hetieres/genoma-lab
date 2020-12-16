@@ -10,7 +10,7 @@
         <ul>
             @foreach ($more_viewed as $news)
                 <li>
-                    <a href="{{ route('details', ['title' => str_slug($news->title), 'id' => $news->id]) }}">
+                    <a href="{{ route('detalhe', ['title' => str_slug($news->title), 'id' => $news->id]) }}">
                         {{-- <div class="title">{{ $news->title }}</div> --}}
                         <div class="description">{{ $news->title }} ({{ number_format($news->total, 0, ',', '.') }} notícias)</div>
                         {{-- <div class="vehicle">{{ $news->vehicle->description }}</div> --}}
@@ -25,7 +25,7 @@
         <ul>
             @foreach ($more_viewed_international as $news)
                 <li>
-                    <a href="{{ route('details', ['title' => str_slug($news->title), 'id' => $news->id]) }}">
+                    <a href="{{ route('detalhe', ['title' => str_slug($news->title), 'id' => $news->id]) }}">
                         {{-- <div class="title">{{ $news->title }}</div> --}}
                         <div class="description">{{ $news->title }} ({{ number_format($news->total, 0, ',', '.') }} notícias)</div>
                         {{-- <div class="vehicle">{{ $news->vehicle->description }}</div> --}}
@@ -39,7 +39,7 @@
         <h4><a href="{{ route('vehicles') }}"><b>Veículos </b> Nacionais</a></h4>
         <ul>
             @foreach ($asideVehicle as $vehicle)
-                <li><a href="{{ route('details', ['title' => str_slug($vehicle->description), 'id' => $vehicle->id]) }}"> {{ $vehicle->description }} <span>({{ number_format($vehicle->total, 0, ',', '.') }} notícias)</span></a></li>
+                <li><a href="{{ route('detalhe', ['title' => str_slug($vehicle->description), 'id' => $vehicle->id]) }}"> {{ $vehicle->description }} <span>({{ number_format($vehicle->total, 0, ',', '.') }} notícias)</span></a></li>
             @endforeach
         </ul>
     </div>
@@ -48,7 +48,7 @@
         <h4><a href="{{ route('vehicles-int') }}"><b>Veículos</b> Internacionais</a></h4>
         <ul>
             @foreach ($asideVehicleExternal as $vehicle)
-                <li><a href="{{ route('details', ['title' => str_slug($vehicle->description), 'id' => $vehicle->id]) }}"> {{ $vehicle->description }} <span>({{ number_format($vehicle->total, 0, ',', '.') }} notícias)</span></a></li>
+                <li><a href="{{ route('detalhe', ['title' => str_slug($vehicle->description), 'id' => $vehicle->id]) }}"> {{ $vehicle->description }} <span>({{ number_format($vehicle->total, 0, ',', '.') }} notícias)</span></a></li>
             @endforeach
         </ul>
     </div>

@@ -26,7 +26,7 @@ class ApiController extends Controller
         if ($data->count()>0) {
             foreach ($data as $item) {
                 $object      = (object) array('id' => $item->id, 'title' => $item->title, 'dt_publication' => $item->dt_publication->format('Y-m-d'), 'created_at' => $item->created_at->format('Y-m-d  H:i:s'), 'updated_at' => $item->updated_at->format('Y-m-d  H:i:s'));
-                $object->url = route('details', ['title' => str_slug($item->title), 'id' => $item->id]);
+                $object->url = route('detalhe', ['title' => str_slug($item->title), 'id' => $item->id]);
                 $process     = json_decode($item->number_process);
                 $process     = (is_array($process) ? $process: [$process]);
 
@@ -67,7 +67,7 @@ class ApiController extends Controller
         if ($data->count()>0) {
             foreach ($data as $item) {
                 $object      = (object) array('id' => $item->id, 'vehicle' => $item->vehicle, 'title' => $item->title, 'dt_publication' => $item->dt_publication->format('Y-m-d'), 'created_at' => $item->created_at->format('Y-m-d  H:i:s'), 'updated_at' => $item->updated_at->format('Y-m-d  H:i:s'));
-                $object->url = route('details', ['title' => str_slug($item->title), 'id' => $item->id]);
+                $object->url = route('detalhe', ['title' => str_slug($item->title), 'id' => $item->id]);
                 $process     = json_decode($item->number_process);
                 $process     = (is_array($process) ? $process: [$process]);
 

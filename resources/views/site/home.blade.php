@@ -1,38 +1,23 @@
 @extends('layouts.site')
 @section('content')
 <main class="Espaco2">
+    @if($highlights)
     <section id="banner">
         <div class="slider container">
+
+        @foreach ($highlights as $highlight)
             <div class="slide">
-                <div class="image" style="background-image: url('https://fapesp.br/files/home/34571.jpg')"></div>
-                <a href="https://agencia.fapesp.br/ipen-se-equipa-para-produzir-nanorradiofarmacos/34571/" class="box" target="_blank">
-                    <h2 class="b">Ipen se equipa para produzir nanorradiofármacos</h2>
-                    <div class="info">Com apoio da FAPESP, laboratório de padrão internacional associa nanotecnologia e radiofarmácia para desenvolver novos produtos, principalmente para o tratamento de câncer</div>
+                <div class="image" style="background-image: url('{{ $highlight->getImage() }}')"></div>
+                <a href="{{ $highlight->link() }}" class="box" target="_blank">
+                    <h2 class="b">{{ $highlight->title }}</h2>
+                    <div class="info">{{ $highlight->summary }}</div>
                 </a>
             </div>
-            <div class="slide">
-                <div class="image" style="background-image: url('https://fapesp.br/files/home/cpe2.jpg')"></div>
-                <a href="https://fapesp.br/14600/fapesp-e-gsk-anunciam-chamada-para-constituicao-do-centro-de-novos-alvos-terapeuticos-em-oncologia" class="box">
-                    <h2 class="b">FAPESP e GSK anunciam chamada para Centro de Novos Alvos Terapêuticos em Oncologia</h2>
-                    <div class="info">Novo centro realizará pesquisas fundamentais e aplicadas buscando descobrir novos alvos terapêuticos para o tratamento do câncer</div>
-                </a>
-            </div>
-            <div class="slide">
-                <div class="image" style="background-image: url('https://fapesp.br/files/home/34543.jpg')"></div>
-                <a href="https://agencia.fapesp.br/oito-emendas-ao-pl-627-buscam-assegurar-transferencias-do-tesouro-a-fapesp-em-2021/34543/" class="box" target="_blank">
-                    <h2 class="b">Oito emendas ao PL 627 buscam assegurar transferências do Tesouro à FAPESP em 2021</h2>
-                    <div class="info">Uma das emendas foi apresentada em conjunto pelos seis deputados que integram a Comissão de Ciência, Tecnologia, Inovação e Informação da Alesp</div>
-                </a>
-            </div>
-            <div class="slide">
-                <div class="image" style="background-image: url('https://fapesp.br/files/home/054-058-avaliacoes-297-0-1140.jpg')"></div>
-                <a href="https://revistapesquisa.fapesp.br/impactos-da-pesquisa-na-sociedade/" class="box" target="_blank">
-                    <h2 class="b">Impactos da pesquisa na sociedade</h2>
-                    <div class="info">Levantamento aponta resultados positivos em programas da FAPESP de apoio a pequenas empresas, colaborações internacionais e formação de pesquisadores</div>
-                </a>
-            </div>
+        @endforeach
+
         </div>
     </section>
+    @endif
 
 <br>
 <div class="container">
@@ -69,30 +54,26 @@
             <div class="BordaInferior2" style="border-bottom: 10px solid #82d643;"></div>
         </div>
 
+        @if ($sessions[0]->posts)
         <div class="recent-articles pt-40 ">
             <div class="container BordaInferior">
                 <div class="col-md-12">
                     <div class="section-tittle mb-30">
-                        <h3>Conheça o Genoma</h3>
+                        <h3>{{ $sessions[0]->description }}</h3>
                     </div>
                     <div class="row Espaco3">
-                        @for ($i = 0; $i < count($Noticias); $i++) <?php
-                                                                    if ($i == 0) {
-                                                                        $style = "Espaco";
-                                                                    } else {
-                                                                        $style = "Espaco";
-                                                                    }
-                                                                    ?> <div class="col-md {{$style}}">
+                        @for ($i = 0; $i < count($sessions[0]->posts); $i++)
+                        <div class="col-md Espaco">
                             <div class="single-recent">
-                                <a href="{{ $Noticias[$i]->link() }}">
+                                <a href="{{ $sessions[0]->posts[$i]->link() }}">
                                     <div class=" mb-4" style="height: auto;">
                                         <div class="">
-                                            <img src="{{ asset($Noticias[$i]->image) }}" alt="" class="img-fluid imgNoticias2">
+                                            <img src="{{ asset($sessions[0]->posts[$i]->getImage()) }}" alt="" class="img-fluid imgNoticias2">
                                         </div>
                                         <div class="">
-                                            <h5 class="cardtitleNoticia subtitulo">{{ $Noticias[$i]->title }}</h5>
+                                            <h5 class="cardtitleNoticia subtitulo">{{ $sessions[0]->posts[$i]->title }}</h5>
                                             <p class="TextLimiteNoticias">
-                                                {!!html_entity_decode(str_replace("\n", "<br>", $Noticias[$i]->summary))!!}
+                                                {!!html_entity_decode(str_replace("\n", "<br>", $sessions[0]->posts[$i]->summary))!!}
                                             </p>
                                         </div>
                                     </div>
@@ -104,14 +85,16 @@
             </div>
             <div class="col-md-12 ">
                 <center>
-                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => 'pesquisas']) }}'">Saiba mais</button>
+                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[0]->url]) }}'">Saiba mais</button>
                 </center>
                 <br>
             </div>
         </div>
-        <div class="BordaInferior2" style="border-bottom: 10px solid #00b9e4;"></div>
+        <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[0]->color }};"></div>
+        @endif
     </div>
 
+    @if($sessions[1]->posts)
     <div class="recent-articles pt-40">
         <div class="container BordaInferior">
             <div class="recent-wrapper">
@@ -119,12 +102,12 @@
                 <div class="row Espaco3">
                     <div class="col-lg-12">
                         <div class="section-tittle mb-30">
-                            <h3>Projetos de Pesquisa</h3>
+                            <h3>{{ $sessions[1]->description }}</h3>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    @foreach ($projetos as $item)
+                    @foreach ($sessions[1]->posts as $item)
                     <div class="col-md">
                         <div class="single-recent">
                             <div class="card mb-4 shadow-sm" style="border: 1px solid #000000;">
@@ -149,31 +132,34 @@
             </div>
             <div class="col-md-12 ">
                 <center>
-                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => 'projetospesquisas']) }}'">Mais pesquisas</button>
+                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[1]->url]) }}'">Mais pesquisas</button>
                 </center>
                 <br>
             </div>
         </div>
-        <div class="BordaInferior2" style="border-bottom: 10px solid #f6303e;"></div>
+        <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[1]->color }};"></div>
     </div>
+    @endif
+
+    @if ($sessions[2]->posts)
     <div class="recent-articles pt-40 ">
         <div class="container BordaInferior">
             <div class="col-md-12">
                 <div class="section-tittle mb-30">
-                    <h3>Educação e Difusão</h3>
+                    <h3>{{ $sessions[2]->description }}</h3>
                 </div>
                 <div class="row Espaco3">
-                    @for ($i = 0; $i < count($EducacaoDifusao); $i++) <div class="col-md Espaco">
+                    @for ($i = 0; $i < count($sessions[2]->posts); $i++) <div class="col-md Espaco">
                         <div class="single-recent">
-                            <a href="{{ $EducacaoDifusao[$i]->link() }}">
+                            <a href="{{ $sessions[2]->posts[$i]->link() }}">
                                 <div class=" mb-4" style="height: auto;">
                                     <div class="">
-                                        <img src="{{ asset($EducacaoDifusao[$i]->image) }}" alt="" class="img-fluid imgNoticias">
+                                        <img src="{{ asset($sessions[2]->posts[$i]->getImage()) }}" alt="" class="img-fluid imgNoticias">
                                     </div>
                                     <div class="">
-                                        <h5 class="cardtitleNoticia subtitulo">{{ $EducacaoDifusao[$i]->title }}</h5>
+                                        <h5 class="cardtitleNoticia subtitulo">{{ $sessions[2]->posts[$i]->title }}</h5>
                                         <p class="TextLimiteNoticias">
-                                            {!!html_entity_decode(str_replace("\n", "<br>", $EducacaoDifusao[$i]->summary))!!}
+                                            {!!html_entity_decode(str_replace("\n", "<br>", $sessions[2]->posts[$i]->summary))!!}
                                         </p>
                                     </div>
                                 </div>
@@ -185,39 +171,34 @@
         </div>
         <div class="col-md-12 ">
             <center>
-                <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => 'educacaodifusoes']) }}'">Mais</button>
+                <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[2]->url]) }}'">Mais</button>
             </center>
             <br>
         </div>
     </div>
-    <div class="BordaInferior2" style="border-bottom: 10px solid #0032a0;"></div>
-</div>
-</div>
-<div class="container">
+    <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[2]->color }};"></div>
+    @endif
+
+    @if ($sessions[3]->posts)
         <div class="recent-articles pt-40 ">
             <div class="container">
                 <div class="col-md-12">
                     <div class="section-tittle mb-30">
-                        <h3>Genoma na Mídia</h3>
+                        <h3>{{ $sessions[3]->description }}</h3>
                     </div>
                     <div class="row Espaco3">
-                        @for ($i = 0; $i < count($Midia); $i++) <?php
-                                                                    if ($i == 0) {
-                                                                        $style = "Espaco";
-                                                                    } else {
-                                                                        $style = "Espaco5";
-                                                                    }
-                                                                    ?> <div class="col-md {{$style}}">
+                        @for ($i = 0; $i < count($sessions[3]->posts); $i++) 
+                        <div class="col-md {{ $i == 0 ? 'Espaco' : 'Espaco5' }}">
                             <div class="single-recent">
-                                <a href="{{ $Midia[$i]->link() }}">
+                                <a href="{{ $sessions[3]->posts[$i]->link() }}">
                                     <div class=" mb-4" style="height: auto;">
                                         <div class="">
-                                            <img src="{{ asset($Midia[$i]->image) }}" alt="" class="img-fluid imgNoticias2">
+                                            <img src="{{ asset($sessions[3]->posts[$i]->getImage()) }}" alt="" class="img-fluid imgNoticias2">
                                         </div>
                                         <div class="">
-                                            <h5 class="cardtitleNoticia subtitulo">{{ $Midia[$i]->title }}</h5>
+                                            <h5 class="cardtitleNoticia subtitulo">{{ $sessions[3]->posts[$i]->title }}</h5>
                                             <p class="TextLimiteNoticias">
-                                                {!!html_entity_decode(str_replace("\n", "<br>", $Midia[$i]->summary))!!}
+                                                {!!html_entity_decode(str_replace("\n", "<br>", $sessions[3]->posts[$i]->summary))!!}
                                             </p>
                                         </div>
                                     </div>
@@ -231,12 +212,19 @@
 
             <div class="col-md-12 ">
                 <center>
-                <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => 'namidia']) }}'">Mais</button>
+                <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[3]->url]) }}'">Mais</button>
                 </center>
                 <br>
             </div>
         </div>
-    </div>
+    @endif
+
+</div>
+</div>
+
+
+
+
 </div>
 </main>
 @endsection

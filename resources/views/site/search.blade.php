@@ -30,10 +30,10 @@
             <ul class="newsList">
                 @foreach ($rs as $news)
                     <li>
-                        <h3><a href="{{ route('details', ['title' => str_slug($news->title), 'id' => $news->id]) }}">{{ $news->title }}</a></h3>
+                        <h3><a href="{{ route('detalhe', ['title' => str_slug($news->title), 'id' => $news->id]) }}">{{ $news->title }}</a></h3>
                        {{-- 
                         <div class="datePublic">
-                            <a href="{{ route('details', ['title' => str_slug($news->vehicle->description), 'id' => $news->vehicle->id]) }}">{{ $news->vehicle->description }}</a>
+                            <a href="{{ route('detalhe', ['title' => str_slug($news->vehicle->description), 'id' => $news->vehicle->id]) }}">{{ $news->vehicle->description }}</a>
                              - Publicado em {{ $news->dt_publication->formatLocalized('%d %B %Y') }}
                         </div>
                         --}}

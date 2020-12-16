@@ -23,19 +23,19 @@
             <ul class="vehiclesList">
                 @foreach ($vehicles as $vehicle)
                     <li>
-                        <a href="{{ route('details', ['title' => str_slug($vehicle->description), 'id' => $vehicle->id]) }}">
+                        <a href="{{ route('detalhe', ['title' => str_slug($vehicle->description), 'id' => $vehicle->id]) }}">
                             <div class="boxVehicleBig">{{ $vehicle->description }}</div>
                         </a>
 
                         <h3>{{ $vehicle->total }} notícias</h3>
                         <div class="lastPublic">Última publicação referente a FAPESP realizada em {{ $vehicle->lastNews->dt_publication->formatLocalized('%d %B %Y') }}</div>
-                        <a href="{{ route('details', ['title' => str_slug($vehicle->lastNews->title), 'id' => $vehicle->lastNews->id]) }}">
+                        <a href="{{ route('detalhe', ['title' => str_slug($vehicle->lastNews->title), 'id' => $vehicle->lastNews->id]) }}">
                             <h4>{{ $vehicle->lastNews->title }}</h4>
                             <div class="description">
                                 {!! $vehicle->lastNews->summary != '' ? strip_tags($vehicle->lastNews->summary) :  \App\Helpers\BaseHelper::limitChar(strip_tags($vehicle->lastNews->text))  !!}
                             </div>
                         </a>
-                        <a href="{{ route('details', ['title' => str_slug($vehicle->description), 'id' => $vehicle->id]) }}" class="viewNews">ver notícias</a>
+                        <a href="{{ route('detalhe', ['title' => str_slug($vehicle->description), 'id' => $vehicle->id]) }}" class="viewNews">ver notícias</a>
                     </li>
                 @endforeach
             </ul>

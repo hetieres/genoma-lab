@@ -51,7 +51,7 @@ class Controller extends BaseController
             $jwt   = new JWTHelper;
             $token = (isset($_COOKIE['JWT-TOKEN']) ? $_COOKIE['JWT-TOKEN'] : '');
             $user  = $jwt->getPayload($token);
-            
+
             //paginas do admin
             if (strpos($_SERVER['REQUEST_URI'], Route::current()->getPrefix())!==false
                 && in_array('auth', Route::current()->middleware()) && isset($user->id)
@@ -63,7 +63,7 @@ class Controller extends BaseController
                     ->limit(10)
                     ->get();
 
-                $sessions_edit = Session::where('edit', '=', '1')->orderByRaw('id=1 desc, id=3 desc, id=6 desc, id=5 desc')->get();
+                $sessions_edit = Session::where('edit', '=', '1')->orderByRaw('id=1 desc, id=6 desc, id=3 desc, id=5 desc')->get();
 
                 // dd($sessions_edit);
 

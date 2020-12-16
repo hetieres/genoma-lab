@@ -16,7 +16,7 @@
             <ul class="breadcrumbs">
                 <li><a href="{{ route('home') }}">Home</a></li>
                 <li><a href="{{ route('vehicles') }}">Veículos</a></li>
-                <li><a href="{{ route('details', ['title' => str_slug($news->vehicle->description), 'id' => $news->vehicle->id]) }}">{{ $news->vehicle->description }}</a></li>
+                <li><a href="{{ route('detalhe', ['title' => str_slug($news->vehicle->description), 'id' => $news->vehicle->id]) }}">{{ $news->vehicle->description }}</a></li>
                 @if (isset($news->source['url']) && $news->source['url'] != '')
                     <li class="active"><a href="{{$news->source['url']}}" target="_blank"><span>Notícia</span></a></li>
                 @else
@@ -25,7 +25,7 @@
             </ul>
         </h1>
 
-        <a href="{{ route('details', ['title' => str_slug($news->vehicle->description), 'id' => $news->vehicle->id]) }}">
+        <a href="{{ route('detalhe', ['title' => str_slug($news->vehicle->description), 'id' => $news->vehicle->id]) }}">
             <div class="boxVehicleBig">{{ $news->vehicle->description }}</div>
         </a>
 
@@ -68,7 +68,7 @@
                     <div class="viewLine clearfix noPrint">
                         <div class="title">Essa notícia também repercutiu nos veículos:</div>
                         @foreach ($news->news as $item)
-                        <a href="{{ route('details', ['title' => str_slug($item->title), 'id' => $item->id]) }}" class="boxVehicle">{{ $item->vehicle->description }}</a>
+                        <a href="{{ route('detalhe', ['title' => str_slug($item->title), 'id' => $item->id]) }}" class="boxVehicle">{{ $item->vehicle->description }}</a>
                         @endforeach
                     </div>
                 @endif
