@@ -50,11 +50,20 @@ class SessionController extends Controller
             $session      = Session::find($request->id);
             $session->ids = $session->ids ? json_decode($session->ids): false;
             $session->url = $session->url ? $session->url:              \str_slug($session->description);
+            $highlight    = false;
 
-            $types                 = TypeList::all();
-            $this->data['session'] = $session;
-            $this->data['types']   = $types;
-            $this->data['user_id'] = Auth::user()->id;
+            if($session->ids){
+                $highlight = Post::whereIn('id', $session->ids);
+                foreach ($session->ids as $item) {
+                    $highlight->orderByRaw('id=' . $item . ' desc');
+                }
+                 $highlight =  $highlight->get();
+            }
+
+            $this->data['session']   = $session;
+            $this->data['types']     = TypeList::all();
+            $this->data['highlight'] = $highlight;
+            $this->data['user_id']   = Auth::user()->id;
 
             return view('admin.sessionEdit', $this->data);
         }

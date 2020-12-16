@@ -10,6 +10,7 @@
     <script src="{{ asset('assets/vendor/bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.min.js') }}" charset="UTF-8"></script>
     <script src="{{ asset('assets/vendor/ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('assets/js/admin/session-edit.min.js?v=2') }}"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 @endsection
 
 @section('content')
@@ -44,7 +45,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="unify_id" class="col-sm-2 control-label">Tipo de lista </label>
+                                    <label for="unify_id" class="col-sm-2 control-label">Tipo destaque </label>
                                     <div class="col-lg-8 col-xs-10">
                                         <select class="form-control select2 required" name="type_list_id" id="type_list_id">
                                             <option value="">-</option>
@@ -55,7 +56,36 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group video d-ids">
+                                <div class="form-group d-ids">
+                                    <label for="add_id" class="col-sm-2 control-label">Destaques Home</label>
+                                    <div class="col-lg-8 col-xs-10">
+                                        <input type="text" class="form-control" style="width: 200px !important; float: left;" id="add_id" name="add_id" placeholder="ID da matéria">
+                                        <a href="#" class="btn btn-success pull-left btn-rel-add">Adicionar</a>
+                                        <small style="vertical-align: -webkit-baseline-middle; margin-left: 5px;" id="label_rel"></small>
+                                    </div>
+                                </div>
+
+                                <div class="form-group d-ids">
+                                    <label class="col-sm-2 control-label"></label>
+                                    <div class="col-lg-8 col-xs-10">
+                                        <ul id="sortable" class="list-group" style="cursor: ns-resize">
+                                            @if ($highlight)
+                                                @foreach ($highlight as $item)
+                                                <li class="list-group-item">
+                                                    <small class="label bg-navy" style="font-size: 100%;"><i class="fa fa-fw fa-arrows-v"></i></small>
+                                                    <a href="{{ route('detalhe', ['id' => $item->id, 'slug' => str_slug($item->title)]) }}" target="_blank"><small class="label bg-maroon" style="font-size: 100%;"><i class="fa fa-fw fa-eye"></i></small></a>
+                                                    <small class="label bg-green" style="font-size: 100%; width: 150px;"><label style="width: 40px;">{{ $item->id }}</label></small>
+                                                    <a href="#" class="btn-rel-del"><small class="label bg-red" style="font-size: 100%;"><i class="fa fa-fw fa-remove"></i></small></a>
+                                                    {{ $item->title }}
+                                                    <input type="hidden" name="ids" value="{{ $item->id }}">
+                                                </li>
+                                                @endforeach
+                                            @endif
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                {{-- <div class="form-group video d-ids">
                                     <label for="ids" class="col-sm-2 control-label">ID's</label>
                                     <div class="col-lg-4 col-xs-10">
                                         <select class="form-control" name="ids" id="ids" multiple="multiple">
@@ -66,7 +96,7 @@
                                             @endif
                                         </select>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <div class="form-group">
                                     <label for="url" class="col-sm-2 control-label">URL(genoma.usp.br/)</label>

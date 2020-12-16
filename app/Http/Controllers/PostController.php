@@ -418,6 +418,21 @@ class PostController extends Controller
         return json_encode($return);
     }
 
+    public function post(Request $request)
+    {
+        $post = Post::find($request->id);
+
+        if ($post && $request->html) {
+            $this->data['li'] = true;
+            $this->data['post'] = $post;
+            return view('admin.postEdit', $this->data);
+        } else if ($post) {
+            return $post;
+        } else {
+            return null;
+        }
+    }
+
 
 
 }
