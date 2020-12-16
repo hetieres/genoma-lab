@@ -99,7 +99,7 @@
         <div class="BordaInferior">
             <div class="recent-wrapper">
                 <!-- section Tittle -->
-                <div class="row Espaco3">
+                <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle mb-30">
                             <h3>{{ $sessions[1]->description }}</h3>
@@ -115,7 +115,7 @@
                                     <div class="card-body">
                                         <p class="TextLimitedProjects" style="color: #1e359c;font-weight: 450;height: 50px;">
                                             {{ $item->title }}</p>
-                                        <p class="card-text" style="height: 145px;">
+                                        <p class="card-text EspacoP" >
                                             {!!html_entity_decode(str_replace("\n", "<br>", $item->summary))!!}
                                         </p>
                                     </div>

@@ -6677,6 +6677,9 @@ h2 {
         width: 100%;
         margin-top: 48px !important;
     }
+    .EspacoP {
+        height: auto;
+    }
     /*RFG*/
     .InputSearch {
         color: #fbfbfb;
@@ -8387,6 +8390,10 @@ del {
     width: auto;*/
     height: 300px !important;
     width: 450px;
+}
+
+.EspacoP {
+    height: 145px;
 }
 
 .banner img {
