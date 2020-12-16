@@ -10,8 +10,15 @@
     </div>
     <div class="container internal">
         <div class="col-12 col-sm-7 col-md-8 no-padding-left no-padding-xs">
-            <h1 class="interal-title" style="padding-top: 0px; color: {{ $post->session->color }};">{{ $post->session->description }}</h1>
-            <br>
+            <h2 class="interal-title" style="padding-top: 0px; color: {{ $post->session->color }};">{{ $post->session->description }}</h2>
+
+            @if ($post->image)
+                <div class="internasBanner">
+                    <center>
+                        <img src="{{ $post->getImage() }}" class="internas img-fluid">
+                    </center>
+                </div>
+            @endif
             <!-- Versão Mobil -->
             <!-- Go to www.addthis.com/dashboard to customize your tools -->
             <div class="addthis_inline_share_toolbox_9yn6 LabelMobil1" style="padding-bottom:10px;float: right;"></div>
