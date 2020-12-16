@@ -26,7 +26,7 @@ class SiteController extends Controller
     public function __construct(Post $conteudo)
     {
         $this->conteudo = $conteudo;
-        View::share('footer', Post::find(151)->text);
+        // View::share('footer', Post::find(151)->text);
     }
 
     /**
