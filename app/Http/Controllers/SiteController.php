@@ -61,16 +61,12 @@ class SiteController extends Controller
             $post = Post::find(220);
             return view('site.conteudo', ['post' => $post]);
         }
-
         if ($id) {
             $post = Post::find($id);
-
             if ($slug != str_slug($post->title)) {
                 return redirect($post->link(), 301);
             }
-
             if ($post) {
-
                 switch ($post->session_id) {
                     case '1': //Desenvolvimento de Tecnologias
                         $DadosHead = Post::find(20);

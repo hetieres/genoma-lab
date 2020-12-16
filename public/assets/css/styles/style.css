@@ -6326,12 +6326,13 @@ h2 {
     /*padding-top: 40px;*/
 }
 
-.title-internal {
+.title-internal2 {
     color: #000000;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 21px;
     padding-bottom: 0px;
-    padding-top: 20px;
+    padding-top: 0px;
+    margin-left: -14px;
 }
 
 .Titulo {
@@ -6523,9 +6524,8 @@ h2 {
         height: auto;
     }
     .banner img {
-        height: auto !important;
+        height: 270px !important;
         width: 100%;
-        margin-top: -17px !important;
     }
 }
 
@@ -6667,6 +6667,11 @@ h2 {
         margin-left: 0%;
         width: 100%;
     }
+    .internasBanner img {
+        height: auto !important;
+        width: 100%;
+        margin-top: 0px !important;
+    }
     .banner img {
         height: auto !important;
         width: 100%;
@@ -6728,6 +6733,14 @@ h2 {
         right: 5px;
         top: 15px;
         padding-bottom: 3px;
+    }
+    .title-internal2 {
+        color: #000000;
+        font-weight: 700;
+        font-size: 21px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+        margin-left: 0px;
     }
 }
 
@@ -8369,10 +8382,16 @@ del {
     height: 20%;
 }
 
+.internas {
+    /*  height: 300px !important;
+    width: auto;*/
+    height: 300px !important;
+    width: 450px;
+}
+
 .banner img {
-    height: 430px;
-    width: 100%;
-    margin-top: -15px;
+    height: 270px;
+    width: auto;
 }
 
 .btnLupa {
