@@ -6678,7 +6678,7 @@ h2 {
         margin-top: 48px !important;
     }
     .EspacoP {
-        height: auto;
+        height: auto !important;
     }
     /*RFG*/
     .InputSearch {
