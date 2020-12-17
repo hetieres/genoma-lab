@@ -113,7 +113,7 @@
                             <div class="card mb-4 shadow-sm" style="border: 1px solid #000000;">
                                 <a href="{{ $item->link() }}">
                                     <div class="card-body">
-                                        <p class="TextLimitedProjects" style="color: #1e359c;font-weight: 450;height: 50px;">
+                                        <p class="TextLimitedProjects BoxProjeto" >
                                             {{ $item->title }}</p>
                                         <p class="card-text EspacoP" >
                                             {!!html_entity_decode(str_replace("\n", "<br>", $item->summary))!!}
@@ -130,12 +130,15 @@
                     @endforeach
                 </div>
             </div>
+            <br>
             <div class="col-md-12 ">
                 <center>
                     <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[1]->url]) }}'">Mais pesquisas</button>
                 </center>
                 <br>
             </div>
+
+            <br><br>
         </div>
         <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[1]->color }};"></div>
     </div>
