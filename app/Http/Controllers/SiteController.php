@@ -26,7 +26,7 @@ class SiteController extends Controller
     public function __construct(Post $conteudo)
     {
         $this->conteudo = $conteudo;
-        View::share('footer', Post::find(151)->text);
+        View::share('footer', Post::find(12)->text);
     }
 
     /**
@@ -92,6 +92,11 @@ class SiteController extends Controller
             if ($post && $slug != str_slug($post->title) && $count_session == 0) {
                 return redirect($post->link(), 301);
             }else if ($post && $slug == str_slug($post->title)) {
+                if($post->session->aside == ""){
+                    $aux = Post::find(18);
+                    
+                    $post->session->aside = $aux->text;
+                }
                 return view('site.detail', ['post' => $post]);
             }
         }
