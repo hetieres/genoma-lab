@@ -137,8 +137,6 @@ $Size = "font-size: 35px;";
             </a>
         </div>
 
-
-
         <nav class="menu header2 ">
             <div class="menuMobile visible-sm">
                 <span class="title">Menu</span>

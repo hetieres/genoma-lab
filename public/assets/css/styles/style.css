@@ -883,14 +883,14 @@ hr {
 .imgNoticias2 {
     padding-bottom: 0px;
     padding-top: 0px;
-    width: 100%;
-    height: 330px !important;
+    /*   width: 100%;
+    height: 330px !important;*/
 }
 
 .cardtitleNoticia {
-    padding-top: 21px;
+    padding-top: 15px;
     padding-bottom: 29px;
-    height: 96px;
+    height: 60px;
     font-size: 18px;
 }
 
@@ -6672,10 +6672,18 @@ h2 {
         width: 100%;
         margin-top: 0px !important;
     }
+    .BoxProjeto {
+        color: #1e359c !important;
+        font-weight: 450;
+        height: auto !important;
+    }
     .banner img {
         height: auto !important;
         width: 100%;
         margin-top: 48px !important;
+    }
+    .EspacoP {
+        height: auto !important;
     }
     /*RFG*/
     .InputSearch {
@@ -6784,8 +6792,8 @@ h2 {
     .imgNoticias2 {
         padding-bottom: 0px;
         padding-top: 0px;
-        width: 100%;
-        height: 250px !important;
+        /* width: 100%;
+        height: 250px !important;*/
     }
     .Espaco {
         padding-right: 0px;
@@ -6800,6 +6808,11 @@ h2 {
     .Espaco4 {
         margin-right: -56px;
         margin-left: -56px;
+    }
+    .BoxProjeto {
+        color: #1e359c !important;
+        font-weight: 450;
+        height: auto !important;
     }
     .header-sticky {
         left: 0;
@@ -6901,6 +6914,11 @@ h2 {
     .SpaceImg {
         display: block;
     }
+    .BoxProjeto {
+        color: #1e359c !important;
+        font-weight: 450;
+        height: auto !important;
+    }
 }
 
 @media only screen and (min-width: 321px) and (max-width: 360px) {
@@ -6969,6 +6987,11 @@ h2 {
     }
     .SpaceImg {
         display: block;
+    }
+    .BoxProjeto {
+        color: #1e359c !important;
+        font-weight: 450;
+        height: auto !important;
     }
 }
 
@@ -8384,9 +8407,20 @@ del {
 
 .internas {
     /*  height: 300px !important;
-    width: auto;*/
+    width: auto;
     height: 300px !important;
     width: 450px;
+    */
+}
+
+.BoxProjeto {
+    color: #1e359c !important;
+    font-weight: 450;
+    height: 40px;
+}
+
+.EspacoP {
+    height: 145px;
 }
 
 .banner img {
@@ -8434,4 +8468,9 @@ del {
 
 .BoxSearch::placeholder {
     color: white;
+}
+
+p {
+    margin-top: 0px !important;
+    margin-bottom: 5px !important;
 }

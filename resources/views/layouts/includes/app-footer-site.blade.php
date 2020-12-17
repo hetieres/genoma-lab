@@ -67,18 +67,37 @@
             $('#arrow_' + id).addClass('fas fa-angle-right');
             var e = $(".links > div > li");
             var r = e.hasClass("active");
-            if (r) {
+            var control = $("#Control").val();
+
+            if (control != id) {
+            //    alert('ID diferente');
+                $('.ArrowMenu').removeClass('fas fa-angle-right');
+                $('.ArrowMenu').addClass('fas fa-angle-down');
                 $('#arrow_' + id).removeClass('fas fa-angle-down');
                 $('#arrow_' + id).addClass('fas fa-angle-right');
-                e.removeClass("active");
             } else {
-                // e.addClass("active");
-                $('#arrow_' + id).removeClass('fas fa-angle-down');
-                $('#arrow_' + id).addClass('fas fa-angle-right');
+
+                if (r) {
+                    //  alert('1');
+                    $('#arrow_' + id).removeClass('fas fa-angle-right');
+                    $('#arrow_' + id).addClass('fas fa-angle-down');
+                    //    e.removeClass("active");
+                } else {
+
+                    // alert('2');
+                    // e.addClass("active");
+                    $('#arrow_' + id).removeClass('fas fa-angle-down');
+                    $('#arrow_' + id).addClass('fas fa-angle-right');
+                }
+
             }
+
         }
+
+        $("#Control").val(id);
     }
 </script>
+<input type="hidden" id="Control" value="">
 
 </body>
 

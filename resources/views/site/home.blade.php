@@ -96,10 +96,10 @@
 
     @if($sessions[1]->posts)
     <div class="recent-articles pt-40">
-        <div class="container BordaInferior">
+        <div class="BordaInferior">
             <div class="recent-wrapper">
                 <!-- section Tittle -->
-                <div class="row Espaco3">
+                <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle mb-30">
                             <h3>{{ $sessions[1]->description }}</h3>
@@ -113,9 +113,9 @@
                             <div class="card mb-4 shadow-sm" style="border: 1px solid #000000;">
                                 <a href="{{ $item->link() }}">
                                     <div class="card-body">
-                                        <p class="TextLimitedProjects" style="color: #1e359c;font-weight: 450;height: 120px;">
+                                        <p class="TextLimitedProjects BoxProjeto" >
                                             {{ $item->title }}</p>
-                                        <p class="card-text" style="height: 105px;">
+                                        <p class="card-text EspacoP" >
                                             {!!html_entity_decode(str_replace("\n", "<br>", $item->summary))!!}
                                         </p>
                                     </div>
@@ -130,12 +130,15 @@
                     @endforeach
                 </div>
             </div>
+            <br>
             <div class="col-md-12 ">
                 <center>
                     <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[1]->url]) }}'">Mais pesquisas</button>
                 </center>
                 <br>
             </div>
+
+            <br><br>
         </div>
         <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[1]->color }};"></div>
     </div>
