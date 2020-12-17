@@ -25,12 +25,12 @@
             <div class="addthis_inline_share_toolbox_9yn6 LabelMobil1" style="padding-bottom:10px;float: right;"></div>
             <br>
 
-            <h1 class="title-internal2 LabelMobil1">{{$post->title}}</h1>
+            <h1 class="title-internal2 LabelMobil1">{!! $post->title !!}</h1>
             <!-- FIM -->
             <div class="container LabelMobil">
                 <div class="row">
                     <div class="col-sm-9">
-                        <h1 class="title-internal2">{{$post->title}}</h1>
+                        <h1 class="title-internal2">{!! $post->title !!}</h1>
                     </div>
                     <div class="col-sm-3">
                         <!-- Go to www.addthis.com/dashboard to customize your tools -->
@@ -44,7 +44,7 @@
             {!!html_entity_decode($post->text)!!}
         </div>
         <aside class="col-12 col-sm-5 col-md-4 no-padding-right no-padding-xs">
-            <div class="titlePesquisa"> <span style="margin-left: 10px;">Linhas de pesquisa do Genoma USP</span>
+            {{-- <div class="titlePesquisa"> <span style="margin-left: 10px;">Linhas de pesquisa do Genoma USP</span>
             </div>
             <br>
             <ul>
@@ -55,8 +55,11 @@
                 <li><a href="#" class="ListaPesquisa">Microbiota humana e genética</a></li>
                 <li><a href="#" class="ListaPesquisa">Modelos para terapias de doenças genéticas e medicina regenerativa</a></li>
                 <li><a href="#" class="ListaPesquisa">Produção científica</a></li>
-            </ul>
-    </div>
+            </ul> --}}
+            {!! str_replace("<div class=\"titlePesquisa\">", "<div class=\"titlePesquisa\" style=\"background: " . $post->session->color . ";\">", $post->session->aside) !!}
+            {{-- {!! $post->session->aside !!} --}}
+
+    </aside>
 </div>
 
 

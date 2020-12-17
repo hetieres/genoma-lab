@@ -16,7 +16,15 @@ $(document).ready(function () {
         "hideMethod": "fadeOut"
     };
 
+    CKEDITOR.replace('aside', {
+        height: 350
+    });
+
     $("#sortable").sortable();
+
+    $('.colorize').colorpicker({
+        format: 'hex'
+    });
 
     $('#save').click(function (event) {
 
@@ -41,6 +49,8 @@ $(document).ready(function () {
             data.append('description', $('#description').val());
             data.append('type_list_id', $('#type_list_id').val());
             data.append('url', $('#url').val());
+            data.append('color', $('#color').val());
+            data.append('aside', CKEDITOR.instances['aside'].getData());
             data.append('id', $('#id').val());
             data.append('user_id', $('#user_id').val());
 

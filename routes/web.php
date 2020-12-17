@@ -62,9 +62,14 @@ Route::get('robots.txt', function () {
     return response($robots->generate(), 200)->header('Content-Type', 'text/plain');
 });
 
+
 /* Site map */
 Route::get('/sitemap.xml', 'SitemapController@index')->name('sitemap');
 Route::get('/sitemap.xml/{slug?}/{pg?}', 'SitemapController@internals')->name('sitemap-internals');
+
+
+Route::get('/import', 'DataImportController@import')->name('import');
+
 
 /* Rotas do site */
 Route::get('/', 'SiteController@index')->name('home');
