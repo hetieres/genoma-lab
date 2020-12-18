@@ -27,6 +27,7 @@ class SiteController extends Controller
     {
         $this->conteudo = $conteudo;
         View::share('footer', Post::find(12)->text);
+        View::share('menu', Post::find(19)->text);
     }
 
     /**
