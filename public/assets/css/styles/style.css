@@ -8469,8 +8469,3 @@ del {
 .BoxSearch::placeholder {
     color: white;
 }
-
-p {
-    margin-top: 0px !important;
-    margin-bottom: 5px !important;
-}
