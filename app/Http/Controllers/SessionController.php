@@ -33,6 +33,8 @@ class SessionController extends Controller
         $model->description  = $request->input('description');
         $model->type_list_id = $request->input('type_list_id');
         $model->url          = $request->input('url');
+        $model->color        = $request->input('color');
+        $model->aside        = $request->input('aside');
         $model->ids          = (strlen($request->input('ids')) > 0 ? json_encode(explode(',', $request->input('ids'))): '');
         $model->user_id      = $request->user_id;
 
@@ -49,7 +51,7 @@ class SessionController extends Controller
         if (isset($request->id) && $request->id > 0) {
             $session      = Session::find($request->id);
             $session->ids = $session->ids ? json_decode($session->ids): false;
-            $session->url = $session->url ? $session->url:              \str_slug($session->description);
+            $session->url = $session->url ? $session->url : str_slug($session->description);
             $highlight    = false;
 
             if($session->ids){

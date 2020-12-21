@@ -19,7 +19,7 @@ class PostController extends Controller
     //
     public function index()
     {
-        $this->data['sessions'] = Session::orderBy('description')->get();
+        $this->data['sessions'] = Session::orderByRaw('id=1 desc, id=6 desc, id=3 desc, id=5 desc')->get();
         return view('admin.postList', $this->data);
     }
 
@@ -185,7 +185,7 @@ class PostController extends Controller
         $this->data['post'] = $post;
         $this->data['files'] = $files;
         $this->data['user_id'] = Auth::user()->id;
-        $this->data['sessions'] = Session::orderBy('description')->get()->toArray();
+        $this->data['sessions'] = Session::orderByRaw('id=1 desc, id=6 desc, id=3 desc, id=5 desc')->get()->toArray();
         $this->data['history_id'] = isset($request->history_id) ? $request->history_id : 0;
         $this->data['history_id'] = isset($post->history[0]->history_id) && $this->data['history_id'] == 0 ? $post->history[0]->history_id : 0;
 

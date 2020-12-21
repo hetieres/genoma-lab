@@ -2,11 +2,13 @@
 
 @section('styles')
     <link href="{{ asset('assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/color-picker/css/bootstrap-colorpicker.min.css') }}" rel="stylesheet">
 @endsection
 
 @section('scripts')
     <script src="{{ asset('assets/vendor/ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/color-picker/js/bootstrap-colorpicker.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.min.js') }}" charset="UTF-8"></script>
     <script src="{{ asset('assets/vendor/ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('assets/js/admin/session-edit.min.js?v=2') }}"></script>
@@ -85,19 +87,6 @@
                                     </div>
                                 </div>
 
-                                {{-- <div class="form-group video d-ids">
-                                    <label for="ids" class="col-sm-2 control-label">ID's</label>
-                                    <div class="col-lg-4 col-xs-10">
-                                        <select class="form-control" name="ids" id="ids" multiple="multiple">
-                                            @if ($session->ids)
-                                            @foreach($session->ids as $id_item)
-                                            <option value="{{ $id_item }}" selected="selected">{{ $id_item }}</option>
-                                            @endforeach
-                                            @endif
-                                        </select>
-                                    </div>
-                                </div> --}}
-
                                 <div class="form-group">
                                     <label for="url" class="col-sm-2 control-label">URL(genoma.usp.br/)</label>
                                     <div class="col-lg-8 col-xs-10">
@@ -105,6 +94,21 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="color" class="col-sm-2 control-label">Cor </label>
+                                    <input type="hidden" name="cor da label da imagem" id="color" class="form-control" value="{{ $session->color }}">
+                                    <div class="col-lg-3 col-xs-10 input-group colorize" style="padding-left: 16px;">
+                                        <input type="text" name="color" id="color" class="form-control" value="{{ $session->color }}" required>
+                                        <div class="input-group-addon"><i></i></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group no-video">
+                                    <label for="aside" class="col-sm-2 control-label">Menu Lateral</label>
+                                    <div class="col-lg-8 col-xs-10">
+                                    <textarea class="form-control" rows="15"  id="aside"  name="aside">{{ $session->aside }}</textarea>
+                                    </div>
+                                </div>
 
                             </div>
                         </form>
