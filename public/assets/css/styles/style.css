@@ -629,7 +629,7 @@ ul {
 }
 
 li {
-    list-style: none
+    list-style: none;
 }
 
 hr {
@@ -8468,4 +8468,8 @@ del {
 
 .BoxSearch::placeholder {
     color: white;
+}
+
+div.internal3 li {
+    list-style-type: unset;
 }

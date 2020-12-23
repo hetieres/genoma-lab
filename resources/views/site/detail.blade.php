@@ -1,15 +1,13 @@
 
 @include('layouts.includes.app-head')
 
-
-
 <div class="container">
     <br><br>
     <div class="LabelMobil1">
     <br><br>
     </div>
     <div class="container internal">
-        <div class="col-12 col-sm-7 col-md-8 no-padding-left no-padding-xs">
+        <div class="col-12 col-sm-7 col-md-8 no-padding-left no-padding-xs internal3">
             <h2 class="interal-title" style="padding-top: 0px; color: {{ $post->session->color }};">{{ $post->session->description }}</h2>
 
             @if ($post->image)
