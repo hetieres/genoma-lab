@@ -144,7 +144,8 @@ $Size = "font-size: 35px;";
                     <i class="fas fa-times"></i>
                 </a>
             </div>
-            <ul class="links" id="navigation">
+            {!! $menu !!}
+            {{-- <ul class="links" id="navigation">
                 <div class="row">
                     <li>
                         <a href="javascript:;" class="LinkMenu"  id="Pesquisa" onclick="Arrow(this.id)">
@@ -259,7 +260,7 @@ $Size = "font-size: 35px;";
                         <br><br>
                     </li>
                 </div>
-            </ul>
+            </ul> --}}
             <div class="buttons">
                 <div class="SearchHide LabelMobil" id="BoxSearch">
                     <form action="/pesquisa" id="form-search" method="get">
