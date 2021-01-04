@@ -629,7 +629,7 @@ ul {
 }
 
 li {
-    list-style: none
+    list-style: none;
 }
 
 hr {
@@ -8470,7 +8470,7 @@ del {
     color: white;
 }
 
-p {
-    margin-top: 0px !important;
-    margin-bottom: 5px !important;
+div.internal3 li {
+    list-style-type: unset;
+    margin-bottom: -15px;
 }

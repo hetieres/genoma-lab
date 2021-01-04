@@ -8,7 +8,7 @@
         @foreach ($highlights as $highlight)
             <div class="slide">
                 <div class="image" style="background-image: url('{{ $highlight->getImage() }}')"></div>
-                <a href="{{ $highlight->link() }}" class="box" target="_blank">
+                <a href="{{ $highlight->link() }}" class="box">
                     <h2 class="b">{{ $highlight->title }}</h2>
                     <div class="info">{{ $highlight->summary }}</div>
                 </a>

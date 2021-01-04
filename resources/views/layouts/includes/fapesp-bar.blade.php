@@ -247,7 +247,7 @@ $Size = "font-size: 35px;";
                     <li>
                         <a href="javascript:;" id="GenomaNumeros" onclick="Arrow(this.id)">
                             <i class="fas fa-plus visible-sm"></i>
-                            <span><b class="MenuLabel" style="margin-top: 3px;"><i id="arrow_GenomaNumeros" class="fas fa-angle-down ArrowMenu LabelMobil"></i>&nbsp;&nbsp;Genoma em Números</b></span>
+                            <span><b class="MenuLabel" style="margin-top: 3px;"><i id="arrow_GenomaNumeros" class="fas fa-angle-down ArrowMenu LabelMobil"></i>&nbsp;&nbsp;Genoma na Mídia</b></span>
                         </a>
                     </li>
                     <li>
