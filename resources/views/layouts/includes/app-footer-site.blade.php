@@ -48,15 +48,6 @@
     $("#IconeLupa").click(function() {
         $("#form-search").submit();
     });
-
-    $("#icon_Pesquisa").html('<i id="arrow_Pesquisa" class="fas fa-angle-down ArrowMenu LabelMobil"></i>');
-    $("#icon_Servicos").html('<i id="arrow_Servicos" class="fas fa-angle-down ArrowMenu LabelMobil"></i>');
-    $("#icon_EnsinoDifusao").html('<i id="arrow_EnsinoDifusao" class="fas fa-angle-down ArrowMenu LabelMobil"></i>');
-    $("#icon_Midia").html('<i id="arrow_GenomaNumeros" class="fas fa-angle-down ArrowMenu LabelMobil"></i>');
-    $("#icon_quemsomos").html('<i id="arrow_QuemSomos" class="fas fa-angle-down ArrowMenu LabelMobil"></i>');
-</script>
-
-<script>
     function Arrow(id) {
         var windowWidth = window.innerWidth;
         if (windowWidth >= 993) {
