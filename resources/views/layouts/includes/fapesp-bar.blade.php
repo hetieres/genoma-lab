@@ -81,6 +81,8 @@ $Size = "font-size: 35px;";
                   
             {!! $menu !!}
 
+            
+
             <div class="buttons">
                 <div class="SearchHide LabelMobil" id="BoxSearch">
                     <form action="/pesquisa" id="form-search" method="get">
