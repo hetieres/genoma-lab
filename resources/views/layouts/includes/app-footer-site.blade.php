@@ -45,16 +45,15 @@
 <script src="{{ asset('assets/js/js/banner/slick.min.js') }}"></script>
 <script src="{{ asset('assets/js/js/banner/home.min.js') }}"></script>
 <script>
-    function Show(value) {
-        if (value == "1") {
-            $("#BoxSearch").show("slow");
-        } else {
-            $("#BoxSearch").hide("slow");
-        }
-    }
     $("#IconeLupa").click(function() {
         $("#form-search").submit();
     });
+
+    $("#icon_Pesquisa").html('<i id="arrow_Pesquisa" class="fas fa-angle-down ArrowMenu LabelMobil"></i>');
+    $("#icon_Servicos").html('<i id="arrow_Servicos" class="fas fa-angle-down ArrowMenu LabelMobil"></i>');
+    $("#icon_EnsinoDifusao").html('<i id="arrow_EnsinoDifusao" class="fas fa-angle-down ArrowMenu LabelMobil"></i>');
+    $("#icon_Midia").html('<i id="arrow_GenomaNumeros" class="fas fa-angle-down ArrowMenu LabelMobil"></i>');
+    $("#icon_quemsomos").html('<i id="arrow_QuemSomos" class="fas fa-angle-down ArrowMenu LabelMobil"></i>');
 </script>
 
 <script>
@@ -65,12 +64,11 @@
             $('.ArrowMenu').addClass('fas fa-angle-down');
             $('#arrow_' + id).removeClass('fas fa-angle-down');
             $('#arrow_' + id).addClass('fas fa-angle-right');
-            var e = $(".links > div > li");
+            var e = $(".links > li");
             var r = e.hasClass("active");
             var control = $("#Control").val();
 
             if (control != id) {
-            //    alert('ID diferente');
                 $('.ArrowMenu').removeClass('fas fa-angle-right');
                 $('.ArrowMenu').addClass('fas fa-angle-down');
                 $('#arrow_' + id).removeClass('fas fa-angle-down');
@@ -78,22 +76,23 @@
             } else {
 
                 if (r) {
-                    //  alert('1');
                     $('#arrow_' + id).removeClass('fas fa-angle-right');
                     $('#arrow_' + id).addClass('fas fa-angle-down');
                     //    e.removeClass("active");
                 } else {
-
-                    // alert('2');
-                    // e.addClass("active");
                     $('#arrow_' + id).removeClass('fas fa-angle-down');
                     $('#arrow_' + id).addClass('fas fa-angle-right');
                 }
-
             }
-
         }
 
+        function Show(value) {
+            if (value == "1") {
+                $("#BoxSearch").show("slow");
+            } else {
+                $("#BoxSearch").hide("slow");
+            }
+        }
         $("#Control").val(id);
     }
 </script>

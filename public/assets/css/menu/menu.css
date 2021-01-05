@@ -4404,7 +4404,7 @@ nav.menu {
 }
 
 nav.menu>div>div>a,
-nav.menu>div ul.links>div>li>a {
+nav.menu>div ul.links>li>a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -4423,7 +4423,7 @@ nav.menu>div ul.links {
     padding: 0 20px 0 15px
 }
 
-nav.menu>div ul.links>div>li {
+nav.menu>div ul.links>li {
     position: static;
     list-style: none;
     list-style-type: none;
@@ -4431,7 +4431,7 @@ nav.menu>div ul.links>div>li {
     float: left
 }
 
-nav.menu>div ul.links>div>li>a {
+nav.menu>div ul.links>li>a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -4440,32 +4440,32 @@ nav.menu>div ul.links>div>li>a {
     color: hsla(0, 0%, 100%, .8)
 }
 
-nav.menu>div ul.links>div>li>a>i {
+nav.menu>div ul.links>li>a>i {
     margin-right: 10px;
     font-size: 16px
 }
 
-nav.menu>div ul.links>div>li>a>i:before {
+nav.menu>div ul.links>li>a>i:before {
     line-height: 34px
 }
 
-nav.menu>div ul.links>div>li>a>span {
+nav.menu>div ul.links>li>a>span {
     line-height: 16px
 }
 
-nav.menu>div ul.links>div>li>a>span>b {
+nav.menu>div ul.links>li>a>span>b {
     display: block
 }
 
-nav.menu>div ul.links>div>li.current>a,
-nav.menu>div ul.links>div>li:hover>a,
-nav.menu>div ul.links>div>li>a:hover {
+nav.menu>div ul.links>li.current>a,
+nav.menu>div ul.links>li:hover>a,
+nav.menu>div ul.links>li>a:hover {
     color: #fff;
     background-color: #02254a
 }
 
-nav.menu>div ul.links>div>li>.dropnav-container,
-nav.menu>div ul.links>div>li>.subnav-container {
+nav.menu>div ul.links>li>.dropnav-container,
+nav.menu>div ul.links>li>.subnav-container {
     position: absolute;
     left: 0;
     display: none;
@@ -4478,27 +4478,27 @@ nav.menu>div ul.links>div>li>.subnav-container {
     transition: all .2s ease-in-out
 }
 
-nav.menu>div ul.links>div>li>.dropnav-container .text,
-nav.menu>div ul.links>div>li>.subnav-container .text {
+nav.menu>div ul.links>li>.dropnav-container .text,
+nav.menu>div ul.links>li>.subnav-container .text {
     padding-right: 40px;
     font-size: 13px;
     color: #fff
 }
 
-nav.menu>div ul.links>div>li>.dropnav-container .btn,
-nav.menu>div ul.links>div>li>.subnav-container .btn {
+nav.menu>div ul.links>li>.dropnav-container .btn,
+nav.menu>div ul.links>li>.subnav-container .btn {
     margin-top: 20px
 }
 
-nav.menu>div ul.links>div>li>.dropnav-container .btn>i,
-nav.menu>div ul.links>div>li>.subnav-container .btn>i {
+nav.menu>div ul.links>li>.dropnav-container .btn>i,
+nav.menu>div ul.links>li>.subnav-container .btn>i {
     position: relative;
     top: 2px;
     font-size: 18px
 }
 
-nav.menu>div ul.links>div>li>.dropnav-container h3,
-nav.menu>div ul.links>div>li>.subnav-container h3 {
+nav.menu>div ul.links>li>.dropnav-container h3,
+nav.menu>div ul.links>li>.subnav-container h3 {
     position: relative;
     padding-bottom: 5px;
     font-size: 16px;
@@ -4506,8 +4506,8 @@ nav.menu>div ul.links>div>li>.subnav-container h3 {
     border-bottom: 1px solid #50555a
 }
 
-nav.menu>div ul.links>div>li>.dropnav-container h3>.border,
-nav.menu>div ul.links>div>li>.subnav-container h3>.border {
+nav.menu>div ul.links>li>.dropnav-container h3>.border,
+nav.menu>div ul.links>li>.subnav-container h3>.border {
     position: absolute;
     left: 0;
     bottom: -1px;
@@ -4516,21 +4516,21 @@ nav.menu>div ul.links>div>li>.subnav-container h3>.border {
     background-color: #fff
 }
 
-nav.menu>div ul.links>div>li>.dropnav-container ul.submenu,
-nav.menu>div ul.links>div>li>.subnav-container ul.submenu {
+nav.menu>div ul.links>li>.dropnav-container ul.submenu,
+nav.menu>div ul.links>li>.subnav-container ul.submenu {
     padding: 0;
     list-style: none;
     list-style-type: none;
     list-style-image: none
 }
 
-nav.menu>div ul.links>div>li>.dropnav-container ul.submenu>li,
-nav.menu>div ul.links>div>li>.subnav-container ul.submenu>li {
+nav.menu>div ul.links>li>.dropnav-container ul.submenu>li,
+nav.menu>div ul.links>li>.subnav-container ul.submenu>li {
     text-align: left
 }
 
-nav.menu>div ul.links>div>li>.dropnav-container ul.submenu>li>a,
-nav.menu>div ul.links>div>li>.subnav-container ul.submenu>li>a {
+nav.menu>div ul.links>li>.dropnav-container ul.submenu>li>a,
+nav.menu>div ul.links>li>.subnav-container ul.submenu>li>a {
     display: block;
     padding: 4px 0;
     font-size: 13px;
@@ -4539,22 +4539,22 @@ nav.menu>div ul.links>div>li>.subnav-container ul.submenu>li>a {
     transition: all .2s ease-in-out
 }
 
-nav.menu>div ul.links>div>li>.dropnav-container ul.submenu>li>a:hover,
-nav.menu>div ul.links>div>li>.subnav-container ul.submenu>li>a:hover {
+nav.menu>div ul.links>li>.dropnav-container ul.submenu>li>a:hover,
+nav.menu>div ul.links>li>.subnav-container ul.submenu>li>a:hover {
     color: hsla(0, 0%, 100%, .7)
 }
 
-nav.menu>div ul.links>div>li>.dropnav-container ul.submenu>li.subitem>a,
-nav.menu>div ul.links>div>li>.subnav-container ul.submenu>li.subitem>a {
+nav.menu>div ul.links>li>.dropnav-container ul.submenu>li.subitem>a,
+nav.menu>div ul.links>li>.subnav-container ul.submenu>li.subitem>a {
     padding-left: 20px
 }
 
-nav.menu>div ul.links>div>li.active>.dropnav-container,
-nav.menu>div ul.links>div>li.active>.subnav-container {
+nav.menu>div ul.links>li.active>.dropnav-container,
+nav.menu>div ul.links>li.active>.subnav-container {
     display: block
 }
 
-nav.menu>div ul.links>div>li>.dropnav-container {
+nav.menu>div ul.links>li>.dropnav-container {
     left: auto;
     width: auto
 }
@@ -4921,7 +4921,7 @@ nav.menu div.busca:hover>.buscaContainer {
 }
 
 .menu-line>.container>nav.menu>div>a,
-.menu-line>.container>nav.menu>ul.links>div>li>a {
+.menu-line>.container>nav.menu>ul.links>li>a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -4940,7 +4940,7 @@ nav.menu div.busca:hover>.buscaContainer {
     padding: 0 20px 0 15px
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li {
+.menu-line>.container>nav.menu>ul.links>li {
     position: static;
     list-style: none;
     list-style-type: none;
@@ -4948,7 +4948,7 @@ nav.menu div.busca:hover>.buscaContainer {
     float: left
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li:hover {
+.menu-line>.container>nav.menu>ul.links>li:hover {
     position: static;
     list-style: none;
     list-style-type: none;
@@ -4957,7 +4957,7 @@ nav.menu div.busca:hover>.buscaContainer {
     /*border-bottom: 5px solid #82d643;*/
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li>a {
+.menu-line>.container>nav.menu>ul.links>li>a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -4968,36 +4968,36 @@ nav.menu div.busca:hover>.buscaContainer {
     transition: all .2s ease-in-out
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li>a>i {
+.menu-line>.container>nav.menu>ul.links>li>a>i {
     margin-right: 10px;
     font-size: 16px
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li>a>i:before {
+.menu-line>.container>nav.menu>ul.links>li>a>i:before {
     line-height: 34px
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li>a>span {
+.menu-line>.container>nav.menu>ul.links>li>a>span {
     line-height: 16px
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li>a>span>b {
+.menu-line>.container>nav.menu>ul.links>li>a>span>b {
     display: block
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li>a>span>b {
+.menu-line>.container>nav.menu>ul.links>li>a>span>b {
     display: block
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li.active>a,
-.menu-line>.container>nav.menu>ul.links>div>li:hover>a,
-.menu-line>.container>nav.menu>ul.links>div>li>a:hover {
+.menu-line>.container>nav.menu>ul.links>li.active>a,
+.menu-line>.container>nav.menu>ul.links>li:hover>a,
+.menu-line>.container>nav.menu>ul.links>li>a:hover {
     color: #fff;
     background-color: #0032a0
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li>.dropnav-container,
-.menu-line>.container>nav.menu>ul.links>div>li>.subnav-container {
+.menu-line>.container>nav.menu>ul.links>li>.dropnav-container,
+.menu-line>.container>nav.menu>ul.links>li>.subnav-container {
     position: absolute;
     left: 0;
     display: none;
@@ -5010,27 +5010,27 @@ nav.menu div.busca:hover>.buscaContainer {
     transition: all .2s ease-in-out
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li>.dropnav-container .text,
-.menu-line>.container>nav.menu>ul.links>div>li>.subnav-container .text {
+.menu-line>.container>nav.menu>ul.links>li>.dropnav-container .text,
+.menu-line>.container>nav.menu>ul.links>li>.subnav-container .text {
     padding-right: 40px;
     font-size: 13px;
     color: #fff
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li>.dropnav-container .btn,
-.menu-line>.container>nav.menu>ul.links>div>li>.subnav-container .btn {
+.menu-line>.container>nav.menu>ul.links>li>.dropnav-container .btn,
+.menu-line>.container>nav.menu>ul.links>li>.subnav-container .btn {
     margin-top: 20px
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li>.dropnav-container .btn>i,
-.menu-line>.container>nav.menu>ul.links>div>li>.subnav-container .btn>i {
+.menu-line>.container>nav.menu>ul.links>li>.dropnav-container .btn>i,
+.menu-line>.container>nav.menu>ul.links>li>.subnav-container .btn>i {
     position: relative;
     top: 2px;
     font-size: 18px
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li>.dropnav-container h3,
-.menu-line>.container>nav.menu>ul.links>div>li>.subnav-container h3 {
+.menu-line>.container>nav.menu>ul.links>li>.dropnav-container h3,
+.menu-line>.container>nav.menu>ul.links>li>.subnav-container h3 {
     position: relative;
     padding-bottom: 5px;
     font-size: 16px;
@@ -5038,8 +5038,8 @@ nav.menu div.busca:hover>.buscaContainer {
     border-bottom: 1px solid #50555a
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li>.dropnav-container h3>.border,
-.menu-line>.container>nav.menu>ul.links>div>li>.subnav-container h3>.border {
+.menu-line>.container>nav.menu>ul.links>li>.dropnav-container h3>.border,
+.menu-line>.container>nav.menu>ul.links>li>.subnav-container h3>.border {
     position: absolute;
     left: 0;
     bottom: -1px;
@@ -5048,21 +5048,21 @@ nav.menu div.busca:hover>.buscaContainer {
     background-color: #fff
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li>.dropnav-container ul.submenu,
-.menu-line>.container>nav.menu>ul.links>div>li>.subnav-container ul.submenu {
+.menu-line>.container>nav.menu>ul.links>li>.dropnav-container ul.submenu,
+.menu-line>.container>nav.menu>ul.links>li>.subnav-container ul.submenu {
     padding: 0;
     list-style: none;
     list-style-type: none;
     list-style-image: none
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li>.dropnav-container ul.submenu>li,
-.menu-line>.container>nav.menu>ul.links>div>li>.subnav-container ul.submenu>li {
+.menu-line>.container>nav.menu>ul.links>li>.dropnav-container ul.submenu>li,
+.menu-line>.container>nav.menu>ul.links>li>.subnav-container ul.submenu>li {
     text-align: left
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li>.dropnav-container ul.submenu>li>a,
-.menu-line>.container>nav.menu>ul.links>div>li>.subnav-container ul.submenu>li>a {
+.menu-line>.container>nav.menu>ul.links>li>.dropnav-container ul.submenu>li>a,
+.menu-line>.container>nav.menu>ul.links>li>.subnav-container ul.submenu>li>a {
     display: block;
     padding: 4px 0;
     font-size: 13px;
@@ -5071,22 +5071,22 @@ nav.menu div.busca:hover>.buscaContainer {
     transition: all .2s ease-in-out
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li>.dropnav-container ul.submenu>li>a:hover,
-.menu-line>.container>nav.menu>ul.links>div>li>.subnav-container ul.submenu>li>a:hover {
+.menu-line>.container>nav.menu>ul.links>li>.dropnav-container ul.submenu>li>a:hover,
+.menu-line>.container>nav.menu>ul.links>li>.subnav-container ul.submenu>li>a:hover {
     color: hsla(0, 0%, 100%, .7)
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li>.dropnav-container ul.submenu>li.subitem>a,
-.menu-line>.container>nav.menu>ul.links>div>li>.subnav-container ul.submenu>li.subitem>a {
+.menu-line>.container>nav.menu>ul.links>li>.dropnav-container ul.submenu>li.subitem>a,
+.menu-line>.container>nav.menu>ul.links>li>.subnav-container ul.submenu>li.subitem>a {
     padding-left: 20px
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li.active>.dropnav-container,
-.menu-line>.container>nav.menu>ul.links>div>li.active>.subnav-container {
+.menu-line>.container>nav.menu>ul.links>li.active>.dropnav-container,
+.menu-line>.container>nav.menu>ul.links>li.active>.subnav-container {
     display: block
 }
 
-.menu-line>.container>nav.menu>ul.links>div>li>.dropnav-container {
+.menu-line>.container>nav.menu>ul.links>li>.dropnav-container {
     left: auto;
     width: auto
 }
@@ -5329,14 +5329,14 @@ nav.menu div.busca:hover>.buscaContainer {
 }
 
 @media not all and (max-width:992px) {
-    .menu-line>.container>nav.menu.header2>ul.links>div>li.active>a,
-    .menu-line>.container>nav.menu.header2>ul.links>div>li:hover>a,
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>a:hover {
+    .menu-line>.container>nav.menu.header2>ul.links>li.active>a,
+    .menu-line>.container>nav.menu.header2>ul.links>li:hover>a,
+    .menu-line>.container>nav.menu.header2>ul.links>li>a:hover {
         color: #05376c;
         background-color: #fff
     }
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container,
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container {
+    .menu-line>.container>nav.menu.header2>ul.links>li>.dropnav-container,
+    .menu-line>.container>nav.menu.header2>ul.links>li>.subnav-container {
         padding: 0 20px;
         background-color: #0032a1;
         -webkit-box-shadow: 0 5px 10px -6px #969696;
@@ -5344,12 +5344,12 @@ nav.menu div.busca:hover>.buscaContainer {
         margin-top: 11px;
         ;
     }
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container .text,
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container .text {
+    .menu-line>.container>nav.menu.header2>ul.links>li>.dropnav-container .text,
+    .menu-line>.container>nav.menu.header2>ul.links>li>.subnav-container .text {
         color: #fff
     }
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container h3,
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container h3 {
+    .menu-line>.container>nav.menu.header2>ul.links>li>.dropnav-container h3,
+    .menu-line>.container>nav.menu.header2>ul.links>li>.subnav-container h3 {
         display: -webkit-box!important;
         display: -ms-flexbox!important;
         display: flex!important;
@@ -5365,21 +5365,21 @@ nav.menu div.busca:hover>.buscaContainer {
         color: #fff;
         border-bottom: 1px solid #e0e1e3
     }
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container h3>.border,
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container h3>.border {
+    .menu-line>.container>nav.menu.header2>ul.links>li>.dropnav-container h3>.border,
+    .menu-line>.container>nav.menu.header2>ul.links>li>.subnav-container h3>.border {
         height: 3px;
         background-color: #686e75
     }
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container ul.submenu>li>a,
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container ul.submenu>li>a {
+    .menu-line>.container>nav.menu.header2>ul.links>li>.dropnav-container ul.submenu>li>a,
+    .menu-line>.container>nav.menu.header2>ul.links>li>.subnav-container ul.submenu>li>a {
         color: rgb(255, 255, 255)
     }
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container ul.submenu>li.more>a,
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container ul.submenu>li.more>a {
+    .menu-line>.container>nav.menu.header2>ul.links>li>.dropnav-container ul.submenu>li.more>a,
+    .menu-line>.container>nav.menu.header2>ul.links>li>.subnav-container ul.submenu>li.more>a {
         color: #9ca2a7
     }
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container>.container>.row,
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container>.container>.row {
+    .menu-line>.container>nav.menu.header2>ul.links>li>.dropnav-container>.container>.row,
+    .menu-line>.container>nav.menu.header2>ul.links>li>.subnav-container>.container>.row {
         display: -webkit-box!important;
         display: -ms-flexbox!important;
         display: flex!important;
@@ -5395,27 +5395,27 @@ nav.menu div.busca:hover>.buscaContainer {
         -ms-flex-positive: 1!important;
         flex-grow: 1!important
     }
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container>.container>.row>div,
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container>.container>.row>div {
+    .menu-line>.container>nav.menu.header2>ul.links>li>.dropnav-container>.container>.row>div,
+    .menu-line>.container>nav.menu.header2>ul.links>li>.subnav-container>.container>.row>div {
         padding: 20px;
         -webkit-transition: all .2s ease-in-out;
         transition: all .2s ease-in-out
     }
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container>.container>.row>div>h3:not(:first-child),
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container>.container>.row>div>h3:not(:first-child) {
+    .menu-line>.container>nav.menu.header2>ul.links>li>.dropnav-container>.container>.row>div>h3:not(:first-child),
+    .menu-line>.container>nav.menu.header2>ul.links>li>.subnav-container>.container>.row>div>h3:not(:first-child) {
         margin-top: 20px
     }
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container>.container>.row>div>.btn,
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container>.container>.row>div>.btn {
+    .menu-line>.container>nav.menu.header2>ul.links>li>.dropnav-container>.container>.row>div>.btn,
+    .menu-line>.container>nav.menu.header2>ul.links>li>.subnav-container>.container>.row>div>.btn {
         padding: 6px 12px 8px;
         font-size: 12px
     }
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container>.container>.row>div:hover,
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container>.container>.row>div:hover {
+    .menu-line>.container>nav.menu.header2>ul.links>li>.dropnav-container>.container>.row>div:hover,
+    .menu-line>.container>nav.menu.header2>ul.links>li>.subnav-container>.container>.row>div:hover {
         background-color: rgba(80, 85, 90, .1)
     }
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container>.container>.row>div:hover h3,
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container>.container>.row>div:hover h3 {
+    .menu-line>.container>nav.menu.header2>ul.links>li>.dropnav-container>.container>.row>div:hover h3,
+    .menu-line>.container>nav.menu.header2>ul.links>li>.subnav-container>.container>.row>div:hover h3 {
         display: -webkit-box!important;
         display: -ms-flexbox!important;
         display: flex!important;
@@ -5430,24 +5430,24 @@ nav.menu div.busca:hover>.buscaContainer {
         color: white;
         /* border-bottom: 1px solid #82d643;*/
     }
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container>.container>.row>div:hover h3>.border,
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container>.container>.row>div:hover h3>.border {
+    .menu-line>.container>nav.menu.header2>ul.links>li>.dropnav-container>.container>.row>div:hover h3>.border,
+    .menu-line>.container>nav.menu.header2>ul.links>li>.subnav-container>.container>.row>div:hover h3>.border {
         background-color: #50555a
     }
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container>.container>.row>div:hover ul.submenu>li>a:hover,
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container>.container>.row>div:hover ul.submenu>li>a:hover {
+    .menu-line>.container>nav.menu.header2>ul.links>li>.dropnav-container>.container>.row>div:hover ul.submenu>li>a:hover,
+    .menu-line>.container>nav.menu.header2>ul.links>li>.subnav-container>.container>.row>div:hover ul.submenu>li>a:hover {
         color: rgb(80, 80, 80)(150, 150, 150);
         /* border-bottom: 1px solid #82d643;*/
     }
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container>.container>.row>div:hover ul.submenu>li.more>a,
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container>.container>.row>div:hover ul.submenu>li.more>a {
+    .menu-line>.container>nav.menu.header2>ul.links>li>.dropnav-container>.container>.row>div:hover ul.submenu>li.more>a,
+    .menu-line>.container>nav.menu.header2>ul.links>li>.subnav-container>.container>.row>div:hover ul.submenu>li.more>a {
         color: rgb(80, 80, 80)(150, 150, 150);
     }
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container>.container>.row>div:hover ul.submenu>li.more>a:hover,
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container>.container>.row>div:hover ul.submenu>li.more>a:hover {
+    .menu-line>.container>nav.menu.header2>ul.links>li>.dropnav-container>.container>.row>div:hover ul.submenu>li.more>a:hover,
+    .menu-line>.container>nav.menu.header2>ul.links>li>.subnav-container>.container>.row>div:hover ul.submenu>li.more>a:hover {
         color: rgb(80, 80, 80)(150, 150, 150);
     }
-    .menu-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container>div {
+    .menu-line>.container>nav.menu.header2>ul.links>li>.dropnav-container>div {
         padding: 20px 5px
     }
     .menu-line>.container>nav.menu.header2>.buttons>.indices.active>a,
@@ -5468,8 +5468,8 @@ nav.menu div.busca:hover>.buscaContainer {
     }
 }
 
-line>.container>nav.menu.header2>ul.links>div>li>.dropnav-container ul.submenu>li>a,
-.menu-line>.container>nav.menu.header2>ul.links>div>li>.subnav-container ul.submenu>li>a:hover {
+line>.container>nav.menu.header2>ul.links>li>.dropnav-container ul.submenu>li>a,
+.menu-line>.container>nav.menu.header2>ul.links>li>.subnav-container ul.submenu>li>a:hover {
     color: rgb(173 173 173);
 }
 
