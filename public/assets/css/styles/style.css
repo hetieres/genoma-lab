@@ -3604,8 +3604,13 @@ hr {
     /*text-transform: capitalize*/
 }
 
+a:hover {
+    color: rgb(173 173 173) !important;
+    text-decoration: underline;
+}
+
 .main-header .main-menu ul ul.submenu>li>a:hover {
-    color: #4c79ff;
+    color: rgb(173 173 173);
     background: none;
     font-weight: 600;
 }
@@ -8474,4 +8479,9 @@ del {
 div.internal3 li {
     list-style-type: unset;
     margin-bottom: -15px;
+}
+
+.SBorda {
+    color: white;
+    border-bottom: none !important;
 }
