@@ -3646,7 +3646,7 @@ a:hover {
 }
 
 .header-sticky ul li a {
-    padding: 10px 19px
+    padding: 0px 0px
 }
 
 .header-sticky.sticky-bar.sticky .header-flex {
@@ -8483,5 +8483,5 @@ div.internal3 li {
 
 .SBorda {
     color: white;
-    border-bottom: none !important;
+    padding-top: 15px;
 }
