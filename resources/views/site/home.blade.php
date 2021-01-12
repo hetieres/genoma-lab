@@ -72,7 +72,7 @@
                                         </div>
                                         <div class="">
                                             <h5 class="cardtitleNoticia subtitulo">{{ $sessions[0]->posts[$i]->title }}</h5>
-                                            <p class="TextLimiteNoticias">
+                                            <p class="TextLimiteNoticias" style="padding-bottom: 50px;">
                                                 {!!html_entity_decode(str_replace("\n", "<br>", $sessions[0]->posts[$i]->summary))!!}
                                             </p>
                                         </div>
@@ -161,7 +161,7 @@
                                     </div>
                                     <div class="">
                                         <h5 class="cardtitleNoticia subtitulo">{{ $sessions[2]->posts[$i]->title }}</h5>
-                                        <p class="TextLimiteNoticias">
+                                        <p class="TextLimiteNoticias" style="padding-bottom: 50px;">
                                             {!!html_entity_decode(str_replace("\n", "<br>", $sessions[2]->posts[$i]->summary))!!}
                                         </p>
                                     </div>

@@ -12,7 +12,7 @@ $Size = "font-size: 35px;";
 @endphp
 @endif
 
-<!-- Preloader Start
+<!-- Preloader Start-->
 <div id="preloader-active" style="display: block;">
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-inner position-relative">
@@ -23,7 +23,7 @@ $Size = "font-size: 35px;";
         </div>
     </div>
 </div>
--->
+
 
 <!-- Preloader Start -->
 <!-- Header Start -->
