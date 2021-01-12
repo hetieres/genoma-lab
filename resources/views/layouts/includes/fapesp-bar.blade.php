@@ -12,7 +12,7 @@ $Size = "font-size: 35px;";
 @endphp
 @endif
 
-<!-- Preloader Start-->
+<!-- Preloader Start
 <div id="preloader-active" style="display: block;">
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-inner position-relative">
@@ -23,6 +23,7 @@ $Size = "font-size: 35px;";
         </div>
     </div>
 </div>
+-->
 
 <!-- Preloader Start -->
 <!-- Header Start -->
@@ -43,8 +44,8 @@ $Size = "font-size: 35px;";
                                     </a>
                                 </div>
                                 <div class="col-3" style="margin-left: 30px;">
-                                    <a href="{{ asset('/') }}"><img class="img-fluig" src="{{asset('assets/img/logo/logo.png') }}" alt="" style="width: 60%;float: right;margin-top: 20px;"></a>
-                                    <a href="{{ asset('/') }}"><img class="img-fluig" src="{{asset('assets/img/logo/logoInstituto.png') }}" alt="" style="float: left;margin-top: 10px;"></a>
+                                    <a href="https://fapesp.br"><img class="img-fluig" src="{{asset('assets/img/logo/logo.png') }}" alt="" style="width: 60%;float: right;margin-top: 20px;"></a>
+                                    <a href="https://www.ib.usp.br"><img class="img-fluig" src="{{asset('assets/img/logo/logoInstituto.png') }}" alt="" style="float: left;margin-top: 10px;"></a>
                                 </div>
                                 <div class="col-12" style="text-align: right;">
                                     <!-- <a href="https://covid19.fapesp.br/en">English</a> -->
@@ -57,7 +58,6 @@ $Size = "font-size: 35px;";
         </div>
     </div>
 </div>
-
 
 <div class="menu-line header-sticky" id="DivMenu">
     <div class="container">
@@ -80,9 +80,6 @@ $Size = "font-size: 35px;";
             </div>
                   
             {!! $menu !!}
-
-            
-
             <div class="buttons">
                 <div class="SearchHide LabelMobil" id="BoxSearch">
                     <form action="/pesquisa" id="form-search" method="get">
@@ -99,8 +96,6 @@ $Size = "font-size: 35px;";
                         <span style="font-size: 14px;color: #7f7f77;height: auto;">English&nbsp;</span>
                     </a>
                 </div>
-
-
                 <!-- Form para Versão Mobil-->
                 <div class="busca LabelMobil11">
                     <form action="/pesquisa" id="form-search" method="get">

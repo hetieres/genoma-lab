@@ -46,8 +46,9 @@
 <script src="{{ asset('assets/js/js/banner/home.min.js') }}"></script>
 <script>
     $("#IconeLupa").click(function() {
-        $("#form-search").submit();
+        $("#form-search").submit();  
     });
+
     function Arrow(id) {
         var windowWidth = window.innerWidth;
         if (windowWidth >= 993) {
@@ -76,15 +77,15 @@
                 }
             }
         }
-
-        function Show(value) {
-            if (value == "1") {
-                $("#BoxSearch").show("slow");
-            } else {
-                $("#BoxSearch").hide("slow");
-            }
-        }
         $("#Control").val(id);
+    }
+
+    function Show(value) {
+        if (value == "1") {
+            $("#BoxSearch").show("slow");
+        } else {
+            $("#BoxSearch").hide("slow");
+        }
     }
 </script>
 <input type="hidden" id="Control" value="">

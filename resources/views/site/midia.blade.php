@@ -32,7 +32,7 @@
                 </div>
             </div>
             <br>
-            {!!html_entity_decode(str_replace("\n", "<br>", $post->summary))!!}</em>
+            {{--{!!html_entity_decode(str_replace("\n", "<br>", $post->summary))!!}--}}</em>
             <br><br>
             {!!html_entity_decode($post->text)!!}
         </div>

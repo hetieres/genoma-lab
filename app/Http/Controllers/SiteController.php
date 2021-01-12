@@ -95,7 +95,6 @@ class SiteController extends Controller
             }else if ($post && $slug == str_slug($post->title)) {
                 if($post->session->aside == ""){
                     $aux = Post::find(18);
-                    
                     $post->session->aside = $aux->text;
                 }
                 return view('site.detail', ['post' => $post]);
