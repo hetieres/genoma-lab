@@ -26,18 +26,21 @@
             <div class="container BordaInferior">
                 <div class="recent-wrapper">
                     <div class="row" style="padding-bottom: 25px;">
-                        <div class="col-md-5   text-justifid ">
+                        <div class="col-md-12   text-justifid ">
+                            <center>
                             <ul class="social-network social-circle">
                                 <li><a href="https://www.facebook.com/genomaUSP/" class="icoFacebook fundoLink" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="https://twitter.com/Mayanazatz" class="icoTwitter fundoLink fundoLink" title="Twitter"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="https://www.instagram.com/genoma.usp/" class="icoGoogle fundoLink" title="Instagram"><i class="fab fa-instagram"></i></a></li>
                                 <li><a href="https://www.youtube.com/c/GenomaUSP" class="icoYouTube fundoLink" title="YouTube"><i class="fab fa-youtube"></i></a></li>
                             </ul>
+                            </center>
                         </div>
                         <div class="LabelMobil1">
                             <br><br><br>
                         </div>
-                        <div class="col-md">
+
+                        <!--<div class="col-md">
                             <div class="single-recent" style="margin-left: 0px;margin-right: 0px;width: 85%;">
                                 <div class="card" style="    border: 1px solid #000000;margin-left: 7px; margin-right: -5px;">
                                     <div class="card-body" style="flex: 1 1 auto;padding: 0.5rem;">
@@ -47,7 +50,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>

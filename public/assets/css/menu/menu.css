@@ -4958,14 +4958,17 @@ nav.menu div.busca:hover>.buscaContainer {
 }
 
 .menu-line>.container>nav.menu>ul.links>li>a {
-    display: -webkit-box;
+    /*display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     padding: 12px 18px 10px;
     font-size: 13px;
     color: #fff;
     -webkit-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out
+    transition: all .2s ease-in-out*/
+    padding: 18px;
+    font-size: 13px;
+    color: #fff;
 }
 
 .menu-line>.container>nav.menu>ul.links>li>a>i {
