@@ -4966,7 +4966,7 @@ nav.menu div.busca:hover>.buscaContainer {
     color: #fff;
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out*/
-    padding: 18px;
+    padding: 14px;
     font-size: 13px;
     color: #fff;
 }
@@ -5344,7 +5344,7 @@ nav.menu div.busca:hover>.buscaContainer {
         background-color: #0032a1;
         -webkit-box-shadow: 0 5px 10px -6px #969696;
         box-shadow: 0 5px 10px -6px #969696;
-        margin-top: 11px;
+        margin-top: 4px;
         ;
     }
     .menu-line>.container>nav.menu.header2>ul.links>li>.dropnav-container .text,
