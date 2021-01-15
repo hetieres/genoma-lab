@@ -83,8 +83,8 @@ $Size = "font-size: 35px;";
             <div class="buttons">
                 <div class="SearchHide LabelMobil" id="BoxSearch">
                     <form action="/pesquisa" id="form-search" method="get">
-                        <i class="fas fa-search IconeSearch" id="IconeLupa" style="padding-left: 10px;"></i>
-                        <i class="fas fa-times IconeSearch" style="float: right;padding-right: 10px;" onclick="Show(0)"></i>
+                        <i class="fas fa-search IconeSearch" id="IconeLupa" style="padding-left: 10px;font-size: 25px;"></i>
+                        <i class="fas fa-times IconeSearch" style="float: right;padding-right: 20px;" onclick="Show(0)"></i>
                         <input type="text" name="k" class="BoxSearch" autocomplete="off" id="search-input" placeholder="Buscar...">
                     </form>
                 </div>
