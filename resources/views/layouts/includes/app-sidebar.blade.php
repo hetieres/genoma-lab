@@ -29,6 +29,12 @@
             </a>
         </li>
 
+        <li>
+            <a href="{{ route('post-edit', ['id' => 19]) }}">
+                <i class="fa fa-pencil"></i> <span>Menu Home </span>
+            </a>
+        </li>
+
 
         <li class="header">SEÇÕES</li>
             @foreach ($sessions_edit as $item)
