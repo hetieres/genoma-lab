@@ -6532,6 +6532,10 @@ h2 {
         height: 270px !important;
         width: 100%;
     }
+    .AjusteCaixaMobil {
+        margin-left: -2px !important;
+        margin-right: -2px !important;
+    }
 }
 
 .bradcam_area h3 {
@@ -6655,6 +6659,10 @@ h2 {
     .LabelMobil1 {
         display: block;
     }
+    .AjusteCaixaMobil {
+        margin-left: -2px !important;
+        margin-right: -2px !important;
+    }
     .Espaco {
         padding-right: 0px;
     }
@@ -6756,6 +6764,10 @@ h2 {
         padding-top: 0px;
         margin-left: 0px;
     }
+    .AjusteCaixaMobil {
+        margin-left: -2px !important;
+        margin-right: -2px !important;
+    }
 }
 
 .Espaco {
@@ -6852,6 +6864,10 @@ h2 {
     .SpaceImg {
         display: block;
     }
+    .AjusteCaixaMobil {
+        margin-left: -2px !important;
+        margin-right: -2px !important;
+    }
 }
 
 @media only screen and (min-width: 361px) and (max-width: 375px) {
@@ -6924,6 +6940,10 @@ h2 {
         color: #1e359c !important;
         font-weight: 450;
         height: auto !important;
+    }
+    .AjusteCaixaMobil {
+        margin-left: -2px !important;
+        margin-right: -2px !important;
     }
 }
 
@@ -6999,6 +7019,10 @@ h2 {
         font-weight: 450;
         height: auto !important;
     }
+    .AjusteCaixaMobil {
+        margin-left: -2px !important;
+        margin-right: -2px !important;
+    }
 }
 
 @media only screen and (min-width: 200px) and (max-width: 320px) {
@@ -7045,6 +7069,10 @@ h2 {
     }
     .SpaceImg {
         display: block;
+    }
+    .AjusteCaixaMobil {
+        margin-left: -2px !important;
+        margin-right: -2px !important;
     }
 }
 
@@ -8463,6 +8491,11 @@ del {
     left: 55%;
     display: none;
     margin-top: -2px;
+}
+
+.AjusteCaixaMobil {
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .BoxSearch {
