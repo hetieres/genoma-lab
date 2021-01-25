@@ -78,8 +78,17 @@ $Size = "font-size: 35px;";
                     <i class="fas fa-times"></i>
                 </a>
             </div>
-                  
+                 
+            
+            <a href="{{asset('/') }}"  class="link-brand" title="Genoma">
+                <img src="{{asset('assets/img/logo/logo-mini.png') }}"  id="logo-mini" class="simple img-fluid LabelMobil" alt="logo" />
+            </a>
+
+                 
+                 
             {!! $menu !!}
+
+            
             <div class="buttons">
                 <div class="SearchHide LabelMobil" id="BoxSearch">
                     <form action="/pesquisa" id="form-search" method="get">
