@@ -1047,6 +1047,13 @@ hr {
     .btn.post-btn::before {
         background: #fff
     }
+    #logo-mini {
+        display: none;
+        position: absolute !important;
+        top: 6px !important;
+        left: -30px !important;
+        width: 50px;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -8521,4 +8528,11 @@ div.internal3 li {
 .SBorda {
     color: white;
     padding-top: 15px;
+}
+
+#logo-mini {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 15px;
 }
