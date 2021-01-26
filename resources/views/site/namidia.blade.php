@@ -1,4 +1,6 @@
 @include('layouts.includes.app-head')
+
+
 <Br><br>
 <div class="container">
     <div style="text-align: justify;">{!!html_entity_decode($DadosHead->text)!!} </div>

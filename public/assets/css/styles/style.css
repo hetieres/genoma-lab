@@ -8536,3 +8536,8 @@ div.internal3 li {
     top: 0;
     left: 15px;
 }
+
+b,
+strong {
+    font-weight: 900 !important;
+}
