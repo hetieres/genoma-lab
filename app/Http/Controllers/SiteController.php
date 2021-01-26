@@ -76,7 +76,6 @@ class SiteController extends Controller
 
     public function detalhe(Request $request)
     {
-
         $slug          = isset($request->slug) ? $request->slug: false;
         $id            = isset($request->id)   ? $request->id:   false;
         $count_session = Session::where('url', $slug)->count();
@@ -122,6 +121,7 @@ class SiteController extends Controller
             $this->data['currentPage'] = $rs->currentPage();
             $this->data['rangePages']  = $this->rangePages($this->data['lastPage'], $this->data['currentPage']);
             $this->data['session']     = $session;
+
             return view('site.list', $this->data);
         }else{
             //404
