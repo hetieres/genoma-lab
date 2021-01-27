@@ -24,7 +24,7 @@
 
             <h2 class="infoSearch">
                 <span><b style="color: #4c0013">{{ number_format($rs->total(), 0, ',', '.') }}</b> resultados</span>
-                <span><b style="color: #4c0013">Página</b> {{ number_format($currentPage, 0, ',', '.') }} <b>de</b> {{  number_format($lastPage, 0, ',', '.') }}</span>
+                <span><b style="color: #4c0013">Página</b> {{ number_format($currentPage, 0, ',', '.') }} de {{  number_format($lastPage, 0, ',', '.') }}</span>
             </h2>
 
             <ul class="newsList">
