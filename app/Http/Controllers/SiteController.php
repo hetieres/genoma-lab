@@ -214,7 +214,7 @@ class SiteController extends Controller
         if (isset($request->k) && trim($request->k) != '') {
             $like = '%' . $request->k . '%';
             $rs->join('sessions', 'posts.session_id', 'sessions.id');
-            $rs->join('sessions.search', 1);
+            $rs->where('sessions.search', 1);
             $rs->where(function ($query) use ($like) {
                 $query->where('posts.title', 'like', $like)
                     ->orWhere('posts.text', 'like', $like)
