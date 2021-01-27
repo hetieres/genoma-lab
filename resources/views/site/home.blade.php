@@ -88,7 +88,7 @@
             </div>
             <div class="col-md-12 ">
                 <center>
-                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[0]->url]) }}'">Saiba mais</button>
+                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[0]->url]) }}'">Mais</button>
                 </center>
                 <br>
             </div>
@@ -112,7 +112,7 @@
                 <div class="row">
                     @foreach ($sessions[1]->posts as $item)
                     <div class="col-md">
-                        <div class="single-recent">
+                        <div class="single-recent AjusteCaixaMobil">
                             <div class="card mb-4 shadow-sm" style="border: 1px solid #000000;">
                                 <a href="{{ $item->link() }}">
                                     <div class="card-body">
@@ -136,7 +136,7 @@
             <br>
             <div class="col-md-12 ">
                 <center>
-                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[1]->url]) }}'">Mais pesquisas</button>
+                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[1]->url]) }}'">Mais</button>
                 </center>
                 <br>
             </div>

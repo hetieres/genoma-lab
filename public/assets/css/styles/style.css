@@ -1047,6 +1047,13 @@ hr {
     .btn.post-btn::before {
         background: #fff
     }
+    #logo-mini {
+        display: none;
+        position: absolute !important;
+        top: 6px !important;
+        left: -30px !important;
+        width: 50px;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -6532,6 +6539,10 @@ h2 {
         height: 270px !important;
         width: 100%;
     }
+    .AjusteCaixaMobil {
+        margin-left: -2px !important;
+        margin-right: -2px !important;
+    }
 }
 
 .bradcam_area h3 {
@@ -6655,6 +6666,10 @@ h2 {
     .LabelMobil1 {
         display: block;
     }
+    .AjusteCaixaMobil {
+        margin-left: -2px !important;
+        margin-right: -2px !important;
+    }
     .Espaco {
         padding-right: 0px;
     }
@@ -6756,6 +6771,10 @@ h2 {
         padding-top: 0px;
         margin-left: 0px;
     }
+    .AjusteCaixaMobil {
+        margin-left: -2px !important;
+        margin-right: -2px !important;
+    }
 }
 
 .Espaco {
@@ -6852,6 +6871,10 @@ h2 {
     .SpaceImg {
         display: block;
     }
+    .AjusteCaixaMobil {
+        margin-left: -2px !important;
+        margin-right: -2px !important;
+    }
 }
 
 @media only screen and (min-width: 361px) and (max-width: 375px) {
@@ -6924,6 +6947,10 @@ h2 {
         color: #1e359c !important;
         font-weight: 450;
         height: auto !important;
+    }
+    .AjusteCaixaMobil {
+        margin-left: -2px !important;
+        margin-right: -2px !important;
     }
 }
 
@@ -6999,6 +7026,10 @@ h2 {
         font-weight: 450;
         height: auto !important;
     }
+    .AjusteCaixaMobil {
+        margin-left: -2px !important;
+        margin-right: -2px !important;
+    }
 }
 
 @media only screen and (min-width: 200px) and (max-width: 320px) {
@@ -7045,6 +7076,10 @@ h2 {
     }
     .SpaceImg {
         display: block;
+    }
+    .AjusteCaixaMobil {
+        margin-left: -2px !important;
+        margin-right: -2px !important;
     }
 }
 
@@ -8465,6 +8500,11 @@ del {
     margin-top: -2px;
 }
 
+.AjusteCaixaMobil {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
 .BoxSearch {
     border-bottom: 2px solid white;
     margin-left: 5%;
@@ -8488,4 +8528,16 @@ div.internal3 li {
 .SBorda {
     color: white;
     padding-top: 15px;
+}
+
+#logo-mini {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 15px;
+}
+
+b,
+strong {
+    font-weight: 900 !important;
 }
