@@ -213,6 +213,7 @@ class SiteController extends Controller
         //chave
         if (isset($request->k) && trim($request->k) != '') {
             $like = '%' . $request->k . '%';
+            $rs->where('search', 1);
             $rs->where(function ($query) use ($like) {
                 $query->where('title', 'like', $like)
                     ->orWhere('text', 'like', $like)
