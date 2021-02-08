@@ -206,19 +206,21 @@ class SiteController extends Controller
     public function search(Request $request)
     {
 
-        $rs = Post::where('session_id', '<>', 5);
+        $rs = Post::selectRaw('posts.*')->where('posts.session_id', '<>', 5);
         $request->k = trim($request->k); //chave
         $request->o = isset($request->o) ? $request->o : 1;
 
         //chave
         if (isset($request->k) && trim($request->k) != '') {
             $like = '%' . $request->k . '%';
+            $rs->join('sessions', 'posts.session_id', 'sessions.id');
+            $rs->where('sessions.search', 1);
             $rs->where(function ($query) use ($like) {
-                $query->where('title', 'like', $like)
-                    ->orWhere('text', 'like', $like)
-                    ->orWhere('summary', 'like', $like)
-                    ->orWhere('keywords', 'like', $like)
-                    ->orWhere('caption_image', 'like', $like);
+                $query->where('posts.title', 'like', $like)
+                    ->orWhere('posts.text', 'like', $like)
+                    ->orWhere('posts.summary', 'like', $like)
+                    ->orWhere('posts.keywords', 'like', $like)
+                    ->orWhere('posts.caption_image', 'like', $like);
             });
         }
 

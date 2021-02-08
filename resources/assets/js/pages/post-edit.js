@@ -246,18 +246,17 @@ $(document).ready(function () {
     });
 
     $("#session_id").on("change", function () {
+        $(".video").hide();
+        $(".no-video").show();
+        $(".no-content").show();
+
         if ($("#session_id").val() == 4) {
             $(".video").show();
             $(".no-video").hide();
-        } else {
-            $(".video").hide();
-            $(".no-video").show();
         }
 
-        if ($("#session_id").val() == 5) {
+        if ($("#session_id").val() == 7) {
             $(".no-content").hide();
-        } else {
-            $(".no-content").show();
         }
     });
 
