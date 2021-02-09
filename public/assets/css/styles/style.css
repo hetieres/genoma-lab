@@ -3653,7 +3653,8 @@ a:hover {
 }
 
 .header-sticky ul li a {
-    padding: 0px 0px
+    padding: 0px 0px;
+    color: white;
 }
 
 .header-sticky.sticky-bar.sticky .header-flex {
