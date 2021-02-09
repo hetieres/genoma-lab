@@ -45,7 +45,7 @@
                                 <div class="card" style="    border: 1px solid #000000;margin-left: 7px; margin-right: -5px;">
                                     <div class="card-body" style="flex: 1 1 auto;padding: 0.5rem;">
                                         <p style="margin-top: 0px;margin-bottom: 0px;">TESTE DE COVID-19 - Saiba como agendar o seu teste molecular rápido
-                                            <a href="{{ asset('/') }}"><img class="img-fluig" src="{{asset('assets/img/seta.png') }}" alt="" style="float: right;margin-right: 0px;width: 21px !important;margin-top: 6px;"></a>
+                                            <a href="http://www.genomacovid19.ib.usp.br/"><img class="img-fluig" src="{{asset('assets/img/seta.png') }}" alt="" style="float: right;margin-right: 0px;width: 21px !important;margin-top: 6px;"></a>
                                         </p>
                                     </div>
                                 </div>
