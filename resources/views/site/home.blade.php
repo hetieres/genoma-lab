@@ -202,7 +202,7 @@
                                             <img src="{{ asset($sessions[3]->posts[$i]->getImage()) }}" alt="" class="img-fluid imgNoticias2">
                                         </div>
                                         <div class="">
-                                            <h5 class="cardtitleNoticia subtitulo">{{ $sessions[3]->posts[$i]->title }}</h5>
+                                            <h5 class="cardtitleNoticia subtitulo" style="padding-bottom: 70px;">{{ $sessions[3]->posts[$i]->title }}</h5>
                                             <p class="TextLimiteNoticias">
                                                 {!!html_entity_decode(str_replace("\n", "<br>", $sessions[3]->posts[$i]->summary))!!}
                                             </p>
