@@ -8517,6 +8517,10 @@ del {
     width: 70%;
 }
 
+.internal {
+    word-wrap: break-word !important;
+}
+
 .BoxSearch::placeholder {
     color: white;
 }
