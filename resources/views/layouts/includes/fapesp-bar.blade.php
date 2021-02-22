@@ -40,7 +40,7 @@ $Size = "font-size: 35px;";
                                 </div>
                                 <div class="col-md-auto">
                                     <a href="{{ asset('/') }}">
-                                        <h1 class="Titulo Titulo2" style="">Centro de Estudos do Genoma Humano e Células-Troco</h1>
+                                        <h1 class="Titulo Titulo2" style="">Centro de Estudos do Genoma Humano e Células-Tronco</h1>
                                     </a>
                                 </div>
                                 <div class="col-3" style="margin-left: 30px;">
