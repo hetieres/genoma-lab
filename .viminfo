@@ -14,12 +14,20 @@
 $
 
 # Command Line History (newest to oldest):
-:q
-|2,0,1612972283,,"q"
 :wq
-|2,0,1608575782,,"wq"
+|2,0,1614019116,,"wq"
+:w!
+|2,0,1614019106,,"w!"
 :w
-|2,0,1608575780,,"w"
+|2,0,1614019084,,"w"
+:q!
+|2,0,1614019019,,"q!"
+:Q1
+|2,0,1614018996,,"Q1"
+:q"
+|2,0,1614018993,,"q\""
+:q
+|2,0,1614018887,,"q"
 :!q
 |2,0,1608566317,,"!q"
 :i
@@ -48,262 +56,277 @@ $
 # Debug Line History (newest to oldest):
 
 # Registers:
-""1	LINE	0
-	<IfModule mod_rewrite.c>
-|3,1,1,1,1,0,1608575772,"<IfModule mod_rewrite.c>"
+"1	LINE	0
+	</div>
+|3,0,1,1,1,0,1614019052,"</div>"
 "2	LINE	0
-	    <IfModule mod_negotiation.c>
-|3,0,2,1,1,0,1608575772,"    <IfModule mod_negotiation.c>"
+	>>>>>>> ed4a62e0ad82eacdc8677104af974dfb2ea27599
+|3,0,2,1,1,0,1614019052,">>>>>>> ed4a62e0ad82eacdc8677104af974dfb2ea27599"
 "3	LINE	0
-	        Options -MultiViews
-|3,0,3,1,1,0,1608575772,"        Options -MultiViews"
+	    </div>
+|3,0,3,1,1,0,1614019052,"    </div>"
 "4	LINE	0
-	    </IfModule>
-|3,0,4,1,1,0,1608575772,"    </IfModule>"
+	        </nav>
+|3,0,4,1,1,0,1614019051,"        </nav>"
 "5	LINE	0
-	
-|3,0,5,1,1,0,1608575772,""
+	            </div>
+|3,0,5,1,1,0,1614019051,"            </div>"
 "6	LINE	0
-	    RewriteEngine On
-|3,0,6,1,1,0,1608575772,"    RewriteEngine On"
+	                </div>
+|3,0,6,1,1,0,1614019051,"                </div>"
 "7	LINE	0
-	
-|3,0,7,1,1,0,1608575772,""
+	                    </form>
+|3,0,7,1,1,0,1614019051,"                    </form>"
 "8	LINE	0
-	    RewriteCond %{REQUEST_FILENAME} -d [OR]
-|3,0,8,1,1,0,1608575772,"    RewriteCond %{REQUEST_FILENAME} -d [OR]"
+	                        <input type="text" name="k" id="search-input" placeholder="Buscar...">
+|3,0,8,1,1,0,1614019051,"                        <input type=\"text\" name=\"k\" id=\"search-input\" placeholder=\"Buscar...\">"
 "9	LINE	0
-	    RewriteCond %{REQUEST_FILENAME} -f
-|3,0,9,1,1,0,1608575772,"    RewriteCond %{REQUEST_FILENAME} -f"
-"-	CHAR	0
-	>
-|3,0,36,0,1,0,1608331979,">"
+	                        </button>
+|3,0,9,1,1,0,1614019051,"                        </button>"
+""-	CHAR	0
+	p
+|3,1,36,0,1,0,1614019108,"p"
 
 # File marks:
-'0  1  0  ~/.git/MERGE_MSG
-|4,48,1,0,1612972283,"~/.git/MERGE_MSG"
-'1  1  0  ~/.git/MERGE_MSG
-|4,49,1,0,1612897301,"~/.git/MERGE_MSG"
-'2  1  0  ~/.git/MERGE_MSG
-|4,50,1,0,1612897097,"~/.git/MERGE_MSG"
-'3  1  0  ~/.git/MERGE_MSG
-|4,51,1,0,1612897097,"~/.git/MERGE_MSG"
-'4  1  0  ~/.git/MERGE_MSG
-|4,52,1,0,1612896989,"~/.git/MERGE_MSG"
+'0  1  3  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,48,1,3,1614019116,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+'1  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,49,119,5,1614019019,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+'2  1  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,50,1,5,1614018999,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+'3  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,51,119,5,1614018999,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+'4  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,52,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
 '5  1  0  ~/.git/MERGE_MSG
-|4,53,1,0,1612896989,"~/.git/MERGE_MSG"
+|4,53,1,0,1612972283,"~/.git/MERGE_MSG"
 '6  1  0  ~/.git/MERGE_MSG
-|4,54,1,0,1612896989,"~/.git/MERGE_MSG"
+|4,54,1,0,1612897301,"~/.git/MERGE_MSG"
 '7  1  0  ~/.git/MERGE_MSG
-|4,55,1,0,1612896989,"~/.git/MERGE_MSG"
+|4,55,1,0,1612897097,"~/.git/MERGE_MSG"
 '8  1  0  ~/.git/MERGE_MSG
-|4,56,1,0,1612896873,"~/.git/MERGE_MSG"
+|4,56,1,0,1612897097,"~/.git/MERGE_MSG"
 '9  1  0  ~/.git/MERGE_MSG
-|4,57,1,0,1612896873,"~/.git/MERGE_MSG"
+|4,57,1,0,1612896989,"~/.git/MERGE_MSG"
 
 # Jumplist (newest first):
+-'  1  3  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,3,1614019116,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,119,5,1614019019,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,119,5,1614018999,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,0,1614018917,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,0,1614018917,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
 -'  1  0  ~/.git/MERGE_MSG
 |4,39,1,0,1612972283,"~/.git/MERGE_MSG"
 -'  1  0  ~/.git/MERGE_MSG
 |4,39,1,0,1612897301,"~/.git/MERGE_MSG"
 -'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
 |4,39,1,0,1612897097,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
 -'  1  0  ~/.git/MERGE_MSG
 |4,39,1,0,1612896989,"~/.git/MERGE_MSG"
 -'  1  0  ~/.git/MERGE_MSG
 |4,39,1,0,1612896873,"~/.git/MERGE_MSG"
 -'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
 |4,39,1,0,1612878687,"~/.git/MERGE_MSG"
 -'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612798385,"~/.git/MERGE_MSG"
+|4,39,1,0,1612878687,"~/.git/MERGE_MSG"
 -'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1611919673,"~/.git/MERGE_MSG"
+|4,39,1,0,1612878687,"~/.git/MERGE_MSG"
 -'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1611774175,"~/.git/MERGE_MSG"
+|4,39,1,0,1612878687,"~/.git/MERGE_MSG"
 -'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1611772788,"~/.git/MERGE_MSG"
+|4,39,1,0,1612878687,"~/.git/MERGE_MSG"
 -'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1611772575,"~/.git/MERGE_MSG"
+|4,39,1,0,1612878687,"~/.git/MERGE_MSG"
 -'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1611771187,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1611770808,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1611769178,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1611698292,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1611605500,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1611083537,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1610989116,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1610752206,"~/.git/MERGE_MSG"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
--'  19  10  ~/.htaccess
-|4,39,19,10,1608575782,"~/.htaccess"
+|4,39,1,0,1612878687,"~/.git/MERGE_MSG"
 
 # History of marks within files (newest to oldest):
+
+> ~/resources/views/layouts/includes/fapesp-bar.blade.php
+	*	1614019114	0
+	"	1	3
+	^	1	4
+	.	1	3
+	+	1	4
+	+	1	5
+	+	1	4
+	+	119	5
+	+	1	3
+
+> ~/resources/views/layouts/includes/fapesp-ba
+	*	1614018887	0
+	"	1	0
 
 > ~/.git/MERGE_MSG
 	*	1612972281	0
