@@ -1,4 +1,4 @@
-@php
+﻿@php
 $Text = "Ciência e tecnologia para o combate à COVID-19";
 $English = 0;
 $Size = "font-size: 35px;";
@@ -40,10 +40,10 @@ $Size = "font-size: 35px;";
                                 </div>
                                 <div class="col-md-auto">
                                     <a href="{{ asset('/') }}">
-                                        <h1 class="Titulo Titulo2" style="">Centro de Estudos do Genoma Humano e Células-Troco</h1>
+                                        <h1 class="Titulo Titulo2" style="">Centro de Estudos do Genoma Humano e Células-Tronco</h1>
                                     </a>
                                 </div>
-                                <div class="col-3" style="margin-left: 30px;">
+                                <div class="col-3" style="margin-left: 28px;">
                                     <a href="https://fapesp.br"><img class="img-fluig" src="{{asset('assets/img/logo/logo.png') }}" alt="" style="width: 60%;float: right;margin-top: 20px;"></a>
                                     <a href="https://www.ib.usp.br"><img class="img-fluig" src="{{asset('assets/img/logo/logoInstituto.png') }}" alt="" style="float: left;margin-top: 10px;"></a>
                                 </div>

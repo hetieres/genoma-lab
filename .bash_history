@@ -1,58 +1,3 @@
-clear
-ls
-cd sites-available/
-ls
-vim default-ssl.conf 
-vim 000-default.conf 
-clear
-pwd
-cd ../../..
-clear
-ls
-cd etc/apache2/sites-available/
-clear
-ls
-vim 000-default.conf 
-cd ../..
-cd ..
-clea
-clear
-ls
-cd var/www/genoma/
-clear
-cd public/
-clear
-vim .htaccess 
-cd ../../..
-cd ..
-cd etc/apache2/sites-enabled/
-ls
-vim 000-default.conf 
-clear
-cd ../..
-clear
-cd ..
-cd etc/
-ls
-cd htt
-cd apache2/
-clear
-ls
-cd sites-available/
-clear
-ls
-cd ...
-cd ..
-clear
-cd ..
-cd ..
-clear
-ls
-cd var/www/genoma/
-clear
-cd public
-vim .htaccess 
-cd ..
 vim .htaccess 
 clear
 pwd
@@ -96,5 +41,60 @@ cls
 clear
 git pull
 clear
+git pull
+git pull
+clear
+ls
+clear
+git pull
+git pull
+git status
+ls
+clear
+git checkout .
+clear
+git status
+git reset --hard
+clear
+git status
+clear
+git add .
+git status
+git add .
+git commit -m "Fixed"
+clear
+git status
+git commit -m "Fixed"
+ git config --global user.email "ricardo.feliciano1984@gmail.com"
+git config --global user.name "RicardoRFG"
+git commit -m "Fixed"
+clear
+git pull
+git pull
+ls -l
+git pull
+clear
+ls
+cls
+clear
+git pull
+clear
+git pull
+clear
+git pull
+ls -l
+git pull
+git pull
+git pull
+git pull
+git pull
+git pull
+git pull
+clear
+git pull
+git pull
+git pull
+git pull
+git pull
 git pull
 git pull

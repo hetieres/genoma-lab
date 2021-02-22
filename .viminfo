@@ -14,12 +14,12 @@
 $
 
 # Command Line History (newest to oldest):
+:q
+|2,0,1612972283,,"q"
 :wq
 |2,0,1608575782,,"wq"
 :w
 |2,0,1608575780,,"w"
-:q
-|2,0,1608566571,,"q"
 :!q
 |2,0,1608566317,,"!q"
 :i
@@ -80,230 +80,234 @@ $
 |3,0,36,0,1,0,1608331979,">"
 
 # File marks:
-'0  19  10  ~/.htaccess
-|4,48,19,10,1608575782,"~/.htaccess"
-'1  1  0  ~/public/.htaccess
-|4,49,1,0,1608575732,"~/public/.htaccess"
-'2  32  0  /etc/apache2/sites-enabled/000-default.conf
-|4,50,32,0,1608566571,"/etc/apache2/sites-enabled/000-default.conf"
-'3  11  43  ~/public/.htaccess
-|4,51,11,43,1608566528,"~/public/.htaccess"
-'4  28  28  /etc/apache2/sites-available/000-default.conf
-|4,52,28,28,1608566419,"/etc/apache2/sites-available/000-default.conf"
-'5  13  29  /etc/apache2/sites-available/000-default.conf
-|4,53,13,29,1608566328,"/etc/apache2/sites-available/000-default.conf"
-'6  13  29  /etc/apache2/sites-available/000-default.conf
-|4,54,13,29,1608566328,"/etc/apache2/sites-available/000-default.conf"
-'7  36  0  /etc/apache2/sites-available/default-ssl.conf
-|4,55,36,0,1608566202,"/etc/apache2/sites-available/default-ssl.conf"
-'8  1  43  ~/public/.htaccess
-|4,56,1,43,1608566054,"~/public/.htaccess"
-'9  11  43  ~/public/.htaccess
-|4,57,11,43,1608566054,"~/public/.htaccess"
+'0  1  0  ~/.git/MERGE_MSG
+|4,48,1,0,1612972283,"~/.git/MERGE_MSG"
+'1  1  0  ~/.git/MERGE_MSG
+|4,49,1,0,1612897301,"~/.git/MERGE_MSG"
+'2  1  0  ~/.git/MERGE_MSG
+|4,50,1,0,1612897097,"~/.git/MERGE_MSG"
+'3  1  0  ~/.git/MERGE_MSG
+|4,51,1,0,1612897097,"~/.git/MERGE_MSG"
+'4  1  0  ~/.git/MERGE_MSG
+|4,52,1,0,1612896989,"~/.git/MERGE_MSG"
+'5  1  0  ~/.git/MERGE_MSG
+|4,53,1,0,1612896989,"~/.git/MERGE_MSG"
+'6  1  0  ~/.git/MERGE_MSG
+|4,54,1,0,1612896989,"~/.git/MERGE_MSG"
+'7  1  0  ~/.git/MERGE_MSG
+|4,55,1,0,1612896989,"~/.git/MERGE_MSG"
+'8  1  0  ~/.git/MERGE_MSG
+|4,56,1,0,1612896873,"~/.git/MERGE_MSG"
+'9  1  0  ~/.git/MERGE_MSG
+|4,57,1,0,1612896873,"~/.git/MERGE_MSG"
 
 # Jumplist (newest first):
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612878687,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1612798385,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1611919673,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1611774175,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1611772788,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1611772575,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1611771187,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1611770808,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1611769178,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1611698292,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1611605500,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1611083537,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1610989116,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1610752206,"~/.git/MERGE_MSG"
 -'  19  10  ~/.htaccess
 |4,39,19,10,1608575782,"~/.htaccess"
--'  1  10  ~/.htaccess
-|4,39,1,10,1608575738,"~/.htaccess"
--'  1  0  ~/public/.htaccess
-|4,39,1,0,1608575732,"~/public/.htaccess"
--'  1  0  ~/public/.htaccess
-|4,39,1,0,1608575732,"~/public/.htaccess"
--'  32  0  /etc/apache2/sites-enabled/000-default.conf
-|4,39,32,0,1608566571,"/etc/apache2/sites-enabled/000-default.conf"
--'  32  0  /etc/apache2/sites-enabled/000-default.conf
-|4,39,32,0,1608566571,"/etc/apache2/sites-enabled/000-default.conf"
--'  32  0  /etc/apache2/sites-enabled/000-default.conf
-|4,39,32,0,1608566571,"/etc/apache2/sites-enabled/000-default.conf"
--'  32  0  /etc/apache2/sites-enabled/000-default.conf
-|4,39,32,0,1608566571,"/etc/apache2/sites-enabled/000-default.conf"
--'  1  0  /etc/apache2/sites-enabled/000-default.conf
-|4,39,1,0,1608566553,"/etc/apache2/sites-enabled/000-default.conf"
--'  1  0  /etc/apache2/sites-enabled/000-default.conf
-|4,39,1,0,1608566553,"/etc/apache2/sites-enabled/000-default.conf"
--'  1  0  /etc/apache2/sites-enabled/000-default.conf
-|4,39,1,0,1608566553,"/etc/apache2/sites-enabled/000-default.conf"
--'  1  0  /etc/apache2/sites-enabled/000-default.conf
-|4,39,1,0,1608566553,"/etc/apache2/sites-enabled/000-default.conf"
--'  11  43  ~/public/.htaccess
-|4,39,11,43,1608566528,"~/public/.htaccess"
--'  11  43  ~/public/.htaccess
-|4,39,11,43,1608566528,"~/public/.htaccess"
--'  11  43  ~/public/.htaccess
-|4,39,11,43,1608566528,"~/public/.htaccess"
--'  11  43  ~/public/.htaccess
-|4,39,11,43,1608566528,"~/public/.htaccess"
--'  28  28  /etc/apache2/sites-available/000-default.conf
-|4,39,28,28,1608566419,"/etc/apache2/sites-available/000-default.conf"
--'  28  28  /etc/apache2/sites-available/000-default.conf
-|4,39,28,28,1608566419,"/etc/apache2/sites-available/000-default.conf"
--'  28  28  /etc/apache2/sites-available/000-default.conf
-|4,39,28,28,1608566419,"/etc/apache2/sites-available/000-default.conf"
--'  28  28  /etc/apache2/sites-available/000-default.conf
-|4,39,28,28,1608566419,"/etc/apache2/sites-available/000-default.conf"
--'  28  28  /etc/apache2/sites-available/000-default.conf
-|4,39,28,28,1608566419,"/etc/apache2/sites-available/000-default.conf"
--'  28  28  /etc/apache2/sites-available/000-default.conf
-|4,39,28,28,1608566419,"/etc/apache2/sites-available/000-default.conf"
--'  28  28  /etc/apache2/sites-available/000-default.conf
-|4,39,28,28,1608566419,"/etc/apache2/sites-available/000-default.conf"
--'  28  28  /etc/apache2/sites-available/000-default.conf
-|4,39,28,28,1608566419,"/etc/apache2/sites-available/000-default.conf"
--'  28  28  /etc/apache2/sites-available/000-default.conf
-|4,39,28,28,1608566419,"/etc/apache2/sites-available/000-default.conf"
--'  28  28  /etc/apache2/sites-available/000-default.conf
-|4,39,28,28,1608566419,"/etc/apache2/sites-available/000-default.conf"
--'  28  28  /etc/apache2/sites-available/000-default.conf
-|4,39,28,28,1608566419,"/etc/apache2/sites-available/000-default.conf"
--'  28  28  /etc/apache2/sites-available/000-default.conf
-|4,39,28,28,1608566419,"/etc/apache2/sites-available/000-default.conf"
--'  28  28  /etc/apache2/sites-available/000-default.conf
-|4,39,28,28,1608566419,"/etc/apache2/sites-available/000-default.conf"
--'  28  28  /etc/apache2/sites-available/000-default.conf
-|4,39,28,28,1608566419,"/etc/apache2/sites-available/000-default.conf"
--'  28  28  /etc/apache2/sites-available/000-default.conf
-|4,39,28,28,1608566419,"/etc/apache2/sites-available/000-default.conf"
--'  28  28  /etc/apache2/sites-available/000-default.conf
-|4,39,28,28,1608566419,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566403,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566403,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566403,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566403,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566403,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566403,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566403,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566403,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566403,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566403,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566403,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566403,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566403,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566403,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566403,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566403,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566328,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566328,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566328,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566328,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566328,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566328,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566328,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566328,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566328,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566328,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566328,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566328,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566328,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566328,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566328,"/etc/apache2/sites-available/000-default.conf"
--'  13  29  /etc/apache2/sites-available/000-default.conf
-|4,39,13,29,1608566328,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  1  0  /etc/apache2/sites-available/000-default.conf
-|4,39,1,0,1608566210,"/etc/apache2/sites-available/000-default.conf"
--'  36  0  /etc/apache2/sites-available/default-ssl.conf
-|4,39,36,0,1608566202,"/etc/apache2/sites-available/default-ssl.conf"
--'  36  0  /etc/apache2/sites-available/default-ssl.conf
-|4,39,36,0,1608566202,"/etc/apache2/sites-available/default-ssl.conf"
--'  36  0  /etc/apache2/sites-available/default-ssl.conf
-|4,39,36,0,1608566202,"/etc/apache2/sites-available/default-ssl.conf"
--'  36  0  /etc/apache2/sites-available/default-ssl.conf
-|4,39,36,0,1608566202,"/etc/apache2/sites-available/default-ssl.conf"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
+-'  19  10  ~/.htaccess
+|4,39,19,10,1608575782,"~/.htaccess"
 
 # History of marks within files (newest to oldest):
+
+> ~/.git/MERGE_MSG
+	*	1612972281	0
+	"	1	0
 
 > ~/.htaccess
 	*	1608575780	0
