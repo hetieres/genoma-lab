@@ -3653,7 +3653,8 @@ a:hover {
 }
 
 .header-sticky ul li a {
-    padding: 0px 0px
+    padding: 0px 0px;
+    color: white;
 }
 
 .header-sticky.sticky-bar.sticky .header-flex {
@@ -8514,6 +8515,10 @@ del {
     background: #0032a0;
     color: white;
     width: 70%;
+}
+
+.internal {
+    word-wrap: break-word !important;
 }
 
 .BoxSearch::placeholder {

@@ -78,17 +78,10 @@ $Size = "font-size: 35px;";
                     <i class="fas fa-times"></i>
                 </a>
             </div>
-                 
-            
             <a href="{{asset('/') }}"  class="link-brand" title="Genoma">
                 <img src="{{asset('assets/img/logo/logo-mini.png') }}"  id="logo-mini" class="simple img-fluid LabelMobil" alt="logo" />
             </a>
-
-                 
-                 
             {!! $menu !!}
-
-            
             <div class="buttons">
                 <div class="SearchHide LabelMobil" id="BoxSearch">
                     <form action="/pesquisa" id="form-search" method="get">
@@ -100,11 +93,13 @@ $Size = "font-size: 35px;";
                 <div class="btnLupa LabelMobil">
                     <i class="fas fa-search IconeSearch" onclick="Show(1)"></i>
                 </div>
+<!--
                 <div class="indices hidden-xs hidden-sm English">
                     <a href="javascript:;" class="text-center">
                         <span style="font-size: 14px;color: #7f7f77;height: auto;">English&nbsp;</span>
                     </a>
                 </div>
+-->
                 <!-- Form para Versão Mobil-->
                 <div class="busca LabelMobil11">
                     <form action="/pesquisa" id="form-search" method="get">
