@@ -48,6 +48,7 @@ class Controller extends BaseController
     private function dataLoad()
     {
         $prefix = $this->_treatPrefix();
+        // dd('aqui');
         if (in_array($prefix, ['fapesp', 'admin', 'fapesp-en'])) {
             $jwt   = new JWTHelper;
             $token = (isset($_COOKIE['JWT-TOKEN']) ? $_COOKIE['JWT-TOKEN'] : '');
@@ -85,6 +86,12 @@ class Controller extends BaseController
                 View::share('side_news', $side_news);
                 View::share('side_edit', $side_edit);
                 View::share('sessions_edit', $sessions_edit);
+            }
+        }else {
+            if($prefix == 'en'){
+                $this->lang = 'en';
+            }else{
+                $this->lang = 'pt';
             }
         }
     }
@@ -124,7 +131,7 @@ class Controller extends BaseController
         return $pages;
     }
 
-    private function _treatPrefix()
+    public function _treatPrefix()
     {
         $ret    = '';
         $prefix = \Request::route()->getPrefix();

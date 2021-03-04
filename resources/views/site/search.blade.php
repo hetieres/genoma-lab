@@ -2,9 +2,9 @@
 @extends('layouts.site')
 @section('content')
     <div class="container"><br><br>
-<h1>Pesquisa        </h1>
+<h1>{{ $lang=="pt" ? 'Pesquisa' : 'Search result'}} </h1>
     </div>
-    <main class="container internal">        
+    <main class="container internal">
         {{-- <div class="col-12 col-sm-12 col-md-12 no-padding-left no-padding-xs">
             <div class="searchLine margin-bottom-30">
                 <div id="searchBox">
@@ -23,15 +23,15 @@
             </div> --}}
 
             <h2 class="infoSearch">
-                <span style="color: #4c0013"><b style="color: #4c0013">{{ number_format($rs->total(), 0, ',', '.') }}</b> resultados</span>
-                <span style="color: #4c0013"><b style="color: #4c0013">Página</b> {{ number_format($currentPage, 0, ',', '.') }} de {{  number_format($lastPage, 0, ',', '.') }}</span>
+                <span style="color: #4c0013"><b style="color: #4c0013">{{ number_format($rs->total(), 0, ',', '.') }}</b> {{ $lang=="pt" ? 'resultados' : 'results'}}</span>
+                <span style="color: #4c0013"><b style="color: #4c0013">{{ $lang=="pt" ? 'Página' : 'Page'}}</b> {{ number_format($currentPage, 0, ',', '.') }} {{ $lang=="pt" ? 'de' : 'to'}} {{  number_format($lastPage, 0, ',', '.') }}</span>
             </h2>
 
             <ul class="newsList">
                 @foreach ($rs as $news)
                     <li>
                         <h3><a href="{{ route('detalhe', ['title' => str_slug($news->title), 'id' => $news->id]) }}">{{ $news->title }}</a></h3>
-                       {{-- 
+                       {{--
                         <div class="datePublic">
                             <a href="{{ route('detalhe', ['title' => str_slug($news->vehicle->description), 'id' => $news->vehicle->id]) }}">{{ $news->vehicle->description }}</a>
                              - Publicado em {{ $news->dt_publication->formatLocalized('%d %B %Y') }}

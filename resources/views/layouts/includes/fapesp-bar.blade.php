@@ -4,7 +4,7 @@ $English = 0;
 $Size = "font-size: 35px;";
 @endphp
 
-@if(isset($post->id) && $post->id == "294" )
+@if($lang=='en')
 @php
 $Text = "Science and Technology in the fight against COVID-19";
 $English = 1;
@@ -36,10 +36,10 @@ $Size = "font-size: 35px;";
                         <div class="container">
                             <div class="row LabelMobil" style="padding-bottom: 15px;">
                                 <div class="col-3" style="border-right: 3px solid #000000;height: 40px;margin-top: 31px;">
-                                    <a href="{{ asset('/') }}"><img class="img-fluig" src="{{asset('assets/img/logo/logoGenoma.png') }}" alt="" style="width: 100%;float: right;margin-top: -10px;"></a>
+                                    <a href="{{ asset('/') . ($lang=="en" ? 'en' : '') }}"><img class="img-fluig" src="{{asset('assets/img/logo/logoGenoma.png') }}" alt="" style="width: 100%;float: right;margin-top: -10px;"></a>
                                 </div>
                                 <div class="col-md-auto">
-                                    <a href="{{ asset('/') }}">
+                                    <a href="{{ asset('/') . ($lang=="en" ? 'en' : '') }}">
                                         <h1 class="Titulo Titulo2" style="">Centro de Estudos do Genoma Humano e Células-Tronco</h1>
                                     </a>
                                 </div>
@@ -88,10 +88,10 @@ $Size = "font-size: 35px;";
             {!! $menu !!}
             <div class="buttons">
                 <div class="SearchHide LabelMobil" id="BoxSearch">
-                    <form action="/pesquisa" id="form-search" method="get">
+                    <form action="{{ route('search' . ($lang=='en' ? '-en' : '')) }}" id="form-search" method="get">
                         <i class="fas fa-search IconeSearch" id="IconeLupa" style="padding-left: 10px;font-size: 25px;"></i>
                         <i class="fas fa-times IconeSearch" style="float: right;padding-right: 20px;" onclick="Show(0)"></i>
-                        <input type="text" name="k" class="BoxSearch" autocomplete="off" id="search-input" placeholder="Buscar...">
+                        <input type="text" name="k" class="BoxSearch" autocomplete="off" id="search-input" placeholder="{{$lang=='en' ? 'Search...' : 'Buscar...'}}">
                     </form>
                 </div>
                 <div class="btnLupa LabelMobil">

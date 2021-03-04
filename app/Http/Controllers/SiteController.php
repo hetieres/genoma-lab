@@ -25,12 +25,22 @@ class SiteController extends Controller
     private $conteudo;
     public function __construct(Post $conteudo)
     {
+        $this->lang = $this->_treatPrefix()=='en' ? 'en' : 'pt';
+        $this->setLang($this->lang);
         $this->conteudo = $conteudo;
-        View::share('footer', Post::find(12)->text);
-        View::share('menu', Post::find(19)->text);
     }
 
-    /**
+    public function setLang($lang){
+        if($lang=='pt'){
+            View::share('footer', Post::find(12)->text);
+            View::share('menu', Post::find(19)->text);
+        }else{
+            View::share('footer', Post::find(100)->text);
+            View::share('menu', Post::find(99)->text);
+        }
+        View::share('lang', $lang);
+    }
+        /**
      * home
      * @return \Illuminate\Http\Response
      */
@@ -39,11 +49,18 @@ class SiteController extends Controller
         $this->data['highlights'] = Post::where('active', 1)
                                     ->where('highlight', 1)
                                     ->where('dt_publication', '<=', date('Y-m-d'))
+                                    ->where('lang', $this->lang)
                                     ->orderBy('order')
                                     ->limit(5)
                                     ->get();
 
-        $sessions = Session::where('edit', '=', '1')->orderByRaw('id=1 desc, id=6 desc, id=3 desc, id=5 desc')->get();
+        
+
+        if($this->lang=='pt'){
+            $sessions = Session::where('lang', $this->lang)->where('edit', '1')->orderByRaw('id=1 desc, id=6 desc, id=3 desc, id=5 desc')->get();
+        }else{
+            $sessions = Session::where('lang', $this->lang)->where('edit', '1')->get();
+        }
 
         foreach ($sessions as $session) {
             $rs = false;
@@ -93,9 +110,10 @@ class SiteController extends Controller
                 return redirect($post->link(), 301);
             }else if ($post && $slug == str_slug($post->title)) {
                 if($post->session->aside == ""){
-                    $aux = Post::find(18);
+                    $aux = Post::find($post->lang=="pt" ? 18 : 101);
                     $post->session->aside = $aux->text;
                 }
+                $this->setLang($post->lang);
                 return view('site.detail', ['post' => $post]);
             }
         }
@@ -121,6 +139,7 @@ class SiteController extends Controller
             $this->data['currentPage'] = $rs->currentPage();
             $this->data['rangePages']  = $this->rangePages($this->data['lastPage'], $this->data['currentPage']);
             $this->data['session']     = $session;
+            $this->setLang($session->lang);
 
             return view('site.list', $this->data);
         }else{
@@ -128,85 +147,10 @@ class SiteController extends Controller
         }
     }
 
-    public function educacaodifusoes(Request $request)
-    {
-        $this->data['DadosHead'] = Post::find(77);
-        $this->data['educacaodifusoes'] = Post::where('session_id', 3)
-            ->where('active', 1)
-            ->where('dt_publication', '<=', date('Y-m-d'))
-            ->orderBy('dt_publication', 'DESC')
-            ->get();
-
-
-        return view('site.educacaodifusoes', $this->data);
-    }
-
-    public function projetospesquisa(Request $request)
-    {
-        $this->data['DadosHead'] = Post::find(23);
-        $this->data['projetospesquisas'] = Post::where('session_id', 6)
-            ->where('active', 1)
-            ->where('dt_publication', '<=', date('Y-m-d'))
-            ->orderBy('title', 'ASC')
-            ->get();
-        return view('site.projetospesquisas', $this->data);
-    }
-
-
-    public function namidia(Request $request)
-    {
-        $this->data['DadosHead'] = Post::find(23);
-        $this->data['namidias'] = Post::where('session_id', 4)
-            ->where('active', 1)
-            ->where('dt_publication', '<=', date('Y-m-d'))
-            ->orderBy('title', 'ASC')
-            ->get();
-        return view('site.namidia', $this->data);
-    }
-
-
-
-    public function conhecaogenoma(Request $request)
-    {
-        $this->data['DadosHead'] = Post::find(20);
-        $this->data['tecnologias'] = Post::where('session_id', 1)
-            ->where('active', 1)
-            ->where('dt_publication', '<=', date('Y-m-d'))
-            ->orderBy('title', 'ASC')
-            ->get();
-        return view('site.tecnologias', $this->data);
-    }
-
-    public function pesquisas(Request $request)
-    {
-
-        $dadosNoticas['pesquisas'] = Post::where('session_id', 2)
-            ->where('active', 1)
-            ->where('dt_publication', '<=', date('Y-m-d'))
-            ->orderBy('dt_publication', 'DESC')
-            ->get();
-        $dadosNoticas['DadosHead'] = Post::find(19);
-
-        return view('site.pesquisas', $dadosNoticas);
-    }
-
-    public function videos()
-    {
-        $this->data['DadosHead'] = Post::find(152);
-        $videos = Post::where('session_id', 4)
-            ->where('active', 1)
-            ->where('dt_publication', '<=', date('Y-m-d'))
-            ->orderBy('dt_publication', 'DESC')
-            ->get();
-        $this->data['videos'] = $videos;
-        return view('site.videos', $this->data);
-    }
-
-
+    
     public function search(Request $request)
     {
-
-        $rs = Post::selectRaw('posts.*')->where('posts.session_id', '<>', 5);
+        $rs = Post::selectRaw('posts.*')->where('posts.lang', $this->lang)->whereNotIn('posts.session_id', [7, 14]);
         $request->k = trim($request->k); //chave
         $request->o = isset($request->o) ? $request->o : 1;
 

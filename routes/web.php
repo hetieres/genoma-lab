@@ -99,13 +99,17 @@ Route::get('/sitemap.xml/{slug?}/{pg?}', 'SitemapController@internals')->name('s
 Route::get('/import', 'DataImportController@import')->name('import');
 
 
-/* Rotas do site */
+/* Rotas do site  PT */
 Route::get('/', 'SiteController@index')->name('home');
 Route::get('/pesquisa', 'SiteController@search')->name('search');
-Route::get('/videos', 'SiteController@videos')->name('videos');
-Route::get('/pesquisas', 'SiteController@pesquisas')->name('pesquisas');
 
+/* Rotas do site  EN */
+Route::group(['prefix' => 'en'], function () {
+    Route::get('/', 'SiteController@index')->name('home-en');
+    Route::get('/search', 'SiteController@search')->name('search-en');
+});
 
+/* Rotas do site gerais */
 Route::get('/{slug?}/{id?}', 'SiteController@detalhe')->name('detalhe');
 // Route::get('/{title}/{id}/{page?}', 'SiteController@detail')->name('detalhe');
 
