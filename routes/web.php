@@ -43,6 +43,34 @@ Route::group(['prefix' => 'fapesp', 'middleware' => ['auth']], function () {
 
 });
 
+
+/* Rotas do Administrador EN */
+Route::group(['prefix' => 'fapesp-en', 'middleware' => ['auth']], function () {
+    Route::get('/', 'PostController@index')->name('dashboard-en');
+
+    // materias
+    Route::group(['prefix' => 'materia'], function () {
+        Route::get('/', 'PostController@index')->name('post-list-en');
+        Route::get('/destaques', 'PostController@order')->name('post-order-en');
+        // Route::get('/{id}', 'PostController@edit')->name('post-edit');
+        Route::get('/nova', 'PostController@edit')->name('post-new-en');
+        Route::get('/{id}/{history_id?}', 'PostController@edit')->name('post-edit-en');
+        Route::get('/compare/{id}/{history_id}', 'PostController@comparation')->name('post-comparation-en');
+    });
+
+    // users
+    Route::group(['prefix' => 'users'], function () {
+        Route::get('/', 'UserController@index')->name('users-en')->middleware('admin-en');
+        Route::get('/profile', 'UserController@profile')->name('users-profile-en');
+    });
+
+    // sessions
+    Route::group(['prefix' => 'session'], function () {
+        Route::get('/{id}', 'SessionController@edit')->name('session-edit-en')->middleware('admin');
+    });
+
+});
+
 /* Rota para limpar cache */
 Route::get('/clear-cache', function () {
     $exitCode = Artisan::call('cache:clear');

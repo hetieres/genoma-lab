@@ -2,7 +2,7 @@
 import { toastrOptions } from "./constants/objects";
 
 export default {
-  props: ["sessions"],
+  props: ["sessions", "lang"],
   data: function() {
     return {
       baseUrl,
@@ -33,7 +33,8 @@ export default {
             daterange: this.filters.daterange,
             key: this.filters.key,
             session_id: this.filters.session_id,
-            order: this.filters.order
+            order: this.filters.order,
+            lang: this.lang
           }
         })
         .then(response => {
@@ -100,7 +101,7 @@ export default {
     },
 
     _bindRedirect: function(url) {
-      url = baseUrl + this.admin + "/" + url;
+      url = baseUrl + this.admin + (this.lang == "en" ? "-en" : "") + "/" + url;
       window.location.href = url;
     },
 

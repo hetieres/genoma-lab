@@ -21,7 +21,9 @@
 
     <section class="content">
         <div class="row">
-            <em-post :sessions='{!! $sessions !!}'></em-post>
+        {{-- @php dd($lang) @endphp --}}
+            <em-post  :sessions='{!! $sessions !!}' lang='{!! $lang !!}'></em-post>
+            {{-- <em-post :sessions='{!! $sessions !!}' :lang='{!! $lang !!}' ></em-post> --}}
         </div>
     </section>
 @endsection
