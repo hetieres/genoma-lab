@@ -43,7 +43,7 @@ $Size = "font-size: 35px;";
                                 </div>
                                 <div class="col-3 painelLogo" >
                                 <center style="margin-top: 1px;margin-left: 90px;"> <span style="color: black;font-weight: 500;">&nbsp;</span></center>
-                                    <a href="http://www.scs.usp.br/identidadevisual/?page_id=7"><img class="img-fluig logoUSP" src="{{asset('assets/img/logo/usp-logo.png') }}" alt=""></a>
+                                    <a href="https://usp.br"><img class="img-fluig logoUSP" src="{{asset('assets/img/logo/usp-logo.png') }}" alt=""></a>
                                     <a href="https://www.ib.usp.br"><img class="img-fluig logo5" src="{{asset('assets/img/logo/logoInstituto.png') }}" alt=""></a>
                                     <a href="https://fapesp.br"><img class="img-fluig LogoFapesp" src="{{asset('assets/img/logo/logo.png') }}" alt=""></a>
                                 </div>
