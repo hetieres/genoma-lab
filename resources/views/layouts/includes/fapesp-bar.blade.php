@@ -32,7 +32,7 @@ $Size = "font-size: 35px;";
                 <div class="container">
                     <div class="row d-flex align-items-center">
                         <div class="container">
-                            <div class="row LabelMobil" style="padding-bottom: 15px;">
+                            <div class="row LabelMobil" style="padding-bottom: 5px;">
                                 <div class="col-3" style="border-right: 3px solid #000000;height: 40px;margin-top: 31px;">
                                     <a href="{{ asset('/') . ($lang=="en" ? 'en' : '') }}"><img class="img-fluig" src="{{asset('assets/img/logo/logoGenoma.png') }}" alt="" style="width: 100%;float: right;margin-top: -10px;"></a>
                                 </div>
@@ -43,18 +43,14 @@ $Size = "font-size: 35px;";
                                 </div>
                                 <div class="col-3 painelLogo" >
                                 <center style="margin-top: 1px;margin-left: 90px;"> <span style="color: black;font-weight: 500;">&nbsp;</span></center>
-                                 
-                                
                                     <a href="http://www.scs.usp.br/identidadevisual/?page_id=7"><img class="img-fluig logoUSP" src="{{asset('assets/img/logo/usp-logo.png') }}" alt=""></a>
-                                 
-                                 
-                                    <a href="https://fapesp.br"><img class="img-fluig LogoFapesp" src="{{asset('assets/img/logo/logo.png') }}" alt=""></a>
-                                  
-                                  
                                     <a href="https://www.ib.usp.br"><img class="img-fluig logo5" src="{{asset('assets/img/logo/logoInstituto.png') }}" alt=""></a>
+                                    <a href="https://fapesp.br"><img class="img-fluig LogoFapesp" src="{{asset('assets/img/logo/logo.png') }}" alt=""></a>
                                 </div>
                                 <div class="col-12" style="text-align: right;">
+                                <!--
                                     <a href="https://genoma.ib.usp.br/en" style="position: absolute;top: -5px;right: 0px;">English</a>
+-->
                                 </div>
                             </div>
                         </div>

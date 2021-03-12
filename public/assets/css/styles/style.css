@@ -110,19 +110,20 @@ main.internal>h1>ul.breadcrumbs {
 }
 
 .logoUSP {
-    width: 87px;
+    width: 80px;
     margin-top: 19px;
-    padding-right: 10px;
+    padding-right: 7px;
 }
 
 .LogoFapesp {
-    width: 114px;
+    width: 110px;
     margin-top: 9px;
+    margin-left: 8px;
 }
 
 .logo5 {
     margin-top: 10px;
-    width: 50px;
+    width: 45px;
 }
 
 .painelLogo {
@@ -1082,12 +1083,14 @@ hr {
         padding-right: 10px;
     }
     .LogoFapesp {
-        width: 90px;
+        width: 85px;
         margin-top: 9px;
+        margin-left: 5px;
     }
     .logo5 {
         margin-top: 10px;
-        width: 33px;
+        width: 41px;
+        margin-left: -6px;
     }
     .painelLogo {
         margin-left: 0px;
