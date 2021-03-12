@@ -118,18 +118,22 @@ main.internal>h1>ul.breadcrumbs {
 .LogoFapesp {
     width: 110px;
     margin-top: 9px;
-    margin-left: 8px;
+    margin-left: 22px;
+    position: absolute;
 }
 
 .logo5 {
     margin-top: 10px;
     width: 45px;
+    margin-left: 11px;
 }
 
 .painelLogo {
-    margin-left: 0px;
+    margin-left: 55px;
     padding-bottom: 10px;
     margin-top: -15px;
+    flex: 0 0 23%;
+    max-width: 28%;
 }
 
 
@@ -1081,21 +1085,26 @@ hr {
         width: 70px;
         margin-top: 19px;
         padding-right: 10px;
+        position: relative;
+        margin-left: -19px;
     }
     .LogoFapesp {
         width: 85px;
-        margin-top: 9px;
-        margin-left: 5px;
+        margin-top: 19px;
+        margin-left: 20px;
+        position: absolute;
     }
     .logo5 {
         margin-top: 10px;
         width: 41px;
-        margin-left: -6px;
+        margin-left: 6px;
     }
     .painelLogo {
-        margin-left: 0px;
-        padding-bottom: 15px;
+        margin-left: 34px;
+        padding-bottom: 0px;
         margin-top: -10px;
+        flex: 0 0 23%;
+        max-width: 28%;
     }
 }
 
