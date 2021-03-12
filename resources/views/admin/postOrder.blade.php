@@ -26,7 +26,7 @@
                 <div class="box">
                     <div class="box-header with-border">
                         <h3 class="box-title">
-                            <i class="fa fa-fw fa-arrows-v"></i> Destaques
+                            <i class="fa fa-fw fa-arrows-v"></i> {{ $lang=="pt" ? 'Destaques' : 'Highlights' }}
                         </h3>
                         <div class="pull-right">
                             <button class="btn btn-info" id="save">Gravar</button>

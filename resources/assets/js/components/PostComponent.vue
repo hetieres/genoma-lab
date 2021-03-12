@@ -2,7 +2,7 @@
 import { toastrOptions } from "./constants/objects";
 
 export default {
-  props: ["sessions"],
+  props: ["sessions", "lang"],
   data: function() {
     return {
       baseUrl,
@@ -33,7 +33,8 @@ export default {
             daterange: this.filters.daterange,
             key: this.filters.key,
             session_id: this.filters.session_id,
-            order: this.filters.order
+            order: this.filters.order,
+            lang: this.lang
           }
         })
         .then(response => {
@@ -100,7 +101,7 @@ export default {
     },
 
     _bindRedirect: function(url) {
-      url = baseUrl + this.admin + "/" + url;
+      url = baseUrl + this.admin + (this.lang == "en" ? "-en" : "") + "/" + url;
       window.location.href = url;
     },
 
@@ -233,7 +234,8 @@ export default {
         <div class="box-header with-border">
           <h3 class="box-title">
             <i class="fa fa-files-o"></i>
-            <strong>Filtros</strong> Matérias
+            <strong>{{ this.lang=='pt'?'Filtros':'Filters' }}</strong>
+            {{ this.lang=='pt'?'Matérias':'Posts' }}
           </h3>
         </div>
         <div class="box-body">
@@ -311,7 +313,7 @@ export default {
         <div class="box-header">
           <h3 class="box-title">
             <i class="fa fa-files-o"></i>
-            <strong>Matérias</strong>
+            <strong>{{ this.lang=='pt' ? 'Matérias' : 'Posts' }}</strong>
           </h3>
           <div class="pull-right">
             <ul v-if="ready==true" class="pagination pagination-sm no-margin pull-right">

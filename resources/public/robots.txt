@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /assets/
+Disallow: /.htaccess
+Disallow: /googlee471276915f02164.html
+Disallow: /index.php_orig
+Disallow: /index.php_prod
+Disallow: /infos.json
+Disallow: /mix-manifest.json
+
+Sitemap: https://namidia.fapesp.br/sitemap.xml
+Sitemap: https://www.namidia.fapesp.br/sitemap.xml

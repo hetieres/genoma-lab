@@ -19,7 +19,11 @@ class PostController extends Controller
     //
     public function index()
     {
-        $this->data['sessions'] = Session::orderByRaw('id=1 desc, id=6 desc, id=3 desc, id=5 desc')->get();
+        if($this->lang == 'pt'){
+            $this->data['sessions'] = Session::where('lang', $this->lang)->orderByRaw('id=1 desc, id=6 desc, id=3 desc, id=5 desc')->get();
+        }else{
+            $this->data['sessions'] = Session::where('lang', $this->lang)->get();
+        }
         return view('admin.postList', $this->data);
     }
 
@@ -49,6 +53,7 @@ class PostController extends Controller
         $model->session_id = $request->input('session_id');
         $model->keywords = (strlen($request->input('keywords')) > 0 ? json_encode(explode(',', $request->input('keywords'))) : '');
         $model->user_id = $request->user_id;
+        $model->lang = $model->session->lang;
 
         $this->srcFapesp($model);
 
@@ -82,6 +87,7 @@ class PostController extends Controller
         $posts = Post::where('active', 1)
             ->where('highlight', 1)
             ->where('dt_publication', '<=', date('Y-m-d'))
+            ->where('lang', $this->lang)
             ->orderBy('order')
             ->orderBy('id', 'DESC')
             ->get();
@@ -153,6 +159,10 @@ class PostController extends Controller
             }
         }
 
+        if($post && $post->id > 0  && $post->lang != $this->lang){
+            return redirect(route('post-edit' . ($post->lang=='en' ? '-en' : ''), ["id" => $post->id]), 301);
+        }
+
         if ($post !== '' && !is_null($post->image) && file_exists(public_path($post->image))) {
             $post->image = asset($post->image) . '?' . time();
         } else {
@@ -181,11 +191,14 @@ class PostController extends Controller
 
         $post->history = $post->historyLoad();
 
-
+        if($this->lang == 'pt'){
+            $this->data['sessions'] = Session::where('lang', 'pt')->orderByRaw('id=1 desc, id=6 desc, id=3 desc, id=5 desc')->get()->toArray();
+        }else{
+            $this->data['sessions'] = Session::where('lang', $this->lang)->get()->toArray();
+        }
         $this->data['post'] = $post;
         $this->data['files'] = $files;
         $this->data['user_id'] = Auth::user()->id;
-        $this->data['sessions'] = Session::orderByRaw('id=1 desc, id=6 desc, id=3 desc, id=5 desc')->get()->toArray();
         $this->data['history_id'] = isset($request->history_id) ? $request->history_id : 0;
         $this->data['history_id'] = isset($post->history[0]->history_id) && $this->data['history_id'] == 0 ? $post->history[0]->history_id : 0;
 
@@ -216,6 +229,10 @@ class PostController extends Controller
                         ->orWhere('summary', 'like', $key);
                 });
             }
+        }
+
+        if (isset($request->lang) && $request->lang != '') {
+            $rs->where('lang', $request->lang);
         }
 
         if (!isset($request->order) || $request->order == 0) {

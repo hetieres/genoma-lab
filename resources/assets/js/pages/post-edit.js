@@ -255,7 +255,7 @@ $(document).ready(function () {
             $(".no-video").hide();
         }
 
-        if ($("#session_id").val() == 7) {
+        if ($("#session_id").val() == 7 || $("#session_id").val() == 14) {
             $(".no-content").hide();
         }
     });

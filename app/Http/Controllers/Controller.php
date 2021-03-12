@@ -20,6 +20,7 @@ class Controller extends BaseController
     public $_public_path;
     public $_uploads_path;
     public $data = array();
+    public $lang = '';
 
     public function __construct()
     {
@@ -47,14 +48,15 @@ class Controller extends BaseController
     private function dataLoad()
     {
         $prefix = $this->_treatPrefix();
-        if (in_array($prefix, ['fapesp', 'admin'])) {
+        // dd('aqui');
+        if (in_array($prefix, ['fapesp', 'admin', 'fapesp-en'])) {
             $jwt   = new JWTHelper;
             $token = (isset($_COOKIE['JWT-TOKEN']) ? $_COOKIE['JWT-TOKEN'] : '');
             $user  = $jwt->getPayload($token);
 
             //paginas do admin
             if (strpos($_SERVER['REQUEST_URI'], Route::current()->getPrefix())!==false
-                && in_array('auth', Route::current()->middleware()) && isset($user->id)
+            && in_array('auth', Route::current()->middleware()) && isset($user->id)
             ) {
 
                 $side_news = Post::orderBy('id', 'DESC')->limit(10)->get();
@@ -63,13 +65,33 @@ class Controller extends BaseController
                     ->limit(10)
                     ->get();
 
-                $sessions_edit = Session::where('edit', '=', '1')->orderByRaw('id=1 desc, id=6 desc, id=3 desc, id=5 desc')->get();
+                    
+                    //define lang
+                    if($prefix == 'fapesp-en'){
+                        // dd('aqui');
+                    View::share('lang', 'en');
+                    View::share('routelang', '-en');
+                    $sessions_edit = Session::where('lang', 'en')->where('edit', '=', '1')->get();
+                    $this->lang = 'en';
+                }else{
+                    View::share('lang', 'pt');
+                    View::share('routelang', '');
+                    $sessions_edit = Session::where('lang', 'pt')->where('edit', '=', '1')->orderByRaw('id=1 desc, id=6 desc, id=3 desc, id=5 desc')->get();
+                    $this->lang = 'pt';
+                }
+
 
                 // dd($sessions_edit);
 
                 View::share('side_news', $side_news);
                 View::share('side_edit', $side_edit);
                 View::share('sessions_edit', $sessions_edit);
+            }
+        }else {
+            if($prefix == 'en'){
+                $this->lang = 'en';
+            }else{
+                $this->lang = 'pt';
             }
         }
     }
@@ -109,7 +131,7 @@ class Controller extends BaseController
         return $pages;
     }
 
-    private function _treatPrefix()
+    public function _treatPrefix()
     {
         $ret    = '';
         $prefix = \Request::route()->getPrefix();
