@@ -109,6 +109,28 @@ main.internal>h1>ul.breadcrumbs {
     border-bottom-right-radius: 4px;
 }
 
+.logoUSP {
+    width: 87px;
+    margin-top: 19px;
+    padding-right: 10px;
+}
+
+.LogoFapesp {
+    width: 114px;
+    margin-top: 9px;
+}
+
+.logo5 {
+    margin-top: 10px;
+    width: 50px;
+}
+
+.painelLogo {
+    margin-left: 0px;
+    padding-bottom: 15px;
+    margin-top: -25px;
+}
+
 
 /* Style the navigation menu */
 
@@ -1053,6 +1075,24 @@ hr {
         top: 6px !important;
         left: -30px !important;
         width: 50px;
+    }
+    .logoUSP {
+        width: 70px;
+        margin-top: 19px;
+        padding-right: 10px;
+    }
+    .LogoFapesp {
+        width: 90px;
+        margin-top: 9px;
+    }
+    .logo5 {
+        margin-top: 10px;
+        width: 33px;
+    }
+    .painelLogo {
+        margin-left: 0px;
+        padding-bottom: 15px;
+        margin-top: -10px;
     }
 }
 

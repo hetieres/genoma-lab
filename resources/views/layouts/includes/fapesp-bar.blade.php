@@ -23,8 +23,6 @@ $Size = "font-size: 35px;";
         </div>
     </div>
 </div>
-
-
 <!-- Preloader Start -->
 <!-- Header Start -->
 <div id="Removelogos">
@@ -43,16 +41,20 @@ $Size = "font-size: 35px;";
                                         <h1 class="Titulo Titulo2" style="">Centro de Estudos do Genoma Humano e Células-Tronco</h1>
                                     </a>
                                 </div>
-
-                                
-                              
-                                <div class="col-3" style="margin-left: 30px;">
+                                <div class="col-3 painelLogo" >
                                 <center style="margin-top: 1px;margin-left: 90px;"> <span style="color: black;font-weight: 500;">&nbsp;</span></center>
-                                    <a href="https://fapesp.br"><img class="img-fluig" src="{{asset('assets/img/logo/logo.png') }}" alt="" style="width: 60%;float: right;margin-top: 9px;"></a>
-                                    <a href="https://www.ib.usp.br"><img class="img-fluig" src="{{asset('assets/img/logo/logoInstituto.png') }}" alt="" style="float: left;margin-top: 10px;"></a>
+                                 
+                                
+                                    <a href="http://www.scs.usp.br/identidadevisual/?page_id=7"><img class="img-fluig logoUSP" src="{{asset('assets/img/logo/usp-logo.png') }}" alt=""></a>
+                                 
+                                 
+                                    <a href="https://fapesp.br"><img class="img-fluig LogoFapesp" src="{{asset('assets/img/logo/logo.png') }}" alt=""></a>
+                                  
+                                  
+                                    <a href="https://www.ib.usp.br"><img class="img-fluig logo5" src="{{asset('assets/img/logo/logoInstituto.png') }}" alt=""></a>
                                 </div>
                                 <div class="col-12" style="text-align: right;">
-                                    <!-- <a href="https://covid19.fapesp.br/en">English</a> -->
+                                    <a href="https://genoma.ib.usp.br/en" style="position: absolute;top: -5px;right: 0px;">English</a>
                                 </div>
                             </div>
                         </div>
@@ -97,13 +99,6 @@ $Size = "font-size: 35px;";
                 <div class="btnLupa LabelMobil">
                     <i class="fas fa-search IconeSearch" onclick="Show(1)"></i>
                 </div>
-<!--
-                <div class="indices hidden-xs hidden-sm English">
-                    <a href="javascript:;" class="text-center">
-                        <span style="font-size: 14px;color: #7f7f77;height: auto;">English&nbsp;</span>
-                    </a>
-                </div>
--->
                 <!-- Form para Versão Mobil-->
                 <div class="busca LabelMobil11">
                     <form action="/pesquisa" id="form-search" method="get">
