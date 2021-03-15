@@ -9,8 +9,6 @@
         </div>
     </div>
 </div>
-
-
 <!-- Preloader Start -->
 <!-- Header Start -->
 <div id="Removelogos">
@@ -20,7 +18,7 @@
                 <div class="container">
                     <div class="row d-flex align-items-center">
                         <div class="container">
-                            <div class="row LabelMobil" style="padding-bottom: 15px;">
+                            <div class="row LabelMobil" style="padding-bottom: 5px;">
                                 <div class="col-3" style="border-right: 3px solid #000000;height: 40px;margin-top: 31px;">
                                     <a href="{{ asset('/') . ($lang=="en" ? 'en' : '') }}"><img class="img-fluig" src="{{asset('assets/img/logo/logoGenoma.png') }}" alt="" style="width: 100%;float: right;margin-top: -10px;"></a>
                                 </div>
@@ -29,16 +27,15 @@
                                         <h1 class="Titulo Titulo2" style="">{{ $lang=="pt" ? "Centro de Estudos do Genoma Humano e Células-Tronco" : "Human Genome and Stem Cell Research Center" }}</h1>
                                     </a>
                                 </div>
-
-                                
-                              
-                                <div class="col-3" style="margin-left: {{$lang=="pt"?'30':'100'}}px;">
-                                <center style="margin-top: 1px;margin-left: 90px;"> <span style="color: black;font-weight: 500;">&nbsp;</span></center>
-                                    <a href="https://fapesp.br"><img class="img-fluig" src="{{asset($lang=='pt' ? 'assets/img/logo/logo.png' : 'assets/img/logo/logo-en.jpg') }}" alt="" style="width: 60%;float: right;margin-top: 9px;"></a>
-                                    <a href="https://www.ib.usp.br"><img class="img-fluig" src="{{asset('assets/img/logo/logoInstituto.png') }}" alt="" style="float: left;margin-top: 10px;"></a>
+                                <div class="col-3 painelLogo" style="margin-left: {{ $lang=='pt' ? '45' : '115' }}px">
+                                    <a href="https://usp.br"><img class="img-fluig logoUSP" src="{{asset('assets/img/logo/usp-logo.png') }}" alt=""></a>
+                                    <a href="https://www.ib.usp.br"><img class="img-fluig logo5" src="{{asset('assets/img/logo/logoInstituto.png') }}" alt=""></a>
+                                    <a href="https://fapesp.br"><img class="img-fluig LogoFapesp" src="{{asset($lang=='pt' ? 'assets/img/logo/logo.png' : 'assets/img/logo/logo-en.jpg') }}" alt=""></a>
                                 </div>
                                 <div class="col-12" style="text-align: right;">
-                                    <!-- <a href="https://covid19.fapesp.br/en">English</a> -->
+                                <!--
+                                    <a href="https://genoma.ib.usp.br/en" style="position: absolute;top: -5px;right: 0px;">English</a>
+-->
                                 </div>
                             </div>
                         </div>
@@ -83,13 +80,6 @@
                 <div class="btnLupa LabelMobil">
                     <i class="fas fa-search IconeSearch" onclick="Show(1)"></i>
                 </div>
-<!--
-                <div class="indices hidden-xs hidden-sm English">
-                    <a href="javascript:;" class="text-center">
-                        <span style="font-size: 14px;color: #7f7f77;height: auto;">English&nbsp;</span>
-                    </a>
-                </div>
--->
                 <!-- Form para Versão Mobil-->
                 <div class="busca LabelMobil11">
                     <form action="/pesquisa" id="form-search" method="get">

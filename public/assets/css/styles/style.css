@@ -109,6 +109,33 @@ main.internal>h1>ul.breadcrumbs {
     border-bottom-right-radius: 4px;
 }
 
+.logoUSP {
+    width: 80px;
+    margin-top: 19px;
+    padding-right: 7px;
+}
+
+.LogoFapesp {
+    width: 110px;
+    margin-top: 9px;
+    margin-left: 22px;
+    position: absolute;
+}
+
+.logo5 {
+    margin-top: 10px;
+    width: 45px;
+    margin-left: 11px;
+}
+
+.painelLogo {
+    margin-left: 55px;
+    padding-bottom: 10px;
+    margin-top: -15px;
+    flex: 0 0 23%;
+    max-width: 28%;
+}
+
 
 /* Style the navigation menu */
 
@@ -1039,7 +1066,7 @@ hr {
     width: 100%
 }
 
-@media only screen and (min-width: 1000px) and (max-width: 1199px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
     .btn.post-btn {
         background: #000;
         color: #ff2143 !important
@@ -1053,6 +1080,31 @@ hr {
         top: 6px !important;
         left: -30px !important;
         width: 50px;
+    }
+    .logoUSP {
+        width: 70px;
+        margin-top: 19px;
+        padding-right: 10px;
+        position: relative;
+        margin-left: -19px;
+    }
+    .LogoFapesp {
+        width: 85px;
+        margin-top: 19px;
+        margin-left: 20px;
+        position: absolute;
+    }
+    .logo5 {
+        margin-top: 10px;
+        width: 41px;
+        margin-left: 6px;
+    }
+    .painelLogo {
+        margin-left: 34px;
+        padding-bottom: 0px;
+        margin-top: -10px;
+        flex: 0 0 23%;
+        max-width: 28%;
     }
 }
 
