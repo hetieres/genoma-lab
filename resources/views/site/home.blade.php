@@ -42,13 +42,15 @@
 
                         <div class="col-md" onclick="location.href = 'http://www.genomacovid19.ib.usp.br/';" style="cursor: pointer;">
                             <div class="single-recent" style="margin-left: 0px;margin-right: 0px;width: 85%;">
-                                <div class="card" style="    border: 1px solid #000000;margin-left: 7px; margin-right: -5px;">
-                                    <div class="card-body" style="flex: 1 1 auto;padding: 0.5rem;">
-                                        <p style="margin-top: 0px;margin-bottom: 0px;">TESTE DE COVID-19 - Saiba como agendar o seu teste molecular rápido
-                                            <a href="http://www.genomacovid19.ib.usp.br/"><img class="img-fluig" src="{{asset('assets/img/seta.png') }}" alt="" style="float: right;margin-right: 0px;width: 21px !important;margin-top: 6px;"></a>
-                                        </p>
+                                @if ($lang == 'pt')
+                                    <div class="card" style="    border: 1px solid #000000;margin-left: 7px; margin-right: -5px;">
+                                        <div class="card-body" style="flex: 1 1 auto;padding: 0.5rem;">
+                                            <p style="margin-top: 0px;margin-bottom: 0px;">TESTE DE COVID-19 - Saiba como agendar o seu teste molecular rápido
+                                                <a href="http://www.genomacovid19.ib.usp.br/"><img class="img-fluig" src="{{asset('assets/img/seta.png') }}" alt="" style="float: right;margin-right: 0px;width: 21px !important;margin-top: 6px;"></a>
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -88,7 +90,7 @@
             </div>
             <div class="col-md-12 ">
                 <center>
-                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[0]->url]) }}'">Mais</button>
+                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[0]->url]) }}'">{{ $lang=="pt" ? "Mais" : "More" }}</button>
                 </center>
                 <br>
             </div>
@@ -136,7 +138,7 @@
             <br>
             <div class="col-md-12 ">
                 <center>
-                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[1]->url]) }}'">Mais</button>
+                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[1]->url]) }}'">{{ $lang=="pt" ? "Mais" : "More" }}</button>
                 </center>
                 <br>
             </div>
@@ -177,7 +179,7 @@
         </div>
         <div class="col-md-12 ">
             <center>
-                <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[2]->url]) }}'">Mais</button>
+                <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[2]->url]) }}'">{{ $lang=="pt" ? "Mais" : "More" }}</button>
             </center>
             <br>
         </div>
@@ -193,7 +195,7 @@
                         <h3>{{ $sessions[3]->description }}</h3>
                     </div>
                     <div class="row Espaco3">
-                        @for ($i = 0; $i < count($sessions[3]->posts); $i++) 
+                        @for ($i = 0; $i < count($sessions[3]->posts); $i++)
                         <div class="col-md {{ $i == 0 ? 'Espaco' : 'Espaco5' }}">
                             <div class="single-recent">
                                 <a href="{{ $sessions[3]->posts[$i]->link() }}">
@@ -218,7 +220,7 @@
 
             <div class="col-md-12 ">
                 <center>
-                <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[3]->url]) }}'">Mais</button>
+                <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[3]->url]) }}'">{{ $lang=="pt" ? "Mais" : "More" }}</button>
                 </center>
                 <br>
             </div>

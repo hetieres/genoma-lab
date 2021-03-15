@@ -1,17 +1,3 @@
-@php
-$Text = "Ciência e tecnologia para o combate à COVID-19";
-$English = 0;
-$Size = "font-size: 35px;";
-@endphp
-
-@if($lang=='en')
-@php
-$Text = "Science and Technology in the fight against COVID-19";
-$English = 1;
-$Size = "font-size: 35px;";
-@endphp
-@endif
-
 <!-- Preloader Start-->
 <div id="preloader-active" style="display: block;">
     <div class="preloader d-flex align-items-center justify-content-center">
@@ -40,15 +26,15 @@ $Size = "font-size: 35px;";
                                 </div>
                                 <div class="col-md-auto">
                                     <a href="{{ asset('/') . ($lang=="en" ? 'en' : '') }}">
-                                        <h1 class="Titulo Titulo2" style="">Centro de Estudos do Genoma Humano e Células-Tronco</h1>
+                                        <h1 class="Titulo Titulo2" style="">{{ $lang=="pt" ? "Centro de Estudos do Genoma Humano e Células-Tronco" : "Human Genome and Stem Cell Research Center" }}</h1>
                                     </a>
                                 </div>
 
                                 
                               
-                                <div class="col-3" style="margin-left: 30px;">
+                                <div class="col-3" style="margin-left: {{$lang=="pt"?'30':'100'}}px;">
                                 <center style="margin-top: 1px;margin-left: 90px;"> <span style="color: black;font-weight: 500;">&nbsp;</span></center>
-                                    <a href="https://fapesp.br"><img class="img-fluig" src="{{asset('assets/img/logo/logo.png') }}" alt="" style="width: 60%;float: right;margin-top: 9px;"></a>
+                                    <a href="https://fapesp.br"><img class="img-fluig" src="{{asset($lang=='pt' ? 'assets/img/logo/logo.png' : 'assets/img/logo/logo-en.jpg') }}" alt="" style="width: 60%;float: right;margin-top: 9px;"></a>
                                     <a href="https://www.ib.usp.br"><img class="img-fluig" src="{{asset('assets/img/logo/logoInstituto.png') }}" alt="" style="float: left;margin-top: 10px;"></a>
                                 </div>
                                 <div class="col-12" style="text-align: right;">
