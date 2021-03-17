@@ -4,7 +4,6 @@
     @if($highlights)
     <section id="banner">
         <div class="slider container">
-
         @foreach ($highlights as $highlight)
             <div class="slide">
                 <div class="image" style="background-image: url('{{ $highlight->getImage() }}')"></div>
@@ -14,7 +13,6 @@
                 </a>
             </div>
         @endforeach
-
         </div>
     </section>
     @endif

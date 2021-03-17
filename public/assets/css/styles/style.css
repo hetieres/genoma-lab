@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
 @import url("https://fonts.googleapis.com/css?family=Barlow:300,400,500,600,700,800,900|Roboto:100,300,400,500,700&display=swap");
-
 @font-face {
     font-family: Akkurat;
     src: url('FontsFree-Net-Akkurat.ttf');
@@ -16,6 +15,14 @@
     font-size: 20px;
     padding-right: 2px;
     margin-top: -6px;
+}
+
+.idioma {
+    /*  margin-top: 3px;
+    padding-left: 60px;
+    margin-right: 10px;*/
+    margin-top: 3px;
+    margin-right: 10px;
 }
 
 h3>.b {
@@ -133,7 +140,7 @@ main.internal>h1>ul.breadcrumbs {
     padding-bottom: 10px;
     flex: 0 0 23%;
     max-width: 28%;
-    margin-top: 4px;
+    margin-top: 10px;
 }
 
 
@@ -904,7 +911,8 @@ hr {
     padding-bottom: 0px;
     padding-top: 0px;
     width: 100%;
-    height: 185px !important;
+    /* height: 185px !important;*/
+    height: auto !important;
 }
 
 .imgNoticias2 {
@@ -1071,11 +1079,9 @@ hr {
         background: #000;
         color: #ff2143 !important
     }
-
     .btn.post-btn::before {
         background: #fff
     }
-
     #logo-mini {
         display: none;
         position: absolute !important;
@@ -1083,7 +1089,6 @@ hr {
         left: -30px !important;
         width: 50px;
     }
-
     .logoUSP {
         width: 70px;
         margin-top: 19px;
@@ -1091,20 +1096,17 @@ hr {
         position: relative;
         margin-left: -19px;
     }
-
     .LogoFapesp {
         width: 85px;
         margin-top: 19px;
         margin-left: 20px;
         position: absolute;
     }
-
     .logo5 {
         margin-top: 10px;
         width: 41px;
         margin-left: 6px;
     }
-
     .painelLogo {
         margin-left: 34px;
         padding-bottom: 0px;
@@ -1119,7 +1121,6 @@ hr {
         background: #000;
         color: #ff2143 !important
     }
-
     .btn.post-btn::before {
         background: #fff
     }
@@ -1130,7 +1131,6 @@ hr {
         background: #000;
         color: #ff2143 !important
     }
-
     .btn.post-btn::before {
         background: #fff
     }
@@ -1141,7 +1141,6 @@ hr {
         background: #000;
         color: #ff2143 !important
     }
-
     .btn.post-btn::before {
         background: #fff
     }
@@ -2642,12 +2641,10 @@ hr {
         -webkit-transform: translateY(-20px);
         transform: translateY(-20px)
     }
-
     50% {
         -webkit-transform: translateY(-10px);
         transform: translateY(-10px)
     }
-
     100% {
         -webkit-transform: translateY(-20px);
         transform: translateY(-20px)
@@ -2681,7 +2678,6 @@ hr {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg)
     }
-
     to {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg)
@@ -2692,7 +2688,6 @@ hr {
     from {
         -webkit-transform: rotate(0deg)
     }
-
     to {
         -webkit-transform: rotate(360deg)
     }
@@ -2780,7 +2775,6 @@ hr {
         -o-transition: .6s;
         transition: .6s
     }
-
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
@@ -2798,7 +2792,6 @@ hr {
         -o-transition: .6s;
         transition: .6s
     }
-
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
@@ -4050,7 +4043,6 @@ a:hover {
 }
 
 @media (max-width: 575px) {
-
     .whats-news-area .whats-news-single .whates-caption h4 a,
     .about-area2 .whats-news-single .whates-caption h4 a,
     .contact-section .whats-news-single .whates-caption h4 a {
@@ -4082,7 +4074,6 @@ a:hover {
 }
 
 @media (max-width: 575px) {
-
     .whats-news-area .whats-news-single .whates-caption p,
     .about-area2 .whats-news-single .whates-caption p,
     .contact-section .whats-news-single .whates-caption p {
@@ -4091,7 +4082,6 @@ a:hover {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-
     .whats-news-area .whats-news-single .whates-caption.whates-caption2 h4 a,
     .about-area2 .whats-news-single .whates-caption.whates-caption2 h4 a,
     .contact-section .whats-news-single .whates-caption.whates-caption2 h4 a {
@@ -4100,7 +4090,6 @@ a:hover {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-
     .whats-news-area .whats-news-single .whates-caption.whates-caption2 h4 a,
     .about-area2 .whats-news-single .whates-caption.whates-caption2 h4 a,
     .contact-section .whats-news-single .whates-caption.whates-caption2 h4 a {
@@ -4109,7 +4098,6 @@ a:hover {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-
     .whats-news-area .whats-news-single .whates-caption.whates-caption2 p,
     .about-area2 .whats-news-single .whates-caption.whates-caption2 p,
     .contact-section .whats-news-single .whates-caption.whates-caption2 p {
@@ -4130,7 +4118,6 @@ a:hover {
 }
 
 @media (max-width: 575px) {
-
     .whats-news-area .whats-right-single,
     .about-area2 .whats-right-single,
     .contact-section .whats-right-single {
@@ -4145,7 +4132,6 @@ a:hover {
 }
 
 @media (max-width: 575px) {
-
     .whats-news-area .whats-right-single .whats-right-img img,
     .about-area2 .whats-right-single .whats-right-img img,
     .contact-section .whats-right-single .whats-right-img img {
@@ -4160,7 +4146,6 @@ a:hover {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-
     .whats-news-area .whats-right-single .whats-right-cap,
     .about-area2 .whats-right-single .whats-right-cap,
     .contact-section .whats-right-single .whats-right-cap {
@@ -4169,7 +4154,6 @@ a:hover {
 }
 
 @media (max-width: 575px) {
-
     .whats-news-area .whats-right-single .whats-right-cap,
     .about-area2 .whats-right-single .whats-right-cap,
     .contact-section .whats-right-single .whats-right-cap {
@@ -4196,7 +4180,6 @@ a:hover {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-
     .whats-news-area .whats-right-single .whats-right-cap h4,
     .about-area2 .whats-right-single .whats-right-cap h4,
     .contact-section .whats-right-single .whats-right-cap h4 {
@@ -4205,7 +4188,6 @@ a:hover {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-
     .whats-news-area .whats-right-single .whats-right-cap h4,
     .about-area2 .whats-right-single .whats-right-cap h4,
     .contact-section .whats-right-single .whats-right-cap h4 {
@@ -4335,7 +4317,6 @@ a:hover {
 }
 
 @media (max-width: 575px) {
-
     .whats-news-area .most-recent-area .most-recent .most-recent-img .most-recent-cap,
     .about-area2 .most-recent-area .most-recent .most-recent-img .most-recent-cap,
     .contact-section .most-recent-area .most-recent .most-recent-img .most-recent-cap {
@@ -4365,7 +4346,6 @@ a:hover {
 }
 
 @media (max-width: 575px) {
-
     .whats-news-area .most-recent-area .most-recent .most-recent-img .most-recent-cap h4,
     .about-area2 .most-recent-area .most-recent .most-recent-img .most-recent-cap h4,
     .contact-section .most-recent-area .most-recent .most-recent-img .most-recent-cap h4 {
@@ -4417,7 +4397,6 @@ a:hover {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-
     .whats-news-area .most-recent-area .most-recent-single .most-recent-capt h4,
     .about-area2 .most-recent-area .most-recent-single .most-recent-capt h4,
     .contact-section .most-recent-area .most-recent-single .most-recent-capt h4 {
@@ -4436,7 +4415,6 @@ a:hover {
 }
 
 @media (max-width: 575px) {
-
     .whats-news-area .most-recent-area .most-recent-single .most-recent-capt h4 a,
     .about-area2 .most-recent-area .most-recent-single .most-recent-capt h4 a,
     .contact-section .most-recent-area .most-recent-single .most-recent-capt h4 a {
@@ -4475,7 +4453,6 @@ a:hover {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-
     .whats-news-area .nav-tabs .nav-link,
     .about-area2 .nav-tabs .nav-link,
     .contact-section .nav-tabs .nav-link {
@@ -4484,7 +4461,6 @@ a:hover {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-
     .whats-news-area .nav-tabs .nav-link,
     .about-area2 .nav-tabs .nav-link,
     .contact-section .nav-tabs .nav-link {
@@ -4493,7 +4469,6 @@ a:hover {
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-
     .whats-news-area .nav-tabs .nav-link,
     .about-area2 .nav-tabs .nav-link,
     .contact-section .nav-tabs .nav-link {
@@ -4502,7 +4477,6 @@ a:hover {
 }
 
 @media (max-width: 575px) {
-
     .whats-news-area .nav-tabs .nav-link,
     .about-area2 .nav-tabs .nav-link,
     .contact-section .nav-tabs .nav-link {
@@ -4543,7 +4517,6 @@ a:hover {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-
     .whats-news-area .nav-tabs,
     .about-area2 .nav-tabs,
     .contact-section .nav-tabs {
@@ -4552,7 +4525,6 @@ a:hover {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-
     .whats-news-area .nav-tabs,
     .about-area2 .nav-tabs,
     .contact-section .nav-tabs {
@@ -4561,7 +4533,6 @@ a:hover {
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-
     .whats-news-area .nav-tabs,
     .about-area2 .nav-tabs,
     .contact-section .nav-tabs {
@@ -4570,7 +4541,6 @@ a:hover {
 }
 
 @media (max-width: 575px) {
-
     .whats-news-area .nav-tabs,
     .about-area2 .nav-tabs,
     .contact-section .nav-tabs {
@@ -5253,7 +5223,6 @@ a:hover {
     .single-blog .tag {
         margin-right: 8px
     }
-
     .single-blog .tag:after {
         display: none
     }
@@ -5306,7 +5275,6 @@ a:hover {
         padding-bottom: 14px;
         margin-bottom: 12px
     }
-
     .single-blog h4 a {
         font-size: 18px
     }
@@ -6237,11 +6205,9 @@ a:hover {
     .comments-area .comment-list .single-comment h5 {
         font-size: 12px
     }
-
     .comments-area .comment-list .single-comment .date {
         font-size: 11px
     }
-
     .comments-area .comment-list .single-comment .comment {
         font-size: 10px
     }
@@ -6600,7 +6566,6 @@ h2 {
     .bradcam_area {
         padding: 150px 0
     }
-
     .imgTextLeft {
         max-width: 100%;
         padding: 0px 0px 20px;
@@ -6611,24 +6576,19 @@ h2 {
     .bradcam_area {
         padding: 150px 0
     }
-
     .imgTextLeft {
         max-width: 100%;
         padding: 0px 0px 20px;
     }
-
     .LabelMobil {
         display: none !important;
     }
-
     .EspacoRodape {
         margin-left: 15px !important;
     }
-
     .search {
         margin-left: 0%;
     }
-
     .InputSearch {
         color: #fbfbfb;
         background: black;
@@ -6636,12 +6596,10 @@ h2 {
         width: 0px !important;
         height: auto;
     }
-
     .banner img {
         height: 270px !important;
         width: 100%;
     }
-
     .AjusteCaixaMobil {
         margin-left: -2px !important;
         margin-right: -2px !important;
@@ -6749,83 +6707,66 @@ h2 {
     .bradcam_area h3 {
         font-size: 30px
     }
-
     p iframe {
         width: 100%;
     }
-
     p img {
         width: 100% !important;
         height: auto !important;
     }
-
     iframe {
         width: 100%;
     }
-
     .LabelMobil {
         display: none !important;
     }
-
     .EspacoRodape {
         margin-left: 15px !important;
         ;
     }
-
     .LabelMobil1 {
         display: block;
     }
-
     .AjusteCaixaMobil {
         margin-left: -2px !important;
         margin-right: -2px !important;
     }
-
     .Espaco {
         padding-right: 0px;
     }
-
     .Espaco2 {
         margin-top: 43px !important;
     }
-
     .Espaco3 {
         margin-right: -50px;
         margin-left: -67px;
     }
-
     .Espaco4 {
         margin-right: -56px;
         margin-left: -56px;
     }
-
     .search {
         margin-left: 0%;
         width: 100%;
     }
-
     .internasBanner img {
         height: auto !important;
         width: 100%;
         margin-top: 0px !important;
     }
-
     .BoxProjeto {
         color: #1e359c !important;
         font-weight: 450;
         height: auto !important;
     }
-
     .banner img {
         height: auto !important;
         width: 100%;
         margin-top: 48px !important;
     }
-
     .EspacoP {
         height: auto !important;
     }
-
     /*RFG*/
     .InputSearch {
         color: #fbfbfb;
@@ -6835,7 +6776,6 @@ h2 {
         height: auto;
         height: 38px;
     }
-
     .IconSearch {
         background: #000000;
         border-color: #fbfbfb;
@@ -6844,7 +6784,6 @@ h2 {
         border-top-right-radius: 4px;
         border-bottom-right-radius: 4px;
     }
-
     .header-sticky {
         left: 0;
         margin: auto;
@@ -6859,14 +6798,12 @@ h2 {
         -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
         background: #fff;
     }
-
     .imgResposiva {
         width: 100%;
         margin-top: 55px;
         /*position: fixed;*/
         left: 0;
     }
-
     .ImgBanner {
         width: 100%;
         margin-top: 18px;
@@ -6876,11 +6813,9 @@ h2 {
         margin-left: 0px;
         margin-right: 0px
     }
-
     .SpaceImg {
         display: block;
     }
-
     .slicknav_menu .slicknav_icon {
         margin-right: 6px;
         margin-top: 9px;
@@ -6889,7 +6824,6 @@ h2 {
         top: 15px;
         padding-bottom: 3px;
     }
-
     .title-internal2 {
         color: #000000;
         font-weight: 700;
@@ -6898,7 +6832,6 @@ h2 {
         padding-top: 0px;
         margin-left: 0px;
     }
-
     .AjusteCaixaMobil {
         margin-left: -2px !important;
         margin-right: -2px !important;
@@ -6932,51 +6865,41 @@ h2 {
     .bradcam_area h3 {
         font-size: 30px
     }
-
     .LabelMobil {
         display: none;
     }
-
     .EspacoRodape {
         margin-left: 15px !important;
         ;
     }
-
     .LabelMobil1 {
         display: block;
     }
-
     .imgNoticias2 {
         padding-bottom: 0px;
         padding-top: 0px;
         /* width: 100%;
         height: 250px !important;*/
     }
-
     .Espaco {
         padding-right: 0px;
     }
-
     .Espaco2 {
         margin-top: 40px;
     }
-
     .Espaco3 {
         margin-right: -50px;
         margin-left: -67px;
     }
-
     .Espaco4 {
         margin-right: -56px;
         margin-left: -56px;
     }
-
     .BoxProjeto {
         color: #1e359c !important;
         font-weight: 450;
         height: auto !important;
     }
-
     .header-sticky {
         left: 0;
         margin: auto;
@@ -6991,14 +6914,12 @@ h2 {
         -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
         background: #fff;
     }
-
     .imgResposiva {
         width: 100%;
         margin-top: 55px;
         /*position: fixed;*/
         left: 0;
     }
-
     .ImgBanner {
         width: 100%;
         margin-top: 24px;
@@ -7008,11 +6929,9 @@ h2 {
         margin-left: 0px;
         margin-right: 0px
     }
-
     .SpaceImg {
         display: block;
     }
-
     .AjusteCaixaMobil {
         margin-left: -2px !important;
         margin-right: -2px !important;
@@ -7023,45 +6942,36 @@ h2 {
     .bradcam_area h3 {
         font-size: 30px
     }
-
     .LabelMobil {
         display: none;
     }
-
     .LabelMobil1 {
         display: block;
     }
-
     .EspacoRodape {
         margin-left: 15px;
     }
-
     .imgNoticias2 {
         padding-bottom: 0px;
         padding-top: 0px;
         width: 100%;
         height: 250px !important;
     }
-
     .Espaco {
         padding-right: 0px;
     }
-
     .Espaco2 {
         margin-top: 40px;
     }
-
     .Espaco3 {
         margin-right: -50px;
         margin-left: -67px;
     }
-
     .banner img {
         height: auto !important;
         width: 100%;
         margin-top: 40px !important;
     }
-
     .header-sticky {
         left: 0;
         margin: auto;
@@ -7076,14 +6986,12 @@ h2 {
         -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
         background: #fff;
     }
-
     .imgResposiva {
         width: 100%;
         margin-top: 55px;
         /*position: fixed;*/
         left: 0;
     }
-
     .ImgBanner {
         width: 100%;
         margin-top: 24px;
@@ -7093,17 +7001,14 @@ h2 {
         margin-left: 0px;
         margin-right: 0px
     }
-
     .SpaceImg {
         display: block;
     }
-
     .BoxProjeto {
         color: #1e359c !important;
         font-weight: 450;
         height: auto !important;
     }
-
     .AjusteCaixaMobil {
         margin-left: -2px !important;
         margin-right: -2px !important;
@@ -7114,46 +7019,37 @@ h2 {
     .bradcam_area h3 {
         font-size: 30px
     }
-
     .LabelMobil {
         display: none;
     }
-
     .LabelMobil1 {
         display: block;
     }
-
     .EspacoRodape {
         margin-left: 15px !important;
         ;
     }
-
     .imgNoticias2 {
         padding-bottom: 0px;
         padding-top: 0px;
         width: 100%;
         /* height: 250px !important;*/
     }
-
     .Espaco {
         padding-right: 0px;
     }
-
     .Espaco2 {
         margin-top: 40px;
     }
-
     .Espaco3 {
         margin-right: -50px;
         margin-left: -67px;
     }
-
     .banner img {
         height: auto !important;
         width: 100%;
         margin-top: 40px !important;
     }
-
     .header-sticky {
         left: 0;
         margin: auto;
@@ -7168,14 +7064,12 @@ h2 {
         -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
         background: #fff;
     }
-
     .imgResposiva {
         width: 100%;
         margin-top: 55px;
         /*position: fixed;*/
         left: 0;
     }
-
     .ImgBanner {
         width: 100%;
         margin-top: 24px;
@@ -7185,17 +7079,14 @@ h2 {
         margin-left: 0px;
         margin-right: 0px
     }
-
     .SpaceImg {
         display: block;
     }
-
     .BoxProjeto {
         color: #1e359c !important;
         font-weight: 450;
         height: auto !important;
     }
-
     .AjusteCaixaMobil {
         margin-left: -2px !important;
         margin-right: -2px !important;
@@ -7206,19 +7097,15 @@ h2 {
     .bradcam_area h3 {
         font-size: 30px
     }
-
     .LabelMobil {
         display: none;
     }
-
     .LabelMobil1 {
         display: block;
     }
-
     .EspacoRodape {
         margin-left: 15px !important;
     }
-
     .header-sticky {
         left: 0;
         margin: auto;
@@ -7233,14 +7120,12 @@ h2 {
         -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
         background: #fff;
     }
-
     .imgResposiva {
         width: 100%;
         margin-top: 55px;
         /*position: fixed;*/
         left: 0;
     }
-
     .ImgBanner {
         width: 109%;
         margin-top: 24px;
@@ -7250,11 +7135,9 @@ h2 {
         margin-left: 0px;
         margin-right: 0px
     }
-
     .SpaceImg {
         display: block;
     }
-
     .AjusteCaixaMobil {
         margin-left: -2px !important;
         margin-right: -2px !important;
@@ -7265,7 +7148,6 @@ h2 {
     .bradcam_area h3 {
         font-size: 40px
     }
-
     .imgTextLeft {
         max-width: 100%;
     }
@@ -8636,7 +8518,7 @@ del {
 .BoxProjeto {
     color: #1e359c !important;
     font-weight: 450;
-    height: 40px;
+    height: 70px;
 }
 
 .EspacoP {

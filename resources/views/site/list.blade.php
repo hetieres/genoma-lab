@@ -1,5 +1,8 @@
 @include('layouts.includes.app-head')
 <Br><br>
+
+
+
 <div class="container">
 <h1 class="interal-title" style="padding-top: 0px; color: {{ $session->color }};">{{ $session->description }}</h1>
 
@@ -19,7 +22,7 @@
                     </p>
                 </div>
                 <center>
-                  <button type="button" class="ButtonG" onclick="location.href = ('{{ $item->link() }}');">Leia mais</button>
+                  <button type="button" class="ButtonG" onclick="location.href = ('{{ $item->link() }}');">{{($lang=="en" ? 'More' : 'Leia mais')}}</button>
                 </center>
                 <br>
             </div>

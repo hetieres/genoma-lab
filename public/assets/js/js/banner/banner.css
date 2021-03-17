@@ -1963,6 +1963,11 @@ body a.btnTop.view {
 }
 
 @media (max-width:991px) {
+    .idioma {
+        margin-top: 3px;
+        padding-left: 10px;
+        margin-right: 0px;
+    }
     .LabelMobil11 {
         display: block;
     }

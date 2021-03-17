@@ -4457,12 +4457,15 @@ nav.menu>div ul.links>li>a>span>b {
     display: block
 }
 
+
+/*
 nav.menu>div ul.links>li.current>a,
 nav.menu>div ul.links>li:hover>a,
 nav.menu>div ul.links>li>a:hover {
     color: #fff;
     background-color: #02254a
 }
+*/
 
 nav.menu>div ul.links>li>.dropnav-container,
 nav.menu>div ul.links>li>.subnav-container {
