@@ -6390,6 +6390,14 @@ a:hover {
     padding-top: 40px;
 }
 
+.interal-title-list {
+    color: #e22b38;
+    font-weight: 700;
+    font-size: 25px;
+    padding-bottom: 15px;
+    padding-top: 0px;
+}
+
 div h1,
 h2 {
     color: #051441;
@@ -6704,6 +6712,9 @@ h2 {
 /* small mobile :320px. */
 
 @media (max-width: 767px) {
+    .interal-title-list {
+        padding-top: 40px;
+    }
     .bradcam_area h3 {
         font-size: 30px
     }
