@@ -1,10 +1,8 @@
 @include('layouts.includes.app-head')
 <Br><br>
 
-
-
 <div class="container">
-<h1 class="interal-title" style="padding-top: 0px; color: {{ $session->color }};">{{ $session->description }}</h1>
+<h1 class="interal-title-list" style="color: {{ $session->color }};">{{ $session->description }}</h1>
 
 <div class="row">
     @foreach ($session->posts as $item)
