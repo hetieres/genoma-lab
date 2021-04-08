@@ -97,10 +97,10 @@
 
             <ul id="navigation">
                 @if ($lang=='pt')
-               <!-- <li>
+               <li>
                     <a href="/genome-in-the-media" id="Inglês">
-                        <span><b class="MenuLabel idioma">Inglês</b></span> </a>
-                </li>-->
+                        <span><b class="MenuLabel idioma">English</b></span> </a>
+                </li>
                 @else
                 <li>
                     <a href="/" id="Portugues">
