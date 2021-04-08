@@ -15,19 +15,19 @@ $
 
 # Command Line History (newest to oldest):
 :wq
-|2,0,1614019116,,"wq"
+|2,0,1617913834,,"wq"
+:q
+|2,0,1617913128,,"q"
+:w
+|2,0,1617819800,,"w"
 :w!
 |2,0,1614019106,,"w!"
-:w
-|2,0,1614019084,,"w"
 :q!
 |2,0,1614019019,,"q!"
 :Q1
 |2,0,1614018996,,"Q1"
 :q"
 |2,0,1614018993,,"q\""
-:q
-|2,0,1614018887,,"q"
 :!q
 |2,0,1608566317,,"!q"
 :i
@@ -48,6 +48,8 @@ $
 |2,0,1608328389,,"!W"
 
 # Search String History (newest to oldest):
+? @$
+|2,1,1617913123,,"@$"
 
 # Expression History (newest to oldest):
 
@@ -56,6 +58,9 @@ $
 # Debug Line History (newest to oldest):
 
 # Registers:
+""0	CHAR	0
+	p
+|3,1,0,0,1,0,1617913123,"p"
 "1	LINE	0
 	</div>
 |3,0,1,1,1,0,1614019052,"</div>"
@@ -83,43 +88,181 @@ $
 "9	LINE	0
 	                        </button>
 |3,0,9,1,1,0,1614019051,"                        </button>"
-""-	CHAR	0
+"-	CHAR	0
 	p
-|3,1,36,0,1,0,1614019108,"p"
+|3,0,36,0,1,0,1614019108,"p"
 
 # File marks:
-'0  1  3  ~/resources/views/layouts/includes/fapesp-bar.blade.php
-|4,48,1,3,1614019116,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
-'1  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
-|4,49,119,5,1614019019,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
-'2  1  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
-|4,50,1,5,1614018999,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
-'3  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
-|4,51,119,5,1614018999,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
-'4  1  0  ~/resources/views/layouts/includes/fapesp-ba
-|4,52,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
-'5  1  0  ~/.git/MERGE_MSG
-|4,53,1,0,1612972283,"~/.git/MERGE_MSG"
-'6  1  0  ~/.git/MERGE_MSG
-|4,54,1,0,1612897301,"~/.git/MERGE_MSG"
-'7  1  0  ~/.git/MERGE_MSG
-|4,55,1,0,1612897097,"~/.git/MERGE_MSG"
-'8  1  0  ~/.git/MERGE_MSG
-|4,56,1,0,1612897097,"~/.git/MERGE_MSG"
-'9  1  0  ~/.git/MERGE_MSG
-|4,57,1,0,1612896989,"~/.git/MERGE_MSG"
+'0  71  24  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,48,71,24,1617914531,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+'1  1  16  ~/.env
+|4,49,1,16,1617913834,"~/.env"
+'2  64  31  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,50,64,31,1617913459,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+'3  64  31  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,51,64,31,1617913459,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+'4  101  31  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,52,101,31,1617913191,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+'5  101  31  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,53,101,31,1617913191,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+'6  101  31  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,54,101,31,1617913191,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+'7  101  31  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,55,101,31,1617913191,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+'8  8  0  ~/resources/views
+|4,56,8,0,1617913128,"~/resources/views"
+'9  117  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,57,117,5,1617819802,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
 
 # Jumplist (newest first):
+-'  71  24  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,71,24,1617914531,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  64  31  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,64,31,1617913847,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  16  ~/.env
+|4,39,1,16,1617913834,"~/.env"
+-'  1  16  ~/.env
+|4,39,1,16,1617913834,"~/.env"
+-'  64  31  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,64,31,1617913459,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  64  31  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,64,31,1617913459,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  101  31  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,101,31,1617913196,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  101  31  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,101,31,1617913196,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  101  31  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,101,31,1617913196,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  101  31  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,101,31,1617913191,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  101  31  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,101,31,1617913191,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  117  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,117,5,1617913167,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  117  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,117,5,1617913167,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  117  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,117,5,1617913167,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  117  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,117,5,1617913167,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  117  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,117,5,1617913167,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  8  0  ~/resources/views
+|4,39,8,0,1617913128,"~/resources/views"
+-'  8  0  ~/resources/views
+|4,39,8,0,1617913128,"~/resources/views"
+-'  8  0  ~/resources/views
+|4,39,8,0,1617913128,"~/resources/views"
+-'  8  0  ~/resources/views
+|4,39,8,0,1617913128,"~/resources/views"
+-'  8  0  ~/resources/views
+|4,39,8,0,1617913128,"~/resources/views"
+-'  8  0  ~/resources/views
+|4,39,8,0,1617913128,"~/resources/views"
+-'  8  0  ~/resources/views
+|4,39,8,0,1617913128,"~/resources/views"
+-'  8  0  ~/resources/views
+|4,39,8,0,1617913128,"~/resources/views"
+-'  8  0  ~/resources/views
+|4,39,8,0,1617913128,"~/resources/views"
+-'  8  0  ~/resources/views
+|4,39,8,0,1617913128,"~/resources/views"
+-'  8  0  ~/resources/views
+|4,39,8,0,1617913128,"~/resources/views"
+-'  8  0  ~/resources/views
+|4,39,8,0,1617913128,"~/resources/views"
+-'  8  0  ~/resources/views
+|4,39,8,0,1617913128,"~/resources/views"
+-'  8  0  ~/resources/views
+|4,39,8,0,1617913128,"~/resources/views"
+-'  8  0  ~/resources/views
+|4,39,8,0,1617913128,"~/resources/views"
+-'  8  0  ~/resources/views
+|4,39,8,0,1617913128,"~/resources/views"
+-'  117  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,117,5,1617819802,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  117  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,117,5,1617819802,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  117  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,117,5,1617819802,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  117  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,117,5,1617819802,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  3  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,3,1617819748,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  3  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,3,1617819748,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  3  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,3,1617819748,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  3  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,3,1617819748,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  3  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,3,1617819748,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  3  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,3,1617819748,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  3  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,3,1617819748,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  3  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,3,1617819748,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  3  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,3,1617819748,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  3  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,3,1614019116,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  3  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,3,1614019116,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  3  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,3,1614019116,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
 -'  1  3  ~/resources/views/layouts/includes/fapesp-bar.blade.php
 |4,39,1,3,1614019116,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
 -'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
 |4,39,119,5,1614019019,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,119,5,1614019019,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,119,5,1614019019,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,119,5,1614019019,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,119,5,1614019019,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,119,5,1614019019,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,119,5,1614019019,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,119,5,1614019019,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,119,5,1614019019,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,119,5,1614019019,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,119,5,1614019019,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,119,5,1614019019,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,119,5,1614019019,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,119,5,1614018999,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,119,5,1614018999,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,119,5,1614018999,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
 -'  119  5  ~/resources/views/layouts/includes/fapesp-bar.blade.php
 |4,39,119,5,1614018999,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
 -'  1  0  ~/resources/views/layouts/includes/fapesp-bar.blade.php
 |4,39,1,0,1614018917,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
 -'  1  0  ~/resources/views/layouts/includes/fapesp-bar.blade.php
 |4,39,1,0,1614018917,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,0,1614018917,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,0,1614018917,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,0,1614018917,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,0,1614018917,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,0,1614018917,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-bar.blade.php
+|4,39,1,0,1614018917,"~/resources/views/layouts/includes/fapesp-bar.blade.php"
 -'  1  0  ~/resources/views/layouts/includes/fapesp-ba
 |4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
 -'  1  0  ~/resources/views/layouts/includes/fapesp-ba
@@ -136,193 +279,73 @@ $
 |4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
 -'  1  0  ~/resources/views/layouts/includes/fapesp-ba
 |4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612972283,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897301,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612897097,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896989,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612896873,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612878687,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612878687,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612878687,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612878687,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612878687,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612878687,"~/.git/MERGE_MSG"
--'  1  0  ~/.git/MERGE_MSG
-|4,39,1,0,1612878687,"~/.git/MERGE_MSG"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
+-'  1  0  ~/resources/views/layouts/includes/fapesp-ba
+|4,39,1,0,1614018890,"~/resources/views/layouts/includes/fapesp-ba"
 
 # History of marks within files (newest to oldest):
 
 > ~/resources/views/layouts/includes/fapesp-bar.blade.php
-	*	1614019114	0
-	"	1	3
-	^	1	4
-	.	1	3
+	*	1617913888	0
+	"	71	24
+	^	101	32
+	.	101	31
 	+	1	4
 	+	1	5
 	+	1	4
 	+	119	5
 	+	1	3
+	+	100	15
+	+	103	21
+	+	102	80
+	+	117	5
+	+	101	31
+
+> ~/.env
+	*	1617913474	0
+	"	1	16
+	^	26	17
+	.	26	16
+	+	24	8
+	+	30	21
+	+	29	17
+	+	24	21
+	+	25	12
+	+	24	0
+	+	26	16
 
 > ~/resources/views/layouts/includes/fapesp-ba
 	*	1614018887	0
@@ -388,19 +411,6 @@ $
 > /etc/ntp.conf
 	*	1608332653	0
 	"	1	0
-
-> ~/.env
-	*	1608331733	0
-	"	1	16
-	^	26	17
-	.	26	16
-	+	24	8
-	+	30	21
-	+	29	17
-	+	24	21
-	+	25	12
-	+	24	0
-	+	26	16
 
 > ~/app/Http/Controllers/SiteController.php
 	*	1608329887	0
