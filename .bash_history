@@ -1,20 +1,3 @@
-git status
-git add .
-git commit -m "Fixed"
-git pull
-vim resources/views/layouts/includes/fapesp-ba                   r.blade.php
-vim resources/views/layouts/includes/fapesp-bar.blade.php
-vim resources/views/layouts/includes/fapesp-bar.blade.php
-cls
-clear
-vim resources/views/layouts/includes/fapesp-bar.blade.php
-git status
-git add .
-git status
-git commit -m "Fixed"
-git pull
-git push
-ls -l
 cd storage/app/public/upload/
 ls -l
 chmod 777 5
@@ -98,3 +81,20 @@ clear
 pwd
 vim .env
 vim resources/views/layouts/includes/fapesp-bar.blade.php 
+clear
+ps
+clear
+pwd
+git status
+git add .
+clear
+git status
+git commit -m "Ajuste Serve"
+git pull
+cls
+cçear
+clear
+vim resources/views/layouts/includes/fapesp-bar.blade.php 
+cd ../../..
+pwd
+git status

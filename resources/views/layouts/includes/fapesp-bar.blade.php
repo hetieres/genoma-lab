@@ -1,4 +1,4 @@
-<!-- Preloader Start
+<!-- Preloader Start-->
 <div id="preloader-active" style="display: block;">
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-inner position-relative">
@@ -8,7 +8,7 @@
             </div>
         </div>
     </div>
-</div>-->
+</div>
 <!-- Preloader Start -->
 <!-- Header Start -->
 <div id="Removelogos">
@@ -49,7 +49,7 @@
 <div class="menu-line header-sticky" id="DivMenu">
     <div class="container">
         <div class="brand LabelMobil1">
-            <a href="{{asset('/') }}" class="link-brand" title="FAPESP - Fundação de Amparo à Pesquisa do Estado de São Paulo">
+            <a href="{{asset('/') . ($lang=="en" ? 'en' : '') }}" class="link-brand" title="FAPESP - Fundação de Amparo à Pesquisa do Estado de São Paulo">
                 <img src="{{asset('assets/img/logo/logoGenoma.png') }}" class="simple img-fluid" alt="logo" />
             </a>
 
@@ -65,7 +65,7 @@
                     <i class="fas fa-times"></i>
                 </a>
             </div>
-            <a href="{{asset('/') }}" class="link-brand" title="Genoma">
+            <a href="{{asset('/'). ($lang=="en" ? 'en' : '') }}" class="link-brand" title="Genoma">
                 <img src="{{asset('assets/img/logo/logo-mini.png') }}" id="logo-mini" class="simple img-fluid LabelMobil" alt="logo" />
             </a>
             {!! $menu !!}
