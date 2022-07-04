@@ -89,7 +89,6 @@
                 </div>
             </div>
 
-
             <div class="col-md-12 ">
                 <center>
                 <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[4]->url]) }}'">{{ $lang=="pt" ? "Mais" : "More" }}</button>
@@ -97,8 +96,8 @@
                 <br>
             </div>
         </div>
-         <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[0]->color }};"></div>
-    @endif   
+         <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[4]->color }};"></div>
+    @endif
 
     @if ($sessions[2]->posts && count($sessions[2]->posts))
     <div class="recent-articles pt-40 ">

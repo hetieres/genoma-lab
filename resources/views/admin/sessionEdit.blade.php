@@ -96,7 +96,7 @@
 
                                 <div class="form-group">
                                     <label for="color" class="col-sm-2 control-label">Cor </label>
-                                    <input type="hidden" name="cor da label da imagem" id="color" class="form-control" value="{{ $session->color }}">
+                                    {{-- <input type="hidden" name="cor da label da imagem" id="color" class="form-control" value="{{ $session->color }}"> --}}
                                     <div class="col-lg-3 col-xs-10 input-group colorize" style="padding-left: 16px;">
                                         <input type="text" name="color" id="color" class="form-control" value="{{ $session->color }}" required>
                                         <div class="input-group-addon"><i></i></div>
