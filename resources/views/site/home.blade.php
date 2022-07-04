@@ -57,26 +57,28 @@
             <div class="BordaInferior2" style="border-bottom: 10px solid #82d643;"></div>
         </div>
 
-        @if ($sessions[0]->posts)
+    </div>
+
+    @if ($sessions[4]->posts && count($sessions[4]->posts))
         <div class="recent-articles pt-40 ">
             <div class="container BordaInferior">
                 <div class="col-md-12">
                     <div class="section-tittle mb-30">
-                        <h3>{{ $sessions[0]->description }}</h3>
+                        <h3>{{ $sessions[4]->description }}</h3>
                     </div>
                     <div class="row Espaco3">
-                        @for ($i = 0; $i < count($sessions[0]->posts); $i++)
-                        <div class="col-md Espaco">
+                        @for ($i = 0; $i < count($sessions[4]->posts); $i++)
+                        <div class="col-md {{ $i == 0 ? 'Espaco' : 'Espaco5' }}">
                             <div class="single-recent">
-                                <a href="{{ $sessions[0]->posts[$i]->link() }}">
+                                <a href="{{ $sessions[4]->posts[$i]->link() }}">
                                     <div class=" mb-4" style="height: auto;">
                                         <div class="">
-                                            <img src="{{ asset($sessions[0]->posts[$i]->getImage()) }}" alt="" class="img-fluid imgNoticias2">
+                                            <img src="{{ asset($sessions[4]->posts[$i]->getImage()) }}" alt="" class="img-fluid imgNoticias2">
                                         </div>
                                         <div class="">
-                                            <h5 class="cardtitleNoticia subtitulo">{{ $sessions[0]->posts[$i]->title }}</h5>
-                                            <p class="TextLimiteNoticias" style="padding-bottom: 50px;">
-                                                {!!html_entity_decode(str_replace("\n", "<br>", $sessions[0]->posts[$i]->summary))!!}
+                                            <h5 class="cardtitleNoticia subtitulo" style="padding-bottom: 70px;">{{ $sessions[4]->posts[$i]->title }}</h5>
+                                            <p class="TextLimiteNoticias">
+                                                {!!html_entity_decode(str_replace("\n", "<br>", $sessions[4]->posts[$i]->summary))!!}
                                             </p>
                                         </div>
                                     </div>
@@ -86,18 +88,19 @@
                     @endfor
                 </div>
             </div>
+
+
             <div class="col-md-12 ">
                 <center>
-                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[0]->url]) }}'">{{ $lang=="pt" ? "Mais" : "More" }}</button>
+                <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[4]->url]) }}'">{{ $lang=="pt" ? "Mais" : "More" }}</button>
                 </center>
                 <br>
             </div>
         </div>
-        <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[0]->color }};"></div>
-        @endif
-    </div>
+         <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[0]->color }};"></div>
+    @endif
 
-    @if($sessions[1]->posts)
+    @if ($sessions[1]->posts && count($sessions[1]->posts))
     <div class="recent-articles pt-40">
         <div class="BordaInferior">
             <div class="recent-wrapper">
@@ -147,7 +150,7 @@
     </div>
     @endif
 
-    @if ($sessions[2]->posts)
+    @if ($sessions[2]->posts && count($sessions[2]->posts))
     <div class="recent-articles pt-40 ">
         <div class="container BordaInferior">
             <div class="col-md-12">
@@ -182,12 +185,12 @@
             <br>
         </div>
     </div>
-    <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[2]->color }};"></div>
+    <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[3]->color }};"></div>
     @endif
 
-    @if ($sessions[3]->posts)
+    @if ($sessions[3]->posts && count($sessions[3]->posts))
         <div class="recent-articles pt-40 ">
-            <div class="container">
+            <div class="container BordaInferior">
                 <div class="col-md-12">
                     <div class="section-tittle mb-30">
                         <h3>{{ $sessions[3]->description }}</h3>
@@ -219,6 +222,46 @@
             <div class="col-md-12 ">
                 <center>
                 <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[3]->url]) }}'">{{ $lang=="pt" ? "Mais" : "More" }}</button>
+                </center>
+                <br>
+            </div>
+        </div>
+         <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[0]->color }};"></div>
+    @endif
+
+
+    @if ($sessions[0]->posts && count($sessions[0]->posts))
+        <div class="recent-articles pt-40 ">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="section-tittle mb-30">
+                        <h3>{{ $sessions[0]->description }}</h3>
+                    </div>
+                    <div class="row Espaco3">
+                        @for ($i = 0; $i < count($sessions[0]->posts); $i++)
+                        <div class="col-md Espaco">
+                            <div class="single-recent">
+                                <a href="{{ $sessions[0]->posts[$i]->link() }}">
+                                    <div class=" mb-4" style="height: auto;">
+                                        <div class="">
+                                            <img src="{{ asset($sessions[0]->posts[$i]->getImage()) }}" alt="" class="img-fluid imgNoticias2">
+                                        </div>
+                                        <div class="">
+                                            <h5 class="cardtitleNoticia subtitulo">{{ $sessions[0]->posts[$i]->title }}</h5>
+                                            <p class="TextLimiteNoticias" style="padding-bottom: 50px;">
+                                                {!!html_entity_decode(str_replace("\n", "<br>", $sessions[0]->posts[$i]->summary))!!}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                    </div>
+                    @endfor
+                </div>
+            </div>
+            <div class="col-md-12 ">
+                <center>
+                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[0]->url]) }}'">{{ $lang=="pt" ? "Mais" : "More" }}</button>
                 </center>
                 <br>
             </div>

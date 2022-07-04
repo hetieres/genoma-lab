@@ -54,10 +54,8 @@ class SiteController extends Controller
                                     ->limit(5)
                                     ->get();
 
-        
-
         if($this->lang=='pt'){
-            $sessions = Session::where('lang', $this->lang)->where('edit', '1')->orderByRaw('id=1 desc, id=6 desc, id=3 desc, id=5 desc')->get();
+            $sessions = Session::where('lang', $this->lang)->where('edit', '1')->orderByRaw('id=1 desc, id=6 desc, id=3 desc, id=5 desc, id=8 desc')->get();
         }else{
             $sessions = Session::where('lang', $this->lang)->where('edit', '1')->get();
         }
@@ -77,7 +75,7 @@ class SiteController extends Controller
                     ->limit($session->limit)
                     ->get();
             }else if($session->type_list_id == 3){ //manual
-                $session->ids = $session->ids ? json_decode($session->ids): false;
+                $session->ids = $session->ids ? json_decode($session->ids): [];
                 $rs = Post::whereIn('id', $session->ids);
                 foreach ($session->ids as $item) {
                     $rs->orderByRaw('id=' . $item . ' desc');
@@ -147,7 +145,7 @@ class SiteController extends Controller
         }
     }
 
-    
+
     public function search(Request $request)
     {
         $rs = Post::selectRaw('posts.*')->where('posts.lang', $this->lang)->whereNotIn('posts.session_id', [7, 14]);
