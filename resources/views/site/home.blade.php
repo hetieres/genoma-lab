@@ -135,7 +135,7 @@
             <br>
         </div>
     </div>
-    <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[3]->color }};"></div>
+    <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[2]->color }};"></div>
     @endif
 
     @if ($sessions[3]->posts && count($sessions[3]->posts))
