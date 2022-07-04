@@ -176,7 +176,7 @@
                 <br>
             </div>
         </div>
-         <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[0]->color }};"></div>
+         <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[3]->color }};"></div>
     @endif
 
 
