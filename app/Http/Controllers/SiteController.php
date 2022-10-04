@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Model\Tag;
 use Carbon\Carbon;
+use App\Model\Gene;
 use App\Model\News;
 use App\Model\Post;
 use App\Model\Video;
@@ -11,9 +12,11 @@ use App\Model\Country;
 use App\Model\Session;
 use App\Model\Category;
 use App\Model\MediaType;
+use App\Model\GeneticTest;
 use App\Helpers\BaseHelper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Str;
+use App\Model\MedicalSpecialty;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
@@ -54,39 +57,114 @@ class SiteController extends Controller
                                     ->limit(5)
                                     ->get();
 
-        if($this->lang=='pt'){
-            $sessions = Session::where('lang', $this->lang)->where('edit', '1')->orderByRaw('id=1 desc, id=6 desc, id=3 desc, id=5 desc, id=8 desc')->get();
-        }else{
-            $sessions = Session::where('lang', $this->lang)->where('edit', '1')->get();
-        }
-
-        foreach ($sessions as $session) {
-            $rs = false;
-            if($session->type_list_id == 1){ //mais recentes
-                $rs = Post::where('session_id', $session->id)
-                    ->where('dt_publication', '<=', date('Y-m-d'))
-                    ->orderBy('dt_publication', 'desc')
-                    ->limit($session->limit)
-                    ->get();
-            }else if($session->type_list_id == 2){ //Aleatório
-                $rs = Post::where('session_id', $session->id)
-                    ->where('dt_publication', '<=', date('Y-m-d'))
-                    ->orderByRaw("RAND()")
-                    ->limit($session->limit)
-                    ->get();
-            }else if($session->type_list_id == 3){ //manual
-                $session->ids = $session->ids ? json_decode($session->ids): [];
-                $rs = Post::whereIn('id', $session->ids);
-                foreach ($session->ids as $item) {
-                    $rs->orderByRaw('id=' . $item . ' desc');
-                }
-                $rs = $rs->limit($session->limit)->get();
-            }
-            $session->posts = $rs;
-        }
-        $this->data['sessions'] = $sessions;
+        $this->data['genes']          = Gene::orderBy('description')->get();
+        $this->data['especialidades'] = MedicalSpecialty::where('description' , '<>', 'Todas')->orderBy('description')->get();
+        $this->data['casais']         = MedicalSpecialty::where('description' , 'like', 'triagem para casais')->first();
+        $this->data['duvidas']        = Post::find(195);
+        $this->data['sobre']          = Post::find(196);
+        $this->data['aconselhamento'] = Post::find(198);
+        $this->data['tests']          = GeneticTest::orderBy('description')->get();
 
         return view('site.home', $this->data);
+    }
+
+    public function pesquisa(Request $request)
+    {
+        $rs = GeneticTest::where('active', 1);
+        $request->k = trim($request->k); //chave
+
+        //chave
+        if (isset($request->k) && trim($request->k) != '') {
+            $type = substr($request->k, 0, 2);
+            $id = substr($request->k, 2);
+
+            //especialidade medica
+            if($type == 'e_'){
+                $specialty = MedicalSpecialty::find($id);
+                if($specialty && $specialty->description != 'todas'){
+                    $rs->where('medical_specialty', 'like', '%' . $specialty->description . '%');
+                }
+            }
+
+            //gene
+             if($type == 'g_'){
+                $gene = Gene::find($id);
+                if($gene){
+                    $rs->where('genes', 'like', '%' . $gene->description . '%');
+                }
+            }
+        }
+
+        //set pagina atual
+        Paginator::currentPageResolver(function () use ($request) {
+            $request->pg = (int) $request->pg;
+            return $request->pg;
+        });
+
+        $this->data['count'] = $rs->count();
+        $rs = $rs->orderBy('priority', 'desc')->orderBy('test')->paginate(20);
+
+
+        $this->data['rs']             = $rs;
+        $this->data['lastPage']       = $rs->lastPage();
+        $this->data['currentPage']    = $rs->currentPage();
+        $this->data['rangePages']     = $this->rangePages($this->data['lastPage'], $this->data['currentPage']);
+        $this->data['genes']          = Gene::orderBy('description')->get();
+        $this->data['especialidades'] = MedicalSpecialty::where('description' , '<>', 'Todas')->orderBy('description')->get();
+        $this->data['tests']          = GeneticTest::orderBy('priority', 'desc')->orderBy('test')->get();
+        $this->data['k']              = isset($request->k) ? $request->k: '';
+        $this->data['url']            = isset($request->k) && $request->k != '' ? '?k=' . $request->k . '&pg=' : '?pg=';
+
+
+        return view('site.pesquisa', $this->data);
+    }
+
+    public function especialidades(Request $request)
+    {
+        $this->data['especialidades'] = MedicalSpecialty::orderByRaw('description = \'Todas\' desc')->orderBy('description')->get();
+
+        return view('site.especialidades', $this->data);
+    }
+
+    public function teste(Request $request)
+    {
+        $this->data['test'] = GeneticTest::where('id', $request->id)->first();
+        return view('site.genetic-test', $this->data);
+    }
+
+    public function solicitacao(Request $request)
+    {
+        if($request->email){
+            $test     = GeneticTest::where('id', $request->id)->first();
+            $to       = 'jbergamo@fapesp.br';
+            $from     = $request->nome . ' <' . $request->email . '>';
+            $subject  = 'Contato via SITE - ' . $request->mensagem;
+            $conteudo = $request->mensage;
+
+            $headers  = "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=utf-8\r\n";
+            $headers .= "From: $from\r\n";
+            $headers .= "Return-path: $from\r\n";
+
+            $conteudo = "<h3>Contato do Laboratório Genoma</h3>";
+            $conteudo .= "<p>Nome: " . $request->nome . "</p>";
+            $conteudo .= "<p>e-mail: " . $request->email . "</p>";
+            $conteudo .= "<p>Telefone: " . $request->telefone . "</p>";
+            $conteudo .= "<p>Mensagem do solicitante: <br>" . $request->mensagem . "</p>";
+            $conteudo = "<br><b>Interesse pelo teste:</b>";
+            $conteudo .= "<p>Código: " . $test->code . "</p>";
+            $conteudo .= "<p>Genes: " . $test->genes . "</p>";
+            $conteudo .= "<p>Doença(s): " . $test->test . "</p>";
+
+            @$mail= mail($to, $subject, $conteudo, $headers);
+
+            $this->data['title'] = 'Solicitar exame';
+            $this->data['text'] = '<p>Exame solicitado com sucesso.</p>';
+
+            return view('site.mensagem', $this->data);
+        }
+        $this->data['test'] = GeneticTest::where('id', $request->id)->first();
+        return view('site.solicitacao', $this->data);
     }
 
     public function detalhe(Request $request)

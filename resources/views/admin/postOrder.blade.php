@@ -29,7 +29,7 @@
                             <i class="fa fa-fw fa-arrows-v"></i> {{ $lang=="pt" ? 'Destaques' : 'Highlights' }}
                         </h3>
                         <div class="pull-right">
-                            <button class="btn btn-info" id="save">Gravar</button>
+                            <button class="btn btn-info save">Gravar</button>
                         </div>
                         {{-- <h3 class="box-title">{{ $post->id != '' ? $post->id . ' :: ' . $post->title : '<nova>' }}</h3> --}}
                     </div>
@@ -71,7 +71,7 @@
                     </div>
                     <div class="box-footer">
                         <div class="pull-right">
-                            <button class="btn btn-info" id="save">Gravar</button>
+                            <button class="btn btn-info save">Gravar</button>
                         </div>
                     </div>
                 </div>

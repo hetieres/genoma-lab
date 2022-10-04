@@ -30,6 +30,11 @@ Route::group(['prefix' => 'fapesp', 'middleware' => ['auth']], function () {
         Route::get('/compare/{id}/{history_id}', 'PostController@comparation')->name('post-comparation');
     });
 
+    // testes genecticos
+    Route::group(['prefix' => 'testes-geneticos'], function () {
+        Route::get('/', 'GeneticTestController@index')->name('import-test');
+    });
+
     // users
     Route::group(['prefix' => 'users'], function () {
         Route::get('/', 'UserController@index')->name('users')->middleware('admin');
@@ -101,7 +106,13 @@ Route::get('/import', 'DataImportController@import')->name('import');
 
 /* Rotas do site  PT */
 Route::get('/', 'SiteController@index')->name('home');
-Route::get('/pesquisa', 'SiteController@search')->name('search');
+Route::get('/especialidades', 'SiteController@especialidades')->name('especialidades');
+Route::get('/pesquisa', 'SiteController@pesquisa')->name('pesquisa');
+
+Route::get('/teste/{id?}', 'SiteController@teste')->name('teste');
+Route::match(array('GET','POST'), '/solicitar-teste/{id?}', 'SiteController@solicitacao')->name('solicitacao');
+
+
 
 /* Rotas do site  EN */
 Route::group(['prefix' => 'en'], function () {

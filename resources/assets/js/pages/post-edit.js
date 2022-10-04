@@ -245,22 +245,22 @@ $(document).ready(function () {
         }
     });
 
-    $("#session_id").on("change", function () {
-        $(".video").hide();
-        $(".no-video").show();
-        $(".no-content").show();
+    // $("#session_id").on("change", function () {
+    //     $(".video").hide();
+    //     $(".no-video").show();
+    //     $(".no-content").show();
 
-        if ($("#session_id").val() == 4) {
-            $(".video").show();
-            $(".no-video").hide();
-        }
+    //     if ($("#session_id").val() == 4) {
+    //         $(".video").show();
+    //         $(".no-video").hide();
+    //     }
 
-        if ($("#session_id").val() == 7 || $("#session_id").val() == 14) {
-            $(".no-content").hide();
-        }
-    });
+    //     if ($("#session_id").val() == 7 || $("#session_id").val() == 14) {
+    //         $(".no-content").hide();
+    //     }
+    // });
 
-    $("#session_id").change();
+    // $("#session_id").change();
 
     $('#files').change(function () {
         if ($('#id').val() == '') {

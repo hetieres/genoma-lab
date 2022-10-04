@@ -24,7 +24,7 @@
             <div class="container BordaInferior">
                 <div class="recent-wrapper">
                     <div class="row" style="padding-bottom: 25px;">
-                        <div class="col-md-4   text-justifid ">
+                        {{-- <div class="col-md-4   text-justifid ">
                             <center>
                             <ul class="social-network social-circle">
                                 <li><a href="https://www.facebook.com/genomaUSP/" class="icoFacebook fundoLink" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
@@ -51,6 +51,7 @@
                                 @endif
                             </div>
                         </div>
+                        --}}
                     </div>
                 </div>
             </div>
@@ -59,221 +60,323 @@
 
     </div>
 
-    @if ($sessions[4]->posts && count($sessions[4]->posts))
-        <div class="recent-articles pt-40 ">
-            <div class="container BordaInferior">
-                <div class="col-md-12">
-                    <div class="section-tittle mb-30">
-                        <h3>{{ $sessions[4]->description }}</h3>
-                    </div>
-                    <div class="row Espaco3">
-                        @for ($i = 0; $i < count($sessions[4]->posts); $i++)
-                        <div class="col-md {{ $i == 0 ? 'Espaco' : 'Espaco5' }}">
-                            <div class="single-recent">
-                                <a href="{{ $sessions[4]->posts[$i]->link() }}">
-                                    <div class=" mb-4" style="height: auto;">
-                                        <div class="">
-                                            <img src="{{ asset($sessions[4]->posts[$i]->getImage()) }}" alt="" class="img-fluid imgNoticias2">
-                                        </div>
-                                        <div class="">
-                                            <h5 class="cardtitleNoticia subtitulo" style="padding-bottom: 70px;">{{ $sessions[4]->posts[$i]->title }}</h5>
-                                            <p class="TextLimiteNoticias">
-                                                {!!html_entity_decode(str_replace("\n", "<br>", $sessions[4]->posts[$i]->summary))!!}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                    </div>
-                    @endfor
-                </div>
-            </div>
+    <style>
 
-            <div class="col-md-12 ">
-                <center>
-                <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[4]->url]) }}'">{{ $lang=="pt" ? "Mais" : "More" }}</button>
-                </center>
-                <br>
-            </div>
-        </div>
-         <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[4]->color }};"></div>
-    @endif
+        .search-bar {
+            background-color: #ff4a37;
+            height: 175px;
+            padding:50px;
+            width: 90%;
+        }
 
-    @if ($sessions[2]->posts && count($sessions[2]->posts))
+        .search-txt{
+            padding: 50px;
+        }
+
+        .grey h3, .search-txt h3{
+            font-weight: bold;
+            font-size: 18pt;
+        }
+
+        .select2-selection.select2-selection--single{
+            border: transparent;
+            padding: 15px;
+            background-color: #243748;
+            height: 62px;
+            max-width: 707px;
+            border-radius: 30px;
+        }
+
+        .select2-container{
+             display: table-cell;
+         }
+
+        .select2-container--default .select2-selection--single .select2-selection__arrow{
+            height: 48px;
+            position: absolute;
+            top: 7px;
+            color: #ff515b;
+            right: 8px;
+            background: white;
+            width: 50px;
+            padding: 0px 13px;
+            border-radius: 31px;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__rendered{
+            color: white;
+        }
+
+        .btn-bar{
+            margin-top: 90px;
+        }
+
+        .btn-bar a{
+            background-color: #01538b;
+            width: 244px;
+            margin-left: 11px;
+            display: inline-block;
+            height: 120px;
+            text-align: center;
+            color: white !important;
+            padding-top: 30px;
+            font-size: 15pt;
+        }
+
+        .btn-bar a:hover{
+            background-color: #01539b;
+        }
+
+        .btn-bar a:first-child{
+            margin-left: 0px;
+        }
+
+        .btn-bar a:nth-child(even){
+            background-color: #0083c3;
+        }
+
+        .btn-bar a:nth-child(even):hover{
+            background-color: #0083d3;
+        }
+
+        .grey{
+            background: #eef2f5;
+            margin-top: 60px;
+            padding: 35px 40px;
+        }
+
+        .grey h3::after {
+            background: #78BCEE;
+            content: "";
+            height: 6px;
+            width: 110px;
+            left: 14px;
+            position: absolute;
+            top: 40px;
+        }
+
+        .grey h5{
+            font-weight: 600;
+            color: #375ebc;
+            font-size: 16px;
+            margin-top: 32px;
+        }
+
+        .grey p{
+            font-size: 15px;
+        }
+        .grey img{
+            width: 100%;
+            height: auto;
+        }
+
+        summary{
+            background: #78BCEE;
+            padding: 15px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+
+        .col-md-6 details:nth-child(1){
+            margin-top: 35px;
+        }
+
+        summary:hover{
+            background: #4CA5E8;
+        }
+
+        details[open] summary {
+            background: #274DA8;
+        }
+
+        summary::marker {
+            content: '';
+        }
+
+        details p {
+            margin: 10px 20px;
+            font-size: 14px;
+        }
+
+        .links{
+            margin: 30px;
+        }
+
+        .links h3{
+            font-weight: bold;
+        }
+
+        .links a{
+            color: #000010;
+        }
+
+        .links a:hover{
+            color: #000000;
+        }
+
+        .links ul {
+            margin-top: 15px;
+        }
+
+        .links {
+            margin: 30px 0px;
+        }
+
+
+        @media only screen and (max-width: 760px) {
+
+        .search-bar {
+            height: 130px;
+            padding:33px 15px;
+            width: 100%;
+        }
+
+        .search-txt {
+            padding: 30px 15px;
+        }
+
+        .select2-selection.select2-selection--single{
+            max-width: 279px;
+        }
+
+        .btn-bar a:first-child{
+            margin-left: 11px;
+        }
+
+        .btn-bar{
+            margin-top: 20px;
+        }
+
+        .btn-bar a{
+            width: 90%;
+            margin-bottom: 15px;
+        }
+
+        .grey {
+            padding: 35px 5px;
+        }
+
+        .grey .col-md-6 {
+            margin-top: 30px;
+        }
+
+        .links ul li{
+            padding: 10px 0px;
+        }
+
+        .img_apoio {
+            width: 100%;
+        }
+
+
+        }
+
+
+
+    </style>
+
+
     <div class="recent-articles pt-40 ">
-        <div class="container BordaInferior">
-            <div class="col-md-12">
-                <div class="section-tittle mb-30">
-                    <h3>{{ $sessions[2]->description }}</h3>
-                </div>
-                <div class="row Espaco3">
-                    @for ($i = 0; $i < count($sessions[2]->posts); $i++) <div class="col-md Espaco">
-                        <div class="single-recent">
-                            <a href="{{ $sessions[2]->posts[$i]->link() }}">
-                                <div class=" mb-4" style="height: auto;">
-                                    <div class="">
-                                        <img src="{{ asset($sessions[2]->posts[$i]->getImage()) }}" alt="" class="img-fluid imgNoticias">
-                                    </div>
-                                    <div class="">
-                                        <h5 class="cardtitleNoticia subtitulo">{{ $sessions[2]->posts[$i]->title }}</h5>
-                                        <p class="TextLimiteNoticias" style="padding-bottom: 50px;">
-                                            {!!html_entity_decode(str_replace("\n", "<br>", $sessions[2]->posts[$i]->summary))!!}
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                </div>
-                @endfor
-            </div>
-        </div>
-        <div class="col-md-12 ">
-            <center>
-                <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[2]->url]) }}'">{{ $lang=="pt" ? "Mais" : "More" }}</button>
-            </center>
-            <br>
-        </div>
-    </div>
-    <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[2]->color }};"></div>
-    @endif
-
-    @if ($sessions[3]->posts && count($sessions[3]->posts))
-        <div class="recent-articles pt-40 ">
-            <div class="container BordaInferior">
-                <div class="col-md-12">
-                    <div class="section-tittle mb-30">
-                        <h3>{{ $sessions[3]->description }}</h3>
-                    </div>
-                    <div class="row Espaco3">
-                        @for ($i = 0; $i < count($sessions[3]->posts); $i++)
-                        <div class="col-md {{ $i == 0 ? 'Espaco' : 'Espaco5' }}">
-                            <div class="single-recent">
-                                <a href="{{ $sessions[3]->posts[$i]->link() }}">
-                                    <div class=" mb-4" style="height: auto;">
-                                        <div class="">
-                                            <img src="{{ asset($sessions[3]->posts[$i]->getImage()) }}" alt="" class="img-fluid imgNoticias2">
-                                        </div>
-                                        <div class="">
-                                            <h5 class="cardtitleNoticia subtitulo" style="padding-bottom: 70px;">{{ $sessions[3]->posts[$i]->title }}</h5>
-                                            <p class="TextLimiteNoticias">
-                                                {!!html_entity_decode(str_replace("\n", "<br>", $sessions[3]->posts[$i]->summary))!!}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                    </div>
-                    @endfor
-                </div>
-            </div>
-
-
             <div class="col-md-12 ">
-                <center>
-                <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[3]->url]) }}'">{{ $lang=="pt" ? "Mais" : "More" }}</button>
-                </center>
-                <br>
-            </div>
-        </div>
-         <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[3]->color }};"></div>
-    @endif
-
-
-     @if ($sessions[1]->posts && count($sessions[1]->posts))
-    <div class="recent-articles pt-40">
-        <div class="BordaInferior">
-            <div class="recent-wrapper">
-                <!-- section Tittle -->
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-tittle mb-30">
-                            <h3>{{ $sessions[1]->description }}</h3>
+                    <div class="col-md-3 search-txt">
+                        <h3>Busque exame <br> pela doença ou gene</h3>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="search-bar">
+                            <select class="search select2">
+                                <option value=""></option>
+                                @foreach ($especialidades as $item)
+                                    <option value="{!! route('pesquisa') . '?k=e_' . $item->id !!}" >{!! $item->description !!}</option>
+                                @endforeach
+                                @foreach ($tests as $test)
+                                    <option value="{!! $test->link() !!}">{!! $test->test !!}</option>
+                                @endforeach
+                                @foreach ($genes as $gene)
+                                    <option value="{!! route('pesquisa') . '?k=g_' . $gene->id !!}" >{!! $gene->description !!}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    @foreach ($sessions[1]->posts as $item)
-                    <div class="col-md">
-                        <div class="single-recent AjusteCaixaMobil">
-                            <div class="card mb-4 shadow-sm" style="border: 1px solid #000000;">
-                                <a href="{{ $item->link() }}">
-                                    <div class="card-body">
-                                        <p class="TextLimitedProjects BoxProjeto" >
-                                            {{ $item->title }}</p>
-                                        <p class="card-text EspacoP" >
-                                            {!!html_entity_decode(str_replace("\n", "<br>", $item->summary))!!}
-                                        </p>
-                                    </div>
-                                </a>
-                                <!--
-                                <a href="{{ asset('/') }}">
-                                <img class="img-fluig" src="{{asset('assets/img/seta.png') }}" alt="" style="float: right;margin-right: 10px;"></a>
-                           -->
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
             </div>
-            <br>
-            <div class="col-md-12 ">
-                <center>
-                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[1]->url]) }}'">{{ $lang=="pt" ? "Mais" : "More" }}</button>
-                </center>
-                <br>
-            </div>
-
-            <br><br>
         </div>
-        <div class="BordaInferior2" style="border-bottom: 10px solid {{ $sessions[1]->color }};"></div>
-    </div>
-    @endif
 
-
-    @if ($sessions[0]->posts && count($sessions[0]->posts))
         <div class="recent-articles pt-40 ">
-            <div class="container">
-                <div class="col-md-12">
-                    <div class="section-tittle mb-30">
-                        <h3>{{ $sessions[0]->description }}</h3>
+            <div class="col-md-12 ">
+                <div class="row">
+                    <div class="col-md-3 search-txt mt-70">
+                        <h3>Ou escolha uma das opções</h3>
                     </div>
-                    <div class="row Espaco3">
-                        @for ($i = 0; $i < count($sessions[0]->posts); $i++)
-                        <div class="col-md Espaco">
-                            <div class="single-recent">
-                                <a href="{{ $sessions[0]->posts[$i]->link() }}">
-                                    <div class=" mb-4" style="height: auto;">
-                                        <div class="">
-                                            <img src="{{ asset($sessions[0]->posts[$i]->getImage()) }}" alt="" class="img-fluid imgNoticias2">
-                                        </div>
-                                        <div class="">
-                                            <h5 class="cardtitleNoticia subtitulo">{{ $sessions[0]->posts[$i]->title }}</h5>
-                                            <p class="TextLimiteNoticias" style="padding-bottom: 50px;">
-                                                {!!html_entity_decode(str_replace("\n", "<br>", $sessions[0]->posts[$i]->summary))!!}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                    <div class="col-md-9 btn-bar">
+                        <a href="{{ route('especialidades') }}">TESTES PARA <br> DIAGNÓSTICOS</a>
+                        <a href="{{ route('pesquisa') . '?k=e_' . $casais->id }}">TRIAGEM <br>PARA CASAIS</a>
+                        <a href="{{ $aconselhamento->link() }}">ACONSELHAMENTO <br> GENÉTICO</a>
                     </div>
-                    @endfor
                 </div>
             </div>
+        </div>
+
+        <div class="recent-articles pt-40">
             <div class="col-md-12 ">
-                <center>
-                    <button type="button" class="ButtonG" onclick="location.href = '{{ route('detalhe', ['slug' => $sessions[0]->url]) }}'">{{ $lang=="pt" ? "Mais" : "More" }}</button>
-                </center>
-                <br>
+                <div class="row grey">
+                    <div class="col-md-6">
+                        <h3>{!! $sobre->title !!}</h3>
+                        <h5>Laboratório de Testes Genéticos do CEGH-CEL</h5>
+                        <img src="{{ asset('assets/img/genoma-sobre.png') }}">
+                        <p>
+                        {!! $sobre->summary !!}
+                        </p>
+                        <p><a href="{{ $sobre->link() }}">Saiba mais</a></p>
+                    </div>
+                    <div class="col-md-6" id="duvidas">
+                        <h3 class="mb-50">{!! $duvidas->title !!}</h3>
+                        {!! $duvidas->text !!}
+                    </div>
+                </div>
             </div>
         </div>
-    @endif
+
+        <div class="recent-articles pt-40 ">
+            <div class="col-md-12 ">
+                <div class="row">
+                    <div class="col-md-4">
+                         <img src="{{ asset('assets/img/certificacao.jpg') }}" class="img_apoio">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="links">
+                            <h3>Links Utéis</h3>
+                            <ul>
+                                <li><a href="https://genoma.ib.usp.br/198">Serviços de genômica para pesquisadores e empresas</a></li>
+                                <li><a href="#">Listas de Genes dos nossos testes</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 </div>
 </div>
-
-
-
-
 </div>
 </main>
+
+<div id="modalPage" aria-labelledby="Label" role="dialog" tabindex="-1" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Título</h4>
+            </div>
+
+            <div class="modal-body"></div>
+
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+
 @endsection

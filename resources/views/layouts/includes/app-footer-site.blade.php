@@ -4,7 +4,7 @@
 <!-- Scripts -->
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" async="true" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5efe2429bd2b5328"></script>
+{{-- <script type="text/javascript" async="true" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5efe2429bd2b5328"></script> --}}
 
 <script src="{{ asset('assets/vendor/jquery/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/bs/popper.min.js') }}"></script>
@@ -23,6 +23,8 @@
 <!-- Scrollup, nice-select, sticky -->
 <script src="{{ asset('assets/js/js/jquery.scrollUp.min.js') }}"></script>
 <script src="{{ asset('assets/js/js/jquery.nice-select.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/select2/js/select2.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/select2/js/i18n/pt-BR.js') }}"></script>
 <script src="{{ asset('assets/js/js/jquery.sticky.js') }}"></script>
 
 <!-- contact js -->
@@ -44,51 +46,9 @@
 <script src="{{ asset('assets/js/js/menu/site.min.js') }}"></script>
 <script src="{{ asset('assets/js/js/banner/slick.min.js') }}"></script>
 <script src="{{ asset('assets/js/js/banner/home.min.js') }}"></script>
-<script>
-    $("#IconeLupa").click(function() {
-        $("#form-search").submit();  
-    });
 
-    function Arrow(id) {
-        var windowWidth = window.innerWidth;
-        if (windowWidth >= 993) {
-            $('.ArrowMenu').removeClass('fas fa-angle-right');
-            $('.ArrowMenu').addClass('fas fa-angle-down');
-            $('#arrow_' + id).removeClass('fas fa-angle-down');
-            $('#arrow_' + id).addClass('fas fa-angle-right');
-            var e = $(".links > li");
-            var r = e.hasClass("active");
-            var control = $("#Control").val();
+{{-- <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script> --}}
 
-            if (control != id) {
-                $('.ArrowMenu').removeClass('fas fa-angle-right');
-                $('.ArrowMenu').addClass('fas fa-angle-down');
-                $('#arrow_' + id).removeClass('fas fa-angle-down');
-                $('#arrow_' + id).addClass('fas fa-angle-right');
-            } else {
-
-                if (r) {
-                    $('#arrow_' + id).removeClass('fas fa-angle-right');
-                    $('#arrow_' + id).addClass('fas fa-angle-down');
-                    //    e.removeClass("active");
-                } else {
-                    $('#arrow_' + id).removeClass('fas fa-angle-down');
-                    $('#arrow_' + id).addClass('fas fa-angle-right');
-                }
-            }
-        }
-        $("#Control").val(id);
-    }
-
-    function Show(value) {
-        if (value == "1") {
-            $("#BoxSearch").show("slow");
-        } else {
-            $("#BoxSearch").hide("slow");
-        }
-    }
-</script>
-<input type="hidden" id="Control" value="">
 
 </body>
 

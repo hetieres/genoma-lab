@@ -7,7 +7,7 @@
 <!--<![endif]-->
 
 <head>
- <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+ <!-- Go to www.addthis.com/dashboard to customize your tools -->
  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5fc6b519332d8fcf"></script>
 
 
@@ -61,15 +61,17 @@
     <link href="{{ asset('assets/css/styles/footer.css') }}" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="{{ asset('assets/css/menu/menu.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/select2/css/select2.min.css') }}" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('assets/js/js/banner/banner.css')}}" rel="stylesheet">
     <link href="{{ asset('assets/js/js/banner/slick.min.css')}}" rel="stylesheet">
     <link href="{{ asset('assets/js/js/banner/home.min.css')}}" rel="stylesheet">
+
 </head>
 
 <body>
-    <header>    
+    <header>
         <!-- Header Start -->
         {{-- Line Bar FAPESP --}}
         @include('layouts.includes.fapesp-bar')

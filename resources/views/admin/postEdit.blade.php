@@ -102,7 +102,7 @@
                                     <textarea class="form-control" rows="15"  id="text"  name="text">{{ $post->text }}</textarea>
                                     </div>
                                 </div>
-
+{{-- 
                                 <div class="form-group no-content no-video">
                                     <label for="href" class="col-sm-2 control-label">Live</label>
                                     <div class="col-lg-8 col-xs-10">
@@ -124,7 +124,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <div class="form-group">
                                     <label for="dt_publication" class="col-sm-2 control-label">Publicado</label>

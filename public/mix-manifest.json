@@ -21,6 +21,7 @@
     "/assets/js/admin/news-report.min.js": "/assets/js/admin/news-report.min.js",
     "/assets/js/admin/news-list.min.js": "/assets/js/admin/news-list.min.js",
     "/assets/js/admin/news-edit-multiple.min.js": "/assets/js/admin/news-edit-multiple.min.js",
+    "/assets/js/admin/import-test.min.js": "/assets/js/admin/import-test.min.js",
     "/assets/js/admin/dashboard.min.js": "/assets/js/admin/dashboard.min.js",
     "/assets/js/pages/search.min.js": "/assets/js/pages/search.min.js",
     "/assets/js/site.min.js": "/assets/js/site.min.js"

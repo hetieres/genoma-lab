@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     $("#sortable").sortable();
 
-    $('#save').click(function (event) {
+    $('.save').click(function (event) {
         $('#save').prop('disabled', true);
         let data = new FormData();
         let ids = [];

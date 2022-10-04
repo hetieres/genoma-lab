@@ -25,6 +25,8 @@ Route::group(['prefix' => 'admin/ajax', 'middleware' => 'ajax'], function () {
     Route::delete('del-user/{id}', 'UserController@destroy')->name('delete-user');
     Route::post('published-user', 'UserController@toogleActive')->name('toogle-active-user');
 
+    Route::post('genetic-test-import', 'GeneticTestController@import');
+
     Route::post('post-save', 'PostController@save');
     Route::get('post-list', 'PostController@list');
     Route::post('post-del', 'PostController@delete');

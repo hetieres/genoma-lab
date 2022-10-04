@@ -35,6 +35,15 @@
             </a>
         </li>
 
+        <li @if(Route::current()->getName()=='import-test'.$routelang) class="active" @endif>
+            <a href="{{ route('import-test'.$routelang) }}">
+                <i class="fa fa-table"></i> <span>{{ $lang=="pt" ? "Testes Genéticos" : "Genetic Tests" }} </span>
+            </a>
+        </li>
+
+
+        {{--
+
         <li>
             <a href="{{ route('post-list'.($lang=='pt' ? '-en' : '')) }}">
                 <i class="fa fa-language"></i> <span> {{ $lang=='en' ? 'Português' : 'English'}} </span>
@@ -49,8 +58,7 @@
                     </a>
                 </li>
             @endforeach
-
-        {{-- <li class="header">RELATÓRIOS</li>
+        <li class="header">RELATÓRIOS</li>
         @if(Auth::user()->type !== 'clipping')
         <li @if(Route::current()->getName()=='report-general'.$routelang) class="active" @endif>
             <a href="{{ route('report-general') }}">

@@ -20,14 +20,14 @@
                         <div class="container">
                             <div class="row LabelMobil" style="padding-bottom: 20px;margin-top: 5px;">
                                 <div class="col-3" style="border-right: 3px solid #000000;height: 40px;margin-top: 31px;">
-                                    <a href="{{ asset('/') . ($lang=="en" ? 'en' : '') }}"><img class="img-fluig" src="{{asset('assets/img/logo/logoGenoma.png') }}" alt="" style="width: 100%;float: right;margin-top: -10px;"></a>
+                                    <a href="https://genoma.ib.usp.br/{{ ($lang=="en" ? 'en' : '') }}"><img class="img-fluig" src="{{asset('assets/img/logo/logoGenoma.png') }}" alt="" style="width: 100%;float: right;margin-top: -10px;"></a>
                                 </div>
                                 <div class="col-md-auto">
                                     <a href="{{ asset('/') . ($lang=="en" ? 'en' : '') }}">
-                                        <h1 class="Titulo Titulo2" style="">{{ $lang=="pt" ? "Centro de Estudos do Genoma Humano e Células-Tronco" : "Human Genome and Stem Cell Research Center" }}</h1>
+                                        <h1 class="Titulo Titulo2" style="">{{ $lang=="pt" ? "Laboratório de Testes Genéticos" : "Laboratório de Testes Genéticos" }}</h1>
                                     </a>
                                 </div>
-                                <div class="col-3 painelLogo" style="margin-left: {{ $lang=='pt' ? '45' : '115' }}px">
+                                <div class="col-3 painelLogo" style="margin-left: {{ $lang=='pt' ? '230' : '115' }}px">
                                     <a href="https://usp.br"><img class="img-fluig logoUSP" src="{{asset('assets/img/logo/usp-logo.png') }}" alt=""></a>
                                     <a href="https://www.ib.usp.br"><img class="img-fluig logo5" src="{{asset('assets/img/logo/logoInstituto.png') }}" alt=""></a>
                                     <a href="https://fapesp.br"><img class="img-fluig LogoFapesp" src="{{asset($lang=='pt' ? 'assets/img/logo/logo.png' : 'assets/img/logo/logo-en.jpg') }}" alt=""></a>
@@ -50,7 +50,7 @@
     <div class="container">
         <div class="brand LabelMobil1">
             <a href="{{asset('/') . ($lang=="en" ? 'en' : '') }}" class="link-brand" title="FAPESP - Fundação de Amparo à Pesquisa do Estado de São Paulo">
-                <img src="{{asset('assets/img/logo/logoGenoma.png') }}" class="simple img-fluid" alt="logo" />
+                <img src="{{asset('assets/img/logo/logoLab.png') }}" class="simple img-fluid" alt="logo" />
             </a>
 
             <a href="javascript:;" class="bars openMenu visible-sm">
@@ -71,7 +71,7 @@
             {!! $menu !!}
 
             <div class="buttons">
-                <div class="SearchHide LabelMobil" id="BoxSearch">
+                {{-- <div class="SearchHide LabelMobil" id="BoxSearch">
                     <form action="{{ route('search' . ($lang=='en' ? '-en' : '')) }}" id="form-search" method="get">
                         <i class="fas fa-search IconeSearch" id="IconeLupa" style="padding-left: 10px;font-size: 25px;"></i>
                         <i class="fas fa-times IconeSearch" style="float: right;padding-right: 20px;" onclick="Show(0)"></i>
@@ -92,10 +92,10 @@
                         </button>
                         <input type="text" name="k" id="search-input" placeholder="Buscar...">
                     </form>
-                </div>
+                </div> --}}
             </div>
 
-            <ul id="navigation">
+            {{-- <ul id="navigation">
                 @if ($lang=='pt')
                <li>
                     <a href="/en" id="Inglês">
@@ -109,7 +109,7 @@
                             </b></span> </a>
                 </li>
                 @endif
-            </ul>
+            </ul> --}}
     </div>
     </nav>
     <div>
