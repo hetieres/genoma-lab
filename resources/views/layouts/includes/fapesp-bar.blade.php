@@ -49,7 +49,7 @@
 <div class="menu-line header-sticky" id="DivMenu">
     <div class="container">
         <div class="brand LabelMobil1">
-            <a href="{{asset('/') . ($lang=="en" ? 'en' : '') }}" class="link-brand" title="FAPESP - Fundação de Amparo à Pesquisa do Estado de São Paulo">
+            <a href="{{ route('home'. ($lang=="en" ? '-en' : '')) }}" class="link-brand" title="FAPESP - Fundação de Amparo à Pesquisa do Estado de São Paulo">
                 <img src="{{asset('assets/img/logo/logoLab.png') }}" class="simple img-fluid" alt="logo" />
             </a>
 
