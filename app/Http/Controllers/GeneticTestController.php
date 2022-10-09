@@ -33,12 +33,14 @@ class GeneticTestController extends Controller
             $fileInfo = pathinfo($file->getClientOriginalName());
             $fileInfo['name'] = str_slug($fileInfo['filename']) . '.' . str_slug($fileInfo['extension']);
             $upload = $file->storeAs($this->_public_path . '/excel', $fileInfo['name']);
+            $excel = Storage::disk('local')->getAdapter()->getPathPrefix() . $upload;
+            chmod($excel, 0775);
             $upload = str_replace($this->_public_path, $this->_uploads_path, $upload);
 
             $reader = new Xlsx();
 
-            // dd('files/excel/genetic_tests.xlsx', $upload);
-            $spreadsheet = $reader->load($upload);
+            //dd($reader, $upload);
+            $spreadsheet = $reader->load($excel);
             // $spreadsheet = $reader->load('files/excel/genetic_tests.xlsx');
             $spreadsheet->setActiveSheetIndex(0);
             $sheetData = $spreadsheet->getActiveSheet()->toArray();
