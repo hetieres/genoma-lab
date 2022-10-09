@@ -68,7 +68,7 @@
             <a href="{{asset('/'). ($lang=="en" ? 'en' : '') }}" class="link-brand" title="Genoma">
                 <img src="{{asset('assets/img/logo/logo-mini.png') }}" id="logo-mini" class="simple img-fluid LabelMobil" alt="logo" />
             </a>
-            {!! str_replace('#duvidas', route('home'). '#duvidas',$menu) !!}
+            {!! str_replace('site/', route('home'), $menu) !!}
 
             <div class="buttons">
                 {{-- <div class="SearchHide LabelMobil" id="BoxSearch">
