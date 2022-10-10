@@ -70,7 +70,7 @@
         }
 
         .search-txt{
-            padding: 50px;
+            padding: 50px 40px;
         }
 
         .grey h3, .search-txt h3{
