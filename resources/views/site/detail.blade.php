@@ -90,7 +90,7 @@
     </div>
     <div class="container internal">
         <div class="col-12 col-sm-7 col-md-12 no-padding-left no-padding-xs internal3">
-            <h1 class="interal-title" style="padding-top: 0px; color: #000000;">{{ $post->title }}</h1>
+            <h1 class="interal-title" style="padding-top: 0px; color: #000000;padding-bottom: 50px;">{{ $post->title }}</h1>
 
             @if ($post->image)
             <div class="internasBanner">
