@@ -104,7 +104,7 @@
         }
 
         .select2-container--default .select2-selection--single .select2-selection__rendered{
-            color: white;
+            color: #000;
         }
 
         .btn-bar{
