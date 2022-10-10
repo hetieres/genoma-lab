@@ -227,6 +227,7 @@
 
         .img_apoio {
             width: 338px !important;
+            margin: 20px 0px;
         }
 
 
