@@ -81,7 +81,7 @@ class SiteController extends Controller
             //especialidade medica
             if($type == 'e_'){
                 $specialty = MedicalSpecialty::find($id);
-                if($specialty && $specialty->description != 'todas'){
+                if($specialty && strtolower($specialty->description) != 'todas'){
                     $rs->where('medical_specialty', 'like', '%' . $specialty->description . '%');
                 }
             }
