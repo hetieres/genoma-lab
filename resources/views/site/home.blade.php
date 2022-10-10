@@ -349,7 +349,7 @@
                         <h5>Links Utéis</h5>
                         <ul>
                             <li><a href="https://genoma.ib.usp.br/198">Serviços de genômica para pesquisadores e empresas</a></li>
-                            <li><a href="#">Listas de Genes dos nossos testes</a></li>
+                            <li><a href="{{ route('home') }}200">Listas de Genes dos nossos testes</a></li>
                         </ul>
                     </div>
                 </div>
