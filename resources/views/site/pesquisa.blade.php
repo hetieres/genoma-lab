@@ -358,8 +358,8 @@
                             </select>
                         </div>
                         <div class="links-uteis">
-                            <a href="{{ route('home') }}200">Entenda nossos códigos</a>
-                            <a href="{{ route('home') }}199">Listas de Genes dos nossos testes</a>
+                            <a href="{{ route('home') }}/200">Entenda nossos códigos</a>
+                            <a href="{{ route('home') }}/199">Listas de Genes dos nossos testes</a>
                         </div>
                     </div>
                 </div>
