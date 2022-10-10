@@ -41,6 +41,46 @@
         color: #fff!important;
     }
 
+     summary{
+            background: #78BCEE;
+            padding: 15px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 4px;
+    }
+
+    .internal3 details:nth-child(1){
+        margin-top: 35px;
+    }
+
+    summary:hover{
+        background: #4CA5E8;
+    }
+
+    details[open] summary {
+        background: #274DA8;
+    }
+
+    summary::marker {
+        content: '';
+    }
+
+    details[open]  {
+        background-color: aliceblue;
+        padding-bottom: 35px;
+    }
+
+    details p {
+        margin: 10px 20px;
+        font-size: 14px;
+    }
+
+    details p:last-child {
+        /*margin-bottom: 35px;*/
+    }
+
 </style>
 
 <div class="container">
@@ -62,9 +102,6 @@
             @endif
 
             <div class="LabelMobil1"><br></div>
-
-
-            <br><br>
 
             {!!html_entity_decode($post->text)!!}
             <br><br>
