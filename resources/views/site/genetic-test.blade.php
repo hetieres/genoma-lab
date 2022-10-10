@@ -106,7 +106,7 @@
 
                 <div class="row">
                     <div class="col-md-4 rotulo">Doença(s)</div>
-                    <div class="col-md-8">{{ implode('<br>', explode(';', $test->test)) }}</div>
+                    <div class="col-md-8">{!! implode('<br>', explode(';', $test->test)) !!}</div>
                 </div>
 
                 <div class="row">
