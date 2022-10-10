@@ -107,10 +107,10 @@ Route::get('/import', 'DataImportController@import')->name('import');
 /* Rotas do site  PT */
 Route::get('/', 'SiteController@index')->name('home');
 Route::get('/especialidades', 'SiteController@especialidades')->name('especialidades');
-Route::get('/pesquisa', 'SiteController@pesquisa')->name('pesquisa');
+Route::get('/exames', 'SiteController@pesquisa')->name('pesquisa');
 
-Route::get('/teste/{id?}', 'SiteController@teste')->name('teste');
-Route::match(array('GET','POST'), '/solicitar-teste/{id?}', 'SiteController@solicitacao')->name('solicitacao');
+Route::get('/exame/{id?}', 'SiteController@teste')->name('teste');
+Route::match(array('GET','POST'), '/solicitar-exame/{id?}', 'SiteController@solicitacao')->name('solicitacao');
 
 
 

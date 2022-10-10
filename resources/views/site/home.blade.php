@@ -295,6 +295,9 @@
                                 @foreach ($tests as $test)
                                     <option value="{!! $test->link() !!}">{!! $test->test !!}</option>
                                 @endforeach
+                                @foreach ($tests as $test)
+                                    <option value="{!! $test->link() !!}">{!! $test->code !!}</option>
+                                @endforeach
                                 @foreach ($genes as $gene)
                                     <option value="{!! route('pesquisa') . '?k=g_' . $gene->id !!}" >{!! $gene->description !!}</option>
                                 @endforeach

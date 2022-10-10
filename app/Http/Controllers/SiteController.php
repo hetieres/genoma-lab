@@ -112,7 +112,7 @@ class SiteController extends Controller
         $this->data['genes']          = Gene::orderBy('description')->get();
         $this->data['especialidades'] = MedicalSpecialty::where('description' , '<>', 'Todas')->orderBy('description')->get();
         $this->data['tests']          = GeneticTest::orderBy('priority', 'desc')->orderBy('test')->get();
-        $this->data['k']              = isset($request->k) ? $request->k: '';
+        $this->data['k']              = isset($request->k) ? $request->k : '';
         $this->data['url']            = isset($request->k) && $request->k != '' ? '?k=' . $request->k . '&pg=' : '?pg=';
 
 

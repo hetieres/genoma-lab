@@ -349,6 +349,9 @@
                                 @foreach ($tests as $test)
                                     <option value="{!! $test->link() !!}">{!! $test->test !!}</option>
                                 @endforeach
+                                @foreach ($tests as $test)
+                                    <option value="{!! $test->link() !!}">{!! $test->code !!}</option>
+                                @endforeach
                                 @foreach ($genes as $gene)
                                     <option value="{!! route('pesquisa') . '?k=g_' . $gene->id !!}" {{ (('g_' . $gene->id) == $k) ? 'selected' : '' }} >{!! $gene->description !!}</option>
                                 @endforeach
@@ -378,10 +381,10 @@
 
         <div class="recent-articles pt-40 ">
             <div class="col-md-12 tabela">
-                <label>Foram encontrados <b>{{ $count }}</b> testes.</label>
+                <label>Foram encontrados <b>{{ $count }}</b> exames.</label>
                 <div class="row rtitle">
                     <div class="col-md-2 ttitle">CÓDIGO</div>
-                    <div class="col-md-5 ttitle">TESTE</div>
+                    <div class="col-md-5 ttitle">EXAME</div>
                     <div class="col-md-3 ttitle text-center">VALOR / PRAZO</div>
                     <div class="col-md-2 ttitle"></div>
                 </div>
