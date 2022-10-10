@@ -93,7 +93,7 @@
     </div>
     <div class="container internal">
         <div class="col-12 col-sm-7 col-md-12 no-padding-left no-padding-xs internal3">
-            <h1 class="interal-title" style="padding-top: 0px; color: #000000;">{{ $test->code }}</h1>
+            <h1 class="interal-title" style="padding-top: 0px; color: #000000;padding-bottom: 50px;">{{ $test->code }}</h1>
 
             <div class="LabelMobil1"><br></div>
 

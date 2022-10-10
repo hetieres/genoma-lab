@@ -111,6 +111,7 @@ Route::get('/exames', 'SiteController@pesquisa')->name('pesquisa');
 
 Route::get('/exame/{id?}', 'SiteController@teste')->name('teste');
 Route::match(array('GET','POST'), '/solicitar-exame/{id?}', 'SiteController@solicitacao')->name('solicitacao');
+Route::match(array('GET','POST'), '/contato', 'SiteController@contato')->name('contato');
 
 
 

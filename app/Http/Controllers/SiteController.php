@@ -136,7 +136,7 @@ class SiteController extends Controller
     {
         if($request->email){
             $test     = GeneticTest::where('id', $request->id)->first();
-            $to       = 'jbergamo@fapesp.br';
+            $to       = 'hetieres@hotmail.com';
             $from     = $request->nome . ' <' . $request->email . '>';
             $subject  = 'Contato via SITE - ' . $request->mensagem;
             $conteudo = $request->mensage;
@@ -165,6 +165,36 @@ class SiteController extends Controller
         }
         $this->data['test'] = GeneticTest::where('id', $request->id)->first();
         return view('site.solicitacao', $this->data);
+    }
+
+     public function contato(Request $request)
+    {
+        if($request->email){
+            $to       = 'hetieres@hotmail.com';
+            $from     = $request->nome . ' <' . $request->email . '>';
+            $subject  = 'Contato via SITE - ' . $request->mensagem;
+            $conteudo = $request->mensage;
+
+            $headers  = "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=utf-8\r\n";
+            $headers .= "From: $from\r\n";
+            $headers .= "Return-path: $from\r\n";
+
+            $conteudo = "<h3>Contato do Laboratório Genoma</h3>";
+            $conteudo .= "<p>Nome: " . $request->nome . "</p>";
+            $conteudo .= "<p>e-mail: " . $request->email . "</p>";
+            $conteudo .= "<p>Telefone: " . $request->telefone . "</p>";
+            $conteudo .= "<p>Mensagem do solicitante: <br>" . $request->mensagem . "</p>";
+
+            @$mail= mail($to, $subject, $conteudo, $headers);
+
+            $this->data['title'] = 'Contato';
+            $this->data['text'] = '<p>E-mail enviado com sucesso.</p>';
+
+            return view('site.mensagem', $this->data);
+        }
+
+        return view('site.contato', $this->data);
     }
 
     public function detalhe(Request $request)

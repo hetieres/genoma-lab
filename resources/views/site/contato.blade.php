@@ -147,33 +147,20 @@
     </div>
     <div class="container internal">
         <div class="col-12 col-sm-7 col-md-12 no-padding-left no-padding-xs internal3">
-            <h1 class="interal-title" style="padding-top: 0px; color: #000000;padding-bottom: 50px;">Solicitar exame</h1>
+            <h1 class="interal-title" style="padding-top: 0px; color: #000000;padding-bottom: 50px;">Contato</h1>
 
             <div class="LabelMobil1"><br></div>
             <div class="pre-text">
-                <p><a href="mailto:especialista_cegh@ib.usp.br?subject=Exame%3A{{ $test->code }}">especialista_cegh@ib.usp.br</a></p>
+                <p><a href="mailto:especialista_cegh@ib.usp.br">especialista_cegh@ib.usp.br</a></p>
                 <p>WhatsApp: (11) 2648-8358 (só para mensagem, em horário comercial)</p>
                 <p>Preencha o formulário abaixo e entraremos em contato (verifique sua caixa de spam):</p>
             </div>
-            <form method="post" id="mail_form" action="{{ route('solicitacao', ['id' => $test->id]) }}">
+            <form method="post" id="mail_form" action="{{ route('contato') }}">
                 @csrf
-                <div class="info">
+                {{-- <div class="info">
                     Você receberá um e-mail de confirmação com os formulários necessários para realização do exame.
-                </div>
+                </div> --}}
                 <div class="tabela">
-                    <div class="row">
-                        <div class="col-md-12 rotulo text-center">
-                            <label>{{ $test->test }}</label>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4 rotulo">Código do exame</div>
-                        <div class="col-md-8">
-                            <input type="text" value="{{ $test->code }}" name="test" disabled />
-                            <input type="hidden" value="{{ $test->id }}"  name="id"/>
-                        </div>
-                    </div>
 
                     <div class="row">
                         <div class="col-md-4 rotulo">Nome completo (obrigatório)</div>
@@ -217,7 +204,7 @@
             </script>
             <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script> --}}
 
-            <p class="botao"><a href="#" class="solicitar">Solicitar o Exame</a><a href="javascript:history.back()">Voltar</a></p>
+            <p class="botao"><a href="#" class="solicitar">Entar em Contato</a><a href="javascript:history.back()">Voltar</a></p>
             <br><br>
         </div>
         {{-- <aside class="col-12 col-sm-5 col-md-4 no-padding-right no-padding-xs">
