@@ -19,10 +19,10 @@
         .select2-selection.select2-selection--single{
             border: transparent;
             padding: 15px;
-            background-color: #243748;
+            /* background-color: #243748; */
             height: 62px;
             max-width: 707px;
-            border-radius: 30px;
+            /* border-radius: 30px; */
         }
 
         .select2-container{
