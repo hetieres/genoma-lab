@@ -225,6 +225,10 @@
             margin: 30px 0px;
         }
 
+        .img_apoio {
+            width: 338px !important;
+        }
+
 
         @media only screen and (max-width: 760px) {
 
@@ -268,7 +272,7 @@
         }
 
         .img_apoio {
-            width: 100%;
+            width: 100% !important;
         }
 
 
@@ -336,14 +340,22 @@
                         <p><a href="{{ $sobre->link() }}">Saiba mais</a></p>
                     </div>
                     <div class="col-md-6" id="duvidas">
-                        <h3 class="mb-50">{!! $duvidas->title !!}</h3>
-                        {!! $duvidas->text !!}
+                        {{-- <h3 class="mb-50">{!! $duvidas->title !!}</h3>
+                        {!! $duvidas->text !!} --}}
+                        <p style="text-align: center;">
+                            <img src="{{ asset('assets/img/certificacao.jpg') }}" class="img_apoio">
+                        </p>
+                        <h5>Links Utéis</h5>
+                        <ul>
+                            <li><a href="https://genoma.ib.usp.br/198">Serviços de genômica para pesquisadores e empresas</a></li>
+                            <li><a href="#">Listas de Genes dos nossos testes</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="recent-articles pt-40 ">
+        {{-- <div class="recent-articles pt-40 ">
             <div class="col-md-12 ">
                 <div class="row">
                     <div class="col-md-4">
@@ -360,7 +372,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
 </div>
 </div>
