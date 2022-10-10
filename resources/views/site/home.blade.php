@@ -276,6 +276,10 @@
             width: 100% !important;
         }
 
+        #duvidas ul li{
+            margin-top: 20px;
+        }
+
 
         }
 
