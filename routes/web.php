@@ -108,6 +108,7 @@ Route::get('/import', 'DataImportController@import')->name('import');
 Route::get('/', 'SiteController@index')->name('home');
 Route::get('/especialidades', 'SiteController@especialidades')->name('especialidades');
 Route::get('/exames', 'SiteController@pesquisa')->name('pesquisa');
+Route::get('/info', 'SiteController@info')->name('info');
 
 Route::get('/exame/{id?}', 'SiteController@teste')->name('teste');
 Route::match(array('GET','POST'), '/solicitar-exame/{id?}', 'SiteController@solicitacao')->name('solicitacao');

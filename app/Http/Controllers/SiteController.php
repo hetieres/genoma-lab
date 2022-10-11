@@ -167,7 +167,11 @@ class SiteController extends Controller
         return view('site.solicitacao', $this->data);
     }
 
-     public function contato(Request $request)
+    public function info(){
+        phpinfo();
+    }
+
+    public function contato(Request $request)
     {
         if($request->email){
             $to       = 'hetieres@hotmail.com';
