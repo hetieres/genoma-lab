@@ -173,7 +173,10 @@ class SiteController extends Controller
 
     public function contato(Request $request)
     {
+        error_reporting(E_ALL|E_STRICT);
+        ini_set('display_errors', 1);
         if($request->email){
+
             $to       = 'hetieres@hotmail.com';
             $from     = $request->nome . ' <' . $request->email . '>';
             $subject  = 'Contato via SITE - ' . $request->mensagem;
