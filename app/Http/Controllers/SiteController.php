@@ -190,7 +190,9 @@ class SiteController extends Controller
             $conteudo .= "<p>Telefone: " . $request->telefone . "</p>";
             $conteudo .= "<p>Mensagem do solicitante: <br>" . $request->mensagem . "</p>";
 
-            @$mail= mail($to, $subject, $conteudo, $headers);
+            $mail= mail($to, $subject, $conteudo, $headers);
+
+            dd($mail);
 
             $this->data['title'] = 'Contato';
             $this->data['text'] = '<p>E-mail enviado com sucesso.</p>';
