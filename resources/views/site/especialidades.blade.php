@@ -90,7 +90,6 @@
                 @endforeach
             </div>
             <br><br>
-            <p class="botao"><a href="{{ route('home')}}">Voltar</a></p>
         </div>
         {{-- <aside class="col-12 col-sm-5 col-md-4 no-padding-right no-padding-xs">
             {!! str_replace("<div class=\"titlePesquisa\">", "<div class=\"titlePesquisa\" style=\"background: " . $post->session->color . " ;\">", $post->session->aside) !!}

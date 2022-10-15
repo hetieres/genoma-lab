@@ -200,7 +200,7 @@
         }
 
         .destaque{
-            background-color: ghostwhite;
+            background-color: #B9D8F0;
         }
 
         .selecionar {

@@ -83,6 +83,7 @@ class SiteController extends Controller
                 $specialty = MedicalSpecialty::find($id);
                 if($specialty && strtolower($specialty->description) != 'todas'){
                     $rs->where('medical_specialty', 'like', '%' . $specialty->description . '%');
+                    $rs->orWhere('medical_specialty', 'like', '%todas%');
                 }
             }
 
@@ -121,7 +122,7 @@ class SiteController extends Controller
 
     public function especialidades(Request $request)
     {
-        $this->data['especialidades'] = MedicalSpecialty::orderByRaw('description = \'Todas\' desc')->orderBy('description')->get();
+        $this->data['especialidades'] = MedicalSpecialty::where('description', '<>', 'Todas')->where('description', '<>', 'triagem para casais')->orderBy('description')->get();
 
         return view('site.especialidades', $this->data);
     }

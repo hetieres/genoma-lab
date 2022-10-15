@@ -6,8 +6,7 @@
         height: 6px;
         width: 110px;
         left: 0px;
-        position: absolute;
-        top: 40px;
+        display: block;
     }
 
     .internal3 h3 {
@@ -81,6 +80,16 @@
         /*margin-bottom: 35px;*/
     }
 
+    .img-fluid {
+        max-width: 60%;
+    }
+
+    @media only screen and (max-width: 760px) {
+        .img-fluid {
+            max-width: 100%;
+        }
+    }
+
 </style>
 
 <div class="container">
@@ -105,7 +114,6 @@
 
             {!!html_entity_decode($post->text)!!}
             <br><br>
-            <p class="botao"><a href="javascript:history.back()">Voltar</a></p>
         </div>
         {{-- <aside class="col-12 col-sm-5 col-md-4 no-padding-right no-padding-xs">
             {!! str_replace("<div class=\"titlePesquisa\">", "<div class=\"titlePesquisa\" style=\"background: " . $post->session->color . " ;\">", $post->session->aside) !!}
