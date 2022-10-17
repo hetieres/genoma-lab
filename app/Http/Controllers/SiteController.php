@@ -203,6 +203,7 @@ class SiteController extends Controller
             } else {
                 $this->data['text'] = '<p>E-mail enviado com sucesso.</p>';
             }
+            dd($this->data['text']);
 
             $this->data['title'] = 'Contato';
 
