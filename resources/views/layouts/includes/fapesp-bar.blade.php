@@ -27,7 +27,7 @@
                                 <div class="col-3" style="border-left: 3px solid #000000;height: 40px;margin-top: 31px;">
                                     <a href="https://genoma.ib.usp.br/{{ ($lang=="en" ? 'en' : '') }}"><img class="img-fluig" src="{{asset('assets/img/logo/logoGenoma.png') }}" alt="" style="width: 100%;float: right;margin-top: -10px;"></a>
                                 </div>
-                                <div class="col-3 painelLogo" style="margin-left: {{ $lang=='pt' ? '130' : '115' }}px">
+                                <div class="col-3 painelLogo" style="margin-left: auto">
                                     <a href="https://usp.br"><img class="img-fluig logoUSP" src="{{asset('assets/img/logo/usp-logo.png') }}" alt=""></a>
                                     <a href="https://www.ib.usp.br"><img class="img-fluig logo5" src="{{asset('assets/img/logo/logoInstituto.png') }}" alt=""></a>
                                     <a href="https://fapesp.br"><img class="img-fluig LogoFapesp" src="{{asset($lang=='pt' ? 'assets/img/logo/logo.png' : 'assets/img/logo/logo-en.jpg') }}" alt=""></a>
