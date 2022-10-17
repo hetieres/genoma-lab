@@ -192,6 +192,7 @@ class SiteController extends Controller
             $mail->SMTPSecure = 'ssl';	// SSL REQUERIDO pelo GMail
             $mail->Host = 'smtp.gmail.com';	// SMTP utilizado
             $mail->Port = 587;  		// A porta 587 deverá estar aberta em seu servidor
+            dd(env('guser'));
             $mail->Username = env('guser');
             $mail->Password = env('gsenha');
             $mail->SetFrom($request->email, $request->nome);
