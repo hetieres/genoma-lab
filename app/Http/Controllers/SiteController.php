@@ -187,7 +187,7 @@ class SiteController extends Controller
 
             $mail = new PHPMailer();
             $mail->IsSMTP();		    // Ativar SMTP
-            $mail->SMTPDebug = 0;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
+            $mail->SMTPDebug = 1;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
             $mail->SMTPAuth = true;		// Autenticação ativada
             $mail->SMTPSecure = 'ssl';	// SSL REQUERIDO pelo GMail
             $mail->Host = 'smtp.gmail.com';	// SMTP utilizado
