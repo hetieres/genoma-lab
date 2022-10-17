@@ -217,7 +217,8 @@
             </script>
             <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script> --}}
 
-            <p class="botao"><a href="#" class="solicitar">Solicitar o Exame</a><a href="javascript:history.back()">Voltar</a></p>
+            <p class="botao"><a href="#" class="solicitar">Solicitar o Exame</a>
+            {{-- <a href="javascript:history.back()">Voltar</a></p> --}}
             <br><br>
         </div>
         {{-- <aside class="col-12 col-sm-5 col-md-4 no-padding-right no-padding-xs">

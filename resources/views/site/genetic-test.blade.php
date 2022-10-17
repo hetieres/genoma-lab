@@ -143,7 +143,8 @@
 
             </div>
 
-            <p class="botao"><a href="{{ route('solicitacao', $test->id) }}">Solicitar o Exame</a><a href="javascript:history.back()">Voltar</a></p>
+            <p class="botao"><a href="{{ route('solicitacao', $test->id) }}">Solicitar o Exame</a>
+            {{-- <a href="javascript:history.back()">Voltar</a></p> --}}
 
             <br><br>
         </div>
