@@ -18,6 +18,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Str;
 use App\Model\MedicalSpecialty;
 use Illuminate\Support\Facades\DB;
+use PHPMailer\PHPMailer\PHPMailer;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
@@ -178,28 +179,32 @@ class SiteController extends Controller
         ini_set('display_errors', 1);
         if($request->email){
 
-            $to       = 'hetieres@hotmail.com';
-            $from     = $request->nome . ' <' . $request->email . '>';
-            $subject  = 'Contato via SITE - ' . $request->mensagem;
-            $conteudo = $request->mensage;
-
-            $headers  = "MIME-Version: 1.0\r\n";
-            $headers .= "Content-Type: text/html; charset=utf-8\r\n";
-            $headers .= "From: $from\r\n";
-            $headers .= "Return-path: $from\r\n";
-
             $conteudo = "<h3>Contato do Laboratório Genoma</h3>";
             $conteudo .= "<p>Nome: " . $request->nome . "</p>";
             $conteudo .= "<p>e-mail: " . $request->email . "</p>";
             $conteudo .= "<p>Telefone: " . $request->telefone . "</p>";
             $conteudo .= "<p>Mensagem do solicitante: <br>" . $request->mensagem . "</p>";
 
-            $mail= mail($to, $subject, $conteudo, $headers);
-
-            dd($mail);
+            $mail = new PHPMailer();
+            $mail->IsSMTP();		    // Ativar SMTP
+            $mail->SMTPDebug = 0;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
+            $mail->SMTPAuth = true;		// Autenticação ativada
+            $mail->SMTPSecure = 'ssl';	// SSL REQUERIDO pelo GMail
+            $mail->Host = 'smtp.gmail.com';	// SMTP utilizado
+            $mail->Port = 587;  		// A porta 587 deverá estar aberta em seu servidor
+            $mail->Username = env('guser');
+            $mail->Password = env('gsenha');
+            $mail->SetFrom($request->email, $request->nome);
+            $mail->Subject = 'Contato via SITE';
+            $mail->Body =  $conteudo;
+            $mail->AddAddress('hetieres@hotmail.com');
+            if(!$mail->Send()) {
+                $this->data['text'] = '<p>Erro ao enviar e-mail:</p><p>'. $mail->ErrorInfo .'</p>';
+            } else {
+                $this->data['text'] = '<p>E-mail enviado com sucesso.</p>';
+            }
 
             $this->data['title'] = 'Contato';
-            $this->data['text'] = '<p>E-mail enviado com sucesso.</p>';
 
             return view('site.mensagem', $this->data);
         }

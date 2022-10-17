@@ -150,6 +150,7 @@ class ComposerStaticInit28436961d8855b9ed9a95e233a2d7ae2
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
             'PhpOffice\\PhpSpreadsheet\\' => 25,
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'M' => 
         array (
@@ -376,6 +377,10 @@ class ComposerStaticInit28436961d8855b9ed9a95e233a2d7ae2
         array (
             0 => __DIR__ . '/..' . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet',
         ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -556,6 +561,7 @@ class ComposerStaticInit28436961d8855b9ed9a95e233a2d7ae2
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
         'App\\Http\\Controllers\\DataImportController' => __DIR__ . '/../..' . '/app/Http/Controllers/DataImportController.php',
+        'App\\Http\\Controllers\\GeneticTestController' => __DIR__ . '/../..' . '/app/Http/Controllers/GeneticTestController.php',
         'App\\Http\\Controllers\\LinkController' => __DIR__ . '/../..' . '/app/Http/Controllers/LinkController.php',
         'App\\Http\\Controllers\\NewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/NewsController.php',
         'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
@@ -581,8 +587,11 @@ class ComposerStaticInit28436961d8855b9ed9a95e233a2d7ae2
         'App\\Model\\CitationType' => __DIR__ . '/../..' . '/app/Model/CitationType.php',
         'App\\Model\\Country' => __DIR__ . '/../..' . '/app/Model/Country.php',
         'App\\Model\\DataImport' => __DIR__ . '/../..' . '/app/Model/DataImport.php',
+        'App\\Model\\Gene' => __DIR__ . '/../..' . '/app/Model/Gene.php',
+        'App\\Model\\GeneticTest' => __DIR__ . '/../..' . '/app/Model/GeneticTest.php',
         'App\\Model\\Lang' => __DIR__ . '/../..' . '/app/Model/Lang.php',
         'App\\Model\\MediaType' => __DIR__ . '/../..' . '/app/Model/MediaType.php',
+        'App\\Model\\MedicalSpecialty' => __DIR__ . '/../..' . '/app/Model/MedicalSpecialty.php',
         'App\\Model\\News' => __DIR__ . '/../..' . '/app/Model/News.php',
         'App\\Model\\NewsStatus' => __DIR__ . '/../..' . '/app/Model/NewsStatus.php',
         'App\\Model\\NewsTag' => __DIR__ . '/../..' . '/app/Model/NewsTag.php',
@@ -1384,6 +1393,7 @@ class ComposerStaticInit28436961d8855b9ed9a95e233a2d7ae2
         'HTMLPurifier_AttrDef_HTML_Bool' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Bool.php',
         'HTMLPurifier_AttrDef_HTML_Class' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Class.php',
         'HTMLPurifier_AttrDef_HTML_Color' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Color.php',
+        'HTMLPurifier_AttrDef_HTML_ContentEditable' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/ContentEditable.php',
         'HTMLPurifier_AttrDef_HTML_FrameTarget' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/FrameTarget.php',
         'HTMLPurifier_AttrDef_HTML_ID' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/ID.php',
         'HTMLPurifier_AttrDef_HTML_Length' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Length.php',
@@ -2705,6 +2715,12 @@ class ComposerStaticInit28436961d8855b9ed9a95e233a2d7ae2
         'Monolog\\SignalHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/SignalHandler.php',
         'Monolog\\Utils' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Utils.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
+        'PHPMailer\\PHPMailer\\Exception' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/Exception.php',
+        'PHPMailer\\PHPMailer\\OAuth' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/OAuth.php',
+        'PHPMailer\\PHPMailer\\OAuthTokenProvider' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/OAuthTokenProvider.php',
+        'PHPMailer\\PHPMailer\\PHPMailer' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/PHPMailer.php',
+        'PHPMailer\\PHPMailer\\POP3' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/POP3.php',
+        'PHPMailer\\PHPMailer\\SMTP' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/SMTP.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/AssertionFailedError.php',
