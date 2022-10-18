@@ -153,15 +153,34 @@ class SiteController extends Controller
             $conteudo .= "<p>e-mail: " . $request->email . "</p>";
             $conteudo .= "<p>Telefone: " . $request->telefone . "</p>";
             $conteudo .= "<p>Mensagem do solicitante: <br>" . $request->mensagem . "</p>";
-            $conteudo = "<br><b>Interesse pelo teste:</b>";
+            $conteudo = "<br><b>Interesse pelo exame:</b>";
             $conteudo .= "<p>Código: " . $test->code . "</p>";
             $conteudo .= "<p>Genes: " . $test->genes . "</p>";
             $conteudo .= "<p>Doença(s): " . $test->test . "</p>";
+            $conteudo = "<html>". $conteudo ."</html>";
 
-            @$mail= mail($to, $subject, $conteudo, $headers);
+            $mail = new PHPMailer();
+            $mail->IsSMTP();		    // Ativar SMTP
+            $mail->SMTPDebug = 0;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
+            $mail->SMTPAuth = true;		// Autenticação ativada
+            $mail->SMTPSecure = "tls"; // conexão segura com TLS
+            $mail->Host = 'smtp.gmail.com';	// SMTP utilizado
+            $mail->Port = 587;  		// A porta 587 deverá estar aberta em seu servidor
+            $mail->CharSet = 'UTF-8';
+            $mail->IsHTML(true); // Enviar como HTML
+            $mail->Username = env('guser');
+            $mail->Password = env('gsenha');
+            $mail->SetFrom($request->email, 'Genoma');
+            $mail->Subject = 'Contato Laboratório Genoma: ' . $request->nome;
+            $mail->Body =  $conteudo;
+            $mail->AddAddress('hetieres@hotmail.com');
+            if(!$mail->Send()) {
+                $this->data['text'] = '<p>Erro ao enviar e-mail:</p><p>'. $mail->ErrorInfo .'</p>';
+            } else {
+                $this->data['text'] = '<p>Exame solicitado com sucesso.</p>';
+            }
 
             $this->data['title'] = 'Solicitar exame';
-            $this->data['text'] = '<p>Exame solicitado com sucesso.</p>';
 
             return view('site.mensagem', $this->data);
         }
@@ -190,23 +209,18 @@ class SiteController extends Controller
             $mail->IsSMTP();		    // Ativar SMTP
             $mail->SMTPDebug = 0;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
             $mail->SMTPAuth = true;		// Autenticação ativada
-            // $mail->SMTPSecure = 'ssl';	// SSL REQUERIDO pelo GMail
             $mail->SMTPSecure = "tls"; // conexão segura com TLS
             $mail->Host = 'smtp.gmail.com';	// SMTP utilizado
             $mail->Port = 587;  		// A porta 587 deverá estar aberta em seu servidor
             $mail->CharSet = 'UTF-8';
             $mail->IsHTML(true); // Enviar como HTML
-            // dd(env('guser'));
             $mail->Username = env('guser');
             $mail->Password = env('gsenha');
-            $mail->SetFrom($request->email, 'Sistema');
-            // $mail->From = "hetieres@gmail.com"; // From
-            // $mail->FromName = "Sistema"; // Nome de quem envia o email
-            $mail->Subject = 'Contato via SITE - ' . $request->nome;
+            $mail->SetFrom($request->email, 'Genoma');
+            $mail->Subject = 'Contato Laboratório Genoma: ' . $request->nome;
             $mail->Body =  $conteudo;
             $mail->AddAddress('hetieres@hotmail.com');
             if(!$mail->Send()) {
-                // dd($mail);
                 $this->data['text'] = '<p>Erro ao enviar e-mail:</p><p>'. $mail->ErrorInfo .'</p>';
             } else {
                 $this->data['text'] = '<p>E-mail enviado com sucesso.</p>';
