@@ -194,7 +194,6 @@ class SiteController extends Controller
             $mail->Host = 'smtp.gmail.com';	// SMTP utilizado
             $mail->Port = 587;  		// A porta 587 deverá estar aberta em seu servidor
             $mail->CharSet = 'UTF-8';
-            $mail->True;
             $mail->IsHTML = true ; // Enviar como HTML
             // dd(env('guser'));
             $mail->Username = env('guser');
