@@ -189,13 +189,19 @@ class SiteController extends Controller
             $mail->IsSMTP();		    // Ativar SMTP
             $mail->SMTPDebug = 1;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
             $mail->SMTPAuth = true;		// Autenticação ativada
-            $mail->SMTPSecure = 'ssl';	// SSL REQUERIDO pelo GMail
+            // $mail->SMTPSecure = 'ssl';	// SSL REQUERIDO pelo GMail
+            $mail->SMTPSecure = "tls"; // conexão segura com TLS
             $mail->Host = 'smtp.gmail.com';	// SMTP utilizado
             $mail->Port = 587;  		// A porta 587 deverá estar aberta em seu servidor
+            $mail->CharSet = 'UTF-8';
+            $mail->True;
+            $mail->IsHTML = true ; // Enviar como HTML
             // dd(env('guser'));
             $mail->Username = env('guser');
             $mail->Password = env('gsenha');
-            $mail->SetFrom($request->email, $request->nome);
+            // $mail->SetFrom($request->email, $request->nome);
+            $mail->From = "hetieres@gmail.com"; // From
+            $mail->FromName = "Joao Hetieres" ; // Nome de quem envia o email
             $mail->Subject = 'Contato via SITE';
             $mail->Body =  $conteudo;
             $mail->AddAddress('hetieres@hotmail.com');
