@@ -165,7 +165,7 @@ class SiteController extends Controller
             $mail->Subject = 'Contato Laboratório Genoma: ' . $request->nome;
             $mail->Body =  $conteudo;
             $mail->addReplyTo($request->email, $request->nome);
-            $mail->AddAddress('hetieres@hotmail.com');
+            $mail->AddAddress('heitor.shimizu@gmail.com');
             if(!$mail->Send()) {
                 $this->data['text'] = '<p>Erro ao enviar e-mail:</p><p>'. $mail->ErrorInfo .'</p>';
             } else {
@@ -210,7 +210,7 @@ class SiteController extends Controller
             $mail->Subject = 'Contato Laboratório Genoma: ' . $request->nome;
             $mail->Body =  $conteudo;
             $mail->addReplyTo($request->email, $request->nome);
-            $mail->AddAddress('hetieres@hotmail.com');
+            $mail->AddAddress('heitor.shimizu@gmail.com');
             if(!$mail->Send()) {
                 $this->data['text'] = '<p>Erro ao enviar e-mail:</p><p>'. $mail->ErrorInfo .'</p>';
             } else {
