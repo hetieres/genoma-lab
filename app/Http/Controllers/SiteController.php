@@ -184,6 +184,7 @@ class SiteController extends Controller
             $conteudo .= "<p>e-mail: " . $request->email . "</p>";
             $conteudo .= "<p>Telefone: " . $request->telefone . "</p>";
             $conteudo .= "<p>Mensagem do solicitante: <br>" . $request->mensagem . "</p>";
+            $conteudo = "<html>". $conteudo ."</html>";
 
             $mail = new PHPMailer();
             $mail->IsSMTP();		    // Ativar SMTP
@@ -194,7 +195,7 @@ class SiteController extends Controller
             $mail->Host = 'smtp.gmail.com';	// SMTP utilizado
             $mail->Port = 587;  		// A porta 587 deverá estar aberta em seu servidor
             $mail->CharSet = 'UTF-8';
-            $mail->IsHTML = true ; // Enviar como HTML
+            $mail->IsHTML(true); // Enviar como HTML
             // dd(env('guser'));
             $mail->Username = env('guser');
             $mail->Password = env('gsenha');
