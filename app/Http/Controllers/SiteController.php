@@ -187,7 +187,7 @@ class SiteController extends Controller
 
             $mail = new PHPMailer();
             $mail->IsSMTP();		    // Ativar SMTP
-            $mail->SMTPDebug = 1;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
+            $mail->SMTPDebug = 0;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
             $mail->SMTPAuth = true;		// Autenticação ativada
             // $mail->SMTPSecure = 'ssl';	// SSL REQUERIDO pelo GMail
             $mail->SMTPSecure = "tls"; // conexão segura com TLS
@@ -198,10 +198,10 @@ class SiteController extends Controller
             // dd(env('guser'));
             $mail->Username = env('guser');
             $mail->Password = env('gsenha');
-            // $mail->SetFrom($request->email, $request->nome);
-            $mail->From = "hetieres@gmail.com"; // From
-            $mail->FromName = "Joao Hetieres" ; // Nome de quem envia o email
-            $mail->Subject = 'Contato via SITE';
+            $mail->SetFrom($request->email, $request->nome);
+            // $mail->From = "hetieres@gmail.com"; // From
+            // $mail->FromName = "Joao Hetieres" ; // Nome de quem envia o email
+            $mail->Subject = 'Contato via SITE - ' . $request->nome;
             $mail->Body =  $conteudo;
             $mail->AddAddress('hetieres@hotmail.com');
             if(!$mail->Send()) {
