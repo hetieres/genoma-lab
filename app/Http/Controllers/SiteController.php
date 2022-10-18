@@ -153,7 +153,7 @@ class SiteController extends Controller
             $conteudo .= "<p>e-mail: " . $request->email . "</p>";
             $conteudo .= "<p>Telefone: " . $request->telefone . "</p>";
             $conteudo .= "<p>Mensagem do solicitante: <br>" . $request->mensagem . "</p>";
-            $conteudo = "<br><b>Interesse pelo exame:</b>";
+            $conteudo .= "<br><b>Interesse pelo exame:</b>";
             $conteudo .= "<p>Código: " . $test->code . "</p>";
             $conteudo .= "<p>Genes: " . $test->genes . "</p>";
             $conteudo .= "<p>Doença(s): " . $test->test . "</p>";
