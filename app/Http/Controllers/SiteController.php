@@ -200,6 +200,7 @@ class SiteController extends Controller
             $mail->Body =  $conteudo;
             $mail->AddAddress('hetieres@hotmail.com');
             if(!$mail->Send()) {
+                dd($mail);
                 $this->data['text'] = '<p>Erro ao enviar e-mail:</p><p>'. $mail->ErrorInfo .'</p>';
             } else {
                 $this->data['text'] = '<p>E-mail enviado com sucesso.</p>';
