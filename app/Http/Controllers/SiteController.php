@@ -198,7 +198,7 @@ class SiteController extends Controller
             // dd(env('guser'));
             $mail->Username = env('guser');
             $mail->Password = env('gsenha');
-            $mail->SetFrom($request->email, $request->nome);
+            // $mail->SetFrom($request->email, $request->nome);
             // $mail->From = "hetieres@gmail.com"; // From
             // $mail->FromName = "Joao Hetieres" ; // Nome de quem envia o email
             $mail->Subject = 'Contato via SITE - ' . $request->nome;
