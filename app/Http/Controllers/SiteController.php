@@ -139,11 +139,6 @@ class SiteController extends Controller
         if($request->email){
             $test     = GeneticTest::where('id', $request->id)->first();
 
-            $headers  = "MIME-Version: 1.0\r\n";
-            $headers .= "Content-Type: text/html; charset=utf-8\r\n";
-            $headers .= "From: $from\r\n";
-            $headers .= "Return-path: $from\r\n";
-
             $conteudo = "<h3>Contato do Laboratório Genoma</h3>";
             $conteudo .= "<p>Nome: " . $request->nome . "</p>";
             $conteudo .= "<p>e-mail: " . $request->email . "</p>";
@@ -169,6 +164,7 @@ class SiteController extends Controller
             $mail->SetFrom($request->email, 'Genoma');
             $mail->Subject = 'Contato Laboratório Genoma: ' . $request->nome;
             $mail->Body =  $conteudo;
+            $mail->addReplyTo($request->email, $request->nome);
             $mail->AddAddress('hetieres@hotmail.com');
             if(!$mail->Send()) {
                 $this->data['text'] = '<p>Erro ao enviar e-mail:</p><p>'. $mail->ErrorInfo .'</p>';
@@ -190,8 +186,6 @@ class SiteController extends Controller
 
     public function contato(Request $request)
     {
-        error_reporting(E_ALL|E_STRICT);
-        ini_set('display_errors', 1);
         if($request->email){
 
             $conteudo = "<h3>Contato do Laboratório Genoma</h3>";
