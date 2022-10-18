@@ -187,7 +187,7 @@ class SiteController extends Controller
 
             $mail = new PHPMailer();
             $mail->IsSMTP();		    // Ativar SMTP
-            $mail->SMTPDebug = 0;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
+            $mail->SMTPDebug = 1;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
             $mail->SMTPAuth = true;		// Autenticação ativada
             $mail->SMTPSecure = 'ssl';	// SSL REQUERIDO pelo GMail
             $mail->Host = 'smtp.gmail.com';	// SMTP utilizado
@@ -200,7 +200,7 @@ class SiteController extends Controller
             $mail->Body =  $conteudo;
             $mail->AddAddress('hetieres@hotmail.com');
             if(!$mail->Send()) {
-                dd($mail);
+                // dd($mail);
                 $this->data['text'] = '<p>Erro ao enviar e-mail:</p><p>'. $mail->ErrorInfo .'</p>';
             } else {
                 $this->data['text'] = '<p>E-mail enviado com sucesso.</p>';
