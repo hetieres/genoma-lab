@@ -38,6 +38,12 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <script src="{{ asset('assets/js/pages/search.min.js') }}"></script>
 
+<!-- mascara -->
+<script type="text/javascript" src="{{ asset('assets/vendor/input-mask/inputmask.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/vendor/input-mask/inputmask.date.extensions.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/vendor/input-mask/inputmask.numeric.extensions.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/vendor/input-mask/jquery.inputmask.js') }}"></script>
+
 <!-- Jquery Plugins, main Jquery -->
 <script src="{{ asset('assets/js/js/main.js') }}"></script>
 

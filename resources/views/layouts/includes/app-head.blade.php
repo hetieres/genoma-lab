@@ -8,40 +8,28 @@
 
 <head>
  <!-- Go to www.addthis.com/dashboard to customize your tools -->
- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5fc6b519332d8fcf"></script>
+ {{-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5fc6b519332d8fcf"></script> --}}
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZX2VFV1HLT"></script>
+    {{-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZX2VFV1HLT"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'G-ZX2VFV1HLT');
-    </script>
+    </script> --}}
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Ciência e tecnologia para o combate à COVID-19">
-    <meta name="keywords" content="COVID-19, coronavírus, FAPESP, pandemia, epidemia, vírus, vacina, pesquisa, ciência">
-    <meta name="author" content="FAPESP">
+    <meta name="description" content="Laboratório de Testes Genéticos(LabTEG)">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{ config('app.name') }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script>
         window.baseUrl = "{{ asset('/') }}";
-    </script>
-
-    <script>
-        function redirect(pg, id) {
-            location.href = '/' + pg + '/' + id;
-        }
-
-        function redirectPG(pg) {
-            location.href = pg;
-        }
     </script>
 
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon" />
