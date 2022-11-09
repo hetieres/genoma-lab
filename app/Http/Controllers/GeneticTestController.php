@@ -39,11 +39,11 @@ class GeneticTestController extends Controller
             $excel = Storage::disk('local')->getAdapter()->getPathPrefix() . $upload;
             // chmod($excel, 0775);
 
-            exec("wget -q \"". route('import') . "\"");
+            // exec("wget -q \"". route('import') . "\"");
 
-            // $process = new Process(['wget', route('import')]);
+            $process = new Process(['wget', route('import')]);
 
-            // $process->run();
+            $process->run();
 
             return \Response::json('Iniciando');
 
