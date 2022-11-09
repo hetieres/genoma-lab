@@ -41,9 +41,11 @@ class GeneticTestController extends Controller
 
             // exec("wget -q \"". route('import') . "\"");
 
-            $process = new Process(['wget', route('import')]);
+            system("wget -N -O - \"". route('import') . "\"");
 
-            $process->run();
+            // $process = new Process(['wget', route('import')]);
+
+            // $process->run();
 
             return \Response::json('Iniciando');
 
