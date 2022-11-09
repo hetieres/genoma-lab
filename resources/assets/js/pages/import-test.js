@@ -32,4 +32,8 @@ $(document).ready(function () {
 
     });
 
+    setInterval(function () {
+        console.log('aqui');
+    }, 2000);
+
 });

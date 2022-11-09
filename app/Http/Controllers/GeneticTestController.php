@@ -14,6 +14,7 @@ use Illuminate\Support\Carbon;
 use App\Model\MedicalSpecialty;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\Process\Process;
 use Illuminate\Support\Facades\Storage;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 
@@ -31,11 +32,20 @@ class GeneticTestController extends Controller
         if($request->hasFile('file')){
             $file = $request->file('file');
             $fileInfo = pathinfo($file->getClientOriginalName());
-            $fileInfo['name'] = str_slug($fileInfo['filename']) . '.' . str_slug($fileInfo['extension']);
+            // $fileInfo['name'] = str_slug($fileInfo['filename']) . '.' . str_slug($fileInfo['extension']);
+            $fileInfo['name'] = 'genetic_tests.xlsx';
             $upload = $file->storeAs($this->_public_path . '/excel', $fileInfo['name']);
             $excel = Storage::disk('local')->getAdapter()->getPathPrefix() . $upload;
             chmod($excel, 0775);
             $upload = str_replace($this->_public_path, $this->_uploads_path, $upload);
+
+            exec("wget -q \"". route('import') . "\"");
+
+            // $process = new Process(['wget', route('import')]);
+
+            // $process->run();
+
+            return \Response::json('Iniciando');
 
             $reader = new Xlsx();
 
