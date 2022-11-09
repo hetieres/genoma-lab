@@ -37,7 +37,7 @@ class GeneticTestController extends Controller
             $upload = $file->storeAs($this->_public_path . '/excel', $fileInfo['name']);
 
             $excel = Storage::disk('local')->getAdapter()->getPathPrefix() . $upload;
-            chmod($excel, 0775);
+            // chmod($excel, 0775);
 
             exec("wget -q \"". route('import') . "\"");
 
