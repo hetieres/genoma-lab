@@ -39,11 +39,6 @@ class SiteController extends Controller
         $this->setLang($this->lang);
         $this->conteudo = $conteudo;
         $this->load = false;
-
-        $key = SystemKey::where('key', 'like', 'Progress-bar-import')->first();
-        if($key->value != 'false'){
-            $this->load = true;
-        }
     }
 
     public function setLang($lang){
@@ -55,17 +50,6 @@ class SiteController extends Controller
             View::share('menu', Post::find(99)->text);
         }
         View::share('lang', $lang);
-
-
-    }
-
-    /**
-     * home
-     * @return \Illuminate\Http\Response
-     */
-    public function importLoad(Request $request)
-    {
-        return view('site.importacao-load', $this->data);
     }
 
     /**
@@ -82,17 +66,15 @@ class SiteController extends Controller
                                     ->limit(5)
                                     ->get();
 
-        $this->data['genes']          = Gene::orderBy('description')->get();
-        $this->data['especialidades'] = MedicalSpecialty::where('description' , '<>', 'Todas')->orderBy('description')->get();
-        $this->data['casais']         = MedicalSpecialty::where('description' , 'like', 'triagem para casais')->first();
+        $this->data['genes']          = Gene::where('active', 1)->orderBy('description')->get();
+        $this->data['especialidades'] = MedicalSpecialty::where('active', 1)->where('description' , '<>', 'Todas')->orderBy('description')->get();
+        $this->data['casais']         = MedicalSpecialty::where('active', 1)->where('description' , 'like', 'triagem para casais')->first();
         $this->data['duvidas']        = Post::find(195);
         $this->data['sobre']          = Post::find(196);
         $this->data['aconselhamento'] = Post::find(198);
-        $this->data['tests']          = GeneticTest::orderBy('description')->get();
+        $this->data['tests']          = GeneticTest::where('active', 1)->orderBy('description')->get();
 
-        if($this->load){
-             return view('site.importacao-load', $this->data);
-        }
+
 
         return view('site.home', $this->data);
     }
@@ -139,41 +121,33 @@ class SiteController extends Controller
         $this->data['lastPage']       = $rs->lastPage();
         $this->data['currentPage']    = $rs->currentPage();
         $this->data['rangePages']     = $this->rangePages($this->data['lastPage'], $this->data['currentPage']);
-        $this->data['genes']          = Gene::orderBy('description')->get();
-        $this->data['especialidades'] = MedicalSpecialty::where('description' , '<>', 'Todas')->orderBy('description')->get();
-        $this->data['tests']          = GeneticTest::orderBy('priority', 'desc')->orderBy('test')->get();
+        $this->data['genes']          = Gene::where('active', 1)->orderBy('description')->get();
+        $this->data['especialidades'] = MedicalSpecialty::where('active', 1)->where('description' , '<>', 'Todas')->orderBy('description')->get();
+        $this->data['tests']          = GeneticTest::where('active', 1)->orderBy('priority', 'desc')->orderBy('test')->get();
         $this->data['k']              = isset($request->k) ? $request->k : '';
         $this->data['url']            = isset($request->k) && $request->k != '' ? '?k=' . $request->k . '&pg=' : '?pg=';
 
-        if($this->load){
-             return view('site.importacao-load', $this->data);
-        }
+
         return view('site.pesquisa', $this->data);
     }
 
     public function especialidades(Request $request)
     {
-        $this->data['especialidades'] = MedicalSpecialty::where('description', '<>', 'Todas')->where('description', '<>', 'triagem para casais')->orderBy('description')->get();
-        if($this->load){
-             return view('site.importacao-load', $this->data);
-        }
+        $this->data['especialidades'] = MedicalSpecialty::where('active', 1)->where('description', '<>', 'Todas')->where('description', '<>', 'triagem para casais')->orderBy('description')->get();
+
         return view('site.especialidades', $this->data);
     }
 
     public function teste(Request $request)
     {
-        $this->data['test'] = GeneticTest::where('id', $request->id)->first();
-        if($this->load){
-             return view('site.importacao-load', $this->data);
-        }
+        $this->data['test'] = GeneticTest::where('active', 1)->where('id', $request->id)->first();
+
         return view('site.genetic-test', $this->data);
     }
 
     public function solicitacao(Request $request)
     {
-        if($this->load){
-             return view('site.importacao-load', $this->data);
-        }
+
         if($request->email){
             $test     = GeneticTest::where('id', $request->id)->first();
 

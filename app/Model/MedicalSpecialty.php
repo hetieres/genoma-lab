@@ -9,6 +9,6 @@ class MedicalSpecialty extends Model
 
     protected $table = 'medical_specialties';
     public $timestamps = true;
-    protected $fillable = array('description');
+    protected $guarded = [];
 
 }

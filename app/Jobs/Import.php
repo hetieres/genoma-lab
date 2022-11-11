@@ -70,9 +70,9 @@ class Import implements ShouldQueue
         $spreadsheet->setActiveSheetIndex(0);
         $sheetData = $spreadsheet->getActiveSheet()->toArray();
 
-        GeneticTest::truncate();
-        Gene::truncate();
-        MedicalSpecialty::truncate();
+        // GeneticTest::truncate();
+        // Gene::truncate();
+        // MedicalSpecialty::truncate();
 
         if (!empty($sheetData)) {
             for ($i=1; $i<count($sheetData); $i++) {
@@ -89,7 +89,7 @@ class Import implements ShouldQueue
                 $test->more              = $sheetData[$i][9];
                 $test->priority          = $sheetData[$i][10] == 'VERDADEIRO' ? 1 : 0;
                 $test->highlight         = $sheetData[$i][11] == 'VERDADEIRO' ? 1 : 0;
-                $test->active            = $sheetData[$i][12] == 'VERDADEIRO' ? 1 : 0;
+                $test->active            = $sheetData[$i][12] == 'VERDADEIRO' ? 0 : 1;
                 $test->tuss              = $sheetData[$i][13];
 
                 $test->save();
@@ -101,9 +101,10 @@ class Import implements ShouldQueue
                 foreach ($genes as $item) {
                     $item = trim($item);
                     $gene = Gene::where('description', $item)->get();
-                    if(count($gene) == 0 && \str_replace(' ', '-', $item) == $item){
+                    if(count($gene) <= 1 && \str_replace(' ', '-', $item) == $item){
                         $gene = new Gene();
                         $gene->description = $item;
+                        $gene->active      = 0;
                         $gene->save();
                     }
                 }
@@ -115,9 +116,10 @@ class Import implements ShouldQueue
                 foreach ($medical_specialty as $item) {
                     $item = trim($item);
                     $model = MedicalSpecialty::where('description', $item)->get();
-                    if(count($model) == 0){
+                    if(count($model) <= 1){
                         $model = new MedicalSpecialty();
                         $model->description = $item;
+                        $model->active      = 0;
                         $model->save();
                     }
                 }
@@ -134,5 +136,29 @@ class Import implements ShouldQueue
 
         $key->value = 'false';
         $key->save();
+
+        MedicalSpecialty::where('active', 1)->delete();
+        MedicalSpecialty::where('active', 0)->update(['active' => 1]);
+        $rs = MedicalSpecialty::orderBy('id')->get();
+
+        for ($i=0; $i < count($rs); $i++) {
+            MedicalSpecialty::where('id', $rs[$i]->id)->update(['id' => $i+1]);
+        }
+
+        Gene::where('active', 1)->delete();
+        Gene::where('active', 0)->update(['active' => 1]);
+        $rs = Gene::orderBy('id')->get();
+
+        for ($i=0; $i < count($rs); $i++) {
+            Gene::where('id', $rs[$i]->id)->update(['id' => $i+1]);
+        }
+
+        GeneticTest::where('active', 1)->delete();
+        GeneticTest::where('active', 0)->update(['active' => 1]);
+        $rs = GeneticTest::orderBy('id')->get();
+
+        for ($i=0; $i < count($rs); $i++) {
+            GeneticTest::where('id', $rs[$i]->id)->update(['id' => $i+1]);
+        }
     }
 }
