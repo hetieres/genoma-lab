@@ -2,31 +2,35 @@
 
 namespace App\Jobs;
 
-use Illuminate\Bus\Queueable;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
-
 use DateTime;
 use App\Model\Gene;
 use App\Model\Post;
 use App\Model\Session;
 use App\Model\SystemKey;
+
 use App\Model\GeneticTest;
 use App\Model\PostHistory;
 use Caxy\HtmlDiff\HtmlDiff;
 use Illuminate\Http\Request;
+use Illuminate\Bus\Queueable;
 use Illuminate\Support\Carbon;
 use App\Model\MedicalSpecialty;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Queue\InteractsWithQueue;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
 
 class Import implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    // use SerializesModels;
+
+    public $timeout = 0;
 
     /**
      * Create a new job instance.
@@ -45,7 +49,7 @@ class Import implements ShouldQueue
      */
     public function handle()
     {
-        // dd('aqui');
+        Log::debug('exec job');
         $key = SystemKey::where('key', 'like', 'Progress-bar-import')->first();
 
 
@@ -54,13 +58,15 @@ class Import implements ShouldQueue
         }
 
         $key->key = "Progress-bar-import";
-        $key->value = "Iniciando...";
+        $key->value = "0%";
         $key->save();
 
 
         $reader = new Xlsx();
+        // Log::debug(public_path('/files/excel/genetic_tests.xlsx'));
+        // die();
 
-        $spreadsheet = $reader->load('files/excel/genetic_tests.xlsx');
+        $spreadsheet = $reader->load(public_path('files/excel/genetic_tests.xlsx'));
         $spreadsheet->setActiveSheetIndex(0);
         $sheetData = $spreadsheet->getActiveSheet()->toArray();
 
@@ -116,7 +122,7 @@ class Import implements ShouldQueue
                     }
                 }
 
-                $key->value = $i * 100 / count($sheetData);
+                $key->value = floor($i * 100 / count($sheetData)) . '%';
                 $key->save();
             }
         }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Model\Post;
 use App\Model\Session;
+use App\Model\SystemKey;
 use App\Helpers\JWTHelper;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
@@ -48,7 +49,6 @@ class Controller extends BaseController
     private function dataLoad()
     {
         $prefix = $this->_treatPrefix();
-        // dd('aqui');
         if (in_array($prefix, ['fapesp', 'admin', 'fapesp-en'])) {
             $jwt   = new JWTHelper;
             $token = (isset($_COOKIE['JWT-TOKEN']) ? $_COOKIE['JWT-TOKEN'] : '');

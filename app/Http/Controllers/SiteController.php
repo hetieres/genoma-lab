@@ -12,6 +12,7 @@ use App\Model\Country;
 use App\Model\Session;
 use App\Model\Category;
 use App\Model\MediaType;
+use App\Model\SystemKey;
 use App\Model\GeneticTest;
 use App\Helpers\BaseHelper;
 use Illuminate\Http\Request;
@@ -27,11 +28,22 @@ use Illuminate\Support\Facades\Storage;
 class SiteController extends Controller
 {
     private $conteudo;
-    public function __construct(Post $conteudo)
+    private $load;
+
+    /**
+     * @return \Illuminate\Http\Response
+     */
+    public function __construct(Request $request, Post $conteudo)
     {
         $this->lang = $this->_treatPrefix()=='en' ? 'en' : 'pt';
         $this->setLang($this->lang);
         $this->conteudo = $conteudo;
+        $this->load = false;
+
+        $key = SystemKey::where('key', 'like', 'Progress-bar-import')->first();
+        if($key->value != 'false'){
+            $this->load = true;
+        }
     }
 
     public function setLang($lang){
@@ -43,8 +55,20 @@ class SiteController extends Controller
             View::share('menu', Post::find(99)->text);
         }
         View::share('lang', $lang);
+
+
     }
-        /**
+
+    /**
+     * home
+     * @return \Illuminate\Http\Response
+     */
+    public function importLoad(Request $request)
+    {
+        return view('site.importacao-load', $this->data);
+    }
+
+    /**
      * home
      * @return \Illuminate\Http\Response
      */
@@ -65,6 +89,10 @@ class SiteController extends Controller
         $this->data['sobre']          = Post::find(196);
         $this->data['aconselhamento'] = Post::find(198);
         $this->data['tests']          = GeneticTest::orderBy('description')->get();
+
+        if($this->load){
+             return view('site.importacao-load', $this->data);
+        }
 
         return view('site.home', $this->data);
     }
@@ -117,25 +145,35 @@ class SiteController extends Controller
         $this->data['k']              = isset($request->k) ? $request->k : '';
         $this->data['url']            = isset($request->k) && $request->k != '' ? '?k=' . $request->k . '&pg=' : '?pg=';
 
-
+        if($this->load){
+             return view('site.importacao-load', $this->data);
+        }
         return view('site.pesquisa', $this->data);
     }
 
     public function especialidades(Request $request)
     {
         $this->data['especialidades'] = MedicalSpecialty::where('description', '<>', 'Todas')->where('description', '<>', 'triagem para casais')->orderBy('description')->get();
-
+        if($this->load){
+             return view('site.importacao-load', $this->data);
+        }
         return view('site.especialidades', $this->data);
     }
 
     public function teste(Request $request)
     {
         $this->data['test'] = GeneticTest::where('id', $request->id)->first();
+        if($this->load){
+             return view('site.importacao-load', $this->data);
+        }
         return view('site.genetic-test', $this->data);
     }
 
     public function solicitacao(Request $request)
     {
+        if($this->load){
+             return view('site.importacao-load', $this->data);
+        }
         if($request->email){
             $test     = GeneticTest::where('id', $request->id)->first();
 
@@ -281,59 +319,6 @@ class SiteController extends Controller
         }
     }
 
-
-    public function search(Request $request)
-    {
-        $rs = Post::selectRaw('posts.*')->where('posts.lang', $this->lang)->whereNotIn('posts.session_id', [7, 14]);
-        $request->k = trim($request->k); //chave
-        $request->o = isset($request->o) ? $request->o : 1;
-
-        //chave
-        if (isset($request->k) && trim($request->k) != '') {
-            $like = '%' . $request->k . '%';
-            $rs->join('sessions', 'posts.session_id', 'sessions.id');
-            $rs->where('sessions.search', 1);
-            $rs->where(function ($query) use ($like) {
-                $query->where('posts.title', 'like', $like)
-                    ->orWhere('posts.text', 'like', $like)
-                    ->orWhere('posts.summary', 'like', $like)
-                    ->orWhere('posts.keywords', 'like', $like)
-                    ->orWhere('posts.caption_image', 'like', $like);
-            });
-        }
-
-        //order by
-        if ($request->o == 1)
-            $rs->orderBy('dt_publication', 'DESC');
-        else if ($request->o == 2)
-            $rs->orderBy('dt_publication');
-
-        //    dd($rs->toSql());
-
-        //set pagina atual
-        Paginator::currentPageResolver(function () use ($request) {
-            $request->pg = (int) $request->pg;
-            return $request->pg;
-        });
-
-        //       dd($rs->toSql());
-
-        $rs = $rs->paginate(10);
-
-        $this->data['rs']          = $rs;
-        $this->data['rangePages']  = $this->rangePages($rs->lastPage(), $rs->currentPage(), 7);
-        $this->data['lastPage']    = $rs->lastPage();
-        $this->data['currentPage'] = $rs->currentPage();
-        $this->data['url']         = isset($_GET['k']) ? '?k=' . $_GET['k'] : '?k=';
-        $this->data['url']         = $this->data['url'] . (isset($_GET['m']) ? '&m=' . $_GET['m'] : '');
-        $this->data['url']         = $this->data['url'] . (isset($_GET['y']) ? '&y=' . $_GET['y'] : '');
-        $this->data['url']         = $this->data['url'] . (isset($_GET['o']) ? '&o=' . $_GET['o'] : '');
-        $this->data['url']         = $this->data['url'] . (isset($_GET['c']) ? '&c=' . $_GET['c'] : '');
-        $this->data['url']         = $this->data['url'] . (isset($_GET['p']) ? '&p=' . $_GET['p'] : '');
-        $this->data['url']         = $this->data['url'] . '&pg=';
-
-        return view('site.search', $this->data);
-    }
 
 
 }

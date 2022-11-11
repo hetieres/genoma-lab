@@ -56,7 +56,7 @@ Route::group(['prefix' => 'admin/ajax', 'middleware' => 'ajax'], function () {
     Route::post('vehicle-save', 'VehicleController@createUpdate');
     Route::post('vehicle-multiple-save', 'VehicleController@multipleSave');
     Route::get('vehicle/all-combo-box', 'VehicleController@allComboBox');
-    
+
     Route::post('session-save', 'SessionController@save');
 
     Route::post('report/news', 'ReportController@reportNews');
@@ -76,3 +76,5 @@ Route::group(['prefix' => 'ajax'], function () {
 
 Route::get('clipping-service', 'ApiController@clippingService');
 Route::get('bv-links', 'ApiController@bv2');
+
+Route::post('genetic-test-status-bar', 'GeneticTestController@statusBar');

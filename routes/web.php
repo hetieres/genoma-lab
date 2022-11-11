@@ -103,6 +103,7 @@ Route::get('/sitemap.xml/{slug?}/{pg?}', 'SitemapController@internals')->name('s
 
 Route::get('/import', 'DataImportController@import')->name('import');
 
+Route::get('/import-load', 'SiteController@importLoad')->name('import-load');
 
 /* Rotas do site  PT */
 Route::get('/', 'SiteController@index')->name('home');

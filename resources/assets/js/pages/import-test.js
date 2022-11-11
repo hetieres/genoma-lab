@@ -1,25 +1,20 @@
 $(document).ready(function () {
 
     $('#save').click(function (event) {
-        $('#save').prop('disabled', true);
         let data = new FormData();
 
         if ($('#file').prop('files')[0]) {
             data.append('file', $('#file').prop('files')[0]);
             let url = baseUrl + "api/admin/ajax/genetic-test-import";
-            let message = "Atualizado com sucesso!";
+            let message = "Atualizando com sucesso!";
 
-            $('.form-group').addClass('d-none');
-            $('.load').removeClass('d-none');
+            // $('#save').prop('disabled', true);
+            // $('.form-group').addClass('d-none');
+            // $('.load').removeClass('d-none');
 
             axios.post(url, data).then(response => {
                 let data = response.data;
                 toastr.success(message);
-                $('#save').prop('disabled', false);
-                $('.load').hide();
-                $('.success').find('p').eq(0).html(data);
-                $('.success').removeClass('d-none');
-                $('.form-group').removeClass('d-none');
             }).catch(error => {
                 console.log(error);
             });
@@ -33,7 +28,24 @@ $(document).ready(function () {
     });
 
     setInterval(function () {
-        console.log('aqui');
-    }, 2000);
+        let data = new FormData();
+        let url = baseUrl + "api/genetic-test-status-bar";
+
+        axios.post(url, data).then(response => {
+            let data = response.data;
+            if (data.value == 'false') {
+                $('#save').prop('disabled', false);
+                $('.load').addClass('d-none');
+                $('.form-group').removeClass('d-none');
+            } else {
+                $('#save').prop('disabled', true);
+                $('.form-group').addClass('d-none');
+                $('.load').removeClass('d-none');
+                $('.load').find('label').eq(0).html(data.value);
+            }
+        }).catch(error => {
+            console.log(error);
+        });
+    }, 333);
 
 });

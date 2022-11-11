@@ -7,6 +7,7 @@ use App\Model\Gene;
 use App\Model\Post;
 use App\Jobs\Import;
 use App\Model\Session;
+use App\Model\SystemKey;
 use App\Model\GeneticTest;
 use App\Model\PostHistory;
 use Caxy\HtmlDiff\HtmlDiff;
@@ -49,6 +50,7 @@ class GeneticTestController extends Controller
             // $process->run();
 
             Import::dispatch();
+            // dispatch(new Import());
 
             return \Response::json('Iniciando');
 
@@ -117,6 +119,15 @@ class GeneticTestController extends Controller
             }
 
         }
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function statusBar(){
+        return SystemKey::where('key', 'like', 'Progress-bar-import')->first();
     }
 
 

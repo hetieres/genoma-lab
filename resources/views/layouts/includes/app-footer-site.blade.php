@@ -53,6 +53,10 @@
 <script src="{{ asset('assets/js/js/banner/slick.min.js') }}"></script>
 <script src="{{ asset('assets/js/js/banner/home.min.js') }}"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+@yield('extra-script')
+
 {{-- <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script> --}}
 
 

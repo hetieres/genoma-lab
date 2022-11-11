@@ -37,17 +37,13 @@
                                 <div class="form-group">
                                     <label for="file" class="col-sm-2 control-label">Excel</label>
                                     <div class="col-lg-6 col-xs-8">
-                                        <input type="file" class="form-control" id="file" name="file">
+                                        <input type="file" class="form-control" id="file" name="file" accept=".xlsx">
                                     </div>
                                 </div>
 
                                 <div class="text-red text-center load d-none">
-                                    <img class="loading" src="{{ asset('assets/img/loading.svg') }}" style="width: 100%; height: 200px;">
-                                </div>
-
-                                <div class="success d-none">
-                                    <h2>Sucesso:</h2>
-                                    <p>127 registros atualizados.</p>
+                                    <label style="font-size: 60px; color: #0ba2bd;">0%</label>
+                                    <img class="loading" src="{{ asset('assets/img/loading.svg') }}" style="width: 100%; height: 378px; margin-top: -150px;">
                                 </div>
 
                             </div>
