@@ -355,6 +355,9 @@
                                 @foreach ($genes as $gene)
                                     <option value="{!! route('pesquisa') . '?k=g_' . $gene->id !!}" {{ (('g_' . $gene->id) == $k) ? 'selected' : '' }} >{!! $gene->description !!}</option>
                                 @endforeach
+                                @foreach ($tests as $test)
+                                    <option value="{!! $test->link() !!}">{!! $test->description !!}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="links-uteis">
@@ -402,7 +405,7 @@
          <div class="recent-articles pt-40 ">
             <div class="col-md-12">
                 <div class="row">
-                
+
                 <ul class="pagination" role="navigation">
                     @if ($lastPage > 5)
                         <li class="page-item previous"><a class="page-link" href="{{ route('pesquisa') . $url . 1 }}"><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left"></i></a></li>
