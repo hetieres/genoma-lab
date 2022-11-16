@@ -177,7 +177,7 @@ class SiteController extends Controller
             $mail->Subject = 'Contato Laboratório Genoma: ' . $request->nome;
             $mail->Body =  $conteudo;
             $mail->addReplyTo($request->email, $request->nome);
-            // $mail->AddAddress('heitor.shimizu@gmail.com');
+            $mail->AddAddress('heitor.shimizu@gmail.com');
             $mail->AddAddress('hetieres@gmail.com');
 
             if (isset($_FILES['anexo']) && $_FILES['anexo']['error'] == UPLOAD_ERR_OK) {
