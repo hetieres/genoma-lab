@@ -60,7 +60,7 @@
         font-weight: bold;
     }
 
-    input, textarea{
+    input, textarea, file{
         width: 80%;
         border-radius: 5px;
         border: 1px solid #000;
@@ -155,7 +155,7 @@
                 <p>WhatsApp: (11) 2648-8358 (só para mensagem, em horário comercial)</p>
                 <p>Preencha o formulário abaixo e entraremos em contato (verifique sua caixa de spam):</p>
             </div>
-            <form method="post" id="mail_form" action="{{ route('solicitacao', ['id' => $test->id]) }}">
+            <form method="post" id="mail_form" action="{{ route('solicitacao', ['id' => $test->id]) }}" enctype="multipart/form-data">
                 @csrf
                 <div class="info">
                     Você receberá um e-mail de confirmação com os formulários necessários para realização do exame.
@@ -200,6 +200,13 @@
                         <div class="col-md-4 rotulo">Mensagem</div>
                         <div class="col-md-8">
                             <textarea id="mensagem" name="mensagem" rows="4" placeholder="Se houver algum detalhe adicional ou dúvida, escreva para nossos especialistas."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 rotulo">Enviar solicitação médica e/ou relatório médico, em PDF ou imagem (não obrigatório)</div>
+                        <div class="col-md-8">
+                            <input type="file" id="anexo" name="anexo">
                         </div>
                     </div>
                     {{-- <div id="html_element"></div> --}}
