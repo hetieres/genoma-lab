@@ -214,7 +214,7 @@
 
 
             </form>
-{{-- 
+{{--
             <script type="text/javascript">
                 var onloadCallback = function() {
                     grecaptcha.render('html_element', {
