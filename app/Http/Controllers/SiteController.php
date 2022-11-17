@@ -81,7 +81,8 @@ class SiteController extends Controller
 
     public function pesquisa(Request $request)
     {
-        $rs = GeneticTest::where('active', 1);
+        $rs = GeneticTest::selectRaw('length(genes) - length(replace(genes, \',\' , \'\')) + 1 totalg, genetic_tests.*')
+                        ->where('active', 1);
         $request->k = trim($request->k); //chave
 
         //chave
@@ -94,7 +95,9 @@ class SiteController extends Controller
                 $specialty = MedicalSpecialty::find($id);
                 if($specialty && strtolower($specialty->description) != 'todas'){
                     $rs->where('medical_specialty', 'like', '%' . $specialty->description . '%');
-                    $rs->orWhere('medical_specialty', 'like', '%todas%');
+                    if(strtolower($specialty->description) != 'triagem para casais'){
+                        $rs->orWhere('medical_specialty', 'like', '%todas%');
+                    }
                 }
             }
 
@@ -114,7 +117,7 @@ class SiteController extends Controller
         });
 
         $this->data['count'] = $rs->count();
-        $rs = $rs->orderBy('priority', 'desc')->orderBy('test')->paginate(20);
+        $rs = $rs->orderByRaw('medical_specialty = \'Todas\' desc')->orderBy('priority', 'desc')->orderBy('totalg', 'desc')->paginate(20);
 
 
         $this->data['rs']             = $rs;

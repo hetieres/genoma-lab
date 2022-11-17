@@ -92,11 +92,18 @@ class Import implements ShouldQueue
                 $test->active            = $sheetData[$i][12] == 'VERDADEIRO' ? 0 : 1;
                 $test->tuss              = $sheetData[$i][13];
 
+                if($test->price[strlen($test->price)-3] == '.'){
+                    $test->price = str_replace('.', 'X', $test->price);
+                    $test->price = str_replace(',', '.', $test->price);
+                    $test->price = str_replace('X', ',', $test->price);
+                }
+
+                $test->genes = explode(';', $test->genes);
+                $test->genes = implode(',', $test->genes);
+
                 $test->save();
 
-                $genes = explode(';', $test->genes);
-                $genes = implode(',', $genes);
-                $genes = explode(',', $genes);
+                $genes = explode(',', $test->genes);
 
                 foreach ($genes as $item) {
                     $item = trim($item);
@@ -124,15 +131,12 @@ class Import implements ShouldQueue
                     }
                 }
 
-                $key->value = floor($i * 100 / count($sheetData)) . '%';
+                $key->value = 'Excel <br>' . floor($i * 100 / count($sheetData)) . '%';
                 $key->save();
+
             }
         }
 
-        $key->value = count($sheetData) - 1 . ' registros importados com sucesso.';
-        $key->save();
-
-        sleep(5);
 
         $key->value = 'false';
         $key->save();
@@ -143,6 +147,8 @@ class Import implements ShouldQueue
 
         for ($i=0; $i < count($rs); $i++) {
             MedicalSpecialty::where('id', $rs[$i]->id)->update(['id' => $i+1]);
+            $key->value = 'Especialidade medica <br>' . floor($i * 100 / count($rs)) . '%';
+            $key->save();
         }
 
         Gene::where('active', 1)->delete();
@@ -151,6 +157,8 @@ class Import implements ShouldQueue
 
         for ($i=0; $i < count($rs); $i++) {
             Gene::where('id', $rs[$i]->id)->update(['id' => $i+1]);
+            $key->value = 'Genes <br>' . floor($i * 100 / count($rs)) . '%';
+            $key->save();
         }
 
         GeneticTest::where('active', 1)->delete();
@@ -159,6 +167,12 @@ class Import implements ShouldQueue
 
         for ($i=0; $i < count($rs); $i++) {
             GeneticTest::where('id', $rs[$i]->id)->update(['id' => $i+1]);
+            $key->value = 'Exames <br>' . floor($i * 100 / count($rs)) . '%';
+            $key->save();
         }
+
+        $key->value = 'false';
+        $key->save();
+
     }
 }
