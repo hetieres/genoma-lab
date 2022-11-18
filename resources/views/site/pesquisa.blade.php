@@ -3,7 +3,7 @@
     <style>
 
         .search-bar {
-            background-color: #ff4a37;
+            background-color: #0032a0;
             height: 175px;
             padding:50px;
             width: 90%;
@@ -33,7 +33,7 @@
             height: 48px;
             position: absolute;
             top: 7px;
-            color: #ff515b;
+            color: #0032a0;
             right: 8px;
             background: white;
             width: 50px;

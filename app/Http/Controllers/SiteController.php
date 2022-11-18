@@ -117,7 +117,22 @@ class SiteController extends Controller
         });
 
         $this->data['count'] = $rs->count();
-        $rs = $rs->orderByRaw('medical_specialty = \'Todas\' desc')->orderBy('priority', 'desc')->orderBy('totalg', 'desc')->paginate(20);
+        $rs = $rs->orderByRaw('medical_specialty = \'Todas\' desc')
+                ->orderByRaw('code = \'Exoma-NGS\' desc')
+                ->orderByRaw('code = \'TrioExoma-NGS\' desc')
+                ->orderByRaw('code = \'Geneunico-NGS\' desc')
+                ->orderByRaw('code = \'GeneMUT-NGS\' desc')
+                ->orderByRaw('code = \'GeneMUT-Sanger\' desc')
+                ->orderByRaw('code = \'Custom-NGS\' desc')
+                ->orderByRaw('code = \'Custom10-NGS\' desc')
+                ->orderBy('priority', 'desc')
+                ->orderByRaw('code = \'TPpainelCasal-NGS\' desc')
+                ->orderByRaw('code = \'TPpainel-NGS\' desc')
+                ->orderByRaw('code = \'TPpainelCasal-NGS-MLPA\' desc')
+                ->orderByRaw('code = \'TPpainel-NGS-MLPA\' desc')
+                ->orderBy('totalg', 'desc')
+                ->orderBy('test')
+                ->paginate(20);
 
 
         $this->data['rs']             = $rs;
