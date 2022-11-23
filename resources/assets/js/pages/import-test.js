@@ -1,23 +1,42 @@
 $(document).ready(function () {
 
+    const sendPostRequest = async () => {
+        try {
+            let data = new FormData();
+            let url = baseUrl + "api/admin/ajax/genetic-test-import";
+
+            data.append('file', $('#file').prop('files')[0]);
+            const resp = await axios.post(url, data);
+            console.log(resp.data);
+        } catch (err) {
+            // Handle Error Here
+            console.error(err);
+        }
+    };
+
     $('#save').click(function (event) {
-        let data = new FormData();
+        // let data = new FormData();
 
         if ($('#file').prop('files')[0]) {
-            data.append('file', $('#file').prop('files')[0]);
-            let url = baseUrl + "api/admin/ajax/genetic-test-import";
-            let message = "Atualizando com sucesso!";
+            // data.append('file', $('#file').prop('files')[0]);
+            // let url = baseUrl + "api/admin/ajax/genetic-test-import";
+            // let message = "Atualizando com sucesso!";
 
             // $('#save').prop('disabled', true);
             // $('.form-group').addClass('d-none');
             // $('.load').removeClass('d-none');
 
-            axios.post(url, data).then(response => {
-                let data = response.data;
-                toastr.success(message);
-            }).catch(error => {
-                console.log(error);
-            });
+            // axios.post(url, data).then(response => {
+            //     let data = response.data;
+            //     toastr.success(message);
+            // }).catch(error => {
+            //     console.log(error);
+            // });
+
+            sendPostRequest();
+
+            console.log('aqui');
+
         } else {
             toastr.error('Selecione um arquivo.');
             $('#save').prop('disabled', false);

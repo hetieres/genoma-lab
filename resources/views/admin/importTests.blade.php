@@ -26,7 +26,7 @@
                 <div class="box">
                     <div class="box-header with-border">
                         <h3 class="box-title">
-                            <i class="fa fa-fw fa-table"></i> Testes Genéticos
+                            <i class="fa fa-fw fa-table"></i> Exames Genéticos
                         </h3>
                         {{-- <h3 class="box-title">{{ $post->id != '' ? $post->id . ' :: ' . $post->title : '<nova>' }}</h3> --}}
                     </div>

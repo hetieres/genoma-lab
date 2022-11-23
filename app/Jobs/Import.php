@@ -49,18 +49,16 @@ class Import implements ShouldQueue
      */
     public function handle()
     {
+        set_time_limit(0);
+
         Log::debug('exec job');
         $key = SystemKey::where('key', 'like', 'Progress-bar-import')->first();
 
 
         if($key == null){
             $key = new SystemKey();
+            $key->key = "Progress-bar-import";
         }
-
-        $key->key = "Progress-bar-import";
-        $key->value = "0%";
-        $key->save();
-
 
         $reader = new Xlsx();
         // Log::debug(public_path('/files/excel/genetic_tests.xlsx'));

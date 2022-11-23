@@ -37,7 +37,7 @@
 
         <li @if(Route::current()->getName()=='import-test'.$routelang) class="active" @endif>
             <a href="{{ route('import-test'.$routelang) }}">
-                <i class="fa fa-table"></i> <span>{{ $lang=="pt" ? "Testes Genéticos" : "Genetic Tests" }} </span>
+                <i class="fa fa-table"></i> <span>{{ $lang=="pt" ? "Exames Genéticos" : "Genetic Tests" }} </span>
             </a>
         </li>
 

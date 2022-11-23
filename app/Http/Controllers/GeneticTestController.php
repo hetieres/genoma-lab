@@ -40,7 +40,7 @@ class GeneticTestController extends Controller
 
             $excel = Storage::disk('local')->getAdapter()->getPathPrefix() . $upload;
 
-            Import::dispatch();
+            Import::dispatchNow();
 
             return \Response::json('Iniciando');
         }
