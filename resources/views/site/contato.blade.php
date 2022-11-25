@@ -8,6 +8,7 @@
         left: 0px;
         position: absolute;
         top: 40px;
+        display: none;
     }
 
     .internal3 h3 {
@@ -21,6 +22,7 @@
         width: 110px;
         position: absolute;
         margin: 42px 0px;
+        display: none;
     }
 
     .internal3 .botao {
