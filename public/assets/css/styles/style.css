@@ -11,6 +11,10 @@
     src: url('FontsFree-Net-Akkurat.ttf');
 }
 
+.mobil {
+    display: none;
+}
+
 .ArrowDow {
     color: black;
     font-size: 20px;
@@ -6788,6 +6792,10 @@ h2 {
         display: none !important;
     }
 
+    .mobil {
+        display: block;
+    }
+
     .EspacoRodape {
         margin-left: 15px !important;
         ;
@@ -8634,7 +8642,7 @@ del {
 }
 
 .EspacoRodape {
-    width: 1200px;
+    width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
