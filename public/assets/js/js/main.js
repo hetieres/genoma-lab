@@ -458,8 +458,9 @@
       }
     });
 
-    if (save) {
-      grecaptcha.execute();
+    if (grecaptcha.getResponse() == '') {
+      alert('Validação reCAPCTHA');
+      save = false;
     }
 
     if (save) {
