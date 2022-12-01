@@ -219,7 +219,6 @@
                 var onloadCallback = function() {
                     grecaptcha.render('html_element', {
                         'sitekey' : '6Lcml4AcAAAAAGAOZ7o1J2Mqz0gx5yGcJUmBhlVg',
-                        'callback' : onSubmit,
                         'data-size': 'invisible'
                     });
                 };
