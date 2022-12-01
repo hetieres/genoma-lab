@@ -218,8 +218,13 @@
             <script type="text/javascript">
                 var onloadCallback = function() {
                     grecaptcha.render('html_element', {
-                    'sitekey' : '6Lcml4AcAAAAAGAOZ7o1J2Mqz0gx5yGcJUmBhlVg'
+                        'sitekey' : '6Lcml4AcAAAAAGAOZ7o1J2Mqz0gx5yGcJUmBhlVg',
+                        'callback' : correctCaptcha
                     });
+
+                    var correctCaptcha = function(response) {
+                        alert(response);
+                    };
                 };
             </script>
             <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
