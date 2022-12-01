@@ -458,10 +458,8 @@
       }
     });
 
-    if (grecaptcha.getResponse() == '') {
-      $('.rc-anchor-light.rc-anchor-normal').css('border', '1px solid red;');
-    } else {
-      $('.rc-anchor-light.rc-anchor-normal').css('border', '1px solid #d3d3d3;');
+    if (save) {
+      grecaptcha.execute();
     }
 
     if (save) {
