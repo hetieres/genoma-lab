@@ -209,12 +209,12 @@
                             <input type="file" id="anexo" name="anexo">
                         </div>
                     </div>
-                    {{-- <div id="html_element"></div> --}}
+                    <div id="html_element"></div>
                 </div>
 
 
             </form>
-{{--
+
             <script type="text/javascript">
                 var onloadCallback = function() {
                     grecaptcha.render('html_element', {
@@ -222,7 +222,7 @@
                     });
                 };
             </script>
-            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script> --}}
+            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 
             <p class="botao"><a href="#" class="solicitar">Solicitar o Exame</a>
             {{-- <a href="javascript:history.back()">Voltar</a></p> --}}
