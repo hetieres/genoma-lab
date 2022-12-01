@@ -12,14 +12,15 @@
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    {{-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZX2VFV1HLT"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BKWRB81MW3"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-ZX2VFV1HLT');
-    </script> --}}
+    gtag('config', 'G-BKWRB81MW3');
+    </script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
