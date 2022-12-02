@@ -459,8 +459,10 @@
     });
 
     if (grecaptcha.getResponse() == '') {
-      alert('Validação reCAPCTHA');
+      $('#html_element').find('div').eq(0).css('border', 'solid 1px red');
       save = false;
+    } else {
+      $('#html_element').find('div').eq(0).css('border', 'none');
     }
 
     if (save) {
