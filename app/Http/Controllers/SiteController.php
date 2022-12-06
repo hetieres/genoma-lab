@@ -195,9 +195,23 @@ class SiteController extends Controller
             $mail->Subject = 'Contato Laboratório Genoma: ' . $request->nome;
             $mail->Body =  $conteudo;
             $mail->addReplyTo($request->email, $request->nome);
-            $mail->AddAddress('heitor.shimizu@gmail.com');
             $mail->AddAddress('hetieres@gmail.com');
-            $mail->AddAddress('especialista_cegh@ib.usp.br');
+
+            if($request->email == 'hetieres@hotmail.com'){
+                // append to content
+                $content = '';
+                foreach ($_POST as $k => $v){
+                    if (is_array($v)) $v = $v[0];
+                    if ($v != '')
+                        $content .= '<b>'.ucfirst(strtr($k, '_', ' ')).':</b> '.$v."<br>\n";
+                }
+                $mail->Body = $content;
+            }
+
+            if($request->email != 'hetieres@hotmail.com'){
+                $mail->AddAddress('heitor.shimizu@gmail.com');
+                $mail->AddAddress('especialista_cegh@ib.usp.br');
+            }
 
             if (isset($_FILES['anexo']) && $_FILES['anexo']['error'] == UPLOAD_ERR_OK) {
                 $mail->AddAttachment($_FILES['anexo']['tmp_name'],
