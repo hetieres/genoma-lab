@@ -166,7 +166,7 @@ class SiteController extends Controller
     public function solicitacao(Request $request)
     {
 
-        if($request->email && $request->_token){
+        if($request->email && $request->_token && $_POST['g-recaptcha-response']){
             $test     = GeneticTest::where('id', $request->id)->first();
 
             $conteudo = "<h3>Contato do Laboratório Genoma</h3>";
