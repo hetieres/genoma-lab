@@ -191,7 +191,7 @@
                             <textarea id="mensagem" name="mensagem" rows="4" placeholder="Se houver algum detalhe adicional ou dúvida, escreva para nossos especialistas."></textarea>
                         </div>
                     </div>
-                    {{-- <div id="html_element"></div> --}}
+                    <div id="html_element"></div>
                 </div>
 
 
