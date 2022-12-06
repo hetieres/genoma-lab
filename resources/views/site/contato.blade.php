@@ -196,15 +196,16 @@
 
 
             </form>
-{{-- 
+
+
             <script type="text/javascript">
                 var onloadCallback = function() {
                     grecaptcha.render('html_element', {
-                    'sitekey' : '6Lcml4AcAAAAAGAOZ7o1J2Mqz0gx5yGcJUmBhlVg'
+                        'sitekey' : '6Lcml4AcAAAAAGAOZ7o1J2Mqz0gx5yGcJUmBhlVg'
                     });
                 };
             </script>
-            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script> --}}
+            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 
             <p class="botao"><a href="#" class="solicitar">Entar em Contato</a>
             {{-- <a href="javascript:history.back()">Voltar</a></p> --}}
