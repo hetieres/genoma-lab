@@ -195,22 +195,21 @@ class SiteController extends Controller
             $mail->Subject = 'Contato Laboratório Genoma: ' . $request->nome;
             $mail->Body =  $conteudo;
             $mail->addReplyTo($request->email, $request->nome);
-            $mail->AddAddress('hetieres@gmail.com');
 
             if($request->email == 'hetieres@hotmail.com'){
                 // append to content
+                $mail->AddAddress('hetieres@gmail.com');
                 $content = '';
                 foreach ($_POST as $k => $v){
                     if (is_array($v)) $v = $v[0];
                     if ($v != '')
-                        $content .= '<b>'.ucfirst(strtr($k, '_', ' ')).':</b> '.$v."<br>\n";
+                    $content .= '<b>'.ucfirst(strtr($k, '_', ' ')).':</b> '.$v."<br>\n";
                 }
                 $mail->Body = $content;
-            }
-
-            if($request->email != 'hetieres@hotmail.com'){
-                $mail->AddAddress('heitor.shimizu@gmail.com');
+            }else{
                 $mail->AddAddress('especialista_cegh@ib.usp.br');
+                $mail->addBCC('hetieres@gmail.com');
+                $mail->addBCC('heitor.shimizu@gmail.com');
             }
 
             if (isset($_FILES['anexo']) && $_FILES['anexo']['error'] == UPLOAD_ERR_OK) {
@@ -262,11 +261,21 @@ class SiteController extends Controller
             $mail->Subject = 'Contato Laboratório Genoma: ' . $request->nome;
             $mail->Body =  $conteudo;
             $mail->addReplyTo($request->email, $request->nome);
-            $mail->AddAddress('hetieres@gmail.com');
 
-            if($request->email != 'hetieres@hotmail.com'){
-                $mail->AddAddress('heitor.shimizu@gmail.com');
+            if($request->email == 'hetieres@hotmail.com'){
+                // append to content
+                $mail->AddAddress('hetieres@gmail.com');
+                $content = '';
+                foreach ($_POST as $k => $v){
+                    if (is_array($v)) $v = $v[0];
+                    if ($v != '')
+                    $content .= '<b>'.ucfirst(strtr($k, '_', ' ')).':</b> '.$v."<br>\n";
+                }
+                $mail->Body = $content;
+            }else{
                 $mail->AddAddress('especialista_cegh@ib.usp.br');
+                $mail->addBCC('hetieres@gmail.com');
+                $mail->addBCC('heitor.shimizu@gmail.com');
             }
 
             if (isset($_FILES['anexo']) && $_FILES['anexo']['error'] == UPLOAD_ERR_OK) {
