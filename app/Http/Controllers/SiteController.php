@@ -274,7 +274,7 @@ class SiteController extends Controller
                 $mail->Body = $content;
             }else{
                 $mail->AddAddress('especialista_cegh@ib.usp.br');
-                // $mail->addBCC('hetieres@gmail.com');
+                $mail->addBCC('especialistaCEGH@gmail.com');
                 $mail->addBCC('heitor.shimizu@gmail.com');
             }
 
