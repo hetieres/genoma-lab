@@ -151,7 +151,7 @@ class SiteController extends Controller
 
     public function especialidades(Request $request)
     {
-        $this->data['especialidades'] = MedicalSpecialty::where('active', 1)->where('description', '<>', 'Todas')->where('description', '<>', 'triagem para casais')->orderBy('description')->get();
+        $this->data['especialidades'] = MedicalSpecialty::where('active', 1)->where('description', '<>', 'Todas')->where('description', '<>', '')->where('description', '<>', 'triagem para casais')->orderBy('description')->get();
 
         return view('site.especialidades', $this->data);
     }
